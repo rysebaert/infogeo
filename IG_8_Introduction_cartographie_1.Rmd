@@ -1,0 +1,935 @@
+---
+title: "Cartographie thématique"
+subtitle: "Cartographie thématique et règles de la sémiologie graphique"
+author: "M1, Université de Paris"
+date: "Hugues Pecout (FR CIST),  Ronan Ysebaert (UMS RIATE)"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    css: styles.css
+    logo: figures/logo.gif
+    incremental: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+      $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"Introduction à la cartographie thématique\"></footer>');    
+    })
+</script>
+
+
+# Définitions
+
+## La cartographie
+
+<p style="font-size:17pt;">**La cartographie est une discipline** (composante de la géomatique) qui a pour objectif la construction de cartes. c'est à la fois une discipline  **scientifique**, **technique** et **artistique**.</p>
+
+<div class="column">
+<p style="color:#9c2005;font-weight:bold;font-size:16pt;">Une science</p> 
+<div class="carto">Les **bases sont mathématiques** (Système de référence et projection).     
+L’enjeu est la **précision et la fiabilité**.    
+La représentation cartographique est régie par des **règles de sémiologie graphique**.</div> 
+<img src="figures/lambert.jpg" width="260" />
+</div>
+
+<div class="column">
+<p style="color:#9c2005;font-weight:bold;font-size:16pt;">Une technique</p>  
+<div class="carto">**Nécessite un vaste savoir faire opérationnel** : acquisition de données, préparation et traitement de données, **maîtrise de logiciels**
+spécialisés...</div> 
+<img src="figures/technique_carto.png" width="290" />
+</div>
+
+<div class="column">
+<p style="color:#9c2005;font-weight:bold;font-size:16pt;">Un art</p>  
+<div class="carto">Recherche d'**esthétisme**. Comme pour tout objet de communication, le graphisme d'une carte à un impact sur la transmission du message.</div> 
+<img src="figures/art.png" width="255" />
+</div>
+
+
+## La carte géographique
+
+<p style="font-size:17pt;">**Une carte est une représentation géométrique plane, simplifiée et conventionnelle de tout ou partie de la surface terrestre**, et cela dans un rapport de similitude convenable qu'on appelle échelle. (*F. Joly, 1976*)</p>
+
+<p style="font-size:17pt;">**Une carte géographique est une représentation d'un espace géographique**. Elle met en valeur l'étendue de cet espace, sa localisation relative par rapport aux espaces voisins, ainsi que la localisation des éléments qu'il contient. **Les cartes servent également à représenter des phénomènes géographiques dont la configuration spatiale produit du sens.**</p>
+
+<br>
+
+<p style="font-size:19pt;color:#9c2005;text-align:center;">**La carte est un outil précisément défini**.</p><p style="font-size:19pt;color:#9c2005;text-align:center;">**La réalisation d’une carte est sujette à des conventions**.</p>
+
+
+## Deux grandes catégories de cartes
+
+<p style="font-size:17pt;">Il existe une **multitude de cartes géographiques** : carte météo, géologique, de végétation, climatique, touristique, d'inventaire, routière, animée, interactive, spatiocarte.... **Mais deux grandes catégories se dégagent** :</p>
+
+
+<div class="columns-2">
+
+<div class="centered">
+<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Cartes topographiques</span>
+<img src="figures/carte_topo.png" width="375" />
+</div>
+
+<div class="centered">
+<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Cartes thématiques</span>  
+<img src="figures/carte_thema.jpg" width="340" />
+</div>
+
+</div>
+
+
+## La carte thématique
+
+
+<p style="font-size:17pt;">**Carte représentant sur un fond repère** topographique, hydrographique, chorographique ou géographique, **des phénomènes localisables de toute nature, qualitatifs ou quantitatifs**</p>
+
+
+<div class="columns-2">
+<div>
+<img src="figures/rideau_fer.png" width="630" />
+</div>
+<div>
+<div class="col_3">
+<span style="color: #898989;">**La cartographie thématique est un outil d’analyse, d’aide à la décision et de communication** largement utilisé pour représenter une ou plusieurs variables.</span>
+<br>    
+<span style="color: #898989;">C'est un **moyen très efficace d’exprimer des idées et de repérer des phénomènes** qui ne le seraient pas (ou plus difficilement) par d’autres moyens.</span>
+<br>   
+<span style="color: #898989;">Cest un **document graphique basé sur la communication par les signes. Elle relève du langage visuel**, sa construction doit suivre **les règles de la sémiologie graphique**.</span> 
+</div>
+</div>
+
+
+# Quelques exemples
+
+## Carte choroplèthe - *variable quantitative relative*
+
+<div class="columns-2">
+
+
+<div class="centered">
+<img src="figures/brexit.jpg" width="445" />
+</div>
+
+<div class="centered">
+<img src="figures/4G.jpg" width="380" />
+</div>
+
+
+</div>
+
+
+
+## Carte choroplèthe - *variable qualitative*
+
+<div class="columns-2">
+
+<div class="centered">
+<img src="figures/typo.jpg" width="420" />
+</div>
+
+
+<div class="centered">
+<img src="figures/conflict.png" width="410" />
+</div>
+
+
+</div>
+
+
+## Carte en proportion - *variable quantitative absolue*
+
+
+<div class="columns-2">
+
+<div class="centered">>
+<img src="figures/rom.png" width="440" />
+</div>
+
+<div class="centered">
+<img src="figures/vatican.png" width="490" />
+
+</div>
+
+</div>
+
+
+## Carte en proportion - *variable quantitative absolue*
+
+<div class="centered"> 
+<img src="figures/prop.png" width="650" />
+</div>
+
+
+## Carte en proportion - *diagramme & camenbert*
+
+
+<div class="columns-2">
+
+<div class="centered">>
+<img src="figures/camembert.png" width="500" />
+</div>
+
+<div class="centered">
+<img src="figures/newzealand.gif" width="360" />
+   
+
+</div>
+
+
+</div>
+
+
+## Anamorphose / Cartogramme - *Quantitative absolue*
+
+<div class="columns-2">
+
+<div class="centered">
+<img src="figures/allo_afrique.jpg" width="435" />
+</div>
+
+
+<div class="centered">
+<img src="figures/anamorphose.jpg" width="420" />
+</div>
+
+
+</div>
+
+
+## Les variantes
+
+<div class="columns-2">
+<div class="centered">
+<img src="figures/carbon_large.png" width="600" />
+</div>
+
+<div style="text-align:right;">
+<img src="figures/travel2.jpg" width="290" />
+  
+<img src="figures/forest.jpg" width="290" />
+
+</div>
+
+</div>
+
+
+## Carte en point - *Quantitative absolue*
+
+<div class="columns-2">
+
+<div class="centered">>
+<img src="figures/dot_map.jpg" width="350" />
+</div>
+
+<div class="centered">
+<img src="figures/dot_map_2.jpg" width="370" />
+</div>
+
+</div>
+
+
+
+## Carte en symbole - *Qualitative*
+
+<div class="centered">
+<img src="figures/symbol_map.jpg" width="550" />
+</div>
+
+## Carte en symbol - *Qualitative*
+
+<div class="centered">
+<img src="figures/carte_symbol.gif" width="690" />
+</div>
+
+
+## Carte de réseau/flux - *Qualitative*
+
+<div class="centered">
+<img src="figures/pan.jpg" width="800" />
+</div>
+
+## Carte de réseau/flux - *Quantitative absolue*
+
+<div class="columns-2">
+
+<div class="centered">
+<img src="figures/commerce.jpeg" width="440" />
+</div>
+
+<div class="centered">
+<img src="figures/navette.png" width="335" />
+</div>
+
+</div>
+
+
+
+## Carte isoplèthe
+
+
+<div class="columns-2">
+
+<div class="centered">
+<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Carte isobare</span>
+<img src="figures/isobar.gif" width="460" />
+</div>
+
+<div class="centered">
+<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Carte isochrone</span>
+<img src="figures/isochrone.png" width="455" />
+</div>
+
+</div>
+
+
+
+
+## Carte isoplèthe
+
+<div class="columns-2">
+
+<div class="centered">
+<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Carte lissée</span>
+<img src="figures/fig_lambert.png" width="475" />
+</div>
+
+<div class="centered">
+<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Carte de potentiel</span>
+<img src="figures/potentiel.png" width="460" />
+</div>
+
+</div>
+
+
+# Les fondamentaux
+
+## Les fondamentaux
+
+<p style="font-size:19pt;">**L’efficacité d'une carte thématique réside dans le temps nécessaire pour mémoriser correctement l’information qui veut être transmise**. Pour cela, il ne faut jamais oublier :</p> 
+<br>  
+<p style="font-size:24pt;color:#9c2005;text-align:center;">1- L’**objectif** de la carte et le **public visé**</p>
+
+<p style="font-size:24pt;color:#9c2005;text-align:center;">2- Les **codes** et **conventions** de la cartographie</p>
+
+<p style="font-size:24pt;color:#9c2005;text-align:center;">3- Les règles de la **sémiologie graphique**</p>
+
+
+## Un public, un objectif et un message
+
+ 
+<div class="columns-2">
+<div>
+<img src="figures/carte_lambert.png" width="570" />
+</div>
+<div>
+<div class="col_3_bis">
+<span style="color:#484848;">On ne réalise pas la même carte en fonction du **public ciblé**, de l’**objectif** (opérationnel, décisionnel, communication) et du **message** que le cartographe souhaite transmettre.</span>
+<br>    
+<span style="color:#9c2005;">Cela influence directement :</span>   
+
+<span style="color:#9c2005;">- **L'emprise** et **la projection** utilisées</span>  
+<span style="color:#9c2005;">- La **généralisation du fond de carte**</span>    
+<span style="color:#9c2005;">- Les **choix graphiques**</span>   
+<span style="color:#9c2005;">- Le **vocabulaire** utilisé</span>   
+
+
+Cliquez [ici](https://www.youtube.com/watch?v=RDwn5Qzq6Fc&feature=youtu.be) si vous en doutez !
+
+</div>
+</div>
+
+## Code et convention cartographique
+
+<div class="columns-2">
+<div>
+<img src="figures/carte_lambert.png" width="570" />
+</div>
+
+<div>
+<div class="col_3_ter">
+<span style="font-size:15pt;">**Les éléments obligatoires d'une carte** :</span>     
+    
+<span style="color:#9c2005;">- Un **titre**</span>  
+<span style="color:#9c2005;">- Une **date**</span>    
+<span style="color:#9c2005;">- Une **légende**</span>   
+<span style="color:#9c2005;">- Une **source** (un **auteur**)</span>  
+<span style="color:#9c2005;">- Une **échelle**</span>   
+<span style="color:#9c2005;">- Une **orientation** (optionnel*)</span>   
+ 
+<span style="color:#9c2005;font-size:12pt;">*Par défaut, le Nord géographique vers le haut*</span>  
+<br>  
+<span style="font-size:15pt;">**Spécificités selon les pays/cultures**, ex :</span>
+
+<span style="font-size:11pt;">*- Utilisation de couleurs froides vers couleurs chaudes ou d’intensité croissante pour signifier l’intensité ou l’abondance*.</span>
+ 
+<span style="font-size:11pt;">*- Le choix de la projection est parfois soumise à des normes. Ex : Depuis  2000 en France métropolitaine → Lambert93 (système géodésique RGF93)*.</span>
+
+</div>
+</div>
+</div>
+
+
+## Les Règles de la sémiologie graphique
+
+
+
+<div class="column">
+<img src="figures/bertin_1.jpg" width="250" />
+</div>
+
+<div class="column">
+<br>
+<br>
+<br>
+<div style="font-size:17pt;text-align:center;">Le **langage cartographique**<br>a été théorisé par<br>**Jacques Bertin** (1967)</div> 
+</div> 
+
+<div class="column">
+<img src="figures/bertin_2.jpg" width="250" />
+</div>
+
+<br>
+<br>
+<br>
+
+<p style="font-size:19pt;font-style:italic;text-align:center;line-height:140%;">
+<span style="color:#9c2005;">« **La graphique**</span> utilise les propriétés de l'image visuelle pour faire apparaître<br>les **relations** de **différence**, **d'ordre** et de **proportionnalité** entre les données »
+</p>
+
+
+
+## Un peu de vocabulaire...
+
+<div class="columns-2">
+<div>
+<p style="font-size:15pt;"> <span style="color:#9c2005;"> **L'implantaton** </span> est la transcription graphique - par des points, des lgnes ou des polygones - d'un objet géographique.<br><br>**Trois types d'implantation** sont possibles : **ponctuel**, **linéaire** et **zonale** (surfacique).</p>
+</div>
+
+<div class="centered">
+<p style="font-size:15pt;">**3 types d'implantation** :</p>
+<img src="figures/VV_couleur.png" width="350" />
+</div>
+
+</div>
+
+<br>
+
+<div class="columns-2">
+<div>
+<p style="font-size:16pt;"><span style="color:#9c2005;">**Les variables visuelles**</span> (ou variables rétiniennes) sont les **moyens graphiques pour retranscrire visuellement une information**.</p>
+<br>
+<p style="font-size:17pt;"><span style="color:#9c2005;">Elles possèdent des propriètés différentes qui **permettent de différencier**, **ordonner** et **mesurer  les données**.</span></p>
+</div>
+
+<div class="centered">
+<p style="font-size:18pt;"><span style="color:#9c2005;">**7 Variables visuelles** :</span></p>
+<img src="figures/var_visu.png" width="230" />
+</div>
+
+</div>
+
+## Les variables visuelles (6 + 1)
+
+<div class="columns-2">
+<div>
+<img src="figures/VV_valeur.png" width="420" />
+<img src="figures/VV_couleur.png" width="420" />
+<img src="figures/VV_taille_ordre.png" width="420" />
+<img src="figures/VV_forme.png" width="420" />
+</div>
+<div class="centered">
+
+
+<img src="figures/VV_grain.png" width="420" />
+<img src="figures/VV_orientation.png" width="420" />
+<br>
+<br>
+<br>
+<br>
+<img src="figures/VV_texture_diff.png" width="420" />
+</div>
+</div>
+
+
+## Les 3 propriétes des variables visuelles
+
+<div class="centered">
+<img src="figures/VV_et_categories.png" width="700" />
+</div>
+
+## Des relations différentes selon le type de données
+
+<div class="centered">
+<img src="figures/catégories-de-VV.png" width="800" />
+</div>
+
+## Données Quantitatives et Qualitatives
+
+<div class="columns-2">
+<div>
+<p style="font-size:17pt;">Une variable est dite <span style="color:#9c2005;">**quantitative**</span> lorsque **ses valeurs sont des** <span style="color:#9c2005;">**nombres**</span> qui peuvent être **ordonnés** et **additionnés**.</p>
+
+<p style="font-size:15pt;">Elle est dite **quantitative** <span style="color:#9c2005;font-size:16pt;">**absolue**</span> lorsqu'il s'agit d'une **variable de stock** qui expriment des **quantités concrètes** (la somme a un sens). Ex :</p>
+>- <p style="font-size:15pt;">*Population totale*</p>
+
+<p style="font-size:15pt;">Elle est dite **quantitative** <span style="color:#9c2005;font-size:16pt;">**relative**</span> lorsqu'il s'agit d'une **variable de taux** qui expriment un **rapport entre deux quantités** (la somme n'a aucune signification). Ex :</p>
+>- <p style="font-size:15pt;">*Densité de population*</p>  
+</div>
+
+
+<div>
+<p style="font-size:17pt;">Une variable est dite <span style="color:#9c2005;">**qualitative**</span> lorsque **ses valeurs sont des qualités appelées** <span style="color:#9c2005;">**modalités**</span> (catégories, niveaux).</p>
+
+<p style="font-size:15pt;">Elle est dite **qualitative** <span style="color:#9c2005;font-size:16pt;">**ordinale**</span> lorsque ses modalités peuvent être **classées dans une ordre logique**. Ex :</p>
+>- <p style="font-size:15pt;">[*zonage communale en aires urbaines de 2010*](https://www.insee.fr/fr/statistiques/1281191){target="_blank"}</p> 
+
+<p style="font-size:15pt;">Le cas échéant, il s'agit d'une variable **qualitative** <span style="color:#9c2005;font-size:16pt;">**nominale**</span>. Ex :</p>
+>- <p style="font-size:15pt;">*Langue officielle des pays*</p>
+
+ 
+</div>
+</div>
+
+## Comment caractèriser ses données ?
+
+<div class="centered">
+<img src="figures/types_de_données_1.png" width="1000" />
+</div>
+
+## Comment caractèriser ses données ?
+
+<div class="centered">
+<img src="figures/arbre_type_data.png" width="720" />
+</div>
+
+## Exemple
+
+<div class="centered">
+<img src="figures/types_de_données_2.png" width="850" />
+</div>
+
+
+## Choisir la bonne variable visuelle
+
+<div class="columnbis">
+<p style="font-size:16pt;text-align:left;">Le choix des représentations cartographiques se fait en fonction de :</p>
+
+<br>
+
+<p style="font-size:16pt;text-align:left;">1- La <span style="color:#9c2005;">**nature**</span> **de la donnée** à représenter</p>
+
+<br>
+
+<p style="font-size:16pt;text-align:left;">2- Le <span style="color:#9c2005;">**type d'implentation**</span> de **l'objet géographique** concerné</p>
+
+</div>
+
+<div class="centered">
+<img src="figures/de-la-donnee-a-la-carte.png" width="650" />
+</div>
+</div>
+
+
+## Choisir la bonne variable visuelle
+
+<div class="centered">
+<img src="figures/Zanin_Tremelo.png" width="1000" />
+</div>
+
+
+# Représenter des données quantitatives absolues
+
+## Représenter des données quantitatives absolues
+
+
+<p style="font-size:17pt;text-align:left;">**UNE SEULE variable visuelle** peut être utilisée pour représenter des données <span style="color:#9c2005;">**quantitatives absolues**</span> : la variable visuelle <span style="color:#9c2005;">**TAILLE**</span></p>
+<br>
+
+<div class="centered">
+<img src="figures/VV_taille_prop.png" width="800" />
+</div>
+<br>
+<p style="font-size:17pt;text-align:left;">**C'est la seule variable visuelle** qui permet de retranscrire correctement **des différences**, **une hiérarchie** et surtout de  <span style="color:#9c2005;">**la proportionalité**</span></p>
+
+## Données quantitatives absolues - *implantation ponctuelle*
+
+<div class="columns-2">
+<div class="centered">
+<img src="figures/taille_zone.gif" width="550" />
+</div>
+<div class="centered">
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:18pt;">Vous **devez utiliser**<br>la **variable visuelle** <span style="color:#9c2005;">**TAILLE**</span><br>en <span style="color:#9c2005;">**implantation ponctuelle**</span></p>
+</div>
+</div>
+
+## Données quantitatives absolues - *implantation linéaire*
+
+<div class="columns-2">
+<div class="centered">
+<img src="figures/taille_line.png" width="420" />
+</div>
+<div class="centered">
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:18pt;">Vous **devez utiliser**<br>la **variable visuelle** <span style="color:#9c2005;">**TAILLE**</span><br>en <span style="color:#9c2005;">**implantation linéaire**</span></p>
+</div>
+</div>
+
+## Données quantitatives absolues - *implantation surfacique*
+<div class="columns-2">
+<div class="centered">
+<img src="figures/rom.png" width="440" />
+</div>
+
+<div class="centered">
+<br>
+<br>
+<br>
+<p style="font-size:18pt;">Vous **devez utiliser**<br>la **variable visuelle** <span style="color:#9c2005;">**TAILLE**</span><br>sur un <span style="color:#9c2005;">**figuré graphique ponctuel**</span></p>
+<br>
+<br>
+<p style="font-size:14pt;">Les différents logiciels centrent généralement le figuré ponctuel sur le centroïde des surfaces</p>
+</div>
+</div>
+
+## Données quantitatives absolues - *implantation surfacique*
+
+
+<div class="columns-2">
+<div>
+<p style="font-size:18pt;">**D'autres types de représentations** sont aujourd'hui possibles **pour représenter des données quantitatives absolues** :<br><br><br><br><span style="color:#9c2005;font-size:21pt;text-align:center;">**> les cartogrammes**</span></p>
+<br>
+
+<p style="font-size:16pt;"><span style="color:#9c2005;">**La géométrie de l'espace de la carte et la surface des territoires sont déformés**</span> afin de se conformer **aux informations relatives à la variable représentée**.</span></p>
+</div>
+<div class="centered">
+<img src="figures/Types-cartograms.png" width="300" />
+</div>
+</div>
+
+# Représenter des données quantitatives relatives
+
+## Représenter des données quantitatives relatives
+
+
+<p style="font-size:17pt;text-align:left;">**Pour représenter des données** <span style="color:#9c2005;">**quantitatives relatives**</span>, vous pouvez utiliser les variables visuelles <span style="color:#9c2005;">**VALEUR**</span>, <span style="color:#9c2005;">**COULEUR**</span> (intensité/dégradé), <span style="color:#9c2005;">**GRAIN**</span> ou <span style="color:#9c2005;">**TEXTURE-STRUCTURE**</span>.<br>
+Elles permettent de retranscrire visuellement des **différences** et une <span style="color:#9c2005;">**hiérarchie**</span>.</p>
+
+
+<div class="columns-2">
+<div class="centered">
+<img src="figures/VV_valeur.png" width="470" />
+<img src="figures/VV_intensité.png" width="470" />
+<img src="figures/VV_harmonique.png" width="470" />
+
+</div>
+<div class="centered">
+<img src="figures/VV_grain.png" width="470" />
+
+<img src="figures/VV_texture_ordre.png" width="470" />
+
+<br>
+<p style="font-size:17pt;text-align:center;">**--> N'utilisez jamais la variable TAILLE**</p>
+</div>
+</div>
+ 
+
+## Discrétiser des données quantitatives relatives
+
+<div class="columns-2">
+<div>
+
+<p style="font-size:16pt;">Pour représenter des données quantitatives relatives, il est nécéssaire de <span style="color:#9c2005;">**discrétiser**</span> **la serie statistique en plusieurs classes**.</p>
+
+<p style="font-size:16pt;">Il existe plusieurs <span style="color:#9c2005;">**méthodes de discrétisation**</span>.</p> 
+<p style="font-size:16pt;">Le choix de la  méthode et du nombre de classe se fait **en fonction de** :</p>  
+>- <p style="font-size:15pt;">La **forme de la distribution**</p>
+>- <p style="font-size:15pt;">Des **valeurs centrales**</p>   
+>- <p style="font-size:15pt;">Des **paramètres de dispersion**</p><br>         
+<p style="font-size:15pt;">Ce choix à un **impact important** sur l'information représentée...</p>  
+</div>
+<div class="centered">
+<img src="figures/discretisations_examples_cartes.png" width="430" />
+</div>
+</div>
+
+## Données quantitatives relatives - *implantation surfacique*
+
+<div class="columns-2">
+<div class="centered">
+<img src="figures/quanti_rel_surf.jpg" width="580" />
+</div>
+<div class="centered">
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:17pt;">Vous pouvez utiliser la<br>**variable visuelle** <span style="color:#9c2005;">**COULEUR**</span><br>(intensité/dégradé)<br>en <span style="color:#9c2005;">**implantation zonale**</span></p>
+</div>
+</div>
+
+## Données quantitatives relatives - *implantation surfacique*
+
+<div class="columns-2">
+<div class="centered">
+<img src="figures/quanti_rel_2.png" width="580" />
+</div>
+<div class="centered">
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:18pt;">Vous pouvez utiliser la<br>**variable visuelle** <span style="color:#9c2005;">**GRAIN**</span><br>en <span style="color:#9c2005;">**implantation zonale**</span></p>
+</div>
+</div>
+
+## Données quantitatives relatives - *implantation ponctuelle*
+
+<div class="columns-2">
+<div class="centered">
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:18pt;">Vous pouvez utiliser **la variable visuelle**<br><span style="color:#9c2005;">**COULEUR**</span> (degradé/intensité)<br>en <span style="color:#9c2005;">**implantation ponctuelle**</span></p>
+</div>
+
+<div class="centered">
+<img src="figures/quanti_point_relatif.jpg" width="400" />
+</div>
+</div>
+
+## Données quantitatives relatives - *implantation linéaire*
+
+<div class="columns-2">
+<div class="centered">
+<img src="figures/quanti_rel_3.png" width="500" />
+</div>
+<div class="centered">
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:17pt;">Vous pouvez utiliser la<br>**variable visuelle** <span style="color:#9c2005;">**VALEUR**</span><br> en <span style="color:#9c2005;">**implantation linéaire**</span></p>
+</div>
+</div>
+
+# Représenter des données qualitatives
+
+## Représenter des données qualitatives
+
+
+<div class="columns-2">
+<div class="centered">
+<p style="font-size:15pt;"><span style="color:#9c2005;font-size:17pt;">**Qualitative NOMINALE**</span></p>
+<img src="figures/VV_couleur.png" width="400" />
+<img src="figures/VV_forme.png" width="400" />
+<img src="figures/VV_orientation.png" width="400" />
+
+<p style="font-size:14pt;"><span style="color:#9c2005;">**COULEUR**</span>, <span style="color:#9c2005;">**FORME**</span> et <span style="color:#9c2005;">**ORIENTATION**</span>.</p>
+
+<p style="font-size:15pt;">Pour exprimer la <span style="color:#9c2005;">**différence**</span> entre les modalités</p>
+</div>
+
+
+<div class="centered">
+<p style="font-size:15pt;"><span style="color:#9c2005;font-size:17pt;">**Qualitative ORDINALE**</span></p>
+<img src="figures/VV_valeur.png" width="300" />   
+<img src="figures/VV_intensité.png" width="300" />    
+<img src="figures/VV_texture_ordre.png" width="300" />   
+<img src="figures/VV_taille_ordre.png" width="300" />   
+
+
+<p style="font-size:14pt;"><span style="color:#9c2005;">**VALEUR**</span>, <span style="color:#9c2005;">**COULEUR**</span>, <span style="color:#9c2005;">**TEXTURE-STRUCTURE**</span> et <span style="color:#9c2005;">**TAILLE**</span>.</p>
+
+<p style="font-size:15pt;">Pour exprimer l'<span style="color:#9c2005;">**ordre**</span> entre les modalités</p>
+</div>
+</div>
+
+## Donnée qualitative nominale - *implantation ponctuelle*
+
+<div class="centered">
+<img src="figures/quali_point_nominale.png" width="650" />
+</div>
+
+<p style="font-size:17pt;">Vous pouvez utiliser la **variable visuelle** <span style="color:#9c2005;">**COULEUR**</span> et ou <span style="color:#9c2005;">**FORME**</span> en <span style="color:#9c2005;">**implantation ponctuelle**</span></p>
+
+## Donnée qualitative nominale - *implantation linéaire*
+
+<div class="columns-2">
+<div class="centered">
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:17pt;">Vous pouvez utiliser la<br>**variable visuelle** <span style="color:#9c2005;">**COULEUR**</span><br> en <span style="color:#9c2005;">**implantation linéaire**</span></p>
+</div>
+<div class="centered">
+<img src="figures/quali_line_nominale.png" width="520" />
+</div>
+</div>
+
+## Donnée qualitative nominale - *implantation surfacique*
+
+<div class="centered">
+<img src="figures/quali_nom_surface.jpg" width="680" />
+</div>
+<div class="centered">
+<p style="font-size:17pt;">Vous pouvez utiliser la **variable visuelle** <span style="color:#9c2005;">**COULEUR**</span> en <span style="color:#9c2005;">**implantation zonale**</span></p>
+</div>
+
+## Donnée qualitative ordinale- *implantation ponctuelle*
+
+<div class="columns-2">
+<div class="centered">
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:17pt;">Vous pouvez utiliser la **variable**<br>**visuelle** <span style="color:#9c2005;">**COULEUR**</span>(dégradé)<br> en <span style="color:#9c2005;">**implantation ponctuelle**</span></p>
+</div>
+<div class="centered">
+<img src="figures/quali_point_ordinale_2.jpg" width="475" />
+</div>
+</div>
+
+## Donnée qualitative ordinale - *implantation linéaire*
+
+<div class="columns-2">
+<div class="centered">
+<img src="figures/quali_line_ordinale.jpg" width="400" />
+</div>
+<div class="centered">
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:17pt;">Vous pouvez utiliser la<br>**variable visuelle** <span style="color:#9c2005;">**COULEUR**</span><br>(dégradé) en <span style="color:#9c2005;">**implantation linéaire**</span></p>
+</div>
+
+
+## Donnée qualitative ordinale - *implantation surfacique*
+
+<div class="columns-2">
+<div class="centered">
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-size:17pt;">Vous pouvez utiliser la<br>**variable visuelle** <span style="color:#9c2005;">**COULEUR**</span><br> en <span style="color:#9c2005;">**implantation zonale**</span></p>
+</div>
+<div class="centered">
+<img src="figures/quali_surface_ordinale.png" width="500" />
+</div>
+</div>
+ 
+
+## Données qualitatives
+ 
+<div class="centered">
+<img src="figures/quali_all.png" width="730" />
+</div> 
+ 
+ 
+# Map failed
+
+## Cherchez l'erreur...
+
+<div class="centered">
+<img src="figures/map_failed_0.jpg" width="590" />
+</div>
+
+## Cherchez l'erreur...
+
+<div class="columns-2">
+<div class="centered">
+<img src="figures/map_failed_4.jpg" width="450" />
+</div>
+
+<div class="centered">
+<img src="figures/map_failed_6.jpg" width="445" />
+</div>
+</div>
+
+## Cherchez l'erreur...
+
+<div class="centered">
+<img src="figures/map_failed_3.jpg" width="1000" />
+</div>
+
+## Cherchez l'erreur...
+
+<div class="centered">
+<img src="figures/map_failed_7.jpg" width="700" />
+</div>
+
+## Cherchez l'erreur...
+
+<div class="centered">
+<img src="figures/map_failed_5.jpg" width="700" />
+</div>
+
+## Cherchez l'erreur...
+
+<div class="centered">
+<img src="figures/map_failed_8.jpg" width="500" />
+</div>
+
+## Cherchez l'erreur...
+
+<div class="centered">
+<img src="figures/map_failed_9.jpg" width="640" />>
+</div>
+
+## Cherchez l'erreur...
+
+<div class="centered">
+<img src="figures/map_failed_1.jpg" width="360" />
+</div>
+
+## Correction !
+
+<div class="columns-2">
+<div class="centered">
+<img src="figures/map_failed_1.jpg" width="340" />
+</div>
+<div class="centered">
+<img src="figures/map_failed_2.jpg" width="340" />
+</div>
+</div>
+
+## Références
+
+<div class="column">
+<img src="figures/ref_1.jpg" width="290" style="border:1px solid grey"  />
+</div>
+<div class="column">
+<img src="figures/ref_2.jpg" width="280" style="border:1px solid grey" />
+</div>
+<div class="column">
+<img src="figures/ref_3.jpg" width="280" style="border:1px solid grey"  />
+</div>
+
+
+

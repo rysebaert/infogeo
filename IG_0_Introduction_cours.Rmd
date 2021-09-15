@@ -1,0 +1,407 @@
+---
+title: "Information géographique"
+subtitle: "Cours d'initiation - Informations pratiques"
+author:  
+- "Ronan Ysebaert, Maxime Guinepain"
+date: "Dernière mise à jour: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, crayon.enabled = TRUE)
+knitr::opts_chunk$set(cache = TRUE,
+                      fig.align='center',
+                      message = FALSE,
+                      warning = TRUE)
+# install.packages("devtools")
+# devtools::install_github("gadenbuie/countdown")
+# devtools::install_github("mitchelloharawild/icons")
+library(countdown)
+library(icons)
+#download_fontawesome()
+```
+
+#  Objectifs ?
+
+
+## Pourquoi cet enseignement ?
+
+**L’information géographique favorise la connaissance, l’analyse et le suivi des territoires, ainsi que leur aménagement**. Elle est utilisée dans de très nombreux secteurs professionnels :
+
+*Agriculture, aménagement, automobile, assurance et banque, bâtiment et travaux publics, défense, eau et assainissement, électricité, enseignement, environnement, épidémiologie, géologie, géomarketing, immobilier, ingénierie logistique, ressources naturelles, santé, services d’urgence, télécommunications, tourisme, urbanisme...*
+
+
+Quelque soit le secteur professionnel dans lequel vous évoluerez, **vous pouvez être amenés à consulter, utiliser, analyser, représenter voire produire de l'information géographique**. 
+
+
+---
+
+## Apprendre à...
+
+
+>- **Identifier**, **définir** et **caractériser** l'information géographique    
+
+
+>- **Manipuler** de l'information géographique dans un environnement SIG (initiation au logiciel QGIS).
+
+>- **Cartographier** de l'information géographique (initiation au logiciel de cartographie thématique Magrit).  
+   
+>- Tendre vers l'**autonomie**, savoir poser les **bonnes questions** et identifier les **outils et méthodes adéquats** pour manipuler l'information géographique.    
+
+
+---
+
+## Calendrier et modalités d'évaluation
+
+.pull-left[
+
+- **8 séances de 2h30 (salles 375-377)** (Septembre - Décembre)
+- **Dossier** à composer en binôme : **2/3 de la note** finale
+- **Examen terminal**, épreuve écrite : **1/3 de la note** finale
+]
+
+
+.pull-right[
+```{r, echo = FALSE, out.width = "400px", fig.align='center'}
+knitr::include_graphics('figures/examen.jpeg')
+```
+- **Session de rattrapage** : épreuve écrite
+
+]
+
+
+---
+
+## Le projet SIG... 
+
+<br>
+
+- Est un travail **à réaliser en binôme**. 
+
+- Comptera pour **2/3 de la note finale**.
+
+- Rendu en **format papier le 10 janvier 2022, bureau 707**.
+
+
+Vous aurez l'occasion de **travailler et d'avancer sur votre dossier durant de nombreuses séances. Profitez-en !**
+
+---
+
+# Projet SIG - Problématique
+
+
+## Mise en situation...
+
+Vous êtes **membre d'un bureau d'étude chargé de réaliser une pré-étude pour l'implantation d'un nouveau équipement** public dans une des communautés d’agglomération de la Métropole du Grand Paris.
+
+
+**L'objectif de cette pré-étude est de proposer une zone d'implantation** pour ce nouvel équipement, en vous basant sur **plusieurs critères d'implantation** que vous aurez préalablement déterminé et justifié.
+
+
+**Vous devez livrer un document qui résume l'ensemble de vos choix, de votre démarche et de vos traitements** qui vous ont permis de déterminer une (ou plusieurs) zone.s d'implantation optimale.s
+
+---
+
+
+<span style="font-size:18pt;">**1) Choisissez une des communautés d'agglomérations** de la MGP (**Paris exclu**)</span>
+
+```{r, echo = FALSE, out.width = "600px", fig.align='center'}
+knitr::include_graphics('figures/carte_projet.png')
+```
+
+---
+
+<span style="font-size:19pt;">**2) Choisissez un type d'équipement public** parmi ces cinq propositions :</span>
+
+
+- **Médiathèque** 
+- **Conservatoire de musique**
+- **Salle de cinéma**
+- **Mission locale pour l’emploi**.
+- **Maison de retraite**.
+
+
+---
+
+# Document à livrer
+
+## Organisation du contenu
+
+- **1) Courte introduction présentant votre espace d'étude et l'équipement** que vous souhaitez implanter. Expliquer **pourquoi l'implantation de ce nouvel équipement vous semble pertinent**. (1 point).
+
+- **2) Présentation des critères d'implantation (4 minimum)** choisis pour déterminer la localisation optimale. **Justifiez la pertinence de vos critères**. N'hésitez pas à vous appuyer sur de la documentation ! (3 points).
+
+- **3) Restitution des étapes de traitement SIG** qui vous ont permis de déterminer la ou les zone.s optimale.s. **Concluez cette partie par une carte de synthèse résumant l'ensemble de la démarche et la (ou les) zone.s d'implantation proposée.s**  (5 points).
+
+- **4) Illustration graphique de la chaîne de traitement réalisée**. (2 points)
+
+- **5) Conclusion. Proposez des critères d'implémentation supplémentaires** qui pourraient améliorer la qualité votre étude (2 points).  
+
+---
+
+## Cartographie obligatoires
+
+Votre rapport devra **obligatoirement contenir 3 cartes thématiques, accompagnées de commentaires descriptifs** :
+
+- **1)** Une **carte représentant des données quantitatives absolues**. (2 points)
+*Ex : Nombre d'habitants par commune*.
+
+- **2)** Une **carte représentant des données quantitatives relatives**. (2 points)   
+*Ex : Part des moins de 25 ans par commune*. 
+
+- **3)** Une **carte représentant des données qualitatives** (2 points)    
+*Ex : Carte de localisation et présentation de votre espace d'étude.*
+
+---
+
+
+## Grille de notation
+
+
+<br>
+
+
+- **13 points** pour le **la réflexion et le travail SIG** *> QGIS*. 
+- **6 points** pour les **cartes thématiques** *> Magrit*. 
+- >**1 point** pour le **soin**. 
+
+
+
+```{r, echo = FALSE, out.width = "120px", fig.align='left'}
+knitr::include_graphics('figures/smiley.png')
+```
+
+---
+
+# Pour vous guider...
+
+
+.pull-left[
+## Un exemple type
+
+Pour vous guider dans votre projet et vous inititier à QGIS et MAGRIT, **tous les tutoriels et démonstrations seront réalisés à partir du même exemple** : **L'implantation d'une médiathèque** au sein de la CA **Est-Ensemble**.
+]
+
+.pull-right[
+<img src="figures/seance5BIS.png" width="500" />
+
+ 
+ <br>
+Vous ne pouvez pas choisir cet exemple pour votre projet !
+ ]
+
+---
+
+
+# Déroulé
+
+## Séance 1 : Introduction
+
+
+### Cours    
+
+- **Information géographique** : Définition, sources, méthodes et outils.       
+- **Projet SIG : problématique**, consignes et données mises à diposition.     
+
+
+### Atelier
+
+- **Rechercher des données géographiques** depuis des portails dédiés.   
+
+
+---
+
+
+## Séance 2 : SIG (1)
+
+.pull-left[
+
+### Cours 
+
+- Information géographique : **Coordonées géographiques** & **projection cartographique**.
+- Information géographique : **Introduction aux SIG**.
+
+
+### Atelier
+
+- **Présentation de QGIS**.
+- **Importer de l'information géographique**. 
+- Gestion des **projection cartographique**.  
+- Gestion des **styles graphiques**.  
+
+]
+
+.pull-right[
+
+<img src="figures/seance2.PNG" width="330" />
+<br>
+<span style="font-size:12pt;">*Import de l'espace d'étude (polygones) et des équipements existants (points)*</span> 
+]
+
+---
+
+## Séance 3 : SIG (2)
+
+.pull-left[
+
+### Cours - Atelier
+
+- **Import de données statistiques**.  
+- **Jointure** de données.   
+- **Sélection** d'entités **par attribut** ou par **localisation**.      
+- Enregistrement d'une sélection.   
+
+]
+
+.pull-right[
+<img src="figures/seance3.png" width="330" />
+<br>
+<span style="font-size:12pt;">*Sélection des entités caractérisées par une valeur supérieure à... pour tel indicateur *</span> 
+]
+
+---
+ 
+## Séance 4 : SIG (3)
+
+.pull-left[
+
+### Cours - Atelier
+
+- **Géotraitements**.
+- **Formalisation graphique d'une chaîne de traitement**.
+
+]
+
+.pull-right[
+<img src="figures/seance4.png" width="330" />
+<br>
+<span style="font-size:12pt;">*Sélection des espaces à plus de xx mètres de xx points *</span> 
+]
+
+---
+
+## Séance 5 : SIG (4)
+
+.pull-left[
+### Cours - Atelier
+
+-  **Définir son implantation optimale**.   
+-  **Gestionnaire de mise en page**.  
+]
+
+.pull-right[
+<img src="figures/seance5BIS.png" width="500" />
+
+]
+
+---
+
+## Séance 6 : Cartographie thématique (1)
+
+.pull-left[
+
+### Cours
+
+- Introduction à la **cartographie thématique**.
+- Spécificités des données **quantitatives absolues**.
+
+
+### Atelier
+
+- **Présentation** du logiciel **Magrit**.   
+- **Cartographier des données quantitatives absolues**.  
+- **Mettre en page sa carte**.  
+]
+
+.pull-right[
+
+<img src="figures/seance7.png" width="500" />
+]
+
+---
+
+## Séance 7 : Cartographie thématique (2)
+
+.pull-left[
+
+### Cours
+
+- Spécificité des données **quantitatives relatives** (discrétisation) et **qualitatives**.
+
+
+### Atelier
+
+- **Cartographier ces données avec Magrit**.
+
+]
+
+.pull-right[
+<img src="figures/seance8.png" width="500" />
+]
+ 
+---
+
+## Séance 8 : Conclusion
+
+<center>
+
+Séance de travail collective sur votre projet.
+
+<br><br>
+
+<img src="figures/collectif.png" width="600" />
+
+</center>
+
+
+---
+
+# Accéder aux cours
+
+### Moodle Université de Paris
+
+
+<center> 
+
+Cours : ME1AY040 - Initiation aux SIG et à la cartographie thématique.      
+
+<br><br>
+
+```{r, echo = FALSE, out.width = "850px"}
+knitr::include_graphics('figures/moodle.png')
+```
+
+</center>
+
+---
+
+### Lien de téléchargement
+
+Si Moodle dysfonctionne, les cours et les données utiles sont téléchargeables sur cette URL : 
+
+**https://bit.ly/3C7vcUx**
+
+---
+
+## Des questions ?
+
+<br><br><br><br>
+
+<p style="font-weight: bold; font-size: 18pt;text-align:center;">mguinepain@outlook.fr</p>
+<p style="font-weight: bold; font-size: 18pt;text-align:center;">ronan.ysebaert@cnrs.fr</p>
+
