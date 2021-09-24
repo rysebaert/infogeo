@@ -1,340 +1,387 @@
 ---
 title: "Introduction aux SIG - Séance 2"
 subtitle: "Opérations élémentaires : Jointures, sélections par expression, sélections par localisation"
-author: "M1, Université de Paris"
-date: "Hugues Pecout (FR CIST),  Ronan Ysebaert (UMS RIATE)"
-output: 
-  ioslides_presentation:
-    widescreen: true
-    css: styles.css
-    logo: figures/logo.gif
-    incremental: true
+author:  
+- "Ronan Ysebaert, Maxime Guinepain"
+date: "Dernière mise à jour: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+options(htmltools.dir.version = FALSE, crayon.enabled = TRUE)
+knitr::opts_chunk$set(cache = TRUE,
+                      fig.align='center',
+                      message = FALSE,
+                      warning = TRUE)
+# install.packages("devtools")
+# devtools::install_github("gadenbuie/countdown")
+# devtools::install_github("mitchelloharawild/icons")
+library(countdown)
+library(icons)
+#download_fontawesome()
 ```
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
-<script>
-    $(document).ready(function() {
-      $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"Opérations élémentaires : Jointures, sélections par expression, sélections par localisations\"></footer>');    
-    })
-</script>
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#1d3352",
+  secondary_color = "#383838",
+  inverse_header_color = "#ffae00"
+)
+```
 
 
-# Éléments de vocabulaire...
+<br><br><br><br><br><br><br>
+# 1. Éléments de vocabulaire...
 
-
+---
 ## Jointure attributaire
 
-<div class="columns-2">
-<div>
-<p style="font-size:15pt;line-height:1.3;">Une **jointure attributaire** permet de joindre **deux tables attributaires décrivant des entités communes et partageant un champ commun**. L'opération produit **une seule table** juxtaposant les champs de la table à joindre à ceux de la table d'origine.</p> 
+.pull-left[
+Une **jointure attributaire** permet de joindre **deux tables attributaires décrivant des entités communes et partageant un champ commun**. L'opération produit **une seule table** juxtaposant les champs de la table à joindre à ceux de la table d'origine.
 
-<p style="font-size:14pt;line-height:1.3;">Dans un SIG la table d'origine est souvent celle associée aux entités localisées d'**une couche géographique**, ce qui permet par exemple de cartographier les **données d'un tableau statistique sans dimension spatiale**.</p> 
+Dans un SIG la table d'origine est souvent celle associée aux entités localisées d'**une couche géographique**, ce qui permet par exemple de cartographier les **données d'un tableau statistique sans dimension spatiale**. 
 
-<p style="font-size:14pt;line-height:1.3;">Les jointures attributaires sont utilisées lorsque l'on souhaite introduire des informations nouvelles dans une couche géographique, par exemple des données décrivant le nombre de commerces que l'on souhaite joindre à une couche de communes.</p>
-<br>
-</div>
+Les jointures attributaires sont utilisées lorsque l'on souhaite introduire des informations nouvelles dans une couche géographique, par exemple des données décrivant le nombre de commerces que l'on souhaite joindre à une couche de communes.
+]
 
-<div  class="centered">
-<img src="figures/jointure_attributaire.png" width="390" />
-<p style="font-size:10pt;line-height:1.3;">Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.</p>
-</div>
-</div>
+.pull-right[
+<br><br><br>
+<img src="figures/jointure_attributaire.png" width="450" />
 
-
+.leg-fig[Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.
+]
+]
+---
 ## Jointure spatiale
 
-<div class="columns-2">
-<div>
-<p style="font-size:15pt;line-height:1.3;">Une **jointure spatiale** permet de caractérister le **positionnement relatif d'entités issues de deux couches géographiques différentes**.</p> 
+.pull-left[
+<br><br>
+Une **jointure spatiale** permet de caractérister le **positionnement relatif d'entités issues de deux couches géographiques différentes**.
 
-<p style="font-size:14pt;line-height:1.3;">Par exemple, une table des écoles pourra être jointe à une table des communes en fonction d'une **relation spatiale de type inclusion géométrique**. Si le point de l'école se trouve dans le polygone correspondant à la commune, les attributs de la table commune deviendront des attributs de la table école. Par définition, une jointure ne peut donc être effectuée qu'entre des données géographiques et non des tables attributaires*.</p> 
+Par exemple, une table des écoles pourra être jointe à une table des communes en fonction d'une **relation spatiale de type inclusion géométrique**. 
 
-</div>
+Si le point de l'école se trouve dans le polygone correspondant à la commune, les attributs de la table commune deviendront des attributs de la table école. Par définition, une jointure ne peut donc être effectuée qu'entre des données géographiques et non des tables attributaires.
+]
 
-<div  class="centered">
-<img src="figures/jointure_spatiale_1.png" width="390" />
-<p style="font-size:10pt;line-height:1.3;">Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.</p>
-</div>
-</div>
+.pull-right[
+<img src="figures/jointure_spatiale_1.png" width="450" />
 
+.leg-fig[
+Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.
+]
+]
+
+---
 
 ## Sélection par attributs
 
-<div class="columns-2">
-<div>
-<p style="font-size:15pt;line-height:1.3;">Il s'agit d'une sélection portant sur les **caractéristiques non spatiales des entités**. Dans un SIG, elles sont prises en charge dans la table attributaire des couches géographiques.</p>
+.pull-left[
+Il s'agit d'une sélection portant sur les **caractéristiques non spatiales des entités**. Dans un SIG, elles sont prises en charge dans la table attributaire des couches géographiques.
 
-<p style="font-size:14pt;line-height:1.3;">On peut effectuer une sélection par expression sur des **variables catégorielles/qualitatives** *(ex:IRIS de de la commune "Bagnolet")* ou sur des **variables quantitatives** *(ex: IRIS dont le nombre de foyers fiscaux est supérieur à "10000")*.</p> 
+On peut effectuer une sélection par expression sur des **variables catégorielles/qualitatives** *(ex : IRIS de de la commune "Bagnolet")* ou sur des **variables quantitatives** *(ex: IRIS dont le nombre de foyers fiscaux est supérieur à "10000")*
 
-<p style="font-size:14pt;line-height:1.3;">Le SIG renverra alors une sélection des entités dont les valeurs répondent à la requête.</p> 
+Le SIG renverra alors une sélection des entités dont les valeurs répondent à la requête
+]
 
-</div>
+.pull-right[
+<img src="figures/select_expression..PNG" width="450" />
+]
 
-<div  class="centered">
-<img src="figures/select_expression..PNG" width="600" />
-</div>
-</div>
-
-
+---
 ## Sélection par localisation
 
-<div class="columns-2">
-<div>
-<p style="font-size:15pt;line-height:1.3;">La sélection par localisation permet de sélectionner certaines entités d'une couche au regard de leur positionnement géographique vis-à-vis d'une autre couche géographique.</p>
+.pull-left[
+<br><br><br><br>
+La sélection par localisation permet de sélectionner certaines entités d'une couche au regard de leur positionnement géographique vis-à-vis d'une autre couche géographique.
 
-<p style="font-size:14pt;line-height:1.3;">Le choix du **prédicat géométrique est important** (intersecte, contient, est disjoint, égal, touche, chevauche, à l'intérieur, croise, etc.)</p> 
+Le choix du **prédicat géométrique est important** (intersecte, contient, est disjoint, égal, touche, chevauche, à l'intérieur, croise, etc.) 
+]
 
-</div>
+.pull-right[
+<img src="figures/selection_localisation.jpg" width="450" />
+.leg-fig[Source : École nationale des techniciens de l'équipement. Établissement d'Aix-en-Provence
+]
+]
 
-<div  class="centered">
-<img src="figures/selection_localisation.jpg" width="500" />
-<p style="font-size:10pt;line-height:1.3;">Source : École nationale des techniciens l'équipement. Établissement d'Aix-en-Provence.</p>
-</div>
-</div>
+---
+<br><br><br><br><br><br><br>
+# 2. Exercice pratique (1)
 
+## Extraire les biblioothèques inclues dans le territoire d'Est-Ensemble
+### Changer la projection, sélectionner par localisation et sélectionner par expression. 
 
-
-# Exercice pratique avec les données d'Est Ensemble...
-
-## Objectifs
-
-> - <span style="color:#9c2005">Extraire les bibliothèques inclues dans le territoire dans la communauté d'agglomération d'Est-Ensemble = **Changer la projection, sélectionner par localisation et sélectionner par expression**.</span>  
-
-> - <span style="color:#9c2005">Sélectionner les IRIS caractérisés par une part de la population âgée de 0 à 24 ans supérieure à 33 % = **import de données tabulaires, jointure attributaire, sélection par expression**</span>  
-
+---
 
 ## Sélection des bibliothèques d'Est Ensemble
 
-<p style="font-size:15pt;line-height:1.3;">**Étape 1** - Importez les couches bibliothèque et IRIS Est Ensemble. *(ajouter une couche vecteur)*</p>
+### **Étape 1** - Importer des couches vecteur
 
-<div  class="centered">
-<img src="figures/importvecteur.PNG" width="800" />
-</div>
-
-
-## Sélection des bibliothèques d'Est Ensemble
-
-<p style="font-size:15pt;line-height:1.3;">**Étape 2** - Enregistrez la couche d'équipement dans la même projection que la couche IRIS. *(clic droit sur la couche bibliothèque > enregistrez sous > choisir le même SCR que la couche IRIS)*</p>
-
-<div  class="centered">
-<img src="figures/reproj.PNG" width="800" />
-</div>
-
-
+.medium[
+*Importez les couches bibliothèque et IRIS Est Ensemble. (ajouter une couche vecteur)*
+]
+.center[
+<img src="figures/importvecteur.PNG" height="400" />
+]
+---
 
 ## Sélection des bibliothèques d'Est Ensemble
 
-<p style="font-size:15pt;line-height:1.3;">**Étape 3** - Ne sélectionnez que les bibliothèques contenues dans le territoire d'Est Ensemble *(vecteur > outil de recherche > sélection par localisation)*.</p>
+### **Étape 2** - Harmoniser les projections
 
+.medium[
+*Enregistrez la couche d'équipement dans la même projection que la couche IRIS. (clic droit sur la couche bibliothèque > enregistrez sous > choisir le même SCR que la couche IRIS)*
+]
+.center[
+<img src="figures/reproj.PNG" height="400" />
+]
 
-<div  class="centered">
-<img src="figures/selection_localisation.png" width="800" />
-</div>
-
-
-
-## Sélection des bibliothèques d'Est Ensemble
-
-<p style="font-size:15pt;line-height:1.3;">**Étape 4** - Observer le résultat de la sélection et l'enregistrer. *(clic droit sur la couche bibliothèques > n'enregistrer que les entités sélectionnées)*.</p>
-
-<p style="font-size:13pt;line-height:1.3;">**NB**: pour connaître les bibliothèques qui ne sont pas comprises dans cet espace, on peut inverser la sélection.</p>
-
-
-<div  class="centered">
-<img src="figures/save_selection.PNG" width="700" />
-</div>
-
-
+---
 
 ## Sélection des bibliothèques d'Est Ensemble
 
-<div class="columns-2">
-<div>
+### **Étape 3** - Sélection par localisation
 
-<p style="font-size:15pt;line-height:1.3;">**Étape 5** - Pour notre projet, nous décidons de moderniser une bibliothèque existante. Nous souhaitons donc retirer toutes les médiathèques déjà existantes de cette sélection.</p>
+.medium[Ne sélectionnez que les bibliothèques contenues dans le territoire d'Est Ensemble *(vecteur > outil de recherche > sélection par localisation)*.]
 
-<p style="font-size:15pt;line-height:1.3;">*Ouvrez la table attributaire, triez les résultats, et ne sélectionnez que les bibliothèques. Enregistrez la sélection sous le nom "bibli_est_ensemble"*.</p>
+.center[
+<img src="figures/selection_localisation.png" height="400" />
+]
 
-<p style="font-size:15pt;line-height:1.3;"> On note ainsi que 16 bibliothèques et sont incluses dans le territoire d'Est Ensemble. Ce territoire compte aussi déjà 2 médiathèques, situées dans les communes de Bagnolet et Noisy-le-Sec.</p>
-
-</div>
-
-<div  class="centered">
-<img src="figures/select_table_attrib.PNG" width="500" />
-</div>
-
-
-
+---
 
 ## Sélection des bibliothèques d'Est Ensemble
 
-<div class="columns-2">
-<div>
+### **Étape 3** - Sélection par localisation
 
-<p style="font-size:15pt;line-height:1.3;">**Étape 6** - S'il s'agissait de votre projet, nous vous conseillerions d'améliorer le style de cette couche importante, de lui trouver un nom clair du type *critere1_bibli_est_ensemble.shp* et de l'enregistrer dans un dossier que vous maitrisez.</p>
+.medium[
+Observer le résultat de la sélection et l'enregistrer. *(clic droit sur la couche bibliothèques > n'enregistrer que les entités sélectionnées)*.
+**NB**: pour connaître les bibliothèques qui ne sont pas comprises dans cet espace, on peut inverser la sélection.
+]
 
-<p style="font-size:15pt;line-height:1.3;">Ne jamais oublier d'enregistrer votre projet à la fin de votre travail pour conserver l'ordre des couches et le style que vous leur avez affecté.</p>
+.center[
+<img src="figures/save_selection.PNG" height="400" />
+ ]
 
-</div>
+---
 
-<div  class="centered">
-<img src="figures/sauvegarde_projet.PNG" width="300" />
-</div>
+## Sélection des bibliothèques d'Est Ensemble
 
+### **Étape 4** - Filtrer les résultats 
 
+.left-column[
+.medium[
+*Pour notre projet, nous décidons de moderniser une bibliothèque existante. Nous souhaitons donc retirer toutes les médiathèques déjà existantes de cette sélection.*
 
-## Sélection des IRIS caractérisés par une population jeune
+*Ouvrez la table attributaire, triez les résultats, et ne sélectionnez que les bibliothèques. Enregistrez la sélection sous le nom "bibli_est_ensemble"*.
 
+*On note ainsi que 16 bibliothèques et sont incluses dans le territoire d'Est Ensemble. Ce territoire compte aussi déjà 2 médiathèques, situées dans les communes de Bagnolet et Noisy-le-Sec.*
+]]
 
-<p style="font-size:15pt;line-height:1.3;">**Étape 1** - Importez le fichier contenant les structures par âge des IRIS d'Ile-de-France.</p>
+.right-column[
+.center[
+<img src="figures/select_table_attrib.PNG" height="400" />
+]]
 
-<div  class="centered">
-<img src="figures/import_table.PNG" width="600" />
-</div>
+---
 
+## Sélection des bibliothèques d'Est Ensemble
 
-## Sélection des IRIS caractérisés par une population jeune
+### **Étape 5** - Enregistrer le résultat
 
-<div class="columns-2">
-<div>
+.left-column[
+.medium[
+ <br><br><br>
+ S'il s'agissait de votre projet, nous vous conseillerions d'améliorer le style de cette couche importante, de lui trouver un nom clair du type *critere1_bibli_est_ensemble.shp* et de l'enregistrer dans un dossier que vous maîtrisez.
 
-<p style="font-size:15pt;line-height:1.3;">**Étape 2** - Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.</p>
+Ne jamais oublier d'enregistrer votre projet à la fin de votre travail pour conserver l'ordre des couches et le style que vous leur avez affecté.
+]
+]
 
-<p style="font-size:14pt;line-height:1.3;">Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.</p>
+.right-column[
+.center[
+<img src="figures/sauvegarde_projet.PNG"  height="400" />
+]]
 
-<p style="font-size:14pt;line-height:1.3;">*Clic droit sur la couche IRIS, propriétés, jointure, cliquer sur "+"*</p>
+---
 
-</div>
-
-<div  class="centered">
-<img src="figures/jointure_1.PNG" width="600" />
-</div>
-
-
-
-## Sélection des IRIS caractérisés par une population jeune
-
-
-<p style="font-size:15pt;line-height:1.3;">**Étape 2** - Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.</p>
-
-<p style="font-size:14pt;line-height:1.3;">Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.</p>
-
-<p style="font-size:14pt;line-height:1.3;">*Choisir les deux champs à mettre en lien*. N'hésitez pas à jeter un oeil aux tables attributaires et aux métadonnées pour vous aider à cibler les bons identifiants !</p>
-
-</div>
-
-<div  class="centered">
-<img src="figures/jointure_2.PNG" width="600" />
-</div>
-
+<br><br><br><br><br><br><br>
+# 3. Exercice pratique (2)
+## Sélectionner les IRIS caractérisés par une population jeune
+### Import de données attributaires, jointures attributaires, statistiques basiques, sélections par expression. 
 
 
-## Sélection des IRIS caractérisés par une population jeune
-
-<p style="font-size:15pt;line-height:1.3;">**Étape 2** - Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.</p>
-
-<p style="font-size:14pt;line-height:1.3;">**BRAVO !!! Vous venez de joindre les données démographiques de l'INSEE dans la table attributaire de la couche IGN IRIS !** </p>
-
-<div  class="centered">
-<img src="figures/jointure_3.PNG" width="850" />
-</div>
-
-
+---
 
 ## Sélection des IRIS caractérisés par une population jeune
 
-<div class="columns-2">
-<div>
+### **Étape 1** - Importer un fichier tabulaire
 
-<p style="font-size:15pt;line-height:1.3;">**Étape 3** - Sélection des IRIS caractérisés par une part de la population supérieure à 33 %</p>
+.medium[
+*Importez le fichier contenant les structures par âge des IRIS d'Ile-de-France.*
+]
+.center[
+<img src="figures/import_table.PNG" height="400" />
+]
 
-<p style="font-size:14pt;line-height:1.3;">*Clic droit sur la couche IRIS > ouvrir la table d'attributs > sélectionner des entités en utilisant une expression *</p>
-
-<p style="font-size:14pt;line-height:1.3;">NB : On pourrait aussi envisager la sélection autrement: 25 % des IRIS les plus jeunes, créer des indices de vieillissement, prendre des classes d'âge plus fines. Il vous faudra justifier vos choix !</p>
-
-</div>
-
-<div  class="centered">
-<img src="figures/selection_expression2.PNG" width="400" />
-</div>
-
-
+---
 
 ## Sélection des IRIS caractérisés par une population jeune
 
-<div class="columns-2">
-<div>
+### **Étape 2** - Jointure attributaire
 
-<p style="font-size:15pt;line-height:1.3;">**Étape 4** - Enregistrer les résultats : 85 IRIS à Est-Ensemble sont caractérisés par une part de la population âgée de 0 à 24 ans supérieure à un tiers de la population totale !</p>
+.left-column[
 
-<p style="font-size:14pt;line-height:1.3;">*Clic droit sur la couche IRIS > enregistrer la couche vectorielle sous...> n'enregistrer que les entités sélectionnés *</p>
+.medium[
+<br><br><br>
+Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.
 
-<p style="font-size:14pt;line-height:1.3;">Toujours choisir un nom de fichier qui vous parle (et assez court). Ex : "CRITERE_POP024.shp"</p>
+Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
 
-</div>
+*Clic droit sur la couche IRIS, propriétés, jointure, cliquer sur "+"*
+]
+]
 
-<div  class="centered">
-<img src="figures/selection_expression_save.PNG" width="500" />
-</div>
+.right-column[
+.center[
+<img src="figures/jointure_1.PNG" height="400" />
+]]
+
+---
+
+## Sélection des IRIS caractérisés par une population jeune
+
+### **Étape 2** - Jointure attributaire
+
+.left-column[
+.medium[
+<br><br><br>
+Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.
+
+Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
+
+*Choisir les deux champs à mettre en lien N'hésitez pas à jeter un oeil aux tables attributaires et aux métadonnées pour vous aider à cibler les bons identifiants.*
+]
+]
+
+.right-column[
+.center[
+<img src="figures/jointure_2.PNG" height="400"/>
+]]
+
+---
+
+## Sélection des IRIS caractérisés par une population jeune
+
+### **Étape 2** - Jointure attributaire
+
+**BRAVO !!! Vous venez de joindre les données démographiques de l'INSEE dans la table attributaire de la couche IGN IRIS !** 
+
+.center[
+<img src="figures/jointure_3.PNG" width="800" />
+]
+
+---
+
+## Sélection des IRIS caractérisés par une population jeune
+
+### **Étape 3** - Sélection par expression
+
+.left-column[
+.medium[
+<br><br><br>
+Sélectionnez les IRIS caractérisés par une part de la population supérieure à 33 %.
+*Clic droit sur la couche IRIS > ouvrir la table d'attributs > sélectionner des entités en utilisant une expression.*
+
+NB : On pourrait aussi envisager la sélection autrement: 25 % des IRIS les plus jeunes, créer des indices de vieillissement, prendre des classes d'âge plus fines. Il vous faudra justifier vos choix. 
+]
+]
+
+.right-column[
+.center[
+<img src="figures/selection_expression2.PNG" height="400" />
+]]
+
+---
+
+## Sélection des IRIS caractérisés par une population jeune
+
+### **Étape 4** - Enregistrer les résultats 
+
+.left-column[
+<br><br><br>
+.medium[
+85 IRIS à Est-Ensemble sont caractérisés par une part de la population âgée de 0 à 24 ans supérieure à un tiers de la population totale !
+
+*Clic droit sur la couche IRIS > enregistrer la couche vectorielle sous...> n'enregistrer que les entités sélectionnés*
+
+Toujours choisir un nom de fichier qui vous parle (et assez court). Ex : "CRITERE_POP024.shp"<
+]
+]
+
+.right-column[
+<img src="figures/selection_expression_save.PNG" height="400" />
+]
 
 
-
+---
 
 ## Où en sommes nous ? 
-
-<div class="columns-2">
-<div>
-<p style="font-size:15pt;line-height:1.3;">Extrait du chemin décisionnel conduisant à l'implantation d'une médiathèque sur Est-Ensemble. </p>
-
-<p style="font-size:15pt;line-height:1.3;">NB : La procédure technique serait la même pour le critère de revenu. Il faut juste veiller à choisir et justifier l'utilisation des **bons indicateurs** et des **bons seuils** statistiques pour la sélection.</p>
-
-</div>
-
-<div  class="centered">
+.center[
 <img src="figures/schema_decisionnel_1.PNG" width="500" />
-</div>
 
+.small[
+Extrait du chemin décisionnel conduisant à l'implantation d'une médiathèque sur Est-Ensemble. La procédure technique serait la même pour le critère de revenu. Il faut juste veiller à choisir et justifier l'utilisation des **bons indicateurs** et des **bons seuils** statistiques pour la sélection.]]
+
+---
 
 # A vous de jouer !
 
-## [TO DO] 
+- **Adaptez ces méthodes** aux critères que vous avez identifié.  
 
-> - <span>**Adaptez ces méthodes** aux critères que vous avez identifié.</span>  
+- Pensez à **justifier vos choix** ! N'hésitez pas à recourir à de la bibliographie (enquêtes de fréquentation, publics cibles identifiés par les structures, etc.)
 
-> - <span>Pensez à **justifier vos choix** ! N'hésitez pas à recourir à de la bibliographie (enquêtes de fréquentation, publics cibles identifiés par les structures, etc.)</span>
+- L'exercice est pensé pour que vous n'ayez pas à collecter de données. Dans la réalité il faudrait au préalable effectuer une **veille** sur les ressources disponibles (cf cours 1), télécharger les données et les mettre en forme.
 
-> - <span>L'exercice est pensé pour que vous n'ayez pas à collecter de données. Dans la réalité il faudrait au préalable effectuer une **veille** sur les ressources disponibles (cf cours 1), télécharger les données et les mettre en forme.</span>
+- Vous avez la possibilité d'aller chercher d'**autres ressources** (données statistiques ou couches d'information géographique) qui pourraient vous permettre d'affiner vos critères de sélection ! > si pb nous sommes là pour vous aider...
 
-> - <span>Vous avez la possibilité d'aller chercher d'**autres ressources** (données statistiques ou couches d'information géographique) qui pourraient vous permettre d'affiner vos critères de sélection ! > si pb nous sommes là pour vous aider...</span>
-
+---
 
 ## Pour aller plus loin...
 
-<div class="columns-2">
-<div>
+.pull-left[
+L'INSEE fournit d'autres données à l'échelle de l'IRIS, comme la Base Permanente des Équipements [**BPE**.](https://www.insee.fr/fr/statistiques/3568629?sommaire=3568656#consulter)
 
-<p style="font-size:15pt;line-height:1.3;">L'INSEE fournit d'autres données à l'échelle de l'IRIS, comme la Base Permanente des Équipements [**BPE**](https://www.insee.fr/fr/statistiques/3568629?sommaire=3568656#consulter){target="_blank"}</p>
+Par exemple, on ne pourrait sélectionner que les IRIS qui sont caractérisés par la présence au moins d’une classe pré-élémentaire en école élémentaire (fichier enseignement).
+]
 
-<p style="font-size:14pt;line-height:1.3;">Par exemple, on ne pourrait sélectionner que les IRIS qui sont caractérisés par la présence au moins d’une classe pré-élémentaire en école élémentaire (fichier enseignement)</p>
-
-</div>
-
-<div  class="centered">
+.pull-right[
 <img src="figures/BPE_IRIS.PNG" width="500" />
+]
 </div>
 
+---
 
 ## Pour aller plus loin...
-<p style="font-size:15pt;line-height:1.3;">[**Open Data Ile-de-France**](https://data.iledefrance.fr){target="_blank"} fournit d'autres couches géographiques que celles extraites qui peuvent être utiles pour penser de nouveaux critères.</p>
 
-<p style="font-size:14pt;line-height:1.3;">Par exemple, on ne pourrait sélectionner que les bibliothèques qui sont incluses dans un carré de grille dont le cumul des nuisances environnementales n'excède pas un seuil donné.</p>
+[**Open Data Ile-de-France**](https://data.iledefrance.fr) fournit d'autres couches géographiques que celles extraites qui peuvent être utiles pour penser de nouveaux critères.
 
-<div  class="centered">
+Par exemple, on ne pourrait sélectionner que les bibliothèques qui sont incluses dans un carré de grille dont le cumul des nuisances environnementales n'excède pas un seuil donné.
+
+.center[
 <img src="figures/open_data_idf.PNG" width="700" />
-</div>
-
+]

@@ -1,553 +1,559 @@
 ---
 title: "Introduction aux SIG - Séance 1"
 subtitle: "Définition, fonctionnalités, organiser son projet... <br> Premiers pas avec QGIS"
-author: "M1, Université de Paris"
-date: "Hugues Pecout (FR CIST),  Ronan Ysebaert (UMS RIATE)"
-output: 
-  ioslides_presentation:
-    widescreen: true
-    css: styles.css
-    logo: figures/logo.gif
-    incremental: true
+author:  
+- "Ronan Ysebaert, Maxime Guinepain"
+date: "Dernière mise à jour: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+options(htmltools.dir.version = FALSE, crayon.enabled = TRUE)
+knitr::opts_chunk$set(cache = TRUE,
+                      fig.align='center',
+                      message = FALSE,
+                      warning = TRUE)
+# install.packages("devtools")
+# devtools::install_github("gadenbuie/countdown")
+# devtools::install_github("mitchelloharawild/icons")
+library(countdown)
+library(icons)
+#download_fontawesome()
 ```
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
-<script>
-    $(document).ready(function() {
-      $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"Définition, fonctionnalités et premiers pas avec Qgis\"></footer>');    
-    })
-</script>
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#1d3352",
+  secondary_color = "#383838",
+  inverse_header_color = "#ffae00"
+)
+```
 
 
-# Un peu d'histoire...
+<br><br><br><br><br><br><br>
+# 1. Un peu d'histoire...
 
+---
 ## Londres, 1854
 
-<p style="font-size:13pt;line-height:1.3;">**John snow** est un medecin britannique. **Ces travaux sur la propagation du choléra** dans le quartier de Soho à Londres en 1854 **lui ont valu une place importante dans l'histoire de l'épidémiologie moderne et de l'analyse spatiale**.</p> 
+.pull-left[
+**John Snow** est un médecin britannique. Ses travaux sur la **propagation du choléra** dans le quartier de Soho à Londres en 1854 sont reconnus dans l'histoire de l'**épidémiologie moderne** et de l'**analyse spatiale**.
 
-<div class="columns-2">
-<div class="columns-2">
-<div>
-<img src="figures/John_snow.jpg" width="265" />
-</div>
-<div  style="margin-left:22px;">
-<p style="font-size:12pt;line-height:1.3;font-style:italic;text-align:justify;">**John snown va identifier la cause de l'épidemie de choléra en utilisant un procédé simple**, mais innovant, qui repose sur le principes de fonctionnement des SIG. **Il va mettre en relation deux couches géographiques différentes** :</p> 
-<p style="font-size:12pt;line-height:1.3;font-style:italic;text-align:justify;">**la localisation des lieux de résidence des décès liés à l'épidémie** et **la localisation des pompes à eau** dans le quartier.</p>  
-<p style="font-size:12pt;line-height:1.3;font-style:italic;text-align:justify;">Cette mise en relation **va lui permettre de déterminer que le choléra se transmet par l'eau et d'identifier le foyer de contamination**.</p>
-</div>
-</div>
-<div class="centered">
-<img src="figures/map_snow.jpg" width="420" />
-<p style="font-size:10pt;line-height:1.3;font-style:italic;">**Carte de John Snow** avec la localisation des lieux de résidence des personnes décedées du choléra.</p>
-</div>
-</div>
+.left-column[
+<br>
+![](figures/John_snow.jpg)
+]
 
+.right-column[
+.medium[
+Il va identifier la **cause de l'épidémie** en utilisant un procédé simple, mais innovant, qui repose sur le principes de fonctionnement des SIG : **superposer deux couches géographiques différentes** :
+
+- **Les lieux de résidence des décès liés à l'épidémie**.
+- **Les pompes à eau** du quartier.]]  
+
+.medium[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le foyer de contamination** : la pompe de Brewer Street.]
+]
+
+.pull-right[
+![](figures/map_snow.jpg)
+.leg-fig[**Carte de John Snow** avec la localisation des lieux de résidence des personnes décedées du choléra.]
+]
+
+---
 
 ## Un précurseur...
 
+.pull-left[
+![](figures/snow_monmonier.png)
+.leg-fig[Carte de John Snow revue par Mark Monmonnier, 1996]
+]
 
-<div class="columns-2">
-<div class="centered">
-<p style="font-size:12pt;line-height:1.3;font-style:italic;margin-bottom:1px;">**Superposition de la localisation des puits**.</p>
-<p style="font-size:10pt;line-height:1.3;font-style:italic;">(Carte de John Snow revue par Mark
-Monmonier, 1996)</p>
-<img src="figures/snow_monmonier.png" width="420" />
 
-</div>
-
-<div class="centered">
-<img src="figures/snow_2.png" width="420" />
-
-</div>
-</div>
-
+.pull-right[
+<img src="figures/snow_2.png" height="500px">
+]
+---
 
 ## ...des applications SIG
 
-<p style="font-size:13pt;line-height:1.3;">**Si John Snow avait utilisé un système d'information géographique...**.</p> 
-<div class="columns-2">
-<div class="centered">
-<img src="figures/snow_GIS.gif" width="450" />
-</div>
-<div class="centered">
-<img src="figures/sig_cholera.png" width="410" />
-</div>
-</div>
+.center[Si John Snow avait utilisé un système d'information géographique...]
 
+.pull-left[
+<img src="figures/snow_GIS.gif" height="450" />
+]
 
-# Système d'Information Géographique
+.pull-right[
+<img src="figures/sig_cholera.png" height="450" />
+]
+
+---
+
+<br><br><br><br><br><br><br>
+# 2. Systèmes d'Information Géographique ?
+
+---
 
 ## Historique
 
-<p style="font-size:15pt;line-height:1.3;">**Le concept de Système d'Information Géographique s'est développé et a évolué avec le développement de l'informatique**.</p>  
+**Le concept de Système d'Information Géographique s'est développé et a évolué avec le développement de l'informatique**. 
 
-<p style="font-size:15pt;line-height:1.1;">**1950 – 1970** : début de l’informatique, premières cartographies automatiques.</p> 
+- **1950 – 1970** : début de l’informatique, premières cartographies automatiques.
 
-<p style="font-size:15pt;line-height:1.1;">**1970 - 1980** : diffusion des outils de cartographie automatique/SIG dans les organismes d’État (armée, cadastre, services topographiques …)</p> 
+- **1970 - 1980** : diffusion des outils de cartographie automatique/SIG dans les organismes d’État (armée, cadastre, services topographiques…
 
-<p style="font-size:15pt;line-height:1.1;">**1980 - 1990** : croissance du marché des logiciels SIG, développement des applications SIG.</p> 
+- **1980 - 1990** : croissance du marché des logiciels SIG, développement des applications SIG.
 
-<p style="font-size:15pt;line-height:1.1;">**Depuis les années 90 et 2000** : diffusion de SIG plus légers, libres, d'applications web et banalisation de l’usage de l’information géographique (cartographie en ligne, calcul d’itinéraires, utilisation de la géolocalisation, base de données participatives).</p> 
+- **Depuis les années 90 et 2000** : diffusion de SIG plus légers, libres, d'applications web et banalisation de l’usage de l’information géographique (cartographie en ligne, calcul d’itinéraires, utilisation de la géolocalisation, base de données participatives.
 
-<p style="font-size:14pt;line-height:1.1;margin-top:35px;">**Les SIG sont aujourd’hui utilisés dans de nombreux domaines** : <span style="font-style:italic;"> Agriculture, aménagement du territoire, architecture, assurances & banque, automobile, BTP, cadastre, découpage électoral, défense, démographie, eau et assainissement, électricité, enseignement, environnement, épidémiologie, équipement, géologie, géomarketing, gestion de flotte, gestion de patrimoine, gestion de réseaux, gestion des sols, Internet, immobilier, implantation de commerces, ingénierie logistique, optimisation de parcours, pétrole et gaz, publicité, recherche, ressources naturelles, santé, services d'urgence, télécommunications, tourisme,...</span></p> 
+.medium[
+**Les SIG sont aujourd’hui utilisés dans de nombreux domaines** : 
+*Agriculture, aménagement du territoire, architecture, assurances & banque, automobile, BTP, cadastre, découpage électoral, défense, démographie, eau et assainissement, électricité, enseignement, environnement, épidémiologie, équipement, géologie, géomarketing, gestion de flotte, gestion de patrimoine, gestion de réseaux, gestion des sols, Internet, immobilier, implantation de commerces, ingénierie logistique, optimisation de parcours, pétrole et gaz, publicité, recherche, ressources naturelles, santé, services d'urgence, télécommunications, tourisme,...* ]
 
-
+---
 
 ## Définition
 
-<p style="font-size:14pt;line-height:1.3;">**Système informatique de matériels, de logiciels, et de processus conçus pour permettre la collecte, la gestion, la manipulation, l'analyse, la modélisation et l'affichage de données à référence spatiale** afin de résoudre des problèmes complexes d'aménagement et de gestion. (*Comité fédéral de coordination inter-agences pour la cartographie numérique, 1988*)</p> 
+**Système informatique de matériels, de logiciels, et de processus conçus pour permettre la collecte, la gestion, la manipulation, l'analyse, la modélisation et l'affichage de données à référence spatiale** afin de résoudre des problèmes complexes d'aménagement et de gestion. (*Comité fédéral de coordination inter-agences pour la cartographie numérique, 1988*)</p> 
 
+.pull-left[
+La pratique des logiciels de SIG est un métier : **sigiste**. 
 
+Le SIG est également **l'outil de référence des géomaticiens**. 
 
-<div class="columns-2">
-<div class="centered">
-<br> 
-<img src="figures/QGIS_interface.png" width="550" />
-</div>
-<div  class="centered">
-<div style="margin-left:70px;">
-<br> 
-<p style="font-size:12pt;line-height:1.3;text-align:justify;">**La pratique des logiciels de SIG est un métier : sigiste**. </p> 
-<br> 
-<p style="font-size:12pt;line-height:1.3;text-align:justify;">Le SIG est également **l'outil de référence des géomaticiens**.</p>   
-<p style="font-size:12pt;line-height:1.3;text-align:justify;">**La géomatique est une discipline issue de la géographie et des développements de l'informatique** (**GEO**graphie + infor**MATIQUE**). La géomatique regroupe l'ensemble des outils et méthodes permettant d'acquérir, de représenter, d'analyser et d'intégrer des données géographiques.</p> 
-</div>
-</div>
-</div>
+La géomatique est une discipline issue de la géographie et des développements de l'informatique (**GEO**graphie + infor**MATIQUE**). 
 
+La géomatique regroupe l'ensemble des outils et méthodes permettant d'acquérir, de représenter, d'analyser et d'intégrer des données géographiques.
+]
 
+.pull-right[
+![](figures/georezo.png)
+]
 
-## Principe et fonctionnalités
+---
 
+## Principes et fonctionnalités
 
-<p style="font-size:16pt;line-height:1.3;">Les logiciels SIG permettent de **superposer des couches géographiques de différentes natures, dans un même système de projection**. Cela permet de réaliser de puissantes **analyses croisées**.</p> 
+Les logiciels SIG permettent de **superposer des couches géographiques de différentes natures, dans un même système de projection**. Cela permet de réaliser de puissantes **analyses croisées**.
 
-<div class="columns-2">
-<div>
-<br>
-<p style="font-size:16pt;line-height:1.3;">Ces logiciels permettent d'**opérer sur l'intégralité de la chaîne de traitement des données géographiques** :</p> <br>
-<p style="font-size:16pt;line-height:1;">**Digitalisation** (Saisir et abstraire)<br>     
-**Stockage** et **gestion** (Base de données)<br>     
-**Analyse** (Géotraitement, analyse spatiale)<br>       
-**Représentation** (Cartographie)</p>   
-<br>
+.pull-left[
+<br><br><br>
+Ces logiciels permettent d'opérer sur l'intégralité de la chaîne de traitement des données géographiques :
 
-</div>
-<div class="centered" style="margin-top:7px;">
-<img src="figures/multi_couche.jpg" width="300" />
-</div>
-</div>
+- **Digitalisation** (Saisir et abstraire)  
+- **Stockage** et **gestion** (Base de données)    
+- **Analyse** (Géotraitements, analyse spatiale)       
+- **Représentation** (Cartographie)   
+]
 
+.pull-right[
+<img src="figures/multi_couche.jpg" height="450" />
+]
 
-## Principe et fonctionnalités
+---
 
-<div class="columns-2">
-<div>
-<p style="font-size:16pt;line-height:1.3;text-align:justify;">Pour **modéliser la réalité**, on superpose plusieurs couches d'information géographique, **vecteur et/ou raster**.</p>
-<br>
-<p style="font-size:16pt;line-height:1.3;text-align:justify;">Chaque **couche géographique contient des objets de même type** (adresses, parcelles, routes, bâtiments, cours d'eau, limites administratives...).</p>
-<br>
-<p style="font-size:16pt;line-height:1.3;text-align:justify;">**Tous les objets d'une couche géographique sont de la même forme** : point, ligne, polygone (ou pixel) </p>
+## Principes et fonctionnalités
 
-</div>
-<div class="centered">
-<img src="figures/GIS_SPAIN.jpg" width="320" />
-</div>
-</div>
+.pull-left[
+<br><br><br>
+Pour **modéliser la réalité**, on superpose plusieurs couches d'information géographique, **vecteur et/ou raster**.
 
+Chaque **couche géographique contient des objets de même type** (adresses, parcelles, routes, bâtiments, cours d'eau, limites administratives...)
+
+**Une couche géographique = un type d'objet géographique** : point, ligne, polygone ou image géoréférencée (raster).
+]
+
+.center[
+.pull-right[
+<img src="figures/GIS_SPAIN.jpg" height="450" />
+]]
+
+---
 
 ## Principe et fonctionnalités
 
-<p style="font-size:15pt;line-height:1.3;">**Un SIG permet de travailler sur les trois composantes de l'information géographique** :</p>
+Un SIG permet de travailler sur les trois composantes de l'information géographique :
 
-<div class="columns-2">
+.pull-left[
+.medium[
+### Niveau sémantique
+**Les attributs** qui décrivent les objets géographiques (ex : libellé, population, catégorie) **peuvent être modifiés, supprimés, ajoutés et surtout requêtés** : Il est possible de sélectionner des objets géographiques **en fonction de la valeur des attributs**.
 
-<div>
+### Niveau géométrique
+Possibilité de **modifier la localisation** et/ou **la forme** des objets géographiques, de **calculer des surfaces**, **des distances**, ou encore des **zones tampons**, de **convertir des polygones en point**... Les opérations possibles sur la géométrie des objets sont multiples.
+]
+]
 
-<span style="color:#9c2005;font-size:14pt;font-weight:bold;">Niveau Sémantique</span>
-<p style="font-size:14pt;line-height:1.3;text-align:justify;">**Les attributs** qui decrivent les objets géographiques en tant que tel (ex : nom, type, date, hauteur, proprietaire...) **peuvent être modifiés, supprimés, ajoutés et surtout requêtés**. C'est à dire qu'il est possible de séléctionner des objets géographiques **en fonction de la valeur des attributs**.</p>
-<span style="color:#9c2005;font-size:14pt;font-weight:bold;">Niveau géometrique</span>
-<p style="font-size:14pt;line-height:1.3;text-align:justify;">Un SIG permet de **modifier la localisation** et/ou **la forme** des objets géographiques, de **calculer des surfaces**, **des distances**, ou encore des **zones tampons**, de **convertir des polygones en point**... Les opérations possibles sur la géométrie des objets sont multiples.</p>
+.pull-right[
+.medium[
+### Niveau topologique
+Une fonctionnalité puissante qui consiste à **requêter des objets par localisation**, c'est à dire **en fonction de leur positionnement par rapport à d'autres objets**. Pour cela on peut utiliser une série d'opérateur, exemple : *Contient*, *Croise*, *Intersecte*, *Est à l’intérieur*...]
 
-</div>
+.center[
+![](figures/GIS_by_loc.gif)
 
+.small[
+Ex : *Séléction d'objets géographiques ponctuels situés à une certaine distance (euclidienne) d'autres objets géographiques ponctuels*
+]]]
 
-<div>
-<span style="color:#9c2005;font-size:14pt;font-weight:bold;">Niveau Topologique</span>
-<p style="font-size:14pt;line-height:1.3;text-align:justify;">Une des principales fonctionnalités puissante des SIG est le **requêtage d'objet par localisation**, c'est à dire **en fonction de leur positionnement par rapport à d'autres objets**. Pour cela on peut utiliser une série d'opérateur, exemple : *Contient*, *Croise*, *Intersecte*, *Est à l’intérieur*...</p>
-
-
-<div class="columns-2">
-<div class="centered">
-<img src="figures/GIS_by_loc.gif" width="275" />
-</div>
-<div style="margin-left:40px;">
-<br>
-<p style="font-size:11pt;line-height:1.3;">Ex : *Séléction d'objets géographiques ponctuels situés à une certaine distance (euclidienne) d'autres objets géographiques ponctuels*</p>
-</div>
-
-</div>
-
-</div>
-
+---
 
 ## Principaux logiciels SIG
 
-<div class="centered">
-<img src="figures/logiciels.PNG" width="800" />
-</div>
-
+.center[
+<img src="figures/logiciels.PNG" height="500" />
+]
+---
 
 ## Installez QGIS ! 
 
-<p style="font-size:16pt;line-height:1.3;text-align:justify;">Pour travailler depuis chez vous, nous vous conseillons d'installer QGIS sur votre ordinateur personnel *(https://www.qgis.org/fr/site/forusers/download.html)*. Choisissez la version stable.</p>
+Pour travailler depuis chez vous, nous vous conseillons d'installer QGIS sur votre ordinateur personnel *(https://www.qgis.org/fr/site/forusers/download.html)*. Choisissez la version long terme (la plus stable). 
 
-<div class="centered">
-<img src="figures/qgisinstall.PNG" width="800" />
-</div>
+.center[
+<img src="figures/qgisinstall.PNG" height="450" />
+]
+
+---
 
 
+<br><br><br><br><br><br><br>
+# 3. Premiers pas dans un SIG et découverte de QGIS
 
 
-# Premiers pas dans un SIG et découverte de QGIS
-
-## Présentation des données à disposition
-
-<p style="font-size:16pt;line-height:1.3;text-align:justify;">Des jeux de données ont été extraits et préparés pour vous par les enseignants pour réaliser votre étude. Ils sont organisés par dossiers et sont disponibles sur Moodle.</p>
-
-<div class="columns-2">
-
-<div>
-
-<p style="font-size:14pt;line-height:1.3;text-align:justify;">**Maillages territoriaux** *(répertoire maillage)* : Données issues de l'IGN, contient les géométries des découpages administratifs français pour la métropole du Grand Paris (IRIS, communes, départements) </p>
-
-<p style="font-size:14pt;line-height:1.3;text-align:justify;">**Équipements existants** *(répertoire Equipements)* : Données issues de la plateforme open data de la région Ile-de-France, contient les localisations des équipements cibles pour votre étude : **bibliothèques et médiathèques (844 points pour l'Ile-de-France), établissements et services pour les personnes âgées (1774 points), conservatoires et écoles de musique (331 points), missions locales pour l'emploi (172 points) et établissements cinématographiques (312 points)** </p>
-
-</div>
-
-<div class="centered" style="margin-top:7px;">
-<img src="figures/infogeodata.PNG" width="500" />
-</div>
-</div>
-
+---
 
 ## Présentation des données à disposition
 
-<p style="font-size:16pt;line-height:1.3;text-align:justify;">Des données utiles pour définir vos critères d'implantation sont aussi disponibles.</p>
+Des jeux de données ont été extraits et préparés pour vous par les enseignants pour réaliser votre étude. Ils sont organisés par dossiers et sont disponibles sur [Moodle](https://moodle.u-paris.fr/course/view.php?id=6316).
 
-<div class="columns-2">
+.pull-left[
+.medium[
+**Maillages territoriaux** *(répertoire maillage)* : 
+Données issues de l'IGN, contient les géométries des découpages administratifs français pour la métropole du Grand Paris (IRIS, communes, départements).
 
-<div>
+**Équipements existants** *(répertoire Equipements)* :
+Données issues de la plateforme open data de la région Ile-de-France, contient les localisations des équipements cibles pour votre étude 
 
-<p style="font-size:14pt;line-height:1.3;text-align:justify;">**Réseaux et zonages** *(répertoire Reseaux_zonages)* : Données également extraites depuis Open data IDF, contient les géométries des quartiers prioritaires pour la politique de la ville (300 quartiers), la localisation d'arrêts de transport collectif (bus, tram, métro, RER) ainsi que le réseau hydrographique principal de la région. </p>
+- Bibliothèques et médiathèques (844 points pour l'Ile-de-France)
+- Établissements et services pour les personnes âgées (1774 points)
+- Conservatoires et écoles de musique (331 points)
+- Missions locales pour l'emploi (172 points) et établissements cinématographiques (312 points)
+]
+]
 
-<p style="font-size:14pt;line-height:1.3;text-align:justify;">**Critères socio-économiques** *(répertoire maillage)* : contient des indicateurs statistiques à l'échelle de l'IRIS issus de recensement principal de l'INSEE (année de référence : 2013). Il s'agit de structures par âge de la population, les catégories sociales en 8 postes, actifs, chômeurs, étudiants, retraités, étudiants, personnes en CDD, interim, ainsi que le revenu médian de la population.</p>
+.pull-right[
+![](figures/infogeodata.PNG)]
 
-</div>
 
-<div class="centered" style="margin-top:7px;">
-<img src="figures/infogeodatafiles.PNG" width="500" />
-</div>
-</div>
+---
 
+## Présentation des données à disposition
+
+Des jeux de données ont été extraits et préparés pour vous par les enseignants pour réaliser votre étude. Ils sont organisés par dossiers et sont disponibles sur [Moodle](https://moodle.u-paris.fr/course/view.php?id=6316).
+
+.pull-left[
+.medium[**Réseaux et zonages** *(répertoire Reseaux_zonages)* : Données également extraites depuis Open data IDF, contient les géométries des quartiers prioritaires pour la politique de la ville (300 quartiers), la localisation d'arrêts de transport collectif (bus, tram, métro, RER) ainsi que le réseau hydrographique principal de la région.
+
+**Critères socio-économiques** *(répertoire maillage)* : Contient des indicateurs statistiques à l'échelle de l'IRIS issus du recensement principal de l'INSEE (année de référence : 2013). Il s'agit de structures par âge de la population, les catégories sociales en 8 postes, actifs, chômeurs, étudiants, retraités, étudiants, personnes en CDD, interim, ainsi que le revenu médian de la population.
+]
+]
+
+
+.pull-right[
+![](figures/infogeodatafiles.PNG)
+]
+
+---
 
 ## Ouvrir QGIS
 
-<p style="font-size:15pt;line-height:1.3;">**Lancez l'application QGIS Desktop**, comme vous le ferez avec n'importe quel logiciel :</p>
-<br>
-<br>
-<div class="centered">
+**Lancez l'application QGIS Desktop**, comme vous le feriez avec n'importe quel logiciel :
+
+<br><br>
+.center[
 <img src="figures/logo_qgis.PNG" width="520" />
-</div>
-
-
+]
+---
 
 ## Organiser son travail
 
-<p style="font-size:16pt;line-height:1.3;text-align:justify;">L'utilisation d'un SIG nécessite de la **rigueur méthodologique**, car l'on se retrouve vite submergé de fichiers. Vous devez donc :</p>
+L'utilisation d'un SIG nécessite de la **rigueur méthodologique**, car l'on se retrouve vite submergé de fichiers. Vous devez donc :
 
->- <p style="font-size:16pt;color:#9c2005;">Travaillez en **projet**<p/>
+- Travailler en **projet**.
 
->- <p style="font-size:16pt;color:#9c2005;">Utilisez des **intitulés de fichiers** intelligibles<p/>
+- Utiliser des **intitulés de fichiers** intelligibles.
 
->- <p style="font-size:16pt;color:#9c2005;">Ranger vos données en utilisant des **sous-repertoires**<p/>
+- Ranger vos données en utilisant des **sous-répertoires**.
 
->- <p style="font-size:16pt;color:#9c2005;">Stocker votre projet **sur une clef USB** (et faire une copie)<p/> 
+- Stocker votre projet **sur une clef USB** (et faire une copie). 
 
-</br>
 
-<p style="font-size:16pt;line-height:1.3;text-align:justify;">Commencez par **créer votre répertoire de travail** (sur une clé USB de préférence). Téléchargez les données sur Moodle et décompressez-les dans votre répertoire de travail.
-**Ouvrez Qgis et créez un nouveau projet**. *(Projet/enregister/)*</p>
+Commencez par **créer votre répertoire de travail** (sur une clé USB de préférence). Téléchargez les données du Moodle et décompressez-les dans votre répertoire de travail. **Ouvrez Qgis et créez un nouveau projet**. *(Projet/enregister/)*
 
+---
 
 ## Organiser son projet
 
-<p style="font-size:16pt;line-height:1.3;text-align:justify;">Dans votre répertoire de travail, créez une architecture de sous-répertoires qui vous paraît cohérente et dans laquelle vous vous y retrouverez facilement. Ne prenez que les fichiers qui vous seront utiles !</p>
+Dans votre répertoire de travail, créez une architecture de sous-répertoires qui vous paraît cohérente et dans laquelle vous vous y retrouverez facilement. Ne gardez que les fichiers qui vous seront utiles !</p>
 
-<div class="centered">
-<img src="figures/orgaprojet.png" width="600" />
-</div>
+.center[
+<img src="figures/orgaprojet.png" height="450" />
+]
 
+---
 
 ## Métadonnées
 
-<p style="font-size:16pt;line-height:1.3;text-align:justify;">Les métadonnées apportent des éléments essentiels pour comprendre le contenu des ressources à votre disposition, leur origine et d'éventuelles informations sur leur utilisation. Leur consultation attentive est primordiale.</p>
+Les métadonnées apportent des éléments essentiels pour comprendre le contenu des ressources à votre disposition, leur origine et d'éventuelles informations sur leur utilisation. Leur consultation attentive est primordiale.
 
-<div class="centered">
-<img src="figures/metadatainsee.PNG" width="1000" />
-</div>
+![](figures/metadatainsee.PNG)
 
 
-<p style="color:#9c2005;font-size:13pt;line-height:1.3;text-align:justify;">**Ouvrez le fichier Metadata_ECO_INSEE_IRIS_2013.xls. Quelle est la signification du code "P13_CHOM1564_tx" ? Quelle est son unité de mesure ? Qui a produit la donnée, quand ? Quelle est l'année de référence de l'indicateur ? Qu'est-ce qu'un IRIS ?**</p>
+.medium[Avec ces métadonnées, vous êtes en mesure de répondre aux questions suivantes : *Quelle est la signification du code "P13_CHOM1564_tx" ? Quelle est son unité de mesure ? Qui a produit la donnée, quand ? Quelle est l'année de référence de l'indicateur ? Qu'est-ce qu'un IRIS ?*]
 
+---
 
 
 ## L'Interface de QGIS
 
-<div class="columns-2">
-<div class="centered">
-<img src="figures/interface_qgis.png" width="760" />
-</div>
-<div style="margin-left:260px;">
+.left-column[
 <br>
-<br>
-<p style="font-size:14pt;line-height:1.3;">1- **Menu principal**</p>
-<p style="font-size:14pt;line-height:1.3;">2- **La barre d’outils**</p>
-<p style="font-size:14pt;line-height:1.3;">3- **Barre d’outils latérale**</p>
-<p style="font-size:14pt;line-height:1.3;">4- **La barre d’état**</p>
-<p style="font-size:14pt;line-height:1.3;">5- **Les panneaux** Explorateur, légende...</p>
-<p style="font-size:14pt;line-height:1.3;">6- **Le canevas de carte**</p>
-</div>
+.medium[
+1.  **Menu principal**
+2.  **La barre d’outils** : Raccourci vers les outils les plus récurrents utilisés
+3.  **Barre d’outils latérale** : Par défaut, raccourci vers les options d'import de données.
+4.  **La barre d’état** : Niveau de zoom, échelle, coordonnées géographiques
+5.  **Les panneaux** : Explorateur, listing des couches géographiques chargées...
+6.  **Le canevas de carte** : visualisation des couches géographiques.  
+]
+]
 
-</div>
+.right-column[
+![](figures/interface_qgis.png)
+]
 
-
+---
 
 ## Import (vecteur, raster, données tabulaires... )
 
 
-<p style="font-size:15pt;line-height:1.3;">**Pour importer des données facilement**, utilisez la barre d'outil latérale.</p>
+**Pour importer des données facilement**, utilisez la barre d'outil latérale.
 
-<div class="columns-2">
-<div>
-<img src="figures/importvecteur.PNG" width="650" />
-</div>
-<div style="margin-left:180px;">
-<br>
-<br>
-<p style="font-size:13pt;line-height:1.3;text-align:justify;">Cliquez sur le bon îcone **en fonction du type de données à importer** (Vecteur, raster, csv...)</p>
+.left-column[
+.medium[
+<br><br><br><br>
+Choisissez l'icône **en fonction du type de données à importer** (Vecteur, raster, csv...).
 
 <br>
-<br>
-<p style="color:#9c2005;font-size:13pt;line-height:1.3;text-align:justify;">Pour commencer, **Importez La couche géographique IRIS de votre espace d'étude et celle de l'équipement** choisi.</p>
-</div>
+**TO DO** : *Importez La couche géographique IRIS de votre espace d'étude, celle de votre équipement et celle des communes de la Métropole du Grand Paris*.
+]
+]
 
-</div>
+.right-column[
+.center[
+<img src="figures/importvecteur.PNG" height="400" />
+]
+]
 
-
+---
 
 ## Import (vecteur, raster, données tabulaires... )
 
+**Pour importer des données facilement**, utilisez la barre d'outil latérale.
 
-<p style="font-size:15pt;line-height:1.3;">**Pour importer des données facilement**, utilisez la barre d'outil latérale.</p>
-
-<div class="columns-2">
-<div>
-<img src="figures/importdata.PNG" width="650" />
-</div>
-<div style="margin-left:180px;">
-<br>
-<br>
-<p style="font-size:13pt;line-height:1.3;text-align:justify;">Import d'un fichier de données (1 et 2), définir les séparateurs de champs (3) et préciser si le fichier contient des géométries ou non (4).</p>
+.left-column[
+.medium[
+<br><br><br><br>
+Import d'un fichier de données (1 et 2), définir les séparateurs de champs (3) et préciser si le fichier contient des géométries ou non (4).
 
 <br>
-<br>
-<p style="color:#9c2005;font-size:13pt;line-height:1.3;text-align:justify;">**Importez le fichier de données contenant les structures par âge des IRIS (Ratio_DEMO_IRIS_2013.csv).**</p>
-</div>
+**TO DO** : *Importez le fichier de données contenant les structures par âge des IRIS (Ratio_DEMO_IRIS_2013.csv).*
+]
+]
 
-</div>
+.right-column[
+.center[
+<img src="figures/importdata.PNG" height="400" />
+]
+]
 
-
+---
 
 ## Gestion de la projection
 
-<p style="font-size:15pt;line-height:1.3;">**La projection** d'une couche géographique **est indiquée dans ses propriétés générales**.</p>
+**La projection** d'une couche géographique **est indiquée dans ses propriétés générales**.
 
-<div class="columns-2">
-<div>
-<img src="figures/projct_qgis.PNG" width="650" />
-</div>
+.left-column[
+.medium[
+<br><br>
+Les couches géographiques s'affichent automatiquement dans le système de projection de la première couche géographique importée.
 
-<div style="margin-left:180px;">
+Pour modifier le système de projection, il suffit d'enregistrer une nouvelle version de la couche géographique concernée dans le système de projection souhaité (clic-droit sur la couche, enregistrez-sous...).
 
-<p style="font-size:12pt;line-height:1.3;text-align:justify;">Les couches géographiques s'affichent automatiquement dans le système de projection de la première couche géographique importée. Mais **QGIS utilise la projection prédéfinie pour tous les géotraitements !**</p>    
-<p style="font-size:12pt;line-height:1.3;text-align:justify;">**Pour modifier le système de projection, il suffit d'enregistrer une nouvelle version de la couche géographique concernée dans le système de projection souhaité** (clic-droit sur la couche, enregistrez-sous...).</p>
+**TO DO** : *Enregistrez la couche géographique des équipements dans la même projection que la couche géographique des IRIS*.]
+]
 
-<p style="color:#9c2005;font-size:12pt;line-height:1.3;text-align:justify;">**Enregistrer la couche géographique des équipements dans la même projection que la couche géographique des IRIS**. </p>
-</div>
+.right-column[
+.center[
+<img src="figures/projct_qgis.PNG" height="400" />
+]
+]
 
-</div>
+---
+
+## Consulter les données attributaires et sélectionner des valeurs
+
+Chaque couche géographique est associée à une **table attributaire**.
+
+.left-column[
+<br><br>
+.medium[
+Pour consulter la table attributaire d'une couche géographique, cliquez droit sur la couche concernée dans le panneau légende, puis cliquez sur **Ouvrir la table d'attributs**.
+
+**TO DO** : *Ouvrez la table attributaire de votre couche d'IRIS, ordonnez la colonne TYP_IRIS (clic sur l'en-tête de colonne) et sélectionnez uniquement les IRIS d'habitation (type = H)*
+]]
+
+.right-column[
+.center[
+<img src="figures/qgis_5.PNG" height="400" />
+]
+]
+
+---
+## Autres options de sélection
+
+**Pour sélectionner et zoomer**, uilisez les différentes fonctionnalité de la barre d'outils.
+
+.left-column[
+.medium[
+<br><br><br><br>
+Les icônes *loupe* permettent de **zoomer/dézoomer**. Il est également possible d'utiliser la roulette de votre souris. **L'outil de sélection offre plusieurs solutions** : sélection par clic, par polygone, à main levée...
+
+**TO DO** : *Cliquez sur l'outil identifiez les résultats, puis sélectionnez n'importe quel objet. Que constatez vous ?*
+]
+]
+
+.right-column[
+.center[
+<img src="figures/qgis_4.png" height="400" />
+]
+]
+
+---
+## Gestion de l'affichage graphique
+
+.left-column[
+.medium[
+<br><br>
+Pour changer l'ordre d'affichage des couches, il suffit de les faire glisser à la position de son choix, comme des onglets dans un navigateur Web.
+
+Pour **visualiser l'ensemble d'une couche géographique**, **cliquez droit sur la couche** concernée dans le panneau légende, puis cliquez sur *Zoomer sur la couche*.
+
+**TO DO** : *Si ce n'est pas déjà fait, placez les couches géographiques dans l'ordre suivant : IRIS, communes, votre équipement.* 
+]
+]
+
+.right-column[
+.center[
+<img src="figures/qgis_2.PNG" height="400" />
+]
+]
 
 
-
-## Consulter les données attributaires
-
-
-<p style="font-size:15pt;line-height:1.3;">**Chaque couche géographique est associée à une table attributaire**</p>
-
-<div class="columns-2">
-<div>
-<img src="figures/qgis_5.PNG" width="650" />
-</div>
-<div style="margin-left:180px;">
-<br>
-<br>
-<p style="font-size:13pt;line-height:1.3;text-align:justify;">**Pour consulter la table attributaire** d'une couche géographique, **cliquez droit sur la couche** concernée dans le panneau légende, puis cliquez sur *Ouvrir la table d'attributs*.</p>
-
-<br>
-<br>
-<p style="color:#9c2005;font-size:13pt;line-height:1.3;text-align:justify;">**Sélectionnez un IRIS**, puis **ouvrez la table attributaire**. Parcourez-là, que constatez-vous ?</p>
-</div>
-
-</div>
-
-
-
-
-## Sélection d'objet(s) géographique(s)
-
-
-<p style="font-size:15pt;line-height:1.3;">**Pour sélectionner et zoomer**, uilisez les différentes fonctionnalité de la barre d'outils</p>
-
-<div class="columns-2">
-<div>
-<img src="figures/qgis_4.png" width="650" />
-</div>
-<div style="margin-left:180px;">
-
-<p style="font-size:13pt;line-height:1.3;text-align:justify;">Les icônes *loupe* permettent de **zoomer/dézoomer**. Il est également possible d'utiliser la roulette de votre souris. <br> **L'outil de sélection offre plusieurs solutions** : sélection par clic, par polygone, à main levée...</p>
-<br>
-<p style="color:#9c2005;font-size:13pt;line-height:1.3;text-align:justify;">**Zoomez sur votre espace d'étude** et **sélectionnez un IRIS**, Que constatez vous ? </p>
-<p style="color:#9c2005;font-size:13pt;line-height:1.3;text-align:justify;">**Cliquez sur l'outil** *identifiez les résultats*, puis **sélectionnez n'importe quel objet**. Que constatez vous ? </p>
-</div>
-
-</div>
-
-
-
-
+---
 
 ## Gestion de l'affichage graphique
 
+Modifier le style graphique (**symbologie**) d'une couche géographique
 
-<p style="font-size:15pt;line-height:1.3;">**Afficher les couches géographiques dans le bon ordre** :</p>
+.left-column[
+<br><br><br><br>
+.medium[
+**Double-cliquez sur la couche géographique concernée**, puis allez dans l'onglet *symbologie*.
 
-<div class="columns-2">
-<div>
-<img src="figures/qgis_2.PNG" width="650" />
-</div>
-<div style="margin-left:180px;">
-<br>
-<br>
-<p style="font-size:13pt;line-height:1.3;text-align:justify;">**Pour changer l'ordre d'affichage des couches, il suffit de les faire glisser** à la position de son choix, comme des onglets dans un navigateur web</p>
+**TO DO** : *Jouez sur le style graphique (couleur de fond, bordures) des couches IRIS, communes et équipement.*
+]
+]
 
-<br>
-<br>
-<p style="font-size:13pt;line-height:1.3;text-align:justify;">Pour **visualiser l'ensemble d'une couche géographique**, **cliquez droit sur la couche** concernée dans le panneau légende, puis cliquez sur *Zoomer sur la couche*</p>
-</div>
-
-</div>
+.right-column[
+.center[
+<img src="figures/qgis_3.PNG" height="400" />
+]
+]
 
 
-
-
+---
 
 ## Gestion de l'affichage graphique
 
+Vous pouvez aussi rajouter des **labels (étiquettes)** à la couche pour faciliter le repérage.
 
-<p style="font-size:15pt;line-height:1.3;">**Modifier le style graphique d'une couche géographique** :</p>
+.left-column[
+<br><br><br><br>
+.medium[
+Clic-droit sur la couche commune, puis propriétés. Cliquez ensuite sur "étiquettes".
 
-<div class="columns-2">
-<div>
-<img src="figures/qgis_3.PNG" width="650" />
-</div>
-<div style="margin-left:180px;">
-<br>
-<br>
-<p style="font-size:13pt;line-height:1.3;text-align:justify;">Pour cela, **double-cliquez sur la couche géographique concernée**, puis allez dans l'onglet *style*.</p>
+**TO DO** : *Faites apparaître sur l'espace d'affichage le nom des communes de votre espace d'étude.*
+]
+]
 
-<br>
-<br>
-<p style="color:#9c2005;font-size:13pt;line-height:1.3;text-align:justify;">**Changez la couleur de fond** des IRIS et **le symbole ponctuel** utilisé pour vos équipements</p>
-</div>
-
-</div>
-
-
+.right-column[
+.center[
+<img src="figures/etiquettes.PNG" height="400" />
+]
+]
+---
 
 ## Gestion de l'affichage graphique
 
+Familiarisez vous avec vos équipements et votre espace d'étude en **superposant intelligemment les couches IRIS, communes, départements** ainsi que celle contenant **votre équipement**. Jouez sur les styles, et améliorez la **lisibilité**</p>
 
-<p style="font-size:15pt;line-height:1.3;">**Vous pouvez aussi rajouter des labels (étiquettes) à la couche pour faciliter le repérage** :</p>
-
-<div class="columns-2">
-<div>
-<img src="figures/etiquettes.PNG" width="650" />
-</div>
-<div style="margin-left:180px;">
-<br>
-<br>
-<p style="font-size:13pt;line-height:1.3;text-align:justify;">**Importez la couche "communes", clic-droit sur cette couche, puis propriétés. Cliquez ensuite sur "étiquettes".**</p>
-
-<br>
-<br>
-<p style="color:#9c2005;font-size:13pt;line-height:1.3;text-align:justify;">**Faites apparaitre sur l'espace d'affichage le nom des communes de votre espace d'étude**.</p>
-</div>
-
-</div>
+.center[
+<img src="figures/todostyles.PNG" height="400" />
+]
 
 
-## Gestion de l'affichage graphique
-
-<p style="color:#9c2005;font-size:13pt;line-height:1.3;text-align:justify;">Familiarisez vous avec vos équipements et votre espace d'étude en **superposant intelligemment les couches IRIS, communes, départements** ainsi que celle contenant **votre équipement**. Jouez sur les styles, et améliorez la **lisibilité**</p>
-
-<div class="centered">
-<img src="figures/todostyles.PNG" width="650" />
-</div>
-
-
+---
 ## Exportez une image, enregistrez votre projet
 
-<div class="columns-2">
-<div class="centered">
-<img src="figures/export.PNG" width="400" />
-</div>
-<div style="margin-left:180px;">
-<br>
-<br>
-<p style="font-size:13pt;line-height:1.3;text-align:justify;">**Vous pouvez exporter le visuel créé au format .png**. Attention néanmoins, il **manque beaucoup d'éléments** (titre, légende, sources...) etc. pour que cette carte soit correcte ! Nous verrons cela dans les prochaines séances. Cela peut néanmoins constituer une base de travail et de réflexion. </p>
+.left-column[
+<img src="figures/export.PNG" height="300" />
+]
 
-<p style="font-size:15pt;line-height:1.3;color:#9c2005;">**Enregistrez votre projet à la racine de votre dossier de travail**. Les couches que vous avec chargé et leur style associé seront ainsi enregistrées pour la prochaine utilisation !</p>
-</div>
+.right-column[
+**Vous pouvez exporter le visuel créé au format .png**. 
+Attention néanmoins, il **manque beaucoup d'éléments** (titre, légende, sources...) etc. pour que cette carte soit valable ! Nous verrons cela dans les prochaines séances. Cela peut néanmoins constituer une base de travail et de réflexion. 
 
+**Enregistrez votre projet à la racine de votre dossier de travail**. Les couches que vous avec chargé et leur style associé seront ainsi enregistrées pour la prochaine utilisation 
+]
 
-## Où en sommes nous ? 
-
-
-<p style="font-size:15pt;line-height:1.3;">L'**exploration attentive** des données (et métadonnées) à notre disposition constitue toujours la **phase préalable** à la réalisation d'un projet SIG (hors collecte des données).</p>
-
-<p style="font-size:15pt;line-height:1.3;">Plusieurs éléments fondamentaux pour initier un projet SIG ont aujourd'hui été abordés :</p>
+---
+## Où en sommes-nous ? 
 
 
-> - <span style="font-size:13pt;">**Consulter les données** mises à disposition, **organiser son projet SIG** et **enregistrer** sa session de travail.</span>
-> - <span style="font-size:13pt;">Importer **une information géographique**, tout en identifiant sa nature (point, ligne, surface, raster, vecteur ?)</span>
-> - <span style="font-size:13pt;">Jouer avec la **table attributaire**. Observer le nombre d'**objets géographiques** contenus dans chacune des couches ainsi que les données associées aux géométries.</span>
-> - <span style="font-size:13pt;">Identifier la **projection** utilisée pour chacune couches. Savoir **transformer la projection** d'une couche pour que l'ensemble des couches disposent du même référentiel géographique.</span>
-> - <span style="font-size:13pt;">Savoir extraire les informations importantes dans les **métadonnées**.</span>
-> - <span style="font-size:13pt;">Gérer l'**ordre d'affichage** des couches géographiques et leur style.</span>
+L'**exploration attentive** des données (et métadonnées) à notre disposition constitue toujours la **phase préalable** à la réalisation d'un projet SIG (hors collecte des données).
 
+Plusieurs éléments fondamentaux pour initier un projet SIG ont aujourd'hui été abordés :
+
+- **Consulter les données** mises à disposition, **organiser son projet SIG** et **enregistrer** sa session de travail.
+- Importer **une information géographique**, tout en identifiant sa nature (point, ligne, surface, raster, vecteur ?)
+- Jouer avec la **table attributaire**. Observer le nombre d'**objets géographiques** contenus dans chacune des couches ainsi que les données associées aux géométries.
+- Identifier la **projection** utilisée pour chacune des couches géographiques. Savoir **transformer la projection** d'une couche pour que l'ensemble des couches disposent du même référentiel géographique.
+- Savoir extraire les informations importantes dans les **métadonnées**.
+- Gérer l'**ordre d'affichage** des couches géographiques et leur style.
