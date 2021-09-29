@@ -105,7 +105,7 @@ knitr::include_graphics('figures/geoide2.png')
 <br><br>
 Un géoïde est une surface équipotentielle du champ de pesanteur coïncidant « au mieux » avec le **niveau moyen des océans et qui se prolonge sous les continents**.
  
-**La surface du géoïde équivaut au niveau d'altitude 0** à l'échelle mondiale. La notion d'**altitude traduit donc la hauteur au-dessus du géoide**.
+**La surface du géoïde équivaut au niveau d'altitude 0** à l'échelle mondiale. La notion d'**altitude traduit donc la hauteur au-dessus du géoïde**.
 
 Pour la France, il est calé sur un niveau zéro scellé dans le port de Marseille.
 ]
@@ -172,7 +172,7 @@ knitr::include_graphics('figures/geoide.jpg')
 
 Si la forme de la terre n'est pas régulière, elle se rapproche donc fortement d'un ellipsoïde
 
-Il est important de noter que **l'altitude** d'un point est calculé par rapport à son l'**éloignement vertical à la surface du géoïde** et **pas à celle de l'éllipsoïde de référence**.
+Il est important de noter que **l'altitude** d'un point est calculé par rapport à son l'**éloignement vertical à la surface du géoïde** et **pas à celle de l’ellipsoïde de référence**.
 ]
 ]
 
@@ -199,7 +199,7 @@ knitr::include_graphics('figures/sphere_lat_long.png')
 ```
 ]
 
-**Ces coordonnées sont des valeurs angulaires, calculées par rapport à un parallèle (équateur) et un méridien de référence (Greenwich)**. Les coordonées d'un objet traduit (au minimum) deux dimensions : **la latitude et la longitude**.
+**Ces coordonnées sont des valeurs angulaires, calculées par rapport à un parallèle (équateur) et un méridien de référence (Greenwich)**. Les coordonnées d'un objet traduit (au minimum) deux dimensions : **la latitude et la longitude**.
 
 ---
 
@@ -219,7 +219,7 @@ knitr::include_graphics('figures/sphere_lat_long_2.png')
 
 Un même **ellipsoïde peut être positionné différemment par rapport au géoïde**, et ainsi constituer des systèmes de référence géodésiques **différents**. Le même objet n'aura pas les mêmes coordonnées géographiques dans différents systèmes géodésiques.
 
-- **WSG84 (World Geodetic System 1984)**  
+- **WSG84 (World Geodesic System 1984)**  
 *Le plus utilisé au monde. C'est ce système géodésique qui est utilisé pour le GPS (système de positionnement par satellites).*
 
 - **ITRS (International Terrestrial Reference System)**  
@@ -535,7 +535,7 @@ Suite à un décret du [3 mars 2006](https://geodesie.ign.fr/contenu/fichiers/De
 .medium[
 Toutes les administrations de l'État, collectivités locales et entreprises chargées de l'exécution d'une mission de service public doivent utiliser le **système géodésique de référence RGF93** pour leurs échanges de données géoréférencées.
 
-Ce systéme géodésique est compatible avec le système géodésique de **référence européen ETRS89** et avec le système géodésique de référence mondial **WGS84** (utilisé par le système GPS).
+Ce système géodésique est compatible avec le système géodésique de **référence européen ETRS89** et avec le système géodésique de référence mondial **WGS84** (utilisé par le système GPS).
 
 Les cartes officielles représentant l'ensemble de la France métropolitaine doivent utiliser la projection de référence **Lambert93 Conique Conforme**. 9 variantes de cette projection existent, elles couvrent 9 zones s'étalant du Nord au Sud et doivent être utilisées pour la cartographie locale.]
 
@@ -616,7 +616,7 @@ knitr::include_graphics('figures/Modeliser_localiser.png')
 
 Les coordonnées géographiques sont :
 
-- des **angles**, mesurées depuis le centre de la Terrre et vers un point de la surface 
+- des **angles**, mesurées depuis le centre de la Terre et vers un point de la surface 
 
 > Latitude = angle avec le plan équatorial.
 
@@ -624,7 +624,7 @@ Les coordonnées géographiques sont :
 
 - exprimées en **degrés**.
 
-- relatives à un **système géodésique** de référence (**l'éllipsoïde**).
+- relatives à un **système géodésique** de référence (**l’ellipsoïde**).
 ]
 
 .pull-right[
@@ -650,7 +650,7 @@ knitr::include_graphics('figures/map_blue.png')
 ]
 
 
-Pour représenter une **surface sphérique** sur un **plan (planisphère)**, on utilise des **systèmes de projection cartogrpahiques** qui :
+Pour représenter une **surface sphérique** sur un **plan (planisphère)**, on utilise des **systèmes de projection cartographique** qui :
 
 - déforment soit les formes/angles et conservent les surfaces (projection **équivalente**).
 - soit l'inverse (projection **conforme**).
