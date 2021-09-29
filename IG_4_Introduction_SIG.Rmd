@@ -73,7 +73,7 @@ Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le
 
 .pull-right[
 ![](figures/map_snow.jpg)
-.leg-fig[**Carte de John Snow** avec la localisation des lieux de résidence des personnes décedées du choléra.]
+.leg-fig[**Carte de John Snow** avec la localisation des lieux de résidence des personnes décédées du choléra.]
 ]
 
 ---
@@ -209,7 +209,7 @@ Une fonctionnalité puissante qui consiste à **requêter des objets par localis
 ![](figures/GIS_by_loc.gif)
 
 .small[
-Ex : *Séléction d'objets géographiques ponctuels situés à une certaine distance (euclidienne) d'autres objets géographiques ponctuels*
+Ex : *Sélection d'objets géographiques ponctuels situés à une certaine distance (euclidienne) d'autres objets géographiques ponctuels*
 ]]]
 
 ---
@@ -438,12 +438,12 @@ Pour consulter la table attributaire d'une couche géographique, cliquez droit s
 ---
 ## Autres options de sélection
 
-**Pour sélectionner et zoomer**, uilisez les différentes fonctionnalité de la barre d'outils.
+**Pour sélectionner et zoomer**, utilisez les différentes fonctionnalité de la barre d'outils.
 
 .left-column[
 .medium[
 <br><br><br><br>
-Les icônes *loupe* permettent de **zoomer/dézoomer**. Il est également possible d'utiliser la roulette de votre souris. **L'outil de sélection offre plusieurs solutions** : sélection par clic, par polygone, à main levée...
+Les icônes *loupe* permettent de **zoomer/dé-zoomer**. Il est également possible d'utiliser la roulette de votre souris. **L'outil de sélection offre plusieurs solutions** : sélection par clic, par polygone, à main levée...
 
 **TO DO** : *Cliquez sur l'outil identifiez les résultats, puis sélectionnez n'importe quel objet. Que constatez vous ?*
 ]
