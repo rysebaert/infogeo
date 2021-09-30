@@ -1,74 +1,102 @@
 ---
 title: "Introduction aux SIG - Séance 3"
 subtitle: "Initiation à la digitalisation et aux géotraitements"
-author: "M1, Université de Paris"
-date: "Hugues Pecout (FR CIST),  Ronan Ysebaert (UMS RIATE)"
-output: 
-  ioslides_presentation:
-    widescreen: true
-    css: styles.css
-    logo: figures/logo.gif
-    incremental: true
+author:  
+- "Ronan Ysebaert, Maxime Guinepain"
+date: "Dernière mise à jour: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+options(htmltools.dir.version = FALSE, crayon.enabled = TRUE)
+knitr::opts_chunk$set(cache = FALSE,
+                      fig.align='center',
+                      message = FALSE,
+                      warning = TRUE)
+# install.packages("devtools")
+# devtools::install_github("gadenbuie/countdown")
+# devtools::install_github("mitchelloharawild/icons")
+library(countdown)
+library(icons)
+#download_fontawesome()
 ```
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
-<script>
-    $(document).ready(function() {
-      $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\""Initiation à la digitalisation et aux géotraitements\"></footer>');    
-    })
-</script>
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#1d3352",
+  secondary_color = "#383838",
+  inverse_header_color = "#ffae00"
+)
+```
 
 
-# Rappels...
+<br><br><br><br><br><br><br>
+# 1.Rappels...
 
-## Jointures, sélections par expression... 
+---
 
-<p style="font-size:15pt;line-height:1.3;">**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble</p>
+## Jointures, sélections par expression...
 
-<div  class="centered">
+**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
+
+.center[
 <img src="figures/ig_5_rappel1.PNG" width="700" />
-</div>
+]
 
+---
 
 ## Jointures, sélections par expression... 
 
-<p style="font-size:15pt;line-height:1.3;">**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble</p>
+**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
 
-<div  class="centered">
+.center[
 <img src="figures/ig_5_rappel2.PNG" width="700" />
-</div>
+]
 
+---
 
 ## Jointures, sélections par expression... 
 
-<p style="font-size:15pt;line-height:1.3;">**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble</p>
+**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
 
-<div  class="centered">
+.center[
 <img src="figures/ig_5_rappel3.PNG" width="700" />
-</div>
+]
 
+---
 
 ## Jointures, sélections par expression... 
 
-<p style="font-size:15pt;line-height:1.3;">**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble</p>
+**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
 
-<div  class="centered">
+.center[
 <img src="figures/ig_5_rappel4.PNG" width="700" />
-</div>
+]
 
+---
 
 ## Jointures, sélections par expression... 
 
-<p style="font-size:15pt;line-height:1.3;">**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble</p>
+**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
 
-<div  class="centered">
+.center[
 <img src="figures/ig_5_rappel5.PNG" width="700" />
-</div>
+]
 
 
 
