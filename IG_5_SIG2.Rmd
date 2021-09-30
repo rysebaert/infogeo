@@ -48,7 +48,6 @@ style_duo_accent(
 <br><br><br><br><br><br><br>
 # 1. Éléments de vocabulaire...
 
-toto 
 ---
 ## Jointure attributaire
 
