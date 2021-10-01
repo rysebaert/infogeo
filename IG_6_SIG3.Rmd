@@ -99,345 +99,400 @@ style_duo_accent(
 ]
 
 
+---
+
+<br><br><br><br><br><br><br>
+# 2. Éléments de vocabulaire et de méthode...
 
 
-# Éléments de vocabulaire...
-
+---
 
 ## Raster
 
-<div class="columns-2">
-<div>
-<p style="font-size:15pt;line-height:1.3;">Le mode **raster** ou maillé représente l'espace selon un maillage régulier appliqué sur la surface terrestre. Ce maillage se fait sous forme d'une grille formée de cellules de taille prédéterminée auxquelles sont attribuées des valeurs spécifiques. La taille de la cellule s'appelle la résolution spatiale.</p> 
+.pull-left[
+Le mode **raster**  représente l'espace selon un maillage régulier appliqué sur la surface terrestre. Ce maillage se fait sous forme d'une grille formée de cellules de taille prédéterminée auxquelles sont attribuées des valeurs spécifiques. La taille de la cellule / du pixel s'appelle la résolution spatiale.
 
-<p style="font-size:14pt;line-height:1.3;">Leur analyse et leur traitement relève d'un domaine spécifique : la télédétection.</p> 
+Leur analyse et leur traitement relève d'un domaine spécifique : **la télédétection**. ]
 
-</div>
-
-<div  class="centered">
+.pull-right[
 <img src="figures/raster_vecteur.png" width="390" />
-<p style="font-size:10pt;line-height:1.3;">Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.</p>
-</div>
-</div>
+
+.leg-fig[Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.]
+]
 
 
-## Digitalisation
-
-<p style="font-size:15pt;line-height:1.3;">La digitalisation consiste à numériser des points à partir d'un support visuel, c'est à dire à attribuer à chaque point des coordonnées X et Y dans un système quelconque.</p>
-
-<p style="font-size:15pt;line-height:1.3;">Elle peut se faire selon deux méthodes, la digitalisation sur table à digitaliser ou directement sur un écran à partir d'une source numérisée. L'une des bases de départ des SIG est le plan cadastre digitalisé.</p>
-
-<p style="font-size:10pt;line-height:1.3;">*Source : Georezo, le portail francophone de la géomatique.*</p>
-
-<br>
-
-<p style="font-size:15pt;line-height:1.3;">La digitalisation nécessite beaucoup de méthode, de pratique et de précaution (éviter les erreurs topologiques, chevauchement des polygones, etc.). Sa pratique ne sera pas abordée dans ce cours.</p>
-
-
-<p style="font-size:15pt;line-height:1.3;">Pour en savoir plus, vous pouvez jeter un oeil aux enjeux soulevés par la [digitalisation et le géoréférencement](http://www.foretsanciennes.fr/wp-content/uploads/2012/12/Fabvre-al-2011-digitalisation.pdf) de cartes anciennes (carte d'Etat Major) réalisé par l'INRA</p>
-
-
+---
 
 ## Digitalisation
 
-<div  class="centered">
+.pull-left[
+La digitalisation consiste à **numériser des points à partir d'un support visuel**, en attribuant à chaque point des coordonnées X et Y dans un système de projection quelconque.
+
+Elle peut être réalisée avec deux méthodes : la digitalisation sur table à digitaliser ou directement sur un écran à partir d'une source numérisée. 
+
+L'une des bases de départ des SIG est le plan cadastre digitalisé.
+
+La digitalisation nécessite beaucoup de méthode, de pratique et de précaution (éviter les erreurs topologiques, chevauchement des polygones, etc.). Sa pratique ne sera pas abordée dans ce cours.]
+
+.pull-right[
+<img src="figures/digitalisation5.PNG" width="390" />
+
+.leg-fig[
+Pour en savoir plus, se reporter à [ce document](https://hal.inrae.fr/hal-02791101/document) sur la digitalisation et le géoréférencement de cartes d'État Major ou à [celui-ci]((https://oatao.univ-toulouse.fr/16382/1/Grel_16382.pdf)) pour une application à l'analyse du couvert forestier (source : INRA).
+]
+]
+
+---
+
+## Digitalisation
+
+.center[
 <img src="figures/digitalisation3.PNG" width="800" />
-</div>
+]
 
+---
 
+## Digitalisation
+
+.center[
+<iframe width="840" height="472.5" src="https://www.youtube.com/embed/uFaN-uDv90s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+.leg-fig[Une vidéo (source : CADGIS network) qui explique comment digitaliser une image géoréfrencée avec QGIS)]
+]
+
+---
 
 ## Géotraitement
 
-<p style="font-size:17pt;line-height:1.3;">**Les SIG proposent plusieurs outils de géotraitement**. ces outils **permettent d'opérer sur la géométrie et/ou la topolgie des objets géographiques**. La dimension attributaire est parfois également prise en compte. Ces traitements peuvent s'effectuer **en mode vecteur et/ou en mode raster**</p>  
+.pull-left[
 
+Les SIG proposent plusieurs outils de **géotraitement**. Ils permettent d'opérer sur la **géométrie et/ou la topologie** des objets géographiques. La dimension attributaire est parfois également prise en compte. Ces traitements peuvent s'effectuer en mode **vecteur** et/ou en mode **raster**.
 
-<p style="font-size:17pt;line-height:1.3;">Ces outils de géotraitement permettent par exemple de **fusionner plusieurs objets** en un seul, de **contruire des zones tampons** ou de **découper la surface d'un objet** avec la surface d'un autre.</p>
+Le résultat d'un géotraitement est la **création d'une nouvelle couche géographique**.
 
-<p style="font-size:17pt;line-height:1.3;">**Les géotraitements permettent ainsi d'interroger et/ou de modifier une ou plusieurs dimensions des objets géographiques**.</p>
+<img src="figures/geotraitement1.PNG" width="390" />
+.leg-fig[
+Extrusion des contours des côtes bretonnes par une série de géotraitements (Source : [Atol Open Blog](https://blog.atolcd.com/mise-a-jour-en-vue-pour-lextension-gis-de-pentaho-data-integration/))
+]
 
+]
+
+.pull-right[
+
+<img src="figures/geotraitement2.PNG" width="390" />
+
+.leg-fig[
+Tampons variables autour des rivières (Source : [Documentation QGIS](https://docs.qgis.org/2.8/fr/docs/gentle_gis_introduction/vector_spatial_analysis_buffers.html))]
+]
+
+---
 
 ## Zone tampon (buffer, distances tampon)
 
-<div  class="centered">
+.center[
 <img src="figures/tampon.PNG" width="800" />
-</div>
+]
 
-
+---
 
 ## Intersection
 
-<div  class="centered">
+.center[
 <img src="figures/intersection.PNG" width="800" />
-</div>
+]
 
-
+---
 
 ## Différenciation symétrique (ou différence)
 
-<div  class="centered">
+.center[
 <img src="figures/differenciation.PNG" width="800" />
-</div>
+]
 
+---
 
 ## Union
 
-<div  class="centered">
+.center[
 <img src="figures/union.PNG" width="800" />
-</div>
+]
 
+---
 
 ## Regroupement (merge, dissolve)
 
-<div  class="centered">
+.center[
 <img src="figures/merge.PNG" width="800" />
-</div>
+]
 
+---
 
-
+<br><br><br><br><br><br><br>
 # Exercice pratique avec les données d'Est Ensemble...
 
-## Objectifs
+- Agréger les IRIS d'Est-Ensemble en communes à partir de la valeur d'un champ (leur EPT d'appartenance) : **géotraitement *"regroupement"* **. 
 
-> - <span style="color:#9c2005">Agréger les IRIS d'Est-Ensemble en communes à partir de la valeur d'un champ (leur EPT d'appartenance) : **géotraitement *"regroupement"* **</span>  
+- **Diversifier l'offre géographique** : Extraire l'espace situé à plus de 1500m d'une médiathèque sur le territoire d'Est Ensemble : **géotraitements *espace tampon* et *différence* **.  
 
-> - <span style="color:#9c2005">**Diversifier l'offre géographique** : Extraire l'espace situé à plus de 1500m d'une médiathèque sur le territoire d'Est Ensemble : **géotraitements *espace tampon* et *différence* **</span>  
+- **Une médiathèque accessible** : Extraire l'espace situé à moins de 1000m d'une station de RER : **géotraitements *union*, *espace tampon* et *intersection* **.  
 
-> - <span style="color:#9c2005">**Une médiathèque accessible** : Extraire l'espace situé à moins de 1000m d'une station de RER : **géotraitements *union*, *espace tampon* et *intersection* **</span>  
-
-
+---
 
 ## Agréger les IRIS en communauté d'agglomération
 
-<div class="columns-2">
-<div>
+Objectif : Créer une couche présentant l'**emprise spatiale de la communauté d'agglomération Est Ensemble**. Une méthode possible : **agrégation sur les valeurs d'un champ (ou dissolve).**
 
-<p style="font-size:15pt;line-height:1.3;">On veut créer une couche présentant l'**emprise spatiale de la communauté d'agglomération Est Ensemble**. Plusieurs méthodes peuvent être employées, dont l'**aggrégation sur les valeurs d'un champ (ou dissolve).**</p>
+.left-column[
+.medium[
+Afficher la couche IRIS de votre espace d'étude, ouvrez la table attributaire et trouver le nom du champ correspondant au nom (ou au code de la communauté d'agglomération d'appartenance des IRIS.
 
-<p style="font-size:15pt;line-height:1.3;">*Affichez la couche IRIS de votre espace d'étude, ouvrez la table attributaire et trouver le nom du champ correspondant au nom (ou au code de la communauté d'agglomération d'appartenance des IRIS*.</p>
+Vecteur > outils de géotraitement > Regrouper.
 
-<p style="font-size:15pt;line-height:1.3;">*Vecteur > outils de géotraitement > regrouper (décomposer)*.</p>
+Champ de regroupement : Sélectionner la colonne qui spécifie l'appartenance aux EPCI des communes (EPT_LIBEPT par exemple).
 
-<p style="font-size:15pt;line-height:1.3;">*Nommez le fichier de sortie **EPT_Est_Ensemble.shp**.*</p>
+Nommer le fichier de sortie **EPT_Est_Ensemble.shp**.]]
 
-</div>
+.right-column[
 
-<div  class="centered">
-<img src="figures/dissolve_est_ensemble.PNG" width="500" />
-</div>
+.center[
+<img src="figures/dissolve_est_ensemble.PNG" width="500" />]]
 
-
-## Agréger les IRIS en communauté d'agglomération
-
-<p style="font-size:15pt;line-height:1.3;">Résultat pour Est-Ensemble...</p>
-
-<div  class="centered">
-<img src="figures/dissolve_est_ensemble2.PNG" width="800" />
-</div>
-
+---
 
 ## Agréger les IRIS en communauté d'agglomération
 
-<p style="font-size:15pt;line-height:1.3;">On pourrait réaliser la même opération pour l'ensemble de la MGP...</p>
+Résultat pour Est-Ensemble...
 
-<div  class="centered">
-<img src="figures/dissolve_est_ensemble3.PNG" width="800" />
-</div>
+.center[
+<img src="figures/dissolve_est_ensemble2.PNG" width="800" />]
 
+---
+
+## Agréger les IRIS en communauté d'agglomération
+
+On pourrait réaliser la même opération pour l'ensemble de la MGP...
+
+.center[
+<img src="figures/dissolve_est_ensemble3.PNG" width="800" />]
+
+---
 
 ## Diversifier l'offre géographique
 
-<p style="font-size:15pt;line-height:1.3;">On veut extraire l'**espace qui se situe à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble... Pour aboutir au résultat attendu, une succession d'étapes est à suivre, combinant **sélections et géotraitements (espace tampon et différence).**</p>
+Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
 
-> - <span style="font-size:13pt;color:#666769">(Étape 1) Ouvrir la couche **bibliotheque_Est_Ensemble.shp** (correctement projetée).</span>  
-> - <span style="font-size:13pt;color:#666769">(Étape 2) Extraire uniquement les **médiathèques** (depuis la table attributaire ou par une sélection par expression).</span>  
+.left-column[
+.medium[
+### **Étape 1** 
+Ouvrir la couche *bibliotheque_Est_Ensemble.shp* (correctement projetée), extraire uniquement les médiathèques (depuis la table attributaire ou par une sélection par expression). 
 
-> - <span style="font-size:13pt;color:#666769">(Étape 3) Réaliser un **espace tampon** de 1500 mètres autour de celles-ci et nommer cette couche **mediatheques_1500m**</span>  
+### **Étape 2** 
+Réaliser un **espace tampon** de 1500 mètres autour de celles-ci et nommer cette couche *mediatheques_1500m*.]]
 
-> - <span style="font-size:13pt;color:#666769">(Étape 4) Réaliser la **différence** entre la couche **mediatheques_1500m** et la couche **EPT_Est_Ensemble**, la nommer **mediatheques_1500diff**.</span>
-
-> - <span style="font-size:13pt;color:#666769">(Étape 5) Faire le ménage dans les couches affichées dans le SIG (couches intermédiaires inutiles), enregistrer les couches au bon endroit et jouer sur le style de cette couche finale qui nous intéresse directement pour notre projet.</span>  
-
-
-## Diversifier l'offre géographique
-
-<p style="font-size:15pt;line-height:1.3;">Création d'un **espace tampon de 1500m autour des médiathèques**.</p>
-
-<div  class="centered">
+.right-column[
+.center[
 <img src="figures/tampon_est_ensemble1.PNG" width="800" />
-</div>
 
+.leg-fig[Création d'un **espace tampon de 1500m autour des médiathèques**]]]
+
+---
 
 ## Diversifier l'offre géographique
 
-<p style="font-size:15pt;line-height:1.3;">**Différence** entre la couche **EPT_Est_Ensemble** et la couche **mediatheques_1500m** précédemment créées.</p>
+Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
 
-<div  class="centered">
+.left-column[
+.medium[
+
+### **Étape 3** 
+Réaliser la **différence** entre la couche *mediatheques_1500m* et la couche *EPT_Est_Ensemble*, la nommer *mediatheques_1500diff*.
+
+### **Étape 4** 
+Supprimer les couches intermédiaires affichées dans le SIG, enregistrer la couche finale dans le répertoire adéquat et jouer sur le style de cette couche finale qui nous intéresse directement pour notre projet.]]
+
+.right-column[
+.center[
 <img src="figures/tampon_est_ensemble2.PNG" width="800" />
-</div>
+.leg-fig[L'espace à plus de 1500 mètres d'une médiathèque est dorénavant sélectionné !]]]
 
-
-
-
-## Une médiathèque accessible
-
-<p style="font-size:15pt;line-height:1.3;">On veut extraire l'**espace qui se situe à moins de 1000m d'une station de RER ou de métro** sur le territoire d'Est Ensemble... Pour aboutir au résultat attendu, une succession d'étapes est à suivre, combinant **reprojection et géotraitements (union, espace tampon et intersection).**</p>
-
-> - <span style="font-size:13pt;color:#666769">(Étape 1) Ouvrir les couches **METRO.shp** et **RER.shp**, les enregistrer dans la projection du projet (EPSG:2154).</span>  
-> - <span style="font-size:13pt;color:#666769">(Étape 2) Créer **l'union** de ces deux couches. Nommer le résultat **RER_METRO**</span>  
-
-> - <span style="font-size:13pt;color:#666769">(Étape 3) Réaliser un **espace tampon** de 1000 mètres autour de celle-ci et nommer cette couche **RER_METRO_1000m**</span>  
-
-> - <span style="font-size:13pt;color:#666769">(Étape 4) Réaliser l'**intersection** entre la couche **RER_METRO_1000m** et la couche **EPT_Est_Ensemble**, la nommer **ACCESS**.</span>
-
-> - <span style="font-size:13pt;color:#666769">(Étape 5) Faire le ménage dans les couches affichées dans le SIG (couches intermédiaires inutiles), enregistrer les couches au bon endroit et jouer sur le style de cette couche finale qui nous intéresse directement pour notre projet.</span>  
-
+---
 
 ## Une médiathèque accessible
 
-<p style="font-size:15pt;line-height:1.3;">**Union** des couches **RER** et **METRO**.</p>
+Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de RER ou de métro**.
 
-<div  class="centered">
+.left-column[
+.medium[
+
+### **Étape 1**
+Ouvrir les couches *METRO* et *RER*, les enregistrer dans la projection du projet (EPSG:2154).
+
+### **Étape 2**
+Créer **l'union** de ces deux couches. Nommer le résultat *RER_METRO*
+]]
+
+.right-column[
+.center[
 <img src="figures/union_est_ensemble.PNG" width="800" />
-</div>
+.leg-fig[Les deux couches géographiques de transport sont désormais réunies en une seule !]
+]]
 
-
-
-## Une médiathèque accessible
-
-<p style="font-size:15pt;line-height:1.3;">**Espace tampon (1000m)** autour de la couche **RER_METRO**.</p>
-
-<div  class="centered">
-<img src="figures/tampon_est_ensemble3.PNG" width="800" />
-</div>
-
-
+---
 
 ## Une médiathèque accessible
 
-<p style="font-size:15pt;line-height:1.3;">**Intersection** entre les couches **RER_METRO_1000m** et **EPT_Est_Ensemble**.</p>
+Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de RER ou de métro**.
 
-<div  class="centered">
-<img src="figures/intersection_est_ensemble.PNG" width="800" />
-</div>
+.left-column[
+.medium[
 
+### **Étape 3**
+Réaliser un **espace tampon** de 1000 mètres autour de celle-ci et nommer cette couche *RER_METRO_1000m*.]]  
 
+.right-column[
+.center[
+<img src="figures/tampon_est_ensemble3.PNG" width="800" />]]
+
+---
+
+## Une médiathèque accessible
+
+Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de RER ou de métro**.
+
+.left-column[
+.medium[
+### **Étape 4**
+Réaliser l'**intersection** entre la couche **RER_METRO_1000m** et la couche **EPT_Est_Ensemble**, la nommer *ACCESS*.
+
+### **Étape 5**
+Supprimer les couches intermédiaires affichées dans le SIG, enregistrer la couche finale dans le répertoire adéquat et jouer sur le style de cette couche finale qui nous intéresse directement pour notre projet.]]
+
+.right-column[
+.center[
+<img src="figures/intersection_est_ensemble.PNG" width="800" />]]
+
+---
+<br><br><br><br><br><br><br>
+# 3. Modéliser sa chaine de traitement
+
+---
+## Modéliser sa chaine de traitement
+
+La modélisation graphique de la chaîne de traitement, aussi appelée *cheminement décisionnel* est particulièrement utile pour :
+
+- Expliquer **les étapes de la réalisation** à d’autres personnes (reproductibilité des résultats, transposition à d'autres espaces d'études ou objets géographiques).
+
+- Apporter de la **rigueur méthodologique** à ses travaux (transparence de la procédure). 
+
+- Se rappeler comment sont **nommées et organisés les fichiers** (particulièrement utile d’une séance à l’autre).  
+
+Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancement de vos traitements ! 
+
+---
 
 ## Modéliser sa chaine de traitement
 
-<p style="font-size:15pt;line-height:1.3"> La modélisation graphique de la chaine de traitement, aussi appelée « cheminement décisionnel » est particulièrement utile pour : </p>
-
-> -	<span style="font-size:15pt">Expliquer **les étapes de la réalisation** à d’autres personnes (reproductibilité des résultats).</span>  
-> -	<span style="font-size:15pt">Apporter de la **rigueur méthodologique** à ses travaux.</span> 
-> -	<span style="font-size:15pt">Se rappeler comment sont **nommées et organisés les fichiers** (particulièrement utile d’une séance à l’autre).</span>   
-
-<p style="font-size:15pt;line-height:1.3">En conséquence, il est utile de réaliser ce schéma au fur et à mesure de l’avancement du travail.</p>  
-
-
-
-## Modéliser sa chaine de traitement
-
-<div  class="centered">
+.center[
 <img src="figures/chaine_traitement.PNG" width="800" />
-</div>
+]
 
+---
 
 ## Modéliser sa chaine de traitement
 
-<div  class="centered">
+.center[
 <img src="figures/chaine_traitement1.png" width="800" />
-</div>
+]
 
+---
 
 ## Modéliser sa chaine de traitement
 
-<div  class="centered">
+.center[
 <img src="figures/chaine_traitement2.png" width="800" />
-</div>
+]
 
+---
 
 ## Modéliser sa chaine de traitement
 
-<div  class="centered">
+.center[
 <img src="figures/chaine_traitement3.png" width="800" />
-</div>
+]
 
-
+---
 
 ## Modéliser sa chaine de traitement
 
-<div  class="centered">
+.center[
 <img src="figures/chaine_traitement4.png" width="800" />
-</div>
+]
 
-
+---
 
 ## Modéliser sa chaine de traitement
 
-<div  class="centered">
+.center[
 <img src="figures/chaine_traitement5.png" width="800" />
-</div>
+]
 
+---
 
 ## Modéliser sa chaine de traitement
 
-<div  class="centered">
+.center[
 <img src="figures/chaine_traitement6.png" width="800" />
-</div>
+]
+
+---
+
+.left-column[
+## Où en sommes-nous ? 
+
+Nous avons créé ensemble toutes les couches (critère 1, 2, 3, 4 et 5) nécessaires à la définition de l'implantation finale !
+]
+
+.right-column[
+<img src="figures/schema_decisionnel_2.png" width="550" />
+]
 
 
+---
+<br><br><br><br><br><br><br>
+# 4. A vous de jouer !
 
+- **Adaptez ces méthodes** aux critères que vous avez identifié. 
 
-## Où en sommes nous ? 
+- Pensez à **justifier vos choix** ! Pourquoi telle distance (tampon ?), pourquoi tels points pour les stations de transport ? etc.
 
-<div class="columns-2">
-<div>
-<p style="font-size:15pt;line-height:1.3;">Extrait du chemin décisionnel conduisant à l'implantation d'une médiathèque sur Est-Ensemble. </p>
+- Une bonne manière de procéder consiste à imaginer d'abord ce que vous souhaitez réaliser avec les couches dont vous disposez, et ensuite de modéliser sur papier la façon dont vous pensez procéder (sélections, géotraitements). Cela permettra de vous avancer sur la modélisation du chemin décisionnel.
 
-<p style="font-size:15pt;line-height:1.3;">Nous avons créé ensemble toutes les couches (critère 1, 2, 3, 4 et 5) nécessaires à la définition de l'implantation finale ! </p>
+- Vous avez la possibilité d'aller chercher d'**autres ressources couches d'information géographique** qui pourraient vous permettre d'affiner vos critères de sélection ! > si pb nous sommes là pour vous aider...
 
-</div>
-
-<div  class="centered">
-<img src="figures/schema_decisionnel_2.png" width="400" />
-</div>
-
-
-# A vous de jouer !
-
-## [TO DO] 
-
-> - <span>**Adaptez ces méthodes** aux critères que vous avez identifié.</span>  
-
-> - <span>Pensez à **justifier vos choix** ! Pourquoi telle distance (tampon ?), pourquoi tels points pour les stations de transport ? etc.</span>
-
-> - <span>Une bonne manière de procéder consiste à imaginer d'abord ce que vous souhaitez réaliser avec les couches dont vous disposez, et ensuite de modéliser sur papier la façon dont vous pensez procéder (sélections, géotraitements). Cela permettra de vous avancer sur la modélisation du chemin décisionnel (cf séance suivante).</span>
-
-> - <span>Vous avez la possibilité d'aller chercher d'**autres ressources couches d'information géographique** qui pourraient vous permettre d'affiner vos critères de sélection ! > si pb nous sommes là pour vous aider...</span>
-
-
+---
 
 ## Pour aller plus loin...
-<p style="font-size:15pt;line-height:1.3;">[**Open Data Ile-de-France**](https://data.iledefrance.fr){target="_blank"} fournit d'autres couches géographiques que celles extraites qui peuvent être utiles pour penser de nouveaux critères.</p>
 
-<p style="font-size:14pt;line-height:1.3;">Par exemple, on pourrait décider de privilégier l'implantation de cette médiathèque non loin d'une école ou d'un collège ou un lycée...</p>
+[**Open Data Ile-de-France**](https://data.iledefrance.fr) fournit d'autres couches géographiques que celles extraites qui peuvent être utiles pour penser de nouveaux critères.
 
-<div  class="centered">
+.center[
 <img src="figures/open_data_idf2.PNG" width="700" />
-</div>
+]
+
+Par exemple, on pourrait décider de privilégier l'implantation de cette médiathèque non loin d'une école ou d'un collège ou un lycée...
 
 
+---
 
 ## Pour aller plus loin...
-<div class="columns-2">
-<div>
 
-<p style="font-size:15pt;line-height:1.3;">Renseignez vous sur les autres géotraitements et statistiques spatiales implémentés dans QGIS. L'environnement logiciel repose sur une grande communauté d'utilisateurs. Un très bon manuel existe avec des exemples [**documentés**](https://docs.qgis.org/2.14/fr/docs/training_manual/vector_analysis/index.html){target="_blank"} </p>
+.left-column[
+Renseignez-vous sur les géotraitements et statistiques spatiales disponibles dans QGIS. Un très bon manuel existe avec des exemples [**documentés**](https://docs.qgis.org/3.16/en/docs/training_manual/index.html).
 
-<p style="font-size:14pt;line-height:1.3;">Par exemple, la constitution d'une matrice de distance entre les bibliothèques d'Est Ensemble (outils d'analyse) permet d'identifier que la bibliothèque *Romain Rolland à Romainville* est celle qui dispose de la distance moyenne aux autres bibliothèques la plus faible : 2647m. </p>
+Par exemple, la constitution d'une matrice de distance entre les bibliothèques d'Est Ensemble (outils d'analyse) permet d'identifier que la bibliothèque *Romain Roland à Romainville* est celle qui dispose de la distance moyenne aux autres bibliothèques la plus faible : 2647m.
+]
 
-</div>
-
-<div  class="centered">
-<img src="figures/qgis_lesson.PNG" width="500" />
-</div>
-
+.right-column[
+.center[
+<img src="figures/qgis_lesson.PNG" width="800" />
+]]
