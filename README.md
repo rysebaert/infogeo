@@ -1,6 +1,6 @@
-# Initiation aux SIG et à la cartographie thématique 
+# Initiation aux SIG et à la cartographie thématique <img src="figures/universite_de_paris_logo.png"  align="right" width="120"/>
 
-<img src="figures/universite_de_paris_logo.png"  align="right" width="120"/>
+
 
 **Ronan Ysebaert (UMS RIATE, Université de Paris) et Maxime Guinepain (Géographie-Cités)**
 
@@ -46,6 +46,16 @@ Enseignement de 21 heures dispensé en 8 séances. Il s'articule autour d'un proje
 
 
 ### Synthèse du cours
+
+
+
+### Accès au données du cours
+
+- [Données délivrées aux étudiants](data/Infogeo_data.zip) : découpages géographiques, équipements, données socio-économiques. Utiles à la définition d'une implantation d'équipement dans un des EPCI de la métropole du Grand Paris.
+- [Exemple](data/Projet_Est_Ensemble.zip) : Un exemple appliqué à la modernisation d'une bibliothèque sur le territoire d'Est Ensemble. 
+- [Projet Magrit données quantitatives absolues](magrit_project TD7.json) : un exemple de carte mise en page avec Magrit.
+- [Projet Magrit données quantitatives relatives](magrit_project _TD8.json)
+- [Projet Magrit données qualitatives](magrit_project _TD9.json)
 
 
 
