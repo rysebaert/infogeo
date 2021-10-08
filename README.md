@@ -53,9 +53,9 @@ Enseignement de 21 heures dispensé en 8 séances. Il s'articule autour d'un proje
 
 - [Données délivrées aux étudiants](data/Infogeo_data.zip) : découpages géographiques, équipements, données socio-économiques. Utiles à la définition d'une implantation d'équipement dans un des EPCI de la métropole du Grand Paris.
 - [Exemple](data/Projet_Est_Ensemble.zip) : Un exemple appliqué à la modernisation d'une bibliothèque sur le territoire d'Est Ensemble. 
-- [Projet Magrit données quantitatives absolues](data/magrit_project TD7.json) : un exemple de carte mise en page avec Magrit.
-- [Projet Magrit données quantitatives relatives](data/magrit_project _TD8.json)
-- [Projet Magrit données qualitatives](data/magrit_project _TD9.json)
+- [Projet Magrit données quantitatives absolues](data/magrit_project_quanti_abs.json) : un exemple de carte mise en page avec Magrit.
+- [Projet Magrit données quantitatives relatives](data/magrit_project_quanti_rel.json)
+- [Projet Magrit données qualitatives](data/magrit_project_quali.json)
 
 
 
