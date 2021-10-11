@@ -1,0 +1,83 @@
+---
+title: "Introduction à la cartographie - Séance 2"
+subtitle: "Représenter les données quantitatives absolues<br>Cartographie thématique avec Magrit"
+author:  
+- "Ronan Ysebaert, Maxime Guinepain"
+date: "Dernière mise à jour: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, crayon.enabled = TRUE)
+knitr::opts_chunk$set(cache = TRUE,
+                      fig.align='center',
+                      message = FALSE,
+                      warning = TRUE)
+# install.packages("devtools")
+# devtools::install_github("gadenbuie/countdown")
+# devtools::install_github("mitchelloharawild/icons")
+library(countdown)
+library(icons)
+#download_fontawesome()
+```
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#1d3352",
+  secondary_color = "#383838",
+  inverse_header_color = "#ffae00"
+)
+```
+
+.bottom[
+# 1. La cartographie avec Magrit
+]
+
+---
+
+## Quels logiciels pour quelle cartographie ?
+.pull-left[
+.center[**Logiciels de cartographie**
+<br><br>
+<img src="figures/carto_logicielscarto.png" width=300>]
+.medium[
+* Environnement logiciel complètement <u>dédié à la création cartographique</u>.
+* Image + habillage = carte
+* <u>Cartographie de base</u> (réflexion poussée sur les choix statistiques)
+* <u>Variété des méthodes de représentation</u>.
+* Mise en scène de la carte.
+* <u>Partage et diffusion</u> (« une belle carte »).
+* Interface épurée.]
+
+.center[*Des logiciels dédiés pour la création cartographique*]
+]
+
+.pull-right[
+.center[**Systèmes d'information géographique**
+<br><br>
+<img src="figures/carto_logicielssig.png" width=300>]
+.medium[
+* Gestion de <u>bases de données</u> géographiques.
+* Définition des <u>projections</u> adaptées.
+* Visualisation et superposition des <u>couches</u> géographiques.
+* <u>Géotraitements</u>.
+* Cartographie de base (cartes choroplèthes, typologies, figurés proportionnels).]
+
+.center[*Réaliser une carte thématique de qualité est possible dans un environnement SIG, mais ce n’est pas l’objet premier de ce type de logiciels*]
+]
+
