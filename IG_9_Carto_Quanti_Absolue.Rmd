@@ -81,3 +81,376 @@ style_duo_accent(
 .center[*Réaliser une carte thématique de qualité est possible dans un environnement SIG, mais ce n’est pas l’objet premier de ce type de logiciels*]
 ]
 
+---
+
+### Magrit
+
+.left-column[
+.center[[https://magrit.hypotheses.org/392](https://magrit.hypotheses.org/392)]
+
+Il est possible d'utiliser Magrit en ligne ou de l'installer sur son ordinateur.
+]
+.right-column[
+<img src="figures/carto_magrit.png" height=400>
+]
+
+---
+
+.center[.big[en ligne : [http://magrit.cnrs.fr](magrit.cnrs.fr)]]
+
+![](figures/magrit_page.png)
+
+---
+
+## Objectif de la séquence
+
+.center[
+.big[**Objectif** : Faire une carte en utilisant des *données quantitatives de stock* sur votre espace d'étude]
+
+Téléchargez les données sur Moodle.
+
+<br><br>
+.medium[Géométries : dossier infogéo → Maillages
+
+Données : dossier infogéo → Données INSEE]
+
+<br><br>
+<img src="figures/zip.png" width=80>
+]
+
+---
+
+## Représenter les données quantitatives absolues
+
+.big[
+Les **6 étapes** de la réalisation de cartes de stock dans Magrit :
+
+1. *Préparation* (géométries, données, métadonnées)
+2. Import des géométries et des données, jointure
+3. *Réalisation* de la carte de stocks
+4. Amélioration de la lisibilité
+5. *Mise en page*
+6. Sauvegarde du projet et *export* de la carte
+]
+
+---
+
+### 1) Préparation du travail cartographique
+
+_Identifiez les couches d’information géographique dont vous aurez besoin_ <br>
+_Identifiez la variable que vous souhaitez cartographier_
+
+.pull-left[.center[
+.medium[IRIS_Est_Ensemble.shp]
+<img src="figures/iris_est_ensemble_shp.png" height=400>
+]
+]
+
+.pull-right[
+.medium[Fichier METADATA_DEMO_INSEE]
+![](figures/fichier_metadata_demo_insee.png)
+.medium[Fichier DATA_DEMO_INSEE]
+![](figures/fichier_data_demo_insee.png)
+]
+
+---
+
+.left-column[
+### 2) Import des géométries
+
+Sélectionner simultanément les fichiers `.shp`, `.dbf`, `.shx` et `.prj`.
+]
+
+.right-column[
+![](figures/magrit_stock_01.png)
+]
+
+---
+
+.left-column[
+#### Le type de fond de carte :
+
+Définissez s'il s'agit d'un fond de carte principal (données à montrer) ou d'habillage
+]
+.right-column[
+![](figures/magrit_stock_02.png)
+]
+
+---
+
+.left-column[
+#### La projection :
+
+Vous pouvez modifier la projection du fichier de géométries d'origine.
+]
+.right-column[
+![](figures/magrit_stock_03.png)
+]
+
+---
+
+.left-column[
+#### Le typage des données d'origine :
+
+On détermine à quel type correspond chaque variable du tableau attributaire de la couche d'origine (fichier `.dbf`).
+
+Il faut préciser quel est l'**identifiant unique** de la couche (ici, `CODE_IRIS`).
+]
+.right-column[
+![](figures/magrit_stock_04.png)
+]
+
+---
+
+.left-column[
+#### Import de la table attributaire à joindre :
+
+Maintenant, on importe le fichier qui contient les données à cartographier.
+]
+.right-column[
+![](figures/magrit_stock_05.png)
+]
+
+---
+
+.left-column[
+#### Champ de jointure :
+On sélectionne le champ à partir duquel faire la jointure, soit l'identifiant unique des unités géographiques (ici, `CODE_IRIS`).
+]
+.right-column[
+![](figures/magrit_stock_06.png)
+]
+
+---
+
+.left-column[
+#### Concordance :
+
+On vérifie que la jointure a bien pu associer les entités géographiques à leurs lignes correspondantes dans le tableau joint.
+]
+.right-column[
+![](figures/magrit_stock_07.png)
+]
+
+---
+
+.left-column[
+#### Typage des données :
+
+On indique le type des données à cartographier depuis le fichier joint (ici, **stock**).
+]
+.right-column[
+![](figures/magrit_stock_08.png)
+]
+
+---
+
+.left-column[
+### 3) Réalisation de la carte de stocks
+]
+.right-column[
+![](figures/magrit_stock_09.png)
+]
+
+---
+
+.left-column[
+#### Sélection du champ à cartographier
+]
+.right-column[
+![](figures/magrit_stock_10.png)
+]
+
+---
+
+.left-column[
+### 4) Améliorer la lisibilité
+
+Pensez à ajuster :
+
+- la taille des symboles proportionnels,
+- la couleur des polygones du fond de carte,
+- l'épaisseur et la couleur des bordures...
+
+Vous pouvez ajouter des couches d'habillage (pour compléter le fond de carte).
+]
+.right-column[
+.middle[
+![](figures/magrit_stock_11.png)
+]
+]
+
+---
+
+.left-column[
+#### Pour ajouter des couches d'habillage :
+]
+.right-column[
+![](figures/magrit_stock_12.png)
+]
+
+---
+
+.right-column[
+![](figures/magrit_stock_13.png)
+]
+
+---
+
+.left-column[
+#### Pour changer le style des figurés :
+]
+.right-column[
+![](figures/magrit_stock_14.png)
+]
+
+---
+
+.left-column[
+Comme dans QGis, vous pouvez changer l'ordre de dessin des couches.
+
+Il est également possible d'ajuster manuellement la position des symboles.
+]
+.right-column[
+![](figures/magrit_stock_15.png)
+]
+
+---
+
+.left-column[
+### 5) Mise en page
+
+![](figures/precaution.png)
+]
+.right-column[
+.big[
+La carte doit disposer obligatoirement de :
+
+* Un titre
+* Une échelle
+* Une légende
+* Une source
+* La date des données
+]
+]
+
+---
+
+.left-column[
+Cliquer sur *Habillage et mise en page*
+]
+.right-column[
+![](figures/magrit_stock_16.png)
+]
+
+---
+
+.left-column[
+Il faut veiller à ce que le titre soit
+
+* clair et évocateur
+* pas trop long
+* pas redondant avec la légende
+
+Vérifier que les sources et la légende sont exaustifs
+]
+.right-column[
+![](figures/magrit_stock_17.png)
+]
+
+---
+
+.left-column[
+#### D'autres éléments optionnels :
+]
+.right-column[
+![](figures/magrit_stock_18.png)
+]
+
+---
+
+![](figures/magrit_stock_resultat.png)
+
+---
+
+### 6) Pour finir...
+
+.pull-left[
+#### Sauvegarde du projet
+
+**Sauvegarder le projet au format `.json`**
+
+Il pourra être rouvert par la suite à votre prochaine connexion.
+
+![](figures/magrit_sauv.png)
+]
+
+--
+
+.pull-right[
+#### Export de la carte
+
+![](figures/magrit_export.png)
+
+Choisissez le format qui vous semble le plus approprié :
+
+* **matriciel** (ou *raster* : `.jpg`, `.png`...) : pour une publication, une vignette Web...
+* **vectoriel** (`.svg`) : pour la retravailler (Inkscape, Illustrator...), un site Web...
+]
+
+---
+
+.left-column[
+Il ne vous reste plus qu'à récupérer votre fichier téléchargé, et à l'insérer dans votre document de travail !
+]
+.right-column[
+![](figures/magrit_stock_19.png)
+]
+
+---
+
+## Avec un SIG
+
+.pull-left[
+.big[
+Il est aussi possible de faire des cartes thématiques avec un SIG.
+]
+
+Mais leur mise en page nécessite plus de maîtrise.
+]
+.pull-right[
+![](figures/carte_thema_qgis.png)
+]
+
+---
+
+## Bilan. Ce qu'il faut se demander lors du processus de cartographie
+
+.pull-left[
+.big[
+* Répond-on à la **problématique** posée par le commanditaire ?
+]
+
+Qu'apporte le média cartographique par rapport à un autre type de présentation des données ? Comment cela permet-il de répondre aux hypothèses formulées au préalable ?
+
+.big[
+* La **couverture spatiale** d'analyse est-elle satisfaisante ?
+]
+
+La maille territoriale convient-elle, le zoom est-il suffisant (ni excessif, ni trop petit), la zone géographique bien représentée ?
+
+]
+.pull-right[
+
+.big[
+* L'**indicateur** représenté est-il pertinent ?
+]
+
+Correspond-il au thème, est-il assez récent ? Les sources de données utilisées sont-elles fiables ?
+
+.big[
+* Les **configurations géographiques** qui apparaissent sur la carte permettent-elles d'apporter des éléments à l'analyse ?
+]
+
+Faut-il mieux cibler le phénomène représenté, mieux mettre en évidence les effets de (dis)continuité entre les territoires, changer les ordres de grandeur ?
+]
