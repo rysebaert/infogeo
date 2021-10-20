@@ -1,0 +1,610 @@
+---
+title: "Introduction à la cartographie - Séance 2"
+subtitle: "Représenter les données quantitatives relatives<br>Cartographie thématique avec Magrit"
+author:  
+- "Ronan Ysebaert, Maxime Guinepain"
+date: "Dernière mise à jour: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, crayon.enabled = TRUE)
+knitr::opts_chunk$set(cache = TRUE,
+                      fig.align='center',
+                      message = FALSE,
+                      warning = TRUE)
+# install.packages("devtools")
+# devtools::install_github("gadenbuie/countdown")
+# devtools::install_github("mitchelloharawild/icons")
+library(countdown)
+library(icons)
+#download_fontawesome()
+```
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#1d3352",
+  secondary_color = "#383838",
+  inverse_header_color = "#ffae00"
+)
+```
+
+.bottom[
+<br><br><br><br><br>
+# I. Les discrétisations
+]
+
+---
+
+.left-column[
+
+# Discrétiser
+
+La **discrétisation** est un mode de *simplification de l'information* (quantitative continue) pour la rendre intelligible.
+]
+
+.right-column[
+![](figures/discretisation.png)
+]
+
+---
+
+## Deux objectifs
+
+.pull-left[
+### Conserver l'essentiel de l'information
+
+* **Regrouper les valeurs qui se ressemblent** et qui sont différentes des autres ; donner des **seuils** qui ont du sens
+* Conserver l'ordre de grandeur, la dispersion, la forme de la distribution
+* Rendre compte de la **structure interne** du jeu de données
+]
+
+.pull-right[
+### Transmettre l'information
+
+* Limiter le nombre de classes
+
+$$N(cl) = 1 + 3,3 \log10(N)$$
+
+où $N$ est le nombre d'observations et $N(cl)$ le nombre de classes
+
+* Faciliter la mémorisation
+
+On a coutume de dire que 10 classes est un maximum.
+
+* Construire une carte qui "raconte" quelque-chose !
+]
+
+---
+
+## Quelques principes fondamentaux
+
+
+* Les classes ne doivent **pas être vides**
+* Les classes doivent couvrir l'**ensemble** de la distribution, et être **contiguës** (elles s'arrêtent là où une autre commence)
+* Les classes doivent être  **distinctes** (les valeurs ne doivent pas se superposer)
+* Les caractéristiques essentielles de la distribution de l'indicateur doivent être conservées, et permettre de perdre le moins d'information possible.
+* Le nombre de classes doit être inférieur au nombre d'observations
+
+
+--
+
+.center[ *Compromis entre* information *et* démonstration ]
+
+---
+
+.left-column[
+## Quel résultat sans discrétisation ?
+]
+
+.right-column[
+![](figures/discretisation_sans.png)
+]
+
+---
+
+# Les méthodes de discrétisation
+
+<img src="figures/discretisation_methodes.png" height="450px">
+
+---
+
+## Les caractéristiques statistiques à prendre en compte pour la discrétisation
+
+.pull-left[
+
+* Le **résumé statistique** : valeurs centrales (moyenne  / médiane), le minimum, le maximum
+* Les **paramètres de dispersion** : l'écart-type (calcul intégrant les valeurs algébriques d'écart à la moyenne)
+* La **forme de la distribution** des données : l'observation des concentrations d'individus
+
+]
+
+.pull-right[
+![http://philcarto.free.fr/fortunel/FichesStatistiques.pdf](figures/discretisation_schema_philcarto.png)
+
+<big>Discrétisation = Découpage en classes selon ces spécificités</big>
+]
+
+---
+
+## Les méthodes
+
+<img src="figures/discretisation_tableau_methodes.png" height="400px">
+
+--
+
+.right[*La méthode de Jenks est la méthode passe-partout !*]
+
+---
+
+### 1. Les effectifs égaux
+
+![](figures/effectifs_egaux.png)
+
+Une méthode adaptée pour **comparer les cartes entre elles** :
+
+* *"Les 20% des valeurs les plus élevées sont..."*
+* *"Les 20% des valeurs les plus faibles sont..."*
+
+Cependant, peu adaptée pour mettre en évidence des **valeurs exceptionnelles**.
+
+--
+
+La **méthode Q6** est une variante qui consiste à isoler les bornes extrêmes de la distribution.
+
+---
+
+.left-column[
+**Méthode 1<br>Effectifs égaux / quantiles**
+]
+
+.right-column[
+<img src="figures/discretisation_ex_1.png" height="500px">
+]
+
+---
+
+### 2. Amplitude égale
+
+![](figures/amplitude_egale.png)
+
+Une méthode adaptée pour des distributions **uniformes** ou **symétriques** :
+elle produit généralement des seuils de classe simples et compréhensibles.
+
+---
+
+.left-column[
+**Méthode 2<br>Intervalles égaux / Amplitudes égales**
+]
+
+.right-column[
+<img src="figures/discretisation_ex_2.png" height="500px">
+]
+
+---
+
+### 3. Moyenne et écart-type
+
+![](figures/moyenne-ecart_type.png)
+
+Une méthode idéale pour les **distributions symétriques** (normales, gaussiennes). \
+
+Aussi appelée *discrétisation standardisée*.
+
+Cette méthode met en évidence les **valeurs exceptionnelles** de la distribution.
+
+.right[
+<img src="figures/symetrie_moyenne.png" height="100px">
+]
+
+---
+
+.left-column[
+**Méthode 3<br>Moyenne et écart-type**
+]
+
+.right-column[
+<img src="figures/discretisation_ex_3.png" height="500px">
+]
+
+---
+
+### 4. Seuils naturels
+
+![](figures/seuils_naturels.png)
+
+Une méthode adaptée lorsque des **seuils naturels** apparaissent dans la distribution. Assez subjective, elle nécessite une *bonne connaissance* des phénomènes étudiés.
+
+La méthode dite **de Jenks** automatise ce procédé manuel. Elle repose sur un algorithme qui *minimise la variance intra-classes* en *maximisant la variance inter-classes*.
+
+C'est une méthode **passe-partout**, mais elle ne permet pas de comparer les cartes entre elles !
+
+---
+
+.left-column[
+**Méthode 4<br>Jenks**
+]
+
+.right-column[
+<img src="figures/discretisation_ex_4.png" height="500px">
+]
+
+---
+
+### 5. Progression géométrique
+
+![](figures/progression_geom.png)
+
+Une méthode adaptée pour des distributions **très dissymétriques**. Elle conssite à construire des classes dont l'étendue augmente (ou diminue) de plus en plus.
+
+Il faut en définir la **raison** (coefficient multiplicateur) ; le minimum ne doit pas être égal à zéro.
+
+---
+
+.left-column[
+**Méthode 5<br>Progression géométrique**
+]
+
+.right-column[
+<img src="figures/discretisation_ex_5.png" height="500px">
+]
+
+---
+
+.left-column[
+En résumé...
+]
+
+.right-column[
+<img src="figures/discretisation_italie.png" height="500px">
+]
+
+---
+
+![](figures/bertin_3.png)
+
+# II. Les variables visuelles
+
+---
+
+## Représenter les données quantitatives relatives
+
+.center[
+<big>Retranscrire l'ordre sans la proportionnalité :</big>
+
+<img src="figures/semio_quanti_relative_pas_prop.png" height="350px">
+
+]
+
+---
+
+.center[
+<big>Retranscrire l'ordre sans la proportionnalité :</big>
+<br>
+
+![](figures/semio_a_plats.png)
+]
+
+---
+
+.left-column[
+### Valeur
+
+**Rapport entre une quantité de noir et de blanc perçue sur une surface donnée.**
+Il s'agit donc d'une gradation en niveaux de gris s'échelonnant du gris clair au noir,
+le blanc étant souvent réservé pour l'absence d'information.
+]
+
+.right-column[
+![](figures/semio_a_plats_valeurs.png)
+]
+
+---
+
+.left-column[
+### Camaïeu
+
+Ce procédé est également applicable au cas d'une
+**couleur foncée progressivement par un gain en intensité**.
+On parle alors d'un *camaïeu*, qui constitue en fait le résultat de l'association
+des variables visuelles de *valeur* et de *couleur*.
+]
+
+.right-column[
+![](figures/semio_a_plats_camaieu.png)
+]
+
+---
+
+.left-column[
+### Couleur ordonnée
+
+On utilise ici les **propriétés du spectre visible de la lumière** en en faisant
+varier, en plus de son intensité, la longueur d'onde de la couleur choisie. Cette
+longueur d'onde (du froid vers le chaud ou l'inverse) constitue elle aussi une variable
+visuelle ordonnée et continue. On parle aussi de **gradation harmonique**.
+
+![](figures/spectre_lumiere_visible.png)
+]
+
+.right-column[
+![](figures/semio_a_plats_couleur_ordonnee.png)
+]
+
+---
+
+## Le choix des couleurs :
+
+.pull-left[
+### Perception des couleurs selon l'usage
+
+<img src="figures/couleurs_usage.png" height="400px">
+]
+
+.pull-right[
+### Perception "culturelle" (?) des couleurs
+
+<img src="figures/couleurs_culture.png" height="400px">
+]
+
+---
+
+.left-column[
+### Une ressource utile : ColorBrewer
+
+[http://colorbrewer2.org](http://colorbrewer2.org)
+]
+
+.right-column[
+![](figures/color_brewer.png)
+]
+
+---
+
+.left-column[
+### D'autres variables visuelles plus désuettes
+
+Elles sont un peu "passées de mode", mais elles avaient l'avantage de
+bien se prêter à la superposition d'éléments.
+]
+
+.right-column[
+.right[
+<img src="figures/var_visu_grain.png" height="100px">
+
+<img src="figures/var_visu_structure.png" height="100px">
+]
+]
+
+---
+
+<br><br>
+.center[
+![](figures/magrit_logo.png)]
+<br><br>
+
+# III. Cartographie thématique avec Magrit<br>Représenter les données quantitatives de taux
+
+---
+
+### Objectif :
+
+*Représenter la part des 0-24 ans dans les IRIS d'Est Ensemble* (public cible des médiathèques).
+
+NB : adaptez cet exemple à votre espace d'étude et à votre problématique !
+
+---
+
+### Les étapes :
+
+1. Préparation des données et géométries
+2. Import des géométries et des données, jointure et typage des données
+3. Réalisation d'une carte de ratios et analyse des données
+4. Discrétisation et choix des couleurs
+5. Mise en page
+6. Sauvegarde / Export
+
+
+---
+
+.left-column[
+## 1. Préparation des données et géométries
+
+*Utilisez QGis et un tableur.*
+
+* Quel indicateur choisir ?
+* D'où vient l'information ?
+* Quelle est la date de production de l'indicateur ?
+* Les codes sont-ils les mêmes que dans le fichier de géométrie ?
+]
+
+.right-column[
+![](figures/donnees_metadonnees_geometries.png)
+]
+
+---
+
+![](figures/magrit_ratio_01.png)
+
+---
+
+.left-column[
+## 2. Import, jointure et typage des données
+
+![](figures/magrit_import.png)
+]
+
+.right-column[
+Vous pouvez charger le **fichier projet** réalisé lors de la séance précédente (carte de stock).
+Cela permet :
+
+* de conserver la mise en page réalisée et d'assurer ainsi une **harmonie graphique** entre vos cartes.
+* de **gagner du temps** sur la mise en page.
+
+Dans ce cas, il faut veiller à :
+
+* ne pas modifier a posteriori la carte précédente (vous perdriez l'harmonie graphique) :
+  police, couleur et épaisseur des bordures...
+* **réorganiser vos couches géographiques** pour ne garder que ce dont vous avez besoin
+  (panneaux *import des données* et *gestion des couches*)
+]
+
+---
+
+.left-column[
+*Optionnel : import du fichier projet de la dernière fois*
+]
+.right-column[
+![](figures/magrit_ratio_02.png)
+]
+
+---
+
+.left-column[
+Import des géométries
+]
+.right-column[
+![](figures/magrit_ratio_03.png)
+]
+
+---
+
+.left-column[
+Remplacement du fond de carte principal
+]
+.right-column[
+![](figures/magrit_ratio_04.png)
+]
+
+---
+
+.left-column[
+Import des données et jointure avec le fond de carte
+]
+.right-column[
+![](figures/magrit_ratio_05.png)
+]
+
+---
+
+.left-column[
+Sélection du champ de jointure
+]
+.right-column[
+![](figures/magrit_ratio_06.png)
+]
+
+---
+
+.left-column[
+Typage des données
+]
+.right-column[
+![](figures/magrit_ratio_07.png)
+]
+
+---
+
+.left-column[
+### 3. Réalisation de la carte et analyse des données
+
+![](figures/magrit_ratio_08.png)
+]
+
+--
+
+.right-column[
+![](figures/magrit_ratio_09.png)
+]
+
+---
+
+.pull-left[
+### 4. Discrétisation & choix des couleurs
+
+- Quelle forme de distribution ?
+- Quel est le message que l'on souhaite transmettre ?
+- Quel nombre de classes, quelles couleurs ?
+- **C'est le moment de justifier vos choix !**
+
+![](figures/magrit_analyse_distribution.png)
+.center[
+![](figures/distribution_résumé.png)
+]
+
+]
+
+.pull-right[
+.center[
+![](figures/distribution_beeswarm.png)
+
+![](figures/distribution_histogramme.png)
+]
+]
+
+---
+
+.left-column[
+#### Quelle forme de distribution ?
+
+Plutôt symétrique (médiane = moyenne) : "Moyenne / Écart-type"
+
+#### Quel est le message que l'on souhaite transmettre ?
+
+Visualiser les IRIS dont la population jeune est au-dessus ou en-dessous de la moyenne.
+
+#### Quel nombre de classes ? Quelles couleurs ?
+
+Résumer l'information essentielle : 6 classes.
+
+Rupture du vert au rouge autour de la moyenne.
+]
+
+.right-column[
+![](figures/magrit_ratio_10.png)
+]
+
+---
+
+* **Arrondir les bornes des classes** sans modifier le nombre d'individus statistiques par classe :
+
+![](figures/magrit_ratio_11.png)
+
+* Quelle **gradation de couleurs** ? Pourquoi ? **Séquentielle ou divergente ?**
+la couleur la plus foncée pour la valeur la plus élevée, ou pour la plus faible ?
+
+![](figures/magrit_ratio_12.png)
+
+---
+
+.left-column[
+### 5. Mise en page
+]
+.right-column[
+![](figures/magrit_ratio_13.png)
+]
+
+---
+
+.left-column[
+### 6. Sauvegarder, exporter
+]
+.right-column[
+![](figures/magrit_sauv_export.png)
+]
+
