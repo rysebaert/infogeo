@@ -1,326 +1,332 @@
 ---
-title: "Cartographie thématique"
-subtitle: "Cartographie thématique et règles de la sémiologie graphique"
-author: "M1, Université de Paris"
-date: "Hugues Pecout (FR CIST),  Ronan Ysebaert (UMS RIATE)"
-output: 
-  ioslides_presentation:
-    widescreen: true
-    css: styles.css
-    logo: figures/logo.gif
-    incremental: true
+title: "Introduction aux SIG - Séance 4"
+subtitle: "Concepts et sémiologie graphique"
+author:  
+- "Ronan Ysebaert, Maxime Guinepain"
+date: "Dernière mise à jour: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+options(htmltools.dir.version = FALSE, crayon.enabled = TRUE)
+knitr::opts_chunk$set(cache = FALSE,
+                      fig.align='center',
+                      message = FALSE,
+                      warning = TRUE)
+# install.packages("devtools")
+# devtools::install_github("gadenbuie/countdown")
+# devtools::install_github("mitchelloharawild/icons")
+library(countdown)
+library(icons)
+#download_fontawesome()
 ```
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
-<script>
-    $(document).ready(function() {
-      $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"Introduction à la cartographie thématique\"></footer>');    
-    })
-</script>
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#1d3352",
+  secondary_color = "#383838",
+  inverse_header_color = "#ffae00"
+)
+```
 
 
+<br><br><br><br><br><br><br>
 # Définitions
+
+---
 
 ## La cartographie
 
-<p style="font-size:17pt;">**La cartographie est une discipline** (composante de la géomatique) qui a pour objectif la construction de cartes. c'est à la fois une discipline  **scientifique**, **technique** et **artistique**.</p>
+**La cartographie est une discipline** (composante de la géomatique) qui a pour objectif la construction de cartes. c'est à la fois une discipline  **scientifique**, **technique** et **artistique**.
 
-<div class="column">
-<p style="color:#9c2005;font-weight:bold;font-size:16pt;">Une science</p> 
-<div class="carto">Les **bases sont mathématiques** (Système de référence et projection).     
-L’enjeu est la **précision et la fiabilité**.    
-La représentation cartographique est régie par des **règles de sémiologie graphique**.</div> 
-<img src="figures/lambert.jpg" width="260" />
-</div>
+.pull-left[
 
-<div class="column">
-<p style="color:#9c2005;font-weight:bold;font-size:16pt;">Une technique</p>  
-<div class="carto">**Nécessite un vaste savoir faire opérationnel** : acquisition de données, préparation et traitement de données, **maîtrise de logiciels**
-spécialisés...</div> 
-<img src="figures/technique_carto.png" width="290" />
-</div>
+### Une science 
+Les **bases sont mathématiques** (Système de référence et projection). L’enjeu est la **précision et la fiabilité**.    
+La représentation cartographique est régie par des **règles de sémiologie graphique**. 
+<img src="figures/lambert.jpg" width="540" />
+]
 
-<div class="column">
-<p style="color:#9c2005;font-weight:bold;font-size:16pt;">Un art</p>  
-<div class="carto">Recherche d'**esthétisme**. Comme pour tout objet de communication, le graphisme d'une carte à un impact sur la transmission du message.</div> 
-<img src="figures/art.png" width="255" />
-</div>
+.pull-left[
 
+]
+
+### Une technique
+Acquisition de données, préparation et traitement de données, **maîtrise de logiciels**
+spécialisés... 
+<img src="figures/technique_carto.png" width="540" />
+
+---
+
+## La cartographie
+
+**La cartographie est une discipline** (composante de la géomatique) qui a pour objectif la construction de cartes. c'est à la fois une discipline  **scientifique**, **technique** et **artistique**.
+
+### Un art  
+Recherche d'**esthétisme**. Comme pour tout objet de communication, le graphisme d'une carte à un impact sur la transmission du message.
+<img src="figures/art.png" width="540" />
+
+---
 
 ## La carte géographique
 
-<p style="font-size:17pt;">**Une carte est une représentation géométrique plane, simplifiée et conventionnelle de tout ou partie de la surface terrestre**, et cela dans un rapport de similitude convenable qu'on appelle échelle. (*F. Joly, 1976*)</p>
+**Une carte est une représentation géométrique plane, simplifiée et conventionnelle de tout ou partie de la surface terrestre**, et cela dans un rapport de similitude convenable qu'on appelle échelle. (*F. Joly, 1976*).
 
-<p style="font-size:17pt;">**Une carte géographique est une représentation d'un espace géographique**. Elle met en valeur l'étendue de cet espace, sa localisation relative par rapport aux espaces voisins, ainsi que la localisation des éléments qu'il contient. **Les cartes servent également à représenter des phénomènes géographiques dont la configuration spatiale produit du sens.**</p>
+**Une carte géographique est une représentation d'un espace géographique**. Elle met en valeur l'étendue de cet espace, sa localisation relative par rapport aux espaces voisins, ainsi que la localisation des éléments qu'il contient. **Les cartes servent également à représenter des phénomènes géographiques dont la configuration spatiale produit du sens.**
 
 <br>
+La carte est un outil précisément défini.Sa réalisation est sujette à des **conventions**.
 
-<p style="font-size:19pt;color:#9c2005;text-align:center;">**La carte est un outil précisément défini**.</p><p style="font-size:19pt;color:#9c2005;text-align:center;">**La réalisation d’une carte est sujette à des conventions**.</p>
-
+---
 
 ## Deux grandes catégories de cartes
 
-<p style="font-size:17pt;">Il existe une **multitude de cartes géographiques** : carte météo, géologique, de végétation, climatique, touristique, d'inventaire, routière, animée, interactive, spatiocarte.... **Mais deux grandes catégories se dégagent** :</p>
+Il existe une **multitude de cartes géographiques** : carte météo, géologique, de végétation, climatique, touristique, d'inventaire, routière, animée, interactive, spatiocarte.... **Mais deux grandes catégories se dégagent** :</p>
 
+.pull-left[
+### Cartes topographiques
+<img src="figures/carte_topo.png" width="540" />
+]
 
-<div class="columns-2">
+.pull-right[
+### Cartes thématiques
+<img src="figures/carte_thema.jpg" width="540" />
+]
 
-<div class="centered">
-<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Cartes topographiques</span>
-<img src="figures/carte_topo.png" width="375" />
-</div>
-
-<div class="centered">
-<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Cartes thématiques</span>  
-<img src="figures/carte_thema.jpg" width="340" />
-</div>
-
-</div>
-
+---
 
 ## La carte thématique
 
+**Carte représentant sur un fond repère** topographique, hydrographique, chorographique ou géographique, **des phénomènes localisables de toute nature, qualitatifs ou quantitatifs**.
 
-<p style="font-size:17pt;">**Carte représentant sur un fond repère** topographique, hydrographique, chorographique ou géographique, **des phénomènes localisables de toute nature, qualitatifs ou quantitatifs**</p>
 
+.left-column[
+**La cartographie thématique est un outil d’analyse, d’aide à la décision et de communication** largement utilisé pour représenter une ou plusieurs variables.
 
-<div class="columns-2">
-<div>
+C'est un **moyen très efficace d’exprimer des idées et de repérer des phénomènes** qui ne le seraient pas (ou plus difficilement) par d’autres moyens.
+
+Cest un **document graphique basé sur la communication par les signes. Elle relève du langage visuel**, sa construction doit suivre **les règles de la sémiologie graphique**.
+]
+
+.right-column[
 <img src="figures/rideau_fer.png" width="630" />
-</div>
-<div>
-<div class="col_3">
-<span style="color: #898989;">**La cartographie thématique est un outil d’analyse, d’aide à la décision et de communication** largement utilisé pour représenter une ou plusieurs variables.</span>
-<br>    
-<span style="color: #898989;">C'est un **moyen très efficace d’exprimer des idées et de repérer des phénomènes** qui ne le seraient pas (ou plus difficilement) par d’autres moyens.</span>
-<br>   
-<span style="color: #898989;">Cest un **document graphique basé sur la communication par les signes. Elle relève du langage visuel**, sa construction doit suivre **les règles de la sémiologie graphique**.</span> 
-</div>
-</div>
+]
 
+---
 
+<br><br><br><br><br><br><br>
 # Quelques exemples
+
+---
 
 ## Carte choroplèthe - *variable quantitative relative*
 
-<div class="columns-2">
+.pull-left[
+<img src="figures/brexit.jpg" width="540" />
+]
 
+.pull-right[
+<img src="figures/4G.jpg" width="540" />
+]
 
-<div class="centered">
-<img src="figures/brexit.jpg" width="445" />
-</div>
-
-<div class="centered">
-<img src="figures/4G.jpg" width="380" />
-</div>
-
-
-</div>
-
-
+---
 
 ## Carte choroplèthe - *variable qualitative*
 
-<div class="columns-2">
-
-<div class="centered">
+.pull-left[
 <img src="figures/typo.jpg" width="420" />
-</div>
+]
 
-
-<div class="centered">
+.pull-right[
 <img src="figures/conflict.png" width="410" />
-</div>
+]
 
-
-</div>
-
+---
 
 ## Carte en proportion - *variable quantitative absolue*
 
-
-<div class="columns-2">
-
-<div class="centered">>
+.pull-left[
 <img src="figures/rom.png" width="440" />
-</div>
+]
 
-<div class="centered">
+.pull-right[
 <img src="figures/vatican.png" width="490" />
+]
 
-</div>
-
-</div>
-
+---
 
 ## Carte en proportion - *variable quantitative absolue*
 
-<div class="centered"> 
+.center[ 
 <img src="figures/prop.png" width="650" />
-</div>
+]
 
+---
 
 ## Carte en proportion - *diagramme & camenbert*
 
-
-<div class="columns-2">
-
-<div class="centered">>
+.pull-left[
 <img src="figures/camembert.png" width="500" />
-</div>
+]
 
-<div class="centered">
+.pull-right[
 <img src="figures/newzealand.gif" width="360" />
-   
+]   
 
-</div>
-
-
-</div>
-
+---
 
 ## Anamorphose / Cartogramme - *Quantitative absolue*
 
-<div class="columns-2">
+.pull-left[
 
-<div class="centered">
 <img src="figures/allo_afrique.jpg" width="435" />
-</div>
+]
 
-
-<div class="centered">
+.pull-right[
 <img src="figures/anamorphose.jpg" width="420" />
-</div>
+]
 
-
-</div>
-
+---
 
 ## Les variantes
 
-<div class="columns-2">
-<div class="centered">
+.pull-left[
 <img src="figures/carbon_large.png" width="600" />
-</div>
+]
 
-<div style="text-align:right;">
+.pull-right[
 <img src="figures/travel2.jpg" width="290" />
   
 <img src="figures/forest.jpg" width="290" />
 
-</div>
+]
 
-</div>
-
+---
 
 ## Carte en point - *Quantitative absolue*
 
-<div class="columns-2">
-
-<div class="centered">>
+.pull-left[
 <img src="figures/dot_map.jpg" width="350" />
-</div>
+]
 
-<div class="centered">
+.pull-right[
 <img src="figures/dot_map_2.jpg" width="370" />
-</div>
+]
 
-</div>
-
-
+---
 
 ## Carte en symbole - *Qualitative*
 
-<div class="centered">
+.center[
 <img src="figures/symbol_map.jpg" width="550" />
-</div>
+]
+
+---
 
 ## Carte en symbol - *Qualitative*
 
-<div class="centered">
+.center[
 <img src="figures/carte_symbol.gif" width="690" />
-</div>
+]
 
+---
 
 ## Carte de réseau/flux - *Qualitative*
 
-<div class="centered">
+.center[
 <img src="figures/pan.jpg" width="800" />
-</div>
+]
+
+---
 
 ## Carte de réseau/flux - *Quantitative absolue*
 
-<div class="columns-2">
-
-<div class="centered">
+.pull-left[
 <img src="figures/commerce.jpeg" width="440" />
-</div>
+]
 
-<div class="centered">
+.pull-right[
 <img src="figures/navette.png" width="335" />
-</div>
+]
 
-</div>
-
-
+---
 
 ## Carte isoplèthe
 
+.pull-left[
 
-<div class="columns-2">
-
-<div class="centered">
-<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Carte isobare</span>
+### Carte isobare
 <img src="figures/isobar.gif" width="460" />
-</div>
+]
 
-<div class="centered">
-<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Carte isochrone</span>
+.pull-right[
+### Carte isochrone
 <img src="figures/isochrone.png" width="455" />
-</div>
+]
 
-</div>
-
-
-
+---
 
 ## Carte isoplèthe
 
-<div class="columns-2">
-
-<div class="centered">
-<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Carte lissée</span>
+.pull-left[
+### Carte lissée
 <img src="figures/fig_lambert.png" width="475" />
-</div>
+]
 
-<div class="centered">
-<span style="color:#9c2005;font-weight:bold;font-size:16pt;line-height:3;">Carte de potentiel</span>
+.pull-right[
+### Carte de potentiel
 <img src="figures/potentiel.png" width="460" />
-</div>
+]
 
-</div>
+---
 
-
+<br><br><br><br><br><br><br>
 # Les fondamentaux
+
+---
 
 ## Les fondamentaux
 
-<p style="font-size:19pt;">**L’efficacité d'une carte thématique réside dans le temps nécessaire pour mémoriser correctement l’information qui veut être transmise**. Pour cela, il ne faut jamais oublier :</p> 
-<br>  
-<p style="font-size:24pt;color:#9c2005;text-align:center;">1- L’**objectif** de la carte et le **public visé**</p>
+**L’efficacité d'une carte thématique réside dans le temps nécessaire pour mémoriser correctement l’information qui veut être transmise**. Pour cela, il ne faut jamais oublier : 
+  
+1- L’**objectif** de la carte et le **public visé**
 
-<p style="font-size:24pt;color:#9c2005;text-align:center;">2- Les **codes** et **conventions** de la cartographie</p>
+2- Les **codes** et **conventions** de la cartographie
 
-<p style="font-size:24pt;color:#9c2005;text-align:center;">3- Les règles de la **sémiologie graphique**</p>
+3- Les règles de la **sémiologie graphique**.
 
+---
 
 ## Un public, un objectif et un message
 
+On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/presentation_images/20d4feabc6bf2c18278efa0457b302e2e7b39419/Pr%C3%A9sentation_LJegou.html#1)) :
+
+- La carte **performative**, qui vise à faire réagir, de propagande, rhétorique (vision *post-moderniste*, B. Harley). 
+
+- La carte comme **outil d'analyse**, moyen de faire découvrir des phénomènes et des relations, dans un processus d'exploration et de transformation (paradigme *analytique*, W. Tobler et K. Clarke)
+ 
+- La carte comme **outil d'organisation** d'une communauté sur son territoire (paradigme *participatif*, M. Noucher, T. Jolliveau).
+
+- La carte comme **outil de visualisation de son propre territoire et de navigation**, adaptée et centrée sur sa position actuelle (paradigme de l'*égo-cartographie*) 
+ 
+ - La carte **décorative**, à valeur esthétique, historique, émotive.
+ 
+ ---
  
 <div class="columns-2">
 <div>
@@ -329,7 +335,7 @@ spécialisés...</div>
 <div>
 <div class="col_3_bis">
 <span style="color:#484848;">On ne réalise pas la même carte en fonction du **public ciblé**, de l’**objectif** (opérationnel, décisionnel, communication) et du **message** que le cartographe souhaite transmettre.</span>
-<br>    
+<br>    
 <span style="color:#9c2005;">Cela influence directement :</span>   
 
 <span style="color:#9c2005;">- **L'emprise** et **la projection** utilisées</span>  
