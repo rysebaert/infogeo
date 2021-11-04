@@ -40,8 +40,8 @@ Enseignement de 21 heures dispensé en 8 séances. Il s'articule autour d'un proje
 
 ### Travaux pratiques (cartographie thématique)
 
-- Carto 1 : Représenter des données quantitatives absolues 
-- Carto 2 : Représenter des données quantitatives relatives
+- [Carto 1 : Représenter des données quantitatives absolues](IG_9_Carto_Quanti_Absolue) 
+- Carto 2 : Représenter des données quantitatives relatives(IG_10_Carto_Quanti_Relative)
 - Carto 3 : Représenter des données qualitatives
 
 
