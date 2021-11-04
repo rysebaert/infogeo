@@ -1,10 +1,12 @@
 ---
 title: "Cartographie thématique"
 subtitle: "Concepts fondamentaux et règles de sémiologie graphique"
-author: "Ronan Ysebaert, Maxime Guinepain"
+author:  
+- "Ronan Ysebaert, Maxime Guinepain"
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
+    self_contained: true
     css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
     lib_dir: libs
     nature:
@@ -456,7 +458,7 @@ Elles possèdent des propriétés différentes qui permettent de **différencier
 ## Des relations différentes selon le type de données
 
 .center[
-<img src="figures/catégories-de-VV.png" width="800" />
+<img src="figures/categories-de-VV.png" width="800" />
 
 .leg-fig[Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)
 ]
@@ -498,7 +500,7 @@ Il s'agit d'une variable **qualitative nominale**.
 ## Comment caractériser ses données ?
 
 .center[
-<img src="figures/types_de_données_1.png" width="1000" />
+<img src="figures/types_de_donnees_1.png" width="1000" />
 .leg-fig[Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)]
 ]
 
@@ -515,7 +517,7 @@ Il s'agit d'une variable **qualitative nominale**.
 ## Une erreur à éviter absolument ! 
 
 .center[
-<img src="figures/types_de_données_2.png" width="850" />
+<img src="figures/types_de_donnees_2.png" width="850" />
 
 .leg-fig[Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)]
 ]
@@ -527,7 +529,7 @@ Il s'agit d'une variable **qualitative nominale**.
 .center[
 Le choix des représentations cartographiques se fait en fonction de la **nature de la donnée** à représenter et le **type d'implantation** de **l'objet géographique** concerné par la représentation. 
 
-<img src="figures/de-la-donnee-a-la-carte.png" width="650" />
+<img src="figures/donnee_carte.png" width="650" />
 
 .leg-fig[Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)]
 ]
@@ -675,7 +677,7 @@ Elles permettent de retranscrire visuellement des **différences** et une **hié
 
 .pull-left[
 <img src="figures/VV_valeur.png" width="470" />
-<img src="figures/VV_intensité.png" width="470" />
+<img src="figures/VV_intensite.png" width="470" />
 <img src="figures/VV_harmonique.png" width="470" />
 
 ]
@@ -791,7 +793,7 @@ Exprime la **différence** entre les modalités
 **Qualitative ORDINALE**
 
 <img src="figures/VV_valeur.png" width="380" />   
-<img src="figures/VV_intensité.png" width="380" />    
+<img src="figures/VV_intensite.png" width="380" />    
 <img src="figures/VV_texture_ordre.png" width="380" />   
 <img src="figures/VV_taille_ordre.png" width="380" />   
 
