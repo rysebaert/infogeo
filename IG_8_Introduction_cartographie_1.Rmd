@@ -44,12 +44,12 @@ style_duo_accent(
 )
 ```
 <br><br><br><br><br><br><br>
-# Cartographie ? 
+# Cartographie thématique ? 
 
 ---
 ## Deux grandes catégories de cartes
 
-Il existe une **multitude de réalisations cartographiques** : *carte météo, géologique, de végétation, climatique, touristique, d'inventaire, routière, animée, interactive*.... **Deux grandes catégories se dégagent** :
+Il existe une **multitude de constructions cartographiques** : *cartes météo, géologique, de végétation, climatique, touristique, d'inventaire, routière, animée, interactive*.... **Deux grandes catégories se dégagent** :
 
 .pull-left[
 ### Cartes topographiques
@@ -64,15 +64,17 @@ Il existe une **multitude de réalisations cartographiques** : *carte météo, g
 ---
 ## La cartographie
 
-**La cartographie est une discipline** (composante de la géomatique) qui a pour objectif la construction de cartes. c'est à la fois une discipline  **scientifique**, **technique** et **artistique**.
+**La cartographie est une discipline**, composante de la géomatique, qui rassemble les opérations ayant pour objet l'élaboration, la rédaction et l'édition de cartes. Elle repose sur des bases  **scientifiques**, **techniques** et **artistiques**.
 
 .pull-left[
 ### Une science 
-Les **bases sont mathématiques** (Système de référence et projection). L’enjeu est la **précision et la fiabilité**.    
+Les **bases sont mathématiques** (systèmes géodésiques de référence et projections). 
+
+La chaîne de traitement qu'elle mobilise en amont nécessite **précision et fiabilité**.    
 
 La représentation cartographique est régie par des **règles de sémiologie graphique** et un **socle méthodologique fort**. 
 
-Des recherches sont effectuées en cartographie (efficacité communicationnelle, cartographie animée, optimisation de la représentation des flux).
+L'objet de la carte donne lieu à de nombreuses recherches : efficacité communicationnelle, cartographie animée, optimisation de la représentation des flux...
 
 ]
 
@@ -84,11 +86,11 @@ Des recherches sont effectuées en cartographie (efficacité communicationnelle,
 
 ## La cartographie
 
-**La cartographie est une discipline** (composante de la géomatique) qui a pour objectif la construction de cartes. c'est à la fois une discipline  **scientifique**, **technique** et **artistique**.
+**La cartographie est une discipline**, composante de la géomatique, qui rassemble les opérations ayant pour objet l'élaboration, la rédaction et l'édition de cartes. Elle repose sur des bases  **scientifiques**, **techniques** et **artistiques**.
 
 .pull-left[
 ### Une technique
-Sa maitrise repose sur l'acquisition de données, la préparation et le traitement de données, **et la maîtrise de logiciels**
+Sa maîtrise repose sur l'acquisition de données, la préparation et le traitement de données, et la mobilisation de **logiciels** (tableurs, SIG, cartographie thématique, voire construction et requête de bases de données spatiales).
 spécialisés... 
 ]
 
@@ -102,18 +104,18 @@ spécialisés...
 
 ## La cartographie
 
-**La cartographie est une discipline** (composante de la géomatique) qui a pour objectif la construction de cartes. c'est à la fois une discipline  **scientifique**, **technique** et **artistique**.
+**La cartographie est une discipline**, composante de la géomatique, qui rassemble les opérations ayant pour objet l'élaboration, la rédaction et l'édition de cartes. Elle repose sur des bases  **scientifiques**, **techniques** et **artistiques**.
 
 .pull-left[
 ### Un art  
 
-Recherche d'**esthétisme**, d'une **"touche graphique"**.
+Recherche d'**esthétisme**, de la **"touche graphique"** et d'une certaine **mise en perspective** de phénomènes spatialisés.
 
 Comme pour tout objet de communication, le graphisme d'une carte à un impact sur la transmission du message.
 
 <br><br><br>
 .leg-fig[
-Frontière États-Unis / Mexique : une fracture humaine et économique ([Rekacewicz, 2009](https://www.monde-diplomatique.fr/cartes/maquiladoras)) >>
+Frontière États-Unis / Mexique : une fracture humaine et économique (Source : [Rekacewicz, 2009](https://www.monde-diplomatique.fr/cartes/maquiladoras)) >>
 
 ]
 ]
@@ -125,19 +127,19 @@ Frontière États-Unis / Mexique : une fracture humaine et économique ([Rekacew
 
 ## La cartographie
 
-**La cartographie est une discipline** (composante de la géomatique) qui a pour objectif la construction de cartes. c'est à la fois une discipline  **scientifique**, **technique** et **artistique**.
+**La cartographie est une discipline**, composante de la géomatique, qui rassemble les opérations ayant pour objet l'élaboration, la rédaction et l'édition de cartes. Elle repose sur des bases  **scientifiques**, **techniques** et **artistiques**.
 
 .pull-left[
 ### Un art  
 
-Recherche d'**esthétisme**, d'une **"touche graphique"**.
+Recherche d'**esthétisme**, de la **"touche graphique"** et d'une certaine **mise en perspective** de phénomènes spatialisés.
 
 Comme pour tout objet de communication, le graphisme d'une carte à un impact sur la transmission du message.
 
 <br><br><br>
 .leg-fig[
-War Business ([Lambert, Zainin, Mad Maps, 2019](http://www.cartolycee.net/spip.php?article152)) >>
-
+War Business 
+(Source : [Lambert, Zainin, Mad Maps, 2019](http://www.cartolycee.net/spip.php?article152)) >>
 ]
 ]
 
@@ -154,7 +156,7 @@ On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/prese
 - La carte **performative**, qui vise à faire réagir, de propagande, rhétorique (vision *post-moderniste*, B. Harley). 
 <img src="figures/Bunge_3.png" width="550" />
 .leg-fig[
-Bunge W., Bordessa R., 1975, Region of Rat-Bitten Babies, the Canadian Alternative
+Region of Rat-Bitten Babies (Source : Bunge W., Bordessa R., 1975, the Canadian Alternative)
 ]
 ]
 
@@ -163,7 +165,7 @@ Bunge W., Bordessa R., 1975, Region of Rat-Bitten Babies, the Canadian Alternati
 
 <img src="figures/Bunge_1.png" width="650" />
 .leg-fig[
-<p>Bunge W., 1971, Geography of Revolution</p>
+<p>Geography of Revolution (Source : Bunge W., 1971)</p>
 Pour en savoir plus, allez [ici](https://jacket2.org/commentary/william-bunge-dgei-radical-cartography) 
 ]
 ]
@@ -185,11 +187,11 @@ On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/prese
 .pull-right[
 .center[
 <img src="figures/Snow-cholera-map.JPG" width="700" />
- .leg-fig[Gilbert W, 1958, Adaptation de la carte de John Snow sur l'épidémie de choléra à Londres en 1854
+ .leg-fig[Adaptation de la carte de John Snow sur l'épidémie de choléra à Londres en 1854 (Source : Gilbert W, 1958)
 ]]
 .medium[
-<br><br><br>
-<< Tobler 1993, [Three presentations of geographical analysis and modeling, Technical Report](http://www.lukatela.com/hrvoje/papers/tobler93.html)
+<br><br>
+<< Three presentations of geographical analysis and modeling (Source : [Tobler, 1993](http://www.lukatela.com/hrvoje/papers/tobler93.html))
 ]]
 
 ---
@@ -212,9 +214,7 @@ On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/prese
 <br><br><br><br><br>
 <img src="figures/points_noirs1.PNG" width="700" />
 .medium[
-Cartographie des points noirs et des tronçons à aménager de façon prioritaire
-
-([Fédération des Usagers de la Bicyclette, 2019, 18 3000 contributions](https://carto.parlons-velo.fr/))
+Cartographie des points noirs et des tronçons à aménager de façon prioritaire (18 300 contributions). Source : [Fédération des Usagers de la Bicyclette, 2019](https://carto.parlons-velo.fr/)
 ]
 ]
 ]
@@ -228,13 +228,17 @@ On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/prese
 
 - La carte comme **outil de visualisation de son propre territoire et de navigation**, adaptée et centrée sur sa position actuelle (paradigme de l'*égo-cartographie*) 
 
+<br><br><br><br><br><br><br><br><br>
+.leg-fig[
+Google Timeline, votre mobilité restituée par Google depuis... 2009 ! >>>
+]
 ]
 
 .pull-right[
-<br><br><br><br><br>
 
 .center[
-<img src="figures/google_maps.jpg" width="700" />
+<img src="figures/google_maps2.PNG" width="700" />
+<img src="figures/google_maps.PNG" width="700" />
 ]
 ]
 
@@ -255,7 +259,7 @@ On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/prese
 <br><br><br><br><br>
 <img src="figures/air_france_1937.jpg" width="700" />
 .leg-fig[
-Boucher, L., 1937, affiche publicitaire Air France
+Affiche publicitaire Air France (Source : Boucher, 1937)
 ]]]
 
 ---
@@ -278,7 +282,7 @@ On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/prese
 <br><br><br><br><br>
 <img src="figures/macronie.jfif" width="700" />
 .leg-fig[
-Grandin J., 2018
+Source : [Grandin, 2018](https://twitter.com/julesgrandin/status/987316047874273282)
 ]]]
 
 
@@ -309,7 +313,7 @@ Cela influence directement l'**emprise géographique** et la **projection utilis
 .center[
 <iframe width="840" height="472.5" src="https://www.youtube.com/embed/RDwn5Qzq6Fc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-.leg-fig[Méfiez-vous des cartes, pas des migrants (Lambert, Bahoken, 2018)]
+.leg-fig[Méfiez-vous des cartes, pas des migrants (Source : Lambert, Bahoken, 2018)]
 ]
 
 ---
@@ -328,9 +332,9 @@ Un document graphique basé sur la **communication par les signes**. Elle relèv
 .right-column[
 <img src="figures/rideau_fer.png" width="800" />
 .leg-fig[
-[Lambert N., 2021](https://neocarto.hypotheses.org/3239)]
+Source : [Lambert, 2021](https://neocarto.hypotheses.org/3239)]
 
-Nécessité d'**identifier les moyens graphiques** qui permettent de passer d'une **information statistique spatialisée** à une **représentation graphique efficace**
+Nécessité d'**identifier les moyens graphiques** qui permettent de passer d'une **information statistique spatialisée** à une **représentation graphique efficace**.
 ]
 
 ---
@@ -342,13 +346,15 @@ Nécessité d'**identifier les moyens graphiques** qui permettent de passer d'un
 
 ## Les fondamentaux
 
-L’efficacité d'une carte thématique réside dans le **temps nécessaire** pour mémoriser correctement l’information qui veut être transmise. Pour cela, il ne faut jamais oublier : 
+<br><br><br>
+
+L’efficacité graphique d'une carte thématique peut s'évaluer par le **temps nécessaire** pour mémoriser correctement l’information qui veut être transmise. Pour cela, il ne faut jamais oublier : 
   
-1- L’**objectif** de la carte et le **public visé**
+1 - L’**objectif** de la carte et le **public visé**
 
-2- Les **codes** et **conventions** de la cartographie
+2 - Les **codes** et **conventions** de la cartographie
 
-3- Les règles de la **sémiologie graphique**.
+3 - Les règles de la **sémiologie graphique**
 
 
 ---
@@ -378,7 +384,7 @@ L'usage de la projection doit être maîtrisé. Il est parfois soumise à des no
 .pull-right[
 <img src="figures/carte_lambert.png" width="570" />
  .leg-fig[
- [Lambert, N, Des morts par milliers aux portes de l'Europe, 2015](https://neocarto.hypotheses.org/1370)
+ Des morts par milliers aux portes de l'Europe (Source : [Lambert, 2015](https://neocarto.hypotheses.org/1370))
  ]
  ]
 
@@ -404,7 +410,7 @@ Le **langage cartographique** a été théorisé par **Jacques Bertin** (1967).
 ## Sémiologie graphique : implantation et variable visuelle
 
 .pull-left[
-**L'implantation** est la transcription graphique - par des points, des lignes ou des polygones - d'un objet géographique.
+**L'implantation** est la transcription graphique d'un objet géographique (points, lignes ou polygones).
 
 Trois types d'implantation existent : **ponctuel**, **linéaire** et **zonale** (surfacique).
 
@@ -453,51 +459,9 @@ Elles possèdent des propriétés différentes qui permettent de **différencier
 
 .leg-fig[Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)]
 ]
----
-
-## Des relations différentes selon le type de données
-
-.center[
-<img src="figures/categories-de-VV.png" width="800" />
-
-.leg-fig[Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)
-]
-]
-
 
 ---
-
-## Données quantitatives et qualitatives
-
-.pull-left[
-Une variable est **quantitative** lorsque **ses valeurs sont des nombres** qui peuvent être **ordonnés** et dont la **moyenne a un sens**.
-
-.medium[
-Elle est **quantitative absolue** lorsqu'il s'agit d'une **variable de stock** qui exprime des quantités concrètes : la **somme a un sens**.
-> Une surface, une population, une richesse
-
-Elle est **quantitative relative** lorsqu'il s'agit d'une **variable de taux** qui exprime un  rapport entre deux quantités ou un indice : **la somme n'a aucune signification**.
-> Densité de population, un indice de développement humain...  
-
-]
-]
-
-.pull-right[
-Une variable est dite **qualitative** lorsque **ses valeurs sont définies par des modalités** (catégories, niveaux) et la **moyenne n'a aucune signification**.
-
-.medium[
-Elle est **qualitative ordinale** lorsque ses modalités peuvent être **hiérarchisées**, suivant un ordre logique : 
-> [*zonage communale en aires urbaines de 2010*](https://www.insee.fr/fr/statistiques/1281191)
-
-Il s'agit d'une variable **qualitative nominale**.
-> Langue officielle des pays du monde, zones climatiques... 
-
-]
-]
-
----
-
-## Comment caractériser ses données ?
+## Les types de données qui caractérisent les objets géographiques
 
 .center[
 <img src="figures/types_de_donnees_1.png" width="1000" />
@@ -506,7 +470,17 @@ Il s'agit d'une variable **qualitative nominale**.
 
 ---
 
-## Comment caractériser ses données ?
+## Le lien entre données statistiques et variables visuelles
+
+.center[
+<img src="figures/categories-de-VV.png" width="800" />
+
+.leg-fig[Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)
+]
+]
+
+---
+## Le lien entre données statistiques et variables visuelles
 
 .center[
 <img src="figures/arbre_type_data.png" width="720" />
@@ -524,12 +498,11 @@ Il s'agit d'une variable **qualitative nominale**.
 
 ---
 
-## Choisir la bonne variable visuelle
+## Données, variables visuelles et implantation
 
 .center[
-Le choix des représentations cartographiques se fait en fonction de la **nature de la donnée** à représenter et le **type d'implantation** de **l'objet géographique** concerné par la représentation. 
 
-<img src="figures/donnee_carte.png" width="650" />
+<img src="figures/donnee_carte.png" width="720" />
 
 .leg-fig[Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)]
 ]
@@ -560,10 +533,10 @@ C'est la seule variable visuelle qui permet de retranscrire correctement ***des 
 
 .center[
 
-<img src="figures/taille_prop.png" height="480" />
+<img src="figures/nuclear_full.png" height="480" />
 
 .leg-fig[
-Source : [ESPON, 2017](https://www.espon.eu/topics-policy/publications/maps-month/shaping-new-policies-specific-types-territories-europe-islands#prettyPhoto)]
+Source : [Bill Rankin, 2007](http://www.radicalcartography.net/)]
 ]
 ]
 
@@ -574,7 +547,9 @@ Source : [ESPON, 2017](https://www.espon.eu/topics-policy/publications/maps-mont
 .center[
 <img src="figures/taille_line.png" height="480" />
 
-.leg-fig[Les émigrants du Globe (Minard, 1858)]
+.leg-fig[
+Source : Les émigrants du Globe (Minard, 1858)
+]
 ]
 
 ---
@@ -583,13 +558,20 @@ Source : [ESPON, 2017](https://www.espon.eu/topics-policy/publications/maps-mont
 
 .center[
 .pull-left[
-<img src="figures/commerce.jpeg" height="480" />
+<img src="figures/commerce.jpeg" height="420" />
+.leg-fig[
+Source : [Atlas de l'espace mondial contemporain](https://espace-mondial-atlas.sciencespo.fr/fr/), Sciences Po, Atelier de cartographie, 2018]
 ]
 
+
 .pull-right[
-<img src="figures/navette.png" height="480" />
+<img src="figures/navette.png" height="420" />
+.leg-fig[
+Source : [Cartothèque de la région Hauts-de-France, 2021](https://cartes.hautsdefrance.fr/)
 ]
 ]
+]
+
 ---
 
 ## Données quantitatives absolues - *implantation surfacique*
@@ -605,7 +587,9 @@ Les logiciels de cartographie placent généralement le figuré ponctuel sur le 
 .center[
 <img src="figures/pop_brasil.png" height="420" />
 
-.leg-fig[La population brésilienne par municipio en 2010 ([Théry, 2011](https://braises.hypotheses.org/76))]
+.leg-fig[
+La population brésilienne par municipio en 2010,  (Source : [Théry, 2011](https://braises.hypotheses.org/76))
+]
 ]
 ]
 
@@ -615,54 +599,82 @@ Les logiciels de cartographie placent généralement le figuré ponctuel sur le 
 
 .center[
 <img src="figures/vatican.png" height="480"  />
+<br>
+.leg-fig[
+Source : [L'enjeu mondial](https://www.sciencespo.fr/enjeumondial/fr/media/diplomatie-du-vatican-1978-2017.html), Sciences Po, 2017
 ]
-
+]
 ---
 
 ## Données quantitatives absolues - *variante : carte en proportion*
 
 .center[ 
 <img src="figures/prop.png" height="480"/>
+.leg-fig[
+Source : [HowMuch.net](https://twitter.com/howmuch_net/status/702133591241834496), 2016
+]
 ]
 
 ---
 
 ## Données quantitatives absolues - *variante : diagramme et camembert*
 
+.center[
 .pull-left[
-<img src="figures/camembert.png" height="480" />
+<img src="figures/camembert.png" height="420" />
+.leg-fig[
+Source : Carte figurative des viandes de boucherie, Minard, 1858
+]
 ]
 
 .pull-right[
-<img src="figures/newzealand.gif" height="480"  />
+<img src="figures/tour_controle.png" height="420"  />
+.leg-fig[
+Source : [Faire des cartes avec R, la frontière États-Unis - Mexique](https://riatelab.github.io/mexusaborder), Lambert, Ysebaert, 2019
+]
 ]   
+]
 
 ---
 
 ## Données quantitatives absolues - *variante : cartogramme / anamorphose*
 
+.center[
 .pull-left[
 
-<img src="figures/allo_afrique.jpg" width="435" />
+<img src="figures/allo_afrique.jpg" height="420" />
+.leg-fig[
+Source : [Courrier International, 2019](https://www.courrierinternational.com/article/2013/10/10/allo-l-afrique)
+]
 ]
 
 .pull-right[
-<img src="figures/anamorphose.jpg" width="420" />
+<img src="figures/anamorphose.jpg" height="420" />
+.leg-fig[
+Source : [Agence France Presse, 2017](https://twitter.com/afpfr/status/856951951656988672)
 ]
-
+]
+]
 
 ---
 
 ## Données quantitatives absolues - *variante : carte en point*
 
+.center[
 .pull-left[
-<img src="figures/dot_map.jpg" width="350" />
+<img src="figures/dot_map.jpg" height="480" />
+.leg-fig[
+Source : [Bill Rankin, 2009](http://www.radicalcartography.net/index.html?chicagodots)
+]
 ]
 
 .pull-right[
-<img src="figures/dot_map_2.jpg" width="370" />
+<img src="figures/dot_map_2.png" height="480" />
+.leg-fig[
+Source : [Bill Rankin, 2013](http://www.radicalcartography.net/index.html?france)
 ]
-
+]
+]
 
 ---
 <br><br><br><br><br><br><br>
@@ -672,8 +684,8 @@ Les logiciels de cartographie placent généralement le figuré ponctuel sur le 
 
 ## Représenter des données quantitatives relatives
 
-Les variables visuelles adaptées à la représentation de données quantitatives relatives sont la **VALEUR**, la **COULEUR** (intensité/dégradé), le **GRAIN** ou la **TEXTURE-STRUCTURE**
-Elles permettent de retranscrire visuellement des **différences** et une **hiérarchie**.
+Les variables visuelles adaptées à la représentation de données quantitatives relatives sont la **VALEUR**, la **COULEUR** (intensité/dégradé), le **GRAIN** ou la **TEXTURE-STRUCTURE**.
+Elles retranscrivent visuellement **différences** et **hiérarchies**.
 
 .pull-left[
 <img src="figures/VV_valeur.png" width="470" />
@@ -696,9 +708,9 @@ Elles permettent de retranscrire visuellement des **différences** et une **hié
 
 .pull-left[
 
-Un préalable à la représentation des données quantitatives relatives consiste à **discrétiser la série statistique en plusieurs classes**.
+Un préalable à la représentation consiste à convertir la variable aux caractéristiques continues en variable discrète : **discrétisation**.
 
-Il existe plusieurs **méthodes de discrétisation**. Leur choix dépend :
+Plusieurs méthodes existent. Leur choix dépend :
 
 - de la **forme de la distribution statistique**
 - des **valeurs centrales** (moyenne, médiane) 
@@ -724,7 +736,7 @@ Ce choix à un **impact important** sur l'information représentée...
 <img src="figures/quanti_rel_surf.jpg" height="480" />
 
 .leg-fig[
-Potentiel d'incendie ([USGS, 2013](https://www.usgs.gov/ecosystems/lcsp/fire-danger-forecast/legacy-fire-danger-forecast-products))
+Potentiel d'incendie (Source : [USGS, 2013](https://www.usgs.gov/ecosystems/lcsp/fire-danger-forecast/legacy-fire-danger-forecast-products))
 ]
 ]
 
@@ -741,12 +753,21 @@ Potentiel d'incendie ([USGS, 2013](https://www.usgs.gov/ecosystems/lcsp/fire-dan
 
 ## Données quantitatives relatives - *implantation surfacique*
 
+.center[
+
 .pull-left[
 <img src="figures/brexit.jpg" height="480"  />
+.leg-fig[
+Source : [New York Times, 2016](https://www.nytimes.com/interactive/2016/06/24/world/europe/how-britain-voted-brexit-referendum.html)
+]
 ]
 
 .pull-right[
 <img src="figures/4G.jpg" height="480"  />
+.leg-fig[
+Source : [Chroniques Cartographiques, 2015](https://www.chroniques-cartographiques.fr/2015/08/carte-de-france-de-la-couverture-mobile-4g.html)
+]
+]
 ]
 
 ---
@@ -754,7 +775,7 @@ Potentiel d'incendie ([USGS, 2013](https://www.usgs.gov/ecosystems/lcsp/fire-dan
 ## Données quantitatives relatives - *implantation ponctuelle*
 
 .center[
-<img src="figures/quanti_point_relatif.jpg" height="480" />
+<img src="figures/transac_montreuil.png" height="520" />
 ]
 
 ---
@@ -763,6 +784,9 @@ Potentiel d'incendie ([USGS, 2013](https://www.usgs.gov/ecosystems/lcsp/fire-dan
 
 .center[
 <img src="figures/quanti_rel_3.png" height="480" />
+.leg-fig[
+High Speed rail in Europe, 2016 (Source : [Wikipedia](https://en.wikipedia.org/wiki/High-speed_rail_in_Europe))
+]
 ]
 
 
@@ -806,7 +830,8 @@ Exprime l'**ordre** et la **hiérarchie** entre les modalités.
 ## Donnée qualitative nominale - *implantation ponctuelle*
 
 .center[
-<img src="figures/quali_point_nominale.png" height="480"/>
+<img src="figures/csp_ac_montreuil.png" height="370"/>
+<img src="figures/csp_ve_montreuil.png" height="370"/>
 
 ]
 
@@ -822,7 +847,10 @@ Exprime l'**ordre** et la **hiérarchie** entre les modalités.
 ## Donnée qualitative nominale - *implantation ponctuelle*
 
 .center[
-<img src="figures/carte_symbol.gif" height="480" />
+<img src="figures/carte_symbol.gif" height="420" />
+.leg-fig[
+How Hollywood destroyed America (Source : [theconcourse.deadspin.com, 2014](https://deadspin.com/map-how-hollywood-has-destroyed-america-1542969906))
+]
 ]
 
 ---
@@ -855,6 +883,9 @@ Exprime l'**ordre** et la **hiérarchie** entre les modalités.
 
 .center[
 <img src="figures/quali_point_ordinale_2.jpg" height="480"/>
+.leg-fig[
+Source : [Ministère de la transition écologique et solidaire](http://www.donnees.statistiques.developpement-durable.gouv.fr/lesessentiels/essentiels/nitrates-dce-cours-eau.html)
+]
 ]
 
 ---
@@ -863,13 +894,20 @@ Exprime l'**ordre** et la **hiérarchie** entre les modalités.
 
 .center[
 <img src="figures/quali_line_ordinale.jpg" height="480" />
+.leg-fig[
+Source : [Ministère de la transition écologique et solidaire](http://www.donnees.statistiques.developpement-durable.gouv.fr/lesessentiels/essentiels/nitrates-dce-cours-eau.html)
+]
+]
 ]
 
 ---
 
 ## Donnée qualitative ordinale - *implantation linéaire*
 .center[
-<img src="figures/minard.JPEG" height="480" />
+<img src="figures/regnier_1882.JPEG" height="420" />
+.leg-fig[
+Source : Regnier et Dourdet, 1882 
+]
 ]
 
 ---
@@ -884,7 +922,7 @@ Exprime l'**ordre** et la **hiérarchie** entre les modalités.
 ## Donnée qualitative ordinale - *implantation surfacique*
 
 .center[
-<img src="figures/conflict.png" height="480"/>
+<img src="figures/conflict.png" height="550"/>
 ]
 
 ---
@@ -917,7 +955,7 @@ Exprime l'**ordre** et la **hiérarchie** entre les modalités.
 ]
 
 .pull-right[
-<img src="figures/map_failed_6.jpg" width="445" />
+<img src="figures/map_failed_6.jpg" width="450" />
 ]
 
 ---
@@ -933,7 +971,7 @@ Exprime l'**ordre** et la **hiérarchie** entre les modalités.
 ## Cherchez l'erreur...
 
 .center[
-<img src="figures/map_failed_7.jpg" height="480" />
+<img src="figures/map_failed_7.jpg" height="500" />
 ]
 
 ---
@@ -941,7 +979,7 @@ Exprime l'**ordre** et la **hiérarchie** entre les modalités.
 ## Cherchez l'erreur...
 
 .center[
-<img src="figures/map_failed_5.jpg" width="700" />
+<img src="figures/map_failed_5.jpg" height="500"/>
 ]
 
 ---
@@ -949,7 +987,7 @@ Exprime l'**ordre** et la **hiérarchie** entre les modalités.
 ## Cherchez l'erreur...
 
 .center[
-<img src="figures/map_failed_8.jpg" width="500" />
+<img src="figures/map_failed_8.jpg" height="500"/>
 ]
 
 ---
@@ -957,7 +995,7 @@ Exprime l'**ordre** et la **hiérarchie** entre les modalités.
 ## Cherchez l'erreur...
 
 .center[
-<img src="figures/map_failed_9.jpg" width="640" />>
+<img src="figures/map_failed_9.jpg" height="500"/>>
 ]
 
 ---
