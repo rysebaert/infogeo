@@ -1,0 +1,412 @@
+---
+title: "Introduction à la cartographie - Séance 3"
+subtitle: "Représenter les données qualitatives<br>Cartographie thématique avec Magrit"
+author:  
+- "Ronan Ysebaert, Maxime Guinepain"
+date: "Dernière mise à jour: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      highlightSpans: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, crayon.enabled = TRUE)
+knitr::opts_chunk$set(cache = TRUE,
+                      fig.align='center',
+                      message = FALSE,
+                      warning = TRUE)
+# install.packages("devtools")
+# devtools::install_github("gadenbuie/countdown")
+# devtools::install_github("mitchelloharawild/icons")
+library(countdown)
+library(icons)
+#download_fontawesome()
+```
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#1d3352",
+  secondary_color = "#383838",
+  inverse_header_color = "#ffae00"
+)
+```
+
+
+# 1. Les données qualitatives
+
+Elles correspondent aux variables dont les valeurs ne sont pas numériques.
+
+Par exemple : votre *âge*, votre *taille* sont des variables quantitatives ; votre *couleur de cheveux*, des données qualitatives.
+
+--
+
+Elles sont de deux types :
+
+* Nominales
+* Ordinales
+
+---
+
+# Nominales vs Ordinales
+
+.pull-left[
+### Nominales :
+
+Les valeurs possibles n'ont pas d'ordre
+
+Par exemple : rouge, bleu, vert, jaune, violet...
+
+Ou encore : langues officielles des pays européens
+]
+
+.pull-right[
+### Ordinales :
+
+**L'ordre des valeurs possibles a un sens**
+
+Par exemple : très peu, peu, moyen, beaucoup
+
+Ou encore : hiérarchie urbaine, des centres au périurbain
+]
+
+---
+
+## Un exemple de quali nominal
+
+<img src="figures/exemple_quali_nominal.png" height="450px">
+
+---
+
+## Un exemple de quali ordinal
+
+<img src="figures/exemple_quali_ordinal.png" height="450px">
+
+---
+
+.pull-left[
+### Nominales :
+
+**Les valeurs possibes n'ont pas d'ordre**
+
+La représentation cartographique doit permettre de bien les différencier.
+
+*Attention* : il faut que les formes/propriétés graphiques des symboles soient bien distinctes,
+et éviter les ambiguïtés.
+Mais trop de symboles rendent la lecture difficile.
+]
+
+.pull-right[
+### Ordinales :
+
+**L'ordre des valeurs possibles a un sens**
+
+La représentation graphique doit permettre de rendre compte de l'ordre ou du classement utilisé.
+]
+
+---
+
+## Attention avec le quali ordinal !
+
+.pull-left[
+### Des symboles ambigus :
+
+![](figures/exemple_quali_nominal_ambigu.png)
+]
+
+.pull-right[
+### Des symboles illisibles :
+
+<img src="figures/exemple_quali_nominal_illisible.png" height="300px">
+]
+
+---
+
+## En termes de variables visuelles :
+
+.pull-left[
+### Quali nominal :
+
+* Différence : **oui**
+* Hiérarchie : non
+* Proportionnalité : non
+
+Il faut des variables visuelles qui retranscrivent la **similarité** et la **différence**.
+
+]
+
+.pull-right[
+### Quali ordinal :
+
+* Différence : **oui**
+* Hiérarchie : **oui**
+* Proportionnalité : non
+
+Il faut des variables visuelles qui retranscrivent un **ordre**.
+]
+
+---
+
+# 2. Représenter les données qualitatives nominales
+
+![](figures/pommes.png)
+
+---
+
+## 2.1 La couleur
+
+La variable visuelle de la couleur est très utilisée en cartographie, car :
+
+* elle permet de **différencier** facilement des objets ;
+* elle s'utilise aussi bien pour des points, des lignes que des surfaces (implantations ponctuelles, linéaires, zonales) ;
+* elle peut traduire des **relations différencielles qualitatives** et donc illustrer des *typologies*
+
+![](figures/carrés_couleurs.png)
+
+---
+
+## 2.2 La forme
+
+La variable visuelle forme consiste à faire varier les contours géométriques d'un figuré. Elle inclut les *symboles*.
+
+* elle ne permet que de **différencier** des objets
+
+.pull-left[
+### Formes  simples
+
+<img src="figures/formes_simples.png" height="300px">
+]
+
+.pull-right[
+### Symboles
+
+<img src="figures/formes_symboles.png" height="300px">
+]
+
+---
+
+## 2.3 L'orientation
+
+La variable visuelle orientation correspond au procédé qui consiste à faire varier l'angle d'un figuré graphique avec l'horizontale.
+
+* elle permet de rendree compte de **différences**
+* bien qu'elle soit exprimée en degrés (de 0° à 359°), elle ne peut exprimer que des différences
+  (pas d'usage pour une variable quanti ou quali ordinale)
+* elle est quasi-uniquement utilisée pour les **implantations zonales**
+* elle est un peu passée de mode, bien qu'elle soit utile pour les sorties monochromes...
+
+<img src="figures/var_visu_orientation.png" height="200px">
+
+---
+
+# 3. Représenterles donnés qualitatives ordinales
+
+![](figures/podium.png)
+
+---
+
+## 3.1 Valeurs, camaïeux ou couleurs ordonnées
+
+![](figures/semio_a_plats.png)
+
+---
+
+## 3.2 La texture
+
+La variable visuelle *texture* combine des éléments graphiques pour construire une surface.
+
+* elle peut traduire des **différences**, des **équivalences** ou un **ordre**.
+* elle est surtout utilisée en **implantation zonale**
+
+.pull-left[
+### Différence nominale
+
+![](figures/var_visu_texture_nominal.png)
+]
+
+.pull-right[
+### Différence ordinale
+
+![](figures/var_visu_texture_ordinal.png)
+]
+
+---
+
+# 4. Les couleurs en cartographie des données qualitatives
+
+---
+
+## Les couleurs qui évoquent la réalité
+
+.pull-left[
+<img src="figures/couleurs_réalité_france.png" height="450px">
+]
+
+.pull-right[
+<img src="figures/couleurs_réalité_arcachon.png">
+]
+
+---
+
+## Les couleurs historiquement associées à des thématiques
+
+<img src="figures/couleurs_théma_industrie.png" height="450px">
+
+---
+
+<img src="figures/couleurs_théma_onu.png" height="500px">
+
+---
+
+## Les couleurs conventionnelles
+
+.pull-left[
+<img src="figures/couleurs_conv_géol.png" height="450px">
+]
+
+.pull-right[
+<img src="figures/couleurs_conv_géol_légende.png">
+]
+
+---
+
+## Les couleurs opposées
+
+.center[
+<img src="figures/couleurs_opposées.png" height="400px">
+]
+
+---
+
+### Opposition des couleurs chaudes et froides
+<img src="figures/couleurs_opposées_schengen.png" height="450px">
+
+---
+
+# 5. Représenter les données qualitatives avec Magrit
+
+.center[
+![](figures/magrit_logo.png)
+]
+
+<big>
+Votre objectif : représenter la localisation de votre terrain d'études au sein de la métropole du Grand Paris.
+</big>
+
+---
+
+## Les étapes
+
+1. **Consultation** des données disponibles, **import** des données complémentaires
+2. **Réalisation** de la carte qualitative
+3. **Choix des couleurs** (ordinal ou nominal ?)
+4. **Mise en page**
+5. **Sauvegarde** et export
+
+---
+
+.left-column[
+
+## 5.1 Consultation et import
+
+*Consultez les métadonnées, ouvrez les fichiers de données dans QGis, regardez la table attributaire...*
+
+* quel indicateur ?
+* quel producteur de données ?
+* quelle date de production de l'indicateur ?
+* quel code utiliser pour la cartographie ?
+]
+
+.right-column[
+![](figures/magrit_quali_01.png)
+]
+
+---
+
+.left-column[
+### Identification des codes]
+
+.right-column[
+![](figures/magrit_quali_02.png)
+]
+
+---
+
+.left-column[
+## 5.2 Réalisation
+
+### Choix des options adéquates
+]
+
+.right-column[
+![](figures/magrit_quali_03.png)
+]
+
+---
+
+.left-column[
+## 5.3 Choix des couleurs
+
+* quelle couleur pour quelle modalité ?
+* ordinal ou nominal ?
+* quel ordre pour les modalités en légende ?
+]
+
+.right-column[
+![](figures/magrit_quali_04.png)
+]
+
+---
+
+.left-column[
+### Pour faire vos propres couleurs...
+
+<img src="figures/precaution.png" width="100px">
+
+**Le rendu écran diffère toujours du rendu papier.**
+
+En conditions réelles, il est utile de faire des tests d'impression ou d'opter pour des palettes réfléchies par des spécialistes.
+]
+
+.right-column[
+![](figures/choix_couleur.png)
+]
+
+---
+
+## 5.4 Mise en page
+
+* N'oubliez pas tous les éléments d'**habillage** (sources, date, échelle, titre).
+  Veillez à la cohérence avec les cartes que vous avez produites précédemment.
+  
+* Améliorez le **style graphique** de votre carte : vous pouvez jouer sur la *superposition des couches géographiques*,
+  l'*épaisseur des lignes* administratives, ajouter des *couches d'habillage* pour aider à la localisation ou à la
+  problématisation de votre carte...
+  
+* Adaptez l'**emprise géographique** de votre carte pour améliorer sa *lisibilité* et la *clarté du message* que vous souhaitez transmettre.
+
+*Pour adapter l'emprise géographique dans Magrit, déverouiller la carte et zoomer.*
+
+---
+
+## 5.5 Sauvegarde et export
+
+* Sauvegarder le projet au format `.json` pour continuer votre travail sur un autre terminal.
+* Exporteer la carte au format `.png` pour l'incorporer dans le dossier (attention à éviter la pixellisation !)
+
+---
+
+<img src="figures/magrit_quali_final.png" height="500px">
+
