@@ -44,24 +44,32 @@ library(icons)
 
 ## L'information géographique
 
+.left-column[
+.right[
+<img src="figures/ig_calques.png" height="200px">
+]
+]
+
+.right-column[
+.big[
 "**Une information est dite géographique lorsqu'elle se rapporte à un ou plusieurs lieux de la surface terrestre**" (Beguin & Pumain, 2011).
 
 C'est une information **localisée**, **repérée** ou **géocodée**.
 
 Entre <span color="red" font-size="20pt">60 et 80%</span> de l'information que nous traitons possède une dimension géographique, selon S. Hahmann et D. Burghardt (2012, "<i>How much information is spatially georeferenced? Networks and cognition</i>).
-
-.right[
-<img src="figures/ig_calques.png" height="200px">
 ]
+]
+
+
 
 ---
 
-.left-column[
+.center[
 ## Les trois composantes de l'information géographique
 ]
 
-.right-column[
-```{r, echo = FALSE, out.width = "600px"}
+.center[
+```{r, echo = FALSE, out.width = "900px"}
 
 library(DiagrammeR)
 
@@ -93,19 +101,8 @@ grViz("digraph dot {
 
 ---
 
-.left-column[
-Le niveau sémantique de l'information géographique décrit un objet par sa **nature** et ses **propriétés**.
-Celles-ci constituent les **attributs** de l'objet : par exemple un numéro de parcelle cadastrale, le nom d'une
-route, d'une rivière ou d'une commune, les données du recensement, une photo, etc.
-Ce sont des données **alphanumériques**.
-
-.right[
-source : Afigeo
-]
-]
-
-.right-column[
-```{r, echo = FALSE, out.width = "600px"}
+.center[
+```{r, echo = FALSE, out.width = "900px", out.height="400px"}
 
 library(DiagrammeR)
 
@@ -135,12 +132,22 @@ grViz("digraph dot {
 ```
 ]
 
+Le niveau sémantique de l'information géographique décrit un objet par sa **nature** et ses **propriétés**.
+
+Celles-ci constituent les **attributs** de l'objet : par exemple un numéro de parcelle cadastrale, le nom d'une
+route, d'une rivière ou d'une commune, les données du recensement, une photo, etc.
+
+Ce sont des données **alphanumériques**.
+
+.right[
+source : Afigeo
+]
 
 
 ---
 
-.right-column[
-```{r, echo = FALSE, out.width = "600px"}
+.center[
+```{r, echo = FALSE, out.width = "900px"}
 
 library(DiagrammeR)
 
@@ -167,7 +174,7 @@ grViz("digraph dot {
   d3 [label = 'Niveau géométrique'];
   d4 [label = 'Niveau topologique'];
   
-  d5 [label = 'Tableaux', color=green, shape = rectangle]
+  d5 [label = 'Variables', color=green, shape = rectangle]
   d6 [label = 'Quantitatives absolues']
   d7 [label = 'Quantitatives relatives']
   d8 [label = 'Qualitatives ordinales']
@@ -188,19 +195,8 @@ grViz("digraph dot {
 
 ---
 
-.left-column[
-Le niveau géométrique de l'information géographique décrit la **forme** et la **position** d'un objet sur la Terre :
-par exemple, le tracé d'un réseau routier, les limites d'un maillage administratif, les pixels d'une image satellitaire...
-Celles-ci peuvent être exprimées par un système de coordonnées explicite : par une latitude et une longitude,
-par des coordonnées projetées par exemple en Lambert-93.
-
-.right[
-source : Afigeo
-]
-]
-
-.right-column[
-```{r, echo = FALSE, out.width = "600px"}
+.center[
+```{r, echo = FALSE, out.width = "900px", out.height="400px"}
 
 library(DiagrammeR)
 
@@ -230,21 +226,21 @@ grViz("digraph dot {
 ```
 ]
 
----
-
-.left-column[
 Le niveau géométrique de l'information géographique décrit la **forme** et la **position** d'un objet sur la Terre :
 par exemple, le tracé d'un réseau routier, les limites d'un maillage administratif, les pixels d'une image satellitaire...
+
 Celles-ci peuvent être exprimées par un système de coordonnées explicite : par une latitude et une longitude,
 par des coordonnées projetées par exemple en Lambert-93.
 
 .right[
 source : Afigeo
 ]
-]
 
-.right-column[
-```{r, echo = FALSE, out.width = "600px"}
+
+---
+
+.center[
+```{r, echo = FALSE, out.width = "900px"}
 
 library(DiagrammeR)
 
@@ -289,20 +285,8 @@ grViz("digraph dot {
 
 ---
 
-.left-column[
-Le niveau topologique de l'information géographique décrit les **relations éventuelles** des objets
-avec d'autres objets ou phénomènes, par exemple : la contiguïté entre deux communes, l'inclusion d'une
-parcelle dans une commune, etc.
-
-*Concrètement, cette partie de l'information est déduite du niveau géométrique (par les géotraitements).*
-
-.right[
-source : Afigeo
-]
-]
-
-.right-column[
-```{r, echo = FALSE, out.width = "600px"}
+.center[
+```{r, echo = FALSE, out.width = "900px", out.height="400px"}
 
 library(DiagrammeR)
 
@@ -332,6 +316,15 @@ grViz("digraph dot {
 ```
 ]
 
+Le niveau topologique de l'information géographique décrit les **relations éventuelles** des objets
+avec d'autres objets ou phénomènes, par exemple : la contiguïté entre deux communes, l'inclusion d'une
+parcelle dans une commune, etc.
+
+*Concrètement, cette partie de l'information est déduite du niveau géométrique (par les géotraitements).*
+
+.right[
+source : Afigeo
+]
 
 
 ---
@@ -379,33 +372,38 @@ grViz("digraph dot {
 
 ## Qu'est-ce qu'un SIG ?
 
+.big[
 .pull-left[
 En France, le terme de "**SIG**" a un sens large. Il désigne à la fois le logiciel et les données manipulées.
 ]
-
---
 
 .pull-right[
 ### Les grandes fonctions du SIG :
 
 * abstraire et saisir
+
 * gérer et stocker
+
 * analyser
+
 * représenter
 
 ...les données géographiques.
+]
 ]
 
 ---
 
 .left-column[
 ### Abstraire
-
-Les couches d'information superposées sont une manière de représenter la réalité.
+.big[
+Les couches d'information superposées sont une manière de représenter la réalité.]
 ]
 
 .right-column[
+.center[
 <img src="figures/sig_abstraire.png" height="450px">
+]
 ]
 
 ---
@@ -427,11 +425,17 @@ Par exemple, la numérisation ou digitalisation...
 ]
 
 .right-column[
+.big[
 * **des points** *(par exemple : une usine)*
+
 * **des lignes** *(par exemple : une route, une rivière)*
+
 * **des surfaces** *(par exemple : une commune, une zone protégée)*
+
 * **des images** *(par exemple : une photo aérienne, un modèle numérique de terrain)*
+
 * **des données statistiques** *(par exemple : des nombres d'habitant⋅es)*
+]
 ]
 
 ---
@@ -458,32 +462,40 @@ Par exemple, la numérisation ou digitalisation...
 
 ## La cartographie
 
-.center[
+.left-column[
+.right[
 Jacques Bertin <3 :
-
-"La graphique utilise les propriétés de l'image visuelle pour faire apparaître des relations
-de **différence**, d'**ordre** et de **proportionnalité** entre les données"
 
 <img src="figures/jacques.png" height="200px">
 ]
+]
 
----
+.right-column[
+.big[
+"La graphique utilise les propriétés de l'image visuelle pour faire apparaître des relations
+de **différence**, d'**ordre** et de **proportionnalité** entre les données"
+]
+]
 
+--
+
+
+
+.right-column[
 ### Les variables visuelles
 
-.center[
-<big>
+.big[
 *Les variables visuelles (ou rétiniennes) sont les moyens graphiques par lesquels on transcrit
 visuellement une information.*
+]
 
-<img src="figures/bertin_1.jpg" height="200px">
 ]
 
 ---
 
+.center[
 ### Déterminer la nature d'une variable
 
-.center[
 <img src="figures/natures_variables.png" height="450px">
 ]
 
@@ -494,9 +506,11 @@ visuellement une information.*
 ]
 
 .right-column[
+.big[
 * Le plus souvent en implantation **ponctuelle** ou **linéaire**
 * Traduit la **proportionnalité**
 * Données **quantitatives absolues** (= de stock)
+]
 
 *Exemples : cartes en proportion, cartes de flux, cartes en barres*
 
@@ -510,9 +524,11 @@ visuellement une information.*
 ]
 
 .right-column[
+.big[
 * Le plus souvent en implantation **ponctuelle**
 * Traduit la **différence**
 * Données **qualitatives nominales**
+]
 
 *Exemples : cartes de symboles*
 
@@ -526,9 +542,11 @@ visuellement une information.*
 ]
 
 .right-column[
+.big[
 * Le plus souvent en implantation **zonale**
 * Traduit un **ordre**
 * Données **quantitatives relatives** ou **qualitatives ordonnées**
+]
 
 *Exemples : carte choroplète*
 
@@ -542,9 +560,11 @@ visuellement une information.*
 ]
 
 .right-column[
+.big[
 * En implantation **ponctuelle**, **linéaire** ou **zonale**
 * Traduit la **différence**
 * Données **qualitatives nominales**
+]
 
 *Exemples : typologie*
 
@@ -558,9 +578,11 @@ visuellement une information.*
 ]
 
 .right-column[
+.big[
 * Principalement en implantation **zonale**
 * Peut traduire la **différence** (points vs hachures) : données **qualitatives nominales**
 * Peut traduire l'**ordre** (densité des hachures) données **quantitatives relatives** ou **qualitatives ordonnées**
+]
 
 *Variable visuelle utile pour le noir-et-blanc monochrome et la superposition*
 
@@ -574,9 +596,11 @@ visuellement une information.*
 ]
 
 .right-column[
+.big[
 * Principalement en implantation **zonale**
 * Peut traduire la **différence**
 * Données **qualitatives nominales**
+]   
 
 *Variable visuelle utile pour le noir-et-blanc monochrome et la superposition.*
 
@@ -598,6 +622,9 @@ visuellement une information.*
 ![](figures/Zanin_Tremelo.png)
 
 ---
+
+<br><br><br><br><br>
+
 .center[
 # Rappel des consignes
   
@@ -608,24 +635,31 @@ visuellement une information.*
 
 ## L'évaluation du cours
 
+.big[
 * Un **dossier à composer** en binôme avec les différents exercices pratiques *(2/3 de la note)*
+
 * Un **partiel** *(1/3 de la note)*
+]
 
 ---
 
 ## Le dossier
 
+.big[
 Grille de notation :
 
 * *13 points* sur la réflexion et le travail réalisé avec QGis
+
 * *6 points* sur les cartes thématiques réalisées avec Magrit
-* *1 point* de soin
+
+* *1 point* de soin]
 
 --
 
+.big[
 <img src="figures/precaution.png" height="100px">
 
-* *1 point retiré* par jour de retard !
+* *1 point retiré* par jour de retard !]
 
 ---
 
@@ -651,6 +685,7 @@ la qualité de votre étude. *(2 points)*
 
 ## Figures
 
+.big[
 Votre rapport doit contenir **3 cartes thématiques** accompagnées d'un commentaire descriptif (réalisation
 technique et interprétation thématique).
 
@@ -659,26 +694,35 @@ technique et interprétation thématique).
 2) Une carte représentant des **données quantitatives relatives** *(2 points)*. *Ex. : part des moins de 25 ans par commune*
 
 3) Une carte représentant des **données qualitatives** *(2 points)*. *Ex. : localisation et présentation de votre espace d'étude*
-
----
-
-<br>
-<br>
-Dossier à envoyer par mail au plus tard le **mercredi 5 janvier 2021**
-
----
-
-## Le partiel
-
-Devoir sur table sur les notions vues en cours.
-
-.left[
-![](figures/art_ds.png)
 ]
 
+---
+
+<br>
+<br>
+.big[
+Dossier à envoyer par mail au plus tard le **mercredi 5 janvier 2021**
+]
+
+---
+
+.pull-left[
+## Le partiel
+
+Devoir sur table sur les notions vues en cours.]
+
+.pull-right[
+.right[
+![](figures/art_ds.png)
+]
+]
+
+.big[
 - L'**information géographique** : définition, types de données, vecteur / raster, types d'objets géographiques et d'implantations
+
 - La **géomatique**, les **SIG** : requêtes, géotraitements
-- La **cartographie** : sémiologie graphique, variables visuelles, requis de mise en page et d'habillage
+
+- La **cartographie** : sémiologie graphique, variables visuelles, requis de mise en page et d'habillage]
 
 ---
 .center[

@@ -70,7 +70,9 @@ La **discrétisation** est un mode de *simplification de l'information* (quantit
 ### Conserver l'essentiel de l'information
 
 * **Regrouper les valeurs qui se ressemblent** et qui sont différentes des autres ; donner des **seuils** qui ont du sens
+
 * Conserver l'ordre de grandeur, la dispersion, la forme de la distribution
+
 * Rendre compte de la **structure interne** du jeu de données
 ]
 
@@ -94,17 +96,33 @@ On a coutume de dire que 10 classes est un maximum.
 
 ## Quelques principes fondamentaux
 
-
+.big[
 * Les classes ne doivent **pas être vides**
+
 * Les classes doivent couvrir l'**ensemble** de la distribution, et être **contiguës** (elles s'arrêtent là où une autre commence)
+
 * Les classes doivent être  **distinctes** (les valeurs ne doivent pas se superposer)
+
 * Les caractéristiques essentielles de la distribution de l'indicateur doivent être conservées, et permettre de perdre le moins d'information possible.
+
 * Le nombre de classes doit être inférieur au nombre d'observations
+]
 
+---
 
---
+## >> *Compromis entre* **information** *et* **démonstration** <<
 
-.center[ *Compromis entre* information *et* démonstration ]
+.big[
+* Les classes ne doivent **pas être vides**
+
+* Les classes doivent couvrir l'**ensemble** de la distribution, et être **contiguës** (elles s'arrêtent là où une autre commence)
+
+* Les classes doivent être  **distinctes** (les valeurs ne doivent pas se superposer)
+
+* Les caractéristiques essentielles de la distribution de l'indicateur doivent être conservées, et permettre de perdre le moins d'information possible.
+
+* Le nombre de classes doit être inférieur au nombre d'observations
+]
 
 ---
 
@@ -129,7 +147,9 @@ On a coutume de dire que 10 classes est un maximum.
 .pull-left[
 
 * Le **résumé statistique** : valeurs centrales (moyenne  / médiane), le minimum, le maximum
+
 * Les **paramètres de dispersion** : l'écart-type (calcul intégrant les valeurs algébriques d'écart à la moyenne)
+
 * La **forme de la distribution** des données : l'observation des concentrations d'individus
 
 ]
@@ -228,7 +248,9 @@ Cette méthode met en évidence les **valeurs exceptionnelles** de la distributi
 
 ![](figures/seuils_naturels.png)
 
+.big[
 Une méthode adaptée lorsque des **seuils naturels** apparaissent dans la distribution. Assez subjective, elle nécessite une *bonne connaissance* des phénomènes étudiés.
+]
 
 La méthode dite **de Jenks** automatise ce procédé manuel. Elle repose sur un algorithme qui *minimise la variance intra-classes* en *maximisant la variance inter-classes*.
 
@@ -250,7 +272,9 @@ C'est une méthode **passe-partout**, mais elle ne permet pas de comparer les ca
 
 ![](figures/progression_geom.png)
 
-Une méthode adaptée pour des distributions **très dissymétriques**. Elle conssite à construire des classes dont l'étendue augmente (ou diminue) de plus en plus.
+.big[
+Une méthode adaptée pour des distributions **très dissymétriques**. Elle consiste à construire des classes dont l'étendue augmente (ou diminue) de plus en plus.
+]
 
 Il faut en définir la **raison** (coefficient multiplicateur) ; le minimum ne doit pas être égal à zéro.
 
@@ -276,9 +300,17 @@ En résumé...
 
 ---
 
-![](figures/bertin_3.png)
-
+.pull-left[
+<br>
+<br>
+<br>
 # II. Les variables visuelles
+]
+
+.pull-right[
+![](figures/bertin_3.png)
+]
+
 
 ---
 
@@ -292,6 +324,8 @@ En résumé...
 ]
 
 ---
+
+## Représenter les données quantitatives relatives
 
 .center[
 <big>Retranscrire l'ordre sans la proportionnalité :</big>
@@ -402,23 +436,36 @@ bien se prêter à la superposition d'éléments.
 
 ---
 
+
+.center[
 ### Objectif :
 
+.big[
 *Représenter la part des 0-24 ans dans les IRIS d'Est Ensemble* (public cible des médiathèques).
 
 NB : adaptez cet exemple à votre espace d'étude et à votre problématique !
+]
+]
 
 ---
 
 ### Les étapes :
 
+.big[
+
 1. Préparation des données et géométries
+
 2. Import des géométries et des données, jointure et typage des données
+
 3. Réalisation d'une carte de ratios et analyse des données
+
 4. Discrétisation et choix des couleurs
+
 5. Mise en page
+
 6. Sauvegarde / Export
 
+]
 
 ---
 
@@ -454,12 +501,14 @@ Vous pouvez charger le **fichier projet** réalisé lors de la séance précéde
 Cela permet :
 
 * de conserver la mise en page réalisée et d'assurer ainsi une **harmonie graphique** entre vos cartes.
+
 * de **gagner du temps** sur la mise en page.
 
 Dans ce cas, il faut veiller à :
 
 * ne pas modifier a posteriori la carte précédente (vous perdriez l'harmonie graphique) :
   police, couleur et épaisseur des bordures...
+  
 * **réorganiser vos couches géographiques** pour ne garder que ce dont vous avez besoin
   (panneaux *import des données* et *gestion des couches*)
 ]
@@ -538,8 +587,11 @@ Typage des données
 ### 4. Discrétisation & choix des couleurs
 
 - Quelle forme de distribution ?
+
 - Quel est le message que l'on souhaite transmettre ?
+
 - Quel nombre de classes, quelles couleurs ?
+
 - **C'est le moment de justifier vos choix !**
 
 ![](figures/magrit_analyse_distribution.png)
@@ -581,9 +633,14 @@ Rupture du vert au rouge autour de la moyenne.
 
 ---
 
+<br>
+<br>
+
 * **Arrondir les bornes des classes** sans modifier le nombre d'individus statistiques par classe :
 
 ![](figures/magrit_ratio_11.png)
+
+<br>
 
 * Quelle **gradation de couleurs** ? Pourquoi ? **Séquentielle ou divergente ?**
 la couleur la plus foncée pour la valeur la plus élevée, ou pour la plus faible ?

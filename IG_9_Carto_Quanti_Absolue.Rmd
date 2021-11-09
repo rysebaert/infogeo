@@ -53,15 +53,18 @@ style_duo_accent(
 ## Quels logiciels pour quelle cartographie ?
 .pull-left[
 .center[**Logiciels de cartographie**
-<br><br>
-<img src="figures/carto_logicielscarto.png" width=300>]
+
+<img src="figures/carto_logicielscarto.png" width=200>]
+
 .medium[
-* Environnement logiciel complètement <u>dédié à la création cartographique</u>.
-* Image + habillage = carte
-* <u>Cartographie de base</u> (réflexion poussée sur les choix statistiques)
-* <u>Variété des méthodes de représentation</u>.
-* Mise en scène de la carte.
-* <u>Partage et diffusion</u> (« une belle carte »).
+* Environnement logiciel complètement **dédié à la création cartographique*</u>**.
+
+* **Cartographie de base** (réflexion poussée sur les choix statistiques)
+
+* Variété des méthodes de représentation
+
+* **Partage et diffusion** (« une belle carte »).
+
 * Interface épurée.]
 
 .center[*Des logiciels dédiés pour la création cartographique*]
@@ -69,13 +72,17 @@ style_duo_accent(
 
 .pull-right[
 .center[**Systèmes d'information géographique**
-<br><br>
-<img src="figures/carto_logicielssig.png" width=300>]
+
+
+<img src="figures/carto_logicielssig.png" width=200>]
+
 .medium[
-* Gestion de <u>bases de données</u> géographiques.
-* Définition des <u>projections</u> adaptées.
-* Visualisation et superposition des <u>couches</u> géographiques.
-* <u>Géotraitements</u>.
+* Gestion de **bases de données** géographiques.
+
+* Visualisation et superposition des **couches** géographiques.
+
+* **Géotraitements**.
+
 * Cartographie de base (cartes choroplèthes, typologies, figurés proportionnels).]
 
 .center[*Réaliser une carte thématique de qualité est possible dans un environnement SIG, mais ce n’est pas l’objet premier de ce type de logiciels*]
@@ -83,14 +90,16 @@ style_duo_accent(
 
 ---
 
+.center[
 ### Magrit
+]
 
-.left-column[
+.pull-left[
 .center[[https://magrit.hypotheses.org/392](https://magrit.hypotheses.org/392)]
 
 Il est possible d'utiliser Magrit en ligne ou de l'installer sur son ordinateur.
 ]
-.right-column[
+.pull-right[
 <img src="figures/carto_magrit.png" height=400>
 ]
 
@@ -102,14 +111,16 @@ Il est possible d'utiliser Magrit en ligne ou de l'installer sur son ordinateur.
 
 ---
 
+.center[
 ## Objectif de la séquence
 
-.center[
+<br>
+
 .big[**Objectif** : Faire une carte en utilisant des *données quantitatives de stock* sur votre espace d'étude]
 
 Téléchargez les données sur Moodle.
 
-<br><br>
+<br>
 .medium[Géométries : dossier infogéo → Maillages
 
 Données : dossier infogéo → Données INSEE]
@@ -125,12 +136,17 @@ Données : dossier infogéo → Données INSEE]
 .big[
 Les **6 étapes** de la réalisation de cartes de stock dans Magrit :
 
-1. *Préparation* (géométries, données, métadonnées)
+1. **Préparation** (géométries, données, métadonnées)
+
 2. Import des géométries et des données, jointure
-3. *Réalisation* de la carte de stocks
+
+3. **Réalisation** de la carte de stocks
+
 4. Amélioration de la lisibilité
-5. *Mise en page*
-6. Sauvegarde du projet et *export* de la carte
+
+5. **Mise en page**
+
+6. Sauvegarde du projet et **export**    de la carte
 ]
 
 ---

@@ -47,61 +47,77 @@ style_duo_accent(
 
 # 1. Les données qualitatives
 
+.big[
 Elles correspondent aux variables dont les valeurs ne sont pas numériques.
 
-Par exemple : votre *âge*, votre *taille* sont des variables quantitatives ; votre *couleur de cheveux*, des données qualitatives.
+Par exemple : votre *âge*, votre *taille* sont des variables quantitatives ; votre *couleur de cheveux*, des données qualitatives.]
 
 --
 
+.big[
 Elles sont de deux types :
 
 * Nominales
 * Ordinales
+]
 
 ---
 
 # Nominales vs Ordinales
 
 .pull-left[
-### Nominales :
+### Qualitatives nominales :
 
+.big[
 Les valeurs possibles n'ont pas d'ordre
 
 Par exemple : rouge, bleu, vert, jaune, violet...
 
 Ou encore : langues officielles des pays européens
 ]
+]
+
+--
 
 .pull-right[
-### Ordinales :
+### Qualitatives ordinales :
 
+.big[
 **L'ordre des valeurs possibles a un sens**
 
 Par exemple : très peu, peu, moyen, beaucoup
 
 Ou encore : hiérarchie urbaine, des centres au périurbain
 ]
+]
 
 ---
 
-## Un exemple de quali nominal
+.center[
+## Un exemple de qualitatif nominal
 
 <img src="figures/exemple_quali_nominal.png" height="450px">
+]
 
 ---
 
-## Un exemple de quali ordinal
+.center[
+## Un exemple de qualitatif ordinal
 
 <img src="figures/exemple_quali_ordinal.png" height="450px">
+]
 
 ---
 
+## Pour les représenter
+
 .pull-left[
-### Nominales :
+### Qualitatives nominales :
 
-**Les valeurs possibes n'ont pas d'ordre**
+.big[
+**Les valeurs possibles n'ont pas d'ordre**
 
-La représentation cartographique doit permettre de bien les différencier.
+La représentation cartographique doit permettre de bien les différencier.]
 
 *Attention* : il faut que les formes/propriétés graphiques des symboles soient bien distinctes,
 et éviter les ambiguïtés.
@@ -111,9 +127,11 @@ Mais trop de symboles rendent la lecture difficile.
 .pull-right[
 ### Ordinales :
 
+.big[
 **L'ordre des valeurs possibles a un sens**
 
 La représentation graphique doit permettre de rendre compte de l'ordre ou du classement utilisé.
+]
 ]
 
 ---
@@ -137,83 +155,101 @@ La représentation graphique doit permettre de rendre compte de l'ordre ou du cl
 ## En termes de variables visuelles :
 
 .pull-left[
-### Quali nominal :
-
+### Qualitatif nominal :
+.big[
 * Différence : **oui**
 * Hiérarchie : non
 * Proportionnalité : non
 
 Il faut des variables visuelles qui retranscrivent la **similarité** et la **différence**.
-
+]
 ]
 
 .pull-right[
-### Quali ordinal :
-
+### Qualitatif ordinal :
+.big[
 * Différence : **oui**
 * Hiérarchie : **oui**
 * Proportionnalité : non
 
 Il faut des variables visuelles qui retranscrivent un **ordre**.
 ]
+]
 
 ---
 
-# 2. Représenter les données qualitatives nominales
-
 ![](figures/pommes.png)
+
+# 2. Représenter les données qualitatives nominales
 
 ---
 
 ## 2.1 La couleur
 
+.big[
 La variable visuelle de la couleur est très utilisée en cartographie, car :
 
 * elle permet de **différencier** facilement des objets ;
-* elle s'utilise aussi bien pour des points, des lignes que des surfaces (implantations ponctuelles, linéaires, zonales) ;
-* elle peut traduire des **relations différencielles qualitatives** et donc illustrer des *typologies*
 
-![](figures/carrés_couleurs.png)
+* elle s'utilise aussi bien pour des points, des lignes que des surfaces (implantations ponctuelles, linéaires, zonales) ;
+
+* elle peut traduire des **relations différencielles qualitatives** et donc illustrer des *typologies*
+]
+
+.center[
+![](figures/carrés_couleurs.png)]
 
 ---
 
 ## 2.2 La forme
 
+.big[
 La variable visuelle forme consiste à faire varier les contours géométriques d'un figuré. Elle inclut les *symboles*.
 
 * elle ne permet que de **différencier** des objets
+]
 
+.center[
 .pull-left[
 ### Formes  simples
 
-<img src="figures/formes_simples.png" height="300px">
+<img src="figures/formes_simples.png" height="180px">
 ]
 
 .pull-right[
 ### Symboles
 
-<img src="figures/formes_symboles.png" height="300px">
+<img src="figures/formes_symboles.png" height="180px">
+]
 ]
 
 ---
 
 ## 2.3 L'orientation
 
+.big[
 La variable visuelle orientation correspond au procédé qui consiste à faire varier l'angle d'un figuré graphique avec l'horizontale.
+]
 
-* elle permet de rendree compte de **différences**
+* elle permet de rendre compte de **différences**
+
 * bien qu'elle soit exprimée en degrés (de 0° à 359°), elle ne peut exprimer que des différences
+
   (pas d'usage pour une variable quanti ou quali ordinale)
+  
 * elle est quasi-uniquement utilisée pour les **implantations zonales**
+  
 * elle est un peu passée de mode, bien qu'elle soit utile pour les sorties monochromes...
 
-<img src="figures/var_visu_orientation.png" height="200px">
+.right[
+<img src="figures/var_visu_orientation.png" height="150px">
+]
 
 ---
 
-# 3. Représenterles donnés qualitatives ordinales
-
 ![](figures/podium.png)
+
+# 3. Représenterles donnés qualitatives ordinales
 
 ---
 
@@ -225,10 +261,12 @@ La variable visuelle orientation correspond au procédé qui consiste à faire v
 
 ## 3.2 La texture
 
+.big[
 La variable visuelle *texture* combine des éléments graphiques pour construire une surface.
 
 * elle peut traduire des **différences**, des **équivalences** ou un **ordre**.
 * elle est surtout utilisée en **implantation zonale**
+]
 
 .pull-left[
 ### Différence nominale
@@ -243,6 +281,8 @@ La variable visuelle *texture* combine des éléments graphiques pour construire
 ]
 
 ---
+
+<br><br><br><br><br>
 
 # 4. Les couleurs en cartographie des données qualitatives
 
@@ -265,6 +305,8 @@ La variable visuelle *texture* combine des éléments graphiques pour construire
 <img src="figures/couleurs_théma_industrie.png" height="450px">
 
 ---
+
+## Les couleurs historiquement associées à des thématiques
 
 <img src="figures/couleurs_théma_onu.png" height="500px">
 
@@ -295,25 +337,31 @@ La variable visuelle *texture* combine des éléments graphiques pour construire
 
 ---
 
+![](figures/magrit_logo.png)
+
 # 5. Représenter les données qualitatives avec Magrit
 
-.center[
-![](figures/magrit_logo.png)
-]
+<br><br><br>
 
-<big>
+.big[
 Votre objectif : représenter la localisation de votre terrain d'études au sein de la métropole du Grand Paris.
-</big>
+]
 
 ---
 
 ## Les étapes
 
+.big[
 1. **Consultation** des données disponibles, **import** des données complémentaires
+
 2. **Réalisation** de la carte qualitative
+
 3. **Choix des couleurs** (ordinal ou nominal ?)
+
 4. **Mise en page**
+
 5. **Sauvegarde** et export
+]
 
 ---
 
@@ -324,8 +372,11 @@ Votre objectif : représenter la localisation de votre terrain d'études au sein
 *Consultez les métadonnées, ouvrez les fichiers de données dans QGis, regardez la table attributaire...*
 
 * quel indicateur ?
+
 * quel producteur de données ?
+
 * quelle date de production de l'indicateur ?
+
 * quel code utiliser pour la cartographie ?
 ]
 
@@ -360,7 +411,9 @@ Votre objectif : représenter la localisation de votre terrain d'études au sein
 ## 5.3 Choix des couleurs
 
 * quelle couleur pour quelle modalité ?
+
 * ordinal ou nominal ?
+
 * quel ordre pour les modalités en légende ?
 ]
 
@@ -388,6 +441,7 @@ En conditions réelles, il est utile de faire des tests d'impression ou d'opter 
 
 ## 5.4 Mise en page
 
+.big[
 * N'oubliez pas tous les éléments d'**habillage** (sources, date, échelle, titre).
   Veillez à la cohérence avec les cartes que vous avez produites précédemment.
   
@@ -398,15 +452,19 @@ En conditions réelles, il est utile de faire des tests d'impression ou d'opter 
 * Adaptez l'**emprise géographique** de votre carte pour améliorer sa *lisibilité* et la *clarté du message* que vous souhaitez transmettre.
 
 *Pour adapter l'emprise géographique dans Magrit, déverouiller la carte et zoomer.*
+]
 
 ---
 
 ## 5.5 Sauvegarde et export
 
+.big[
 * Sauvegarder le projet au format `.json` pour continuer votre travail sur un autre terminal.
-* Exporteer la carte au format `.png` pour l'incorporer dans le dossier (attention à éviter la pixellisation !)
+
+* Exporter la carte au format `.png` pour l'incorporer dans le dossier (attention à éviter la pixellisation !)
+]
 
 ---
 
-<img src="figures/magrit_quali_final.png" height="500px">
+<img src="figures/magrit_quali_final.png" height="650px">
 
