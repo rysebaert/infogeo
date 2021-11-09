@@ -56,10 +56,12 @@ Entre <span color="red" font-size="20pt">60 et 80%</span> de l'information que n
 
 ---
 
+.left-column[
 ## Les trois composantes de l'information géographique
+]
 
-.center[
-```{r, echo = FALSE, out.width = "900px"}
+.right-column[
+```{r, echo = FALSE, out.width = "600px"}
 
 library(DiagrammeR)
 
@@ -91,8 +93,19 @@ grViz("digraph dot {
 
 ---
 
-.center[
-```{r, echo = FALSE, out.width = "900px"}
+.left-column[
+Le niveau sémantique de l'information géographique décrit un objet par sa **nature** et ses **propriétés**.
+Celles-ci constituent les **attributs** de l'objet : par exemple un numéro de parcelle cadastrale, le nom d'une
+route, d'une rivière ou d'une commune, les données du recensement, une photo, etc.
+Ce sont des données **alphanumériques**.
+
+.right[
+source : Afigeo
+]
+]
+
+.right-column[
+```{r, echo = FALSE, out.width = "600px"}
 
 library(DiagrammeR)
 
@@ -122,19 +135,12 @@ grViz("digraph dot {
 ```
 ]
 
-Le niveau sémantique de l'information géographique décrit un objet par sa **nature** et ses **propriétés**.
-Celles-ci constituent les **attributs** de l'objet : par exemple un numéro de parcelle cadastrale, le nom d'une
-route, d'une rivière ou d'une commune, les données du recensement, une photo, etc.
-Ce sont des données **alphanumériques**.
 
-.right[
-source : Afigeo
-]
 
 ---
 
-.center[
-```{r, echo = FALSE, out.width = "900px"}
+.right-column[
+```{r, echo = FALSE, out.width = "600px"}
 
 library(DiagrammeR)
 
@@ -182,8 +188,19 @@ grViz("digraph dot {
 
 ---
 
-.center[
-```{r, echo = FALSE, out.width = "900px"}
+.left-column[
+Le niveau géométrique de l'information géographique décrit la **forme** et la **position** d'un objet sur la Terre :
+par exemple, le tracé d'un réseau routier, les limites d'un maillage administratif, les pixels d'une image satellitaire...
+Celles-ci peuvent être exprimées par un système de coordonnées explicite : par une latitude et une longitude,
+par des coordonnées projetées par exemple en Lambert-93.
+
+.right[
+source : Afigeo
+]
+]
+
+.right-column[
+```{r, echo = FALSE, out.width = "600px"}
 
 library(DiagrammeR)
 
@@ -213,6 +230,9 @@ grViz("digraph dot {
 ```
 ]
 
+---
+
+.left-column[
 Le niveau géométrique de l'information géographique décrit la **forme** et la **position** d'un objet sur la Terre :
 par exemple, le tracé d'un réseau routier, les limites d'un maillage administratif, les pixels d'une image satellitaire...
 Celles-ci peuvent être exprimées par un système de coordonnées explicite : par une latitude et une longitude,
@@ -221,12 +241,10 @@ par des coordonnées projetées par exemple en Lambert-93.
 .right[
 source : Afigeo
 ]
+]
 
----
-
-
-.center[
-```{r, echo = FALSE, out.width = "900px"}
+.right-column[
+```{r, echo = FALSE, out.width = "600px"}
 
 library(DiagrammeR)
 
@@ -268,20 +286,23 @@ grViz("digraph dot {
 ```
 ]
 
-Le niveau géométrique de l'information géographique décrit la **forme** et la **position** d'un objet sur la Terre :
-par exemple, le tracé d'un réseau routier, les limites d'un maillage administratif, les pixels d'une image satellitaire...
-Celles-ci peuvent être exprimées par un système de coordonnées explicite : par une latitude et une longitude,
-par des coordonnées projetées par exemple en Lambert-93.
+
+---
+
+.left-column[
+Le niveau topologique de l'information géographique décrit les **relations éventuelles** des objets
+avec d'autres objets ou phénomènes, par exemple : la contiguïté entre deux communes, l'inclusion d'une
+parcelle dans une commune, etc.
+
+*Concrètement, cette partie de l'information est déduite du niveau géométrique (par les géotraitements).*
 
 .right[
 source : Afigeo
 ]
+]
 
----
-
-
-.center[
-```{r, echo = FALSE, out.width = "900px"}
+.right-column[
+```{r, echo = FALSE, out.width = "600px"}
 
 library(DiagrammeR)
 
@@ -311,20 +332,13 @@ grViz("digraph dot {
 ```
 ]
 
-Le niveau topologique de l'information géographique décrit les **relations éventuelles** des objets
-avec d'autres objets ou phénomènes, par exemple : la contiguïté entre deux communes, l'inclusion d'une
-parcelle dans une commune, etc.
 
-*Concrètement, cette partie de l'information est déduite du niveau géométrique (par les géotraitements).*
-
-.right[
-source : Afigeo
-]
 
 ---
 
 
 .center[
+
 ```{r, echo = FALSE, out.width = "900px"}
 
 library(DiagrammeR)
@@ -502,7 +516,7 @@ visuellement une information.*
 
 *Exemples : cartes de symboles*
 
-<img src="figures/exemple_quali_nominal_ambigu.png" height="350px"
+<img src="figures/exemple_quali_nominal_ambigu.png" height="350px">
 ]
 
 ---
@@ -550,7 +564,7 @@ visuellement une information.*
 
 *Variable visuelle utile pour le noir-et-blanc monochrome et la superposition*
 
-![](figures/texture.png)
+<img src="figures/texture.png" height="300px">
 ]
 
 ---
