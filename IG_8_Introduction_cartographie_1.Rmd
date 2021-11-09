@@ -729,6 +729,24 @@ Ce choix à un **impact important** sur l'information représentée...
 ]
 
 ---
+.left-column[
+## Données quantitatives relatives - *implantation surfacique*
+
+Conçue par Charles Dupin et réalisée par le lithographe Jean-Baptiste Collon, cette carte est considérée comme une des toutes premières cartes thématiques jamais réalisée. Elle représente le taux d'élèves masculins scolarisés par département. 
+]
+
+.right-column[
+.center[
+<img src="figures/dupin.jpg" height="520" />
+
+.leg-fig[
+Carte figurative de l'instruction populaire de France (Source : Dupin, 1826)
+]
+]
+]
+
+
+---
 
 ## Données quantitatives relatives - *implantation surfacique*
 
