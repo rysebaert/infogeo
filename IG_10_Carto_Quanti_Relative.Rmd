@@ -138,7 +138,7 @@ On a coutume de dire que 10 classes est un maximum.
 
 # Les méthodes de discrétisation
 
-<img src="figures/discretisation_methodes.png" height="450px">
+<img src="figures/discretisation_methodes.png" height="450px" />
 
 ---
 
@@ -164,7 +164,7 @@ On a coutume de dire que 10 classes est un maximum.
 
 ## Les méthodes
 
-<img src="figures/discretisation_tableau_methodes.png" height="400px">
+<img src="figures/discretisation_tableau_methodes.png" height="400px" />
 
 --
 
@@ -194,7 +194,7 @@ La **méthode Q6** est une variante qui consiste à isoler les bornes extrêmes 
 ]
 
 .right-column[
-<img src="figures/discretisation_ex_1.png" height="500px">
+<img src="figures/discretisation_ex_1.png" height="500px" />
 ]
 
 ---
@@ -213,7 +213,7 @@ elle produit généralement des seuils de classe simples et compréhensibles.
 ]
 
 .right-column[
-<img src="figures/discretisation_ex_2.png" height="500px">
+<img src="figures/discretisation_ex_2.png" height="500px" />
 ]
 
 ---
@@ -229,7 +229,7 @@ Aussi appelée *discrétisation standardisée*.
 Cette méthode met en évidence les **valeurs exceptionnelles** de la distribution.
 
 .right[
-<img src="figures/symetrie_moyenne.png" height="100px">
+<img src="figures/symetrie_moyenne.png" height="100px" />
 ]
 
 ---
@@ -239,7 +239,7 @@ Cette méthode met en évidence les **valeurs exceptionnelles** de la distributi
 ]
 
 .right-column[
-<img src="figures/discretisation_ex_3.png" height="500px">
+<img src="figures/discretisation_ex_3.png" height="500px" />
 ]
 
 ---
@@ -263,7 +263,7 @@ C'est une méthode **passe-partout**, mais elle ne permet pas de comparer les ca
 ]
 
 .right-column[
-<img src="figures/discretisation_ex_4.png" height="500px">
+<img src="figures/discretisation_ex_4.png" height="500px" />
 ]
 
 ---
@@ -285,7 +285,7 @@ Il faut en définir la **raison** (coefficient multiplicateur) ; le minimum ne d
 ]
 
 .right-column[
-<img src="figures/discretisation_ex_5.png" height="500px">
+<img src="figures/discretisation_ex_5.png" height="500px" />
 ]
 
 ---
@@ -295,7 +295,7 @@ En résumé...
 ]
 
 .right-column[
-<img src="figures/discretisation_italie.png" height="500px">
+<img src="figures/discretisation_italie.png" height="500px" />
 ]
 
 ---
@@ -319,7 +319,7 @@ En résumé...
 .center[
 <big>Retranscrire l'ordre sans la proportionnalité :</big>
 
-<img src="figures/semio_quanti_relative_pas_prop.png" height="350px">
+<img src="figures/semio_quanti_relative_pas_prop.png" height="350px" />
 
 ]
 
@@ -387,13 +387,13 @@ visuelle ordonnée et continue. On parle aussi de **gradation harmonique**.
 .pull-left[
 ### Perception des couleurs selon l'usage
 
-<img src="figures/couleurs_usage.png" height="400px">
+<img src="figures/couleurs_usage.png" height="400px" />
 ]
 
 .pull-right[
 ### Perception "culturelle" (?) des couleurs
 
-<img src="figures/couleurs_culture.png" height="400px">
+<img src="figures/couleurs_culture.png" height="400px" />
 ]
 
 ---
@@ -419,9 +419,9 @@ bien se prêter à la superposition d'éléments.
 
 .right-column[
 .right[
-<img src="figures/var_visu_grain.png" height="100px">
+<img src="figures/var_visu_grain.png" height="100px" />
 
-<img src="figures/var_visu_structure.png" height="100px">
+<img src="figures/var_visu_structure.png" height="100px" />
 ]
 ]
 

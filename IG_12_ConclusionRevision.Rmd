@@ -37,7 +37,7 @@ library(icons)
 .center[
 # Quelques révisions
 
-<img src="figures/revisions.png" height="300px">
+<img src="figures/revisions.png" height="300px" />
 ]
 
 ---
@@ -46,7 +46,7 @@ library(icons)
 
 .left-column[
 .right[
-<img src="figures/ig_calques.png" height="200px">
+<img src="figures/ig_calques.png" height="200px" />
 ]
 ]
 
@@ -402,7 +402,7 @@ Les couches d'information superposées sont une manière de représenter la réa
 
 .right-column[
 .center[
-<img src="figures/sig_abstraire.png" height="450px">
+<img src="figures/sig_abstraire.png" height="450px" />
 ]
 ]
 
@@ -466,7 +466,7 @@ Par exemple, la numérisation ou digitalisation...
 .right[
 Jacques Bertin <3 :
 
-<img src="figures/jacques.png" height="200px">
+<img src="figures/jacques.png" height="200px" />
 ]
 ]
 
@@ -496,7 +496,7 @@ visuellement une information.*
 .center[
 ### Déterminer la nature d'une variable
 
-<img src="figures/natures_variables.png" height="450px">
+<img src="figures/natures_variables.png" height="450px"/>
 ]
 
 ---
@@ -532,7 +532,7 @@ visuellement une information.*
 
 *Exemples : cartes de symboles*
 
-<img src="figures/exemple_quali_nominal_ambigu.png" height="350px">
+<img src="figures/exemple_quali_nominal_ambigu.png" height="350px"/>
 ]
 
 ---
@@ -568,7 +568,7 @@ visuellement une information.*
 
 *Exemples : typologie*
 
-<img src="figures/typo.jpg" height="350px">
+<img src="figures/typo.jpg" height="350px" />
 ]
 
 ---
@@ -586,7 +586,7 @@ visuellement une information.*
 
 *Variable visuelle utile pour le noir-et-blanc monochrome et la superposition*
 
-<img src="figures/texture.png" height="300px">
+<img src="figures/texture.png" height="300px" />
 ]
 
 ---
@@ -606,14 +606,14 @@ visuellement une information.*
 
 *Peu efficace, elle est rarement utilisée.*
 
-<img src="figures/orientation.png" height="200px">  
+<img src="figures/orientation.png" height="200px" />  
 ]
 
 ---
 
 ### Des données aux variables visuelles
 
-<img src="figures/donnees_variables_visu.png" height="450px">
+<img src="figures/donnees_variables_visu.png" height="450px" />
 
 ---
 
@@ -628,7 +628,7 @@ visuellement une information.*
 .center[
 # Rappel des consignes
   
-<img src="figures/art_dossier.png" height="150px">
+<img src="figures/art_dossier.png" height="150px" />
 ]
 
 ---
@@ -657,7 +657,7 @@ Grille de notation :
 --
 
 .big[
-<img src="figures/precaution.png" height="100px">
+<img src="figures/precaution.png" height="100px" />
 
 * *1 point retiré* par jour de retard !]
 
@@ -728,7 +728,7 @@ Devoir sur table sur les notions vues en cours.]
 .center[
 # Bon courage et bonnes vacances !
 
-<img src="figures/terre_de_noel.png" height="250px">
+<img src="figures/terre_de_noel.png" height="250px" />
 
 [ronan.ysebaert@cnrs.fr](mailto:ronan.ysebaert@cnrs.fr) - [maxime.guinepain@u-paris.fr](mailto:maxime.guinepain@u-paris.fr)
 ]

@@ -96,7 +96,7 @@ Ou encore : hiérarchie urbaine, des centres au périurbain
 .center[
 ## Un exemple de qualitatif nominal
 
-<img src="figures/exemple_quali_nominal.png" height="450px">
+<img src="figures/exemple_quali_nominal.png" height="450px" />
 ]
 
 ---
@@ -104,7 +104,7 @@ Ou encore : hiérarchie urbaine, des centres au périurbain
 .center[
 ## Un exemple de qualitatif ordinal
 
-<img src="figures/exemple_quali_ordinal.png" height="450px">
+<img src="figures/exemple_quali_ordinal.png" height="450px" />
 ]
 
 ---
@@ -147,7 +147,7 @@ La représentation graphique doit permettre de rendre compte de l'ordre ou du cl
 .pull-right[
 ### Des symboles illisibles :
 
-<img src="figures/exemple_quali_nominal_illisible.png" height="300px">
+<img src="figures/exemple_quali_nominal_illisible.png" height="300px" />
 ]
 
 ---
@@ -213,13 +213,13 @@ La variable visuelle forme consiste à faire varier les contours géométriques 
 .pull-left[
 ### Formes  simples
 
-<img src="figures/formes_simples.png" height="180px">
+<img src="figures/formes_simples.png" height="180px" />
 ]
 
 .pull-right[
 ### Symboles
 
-<img src="figures/formes_symboles.png" height="180px">
+<img src="figures/formes_symboles.png" height="180px" />
 ]
 ]
 
@@ -242,7 +242,7 @@ La variable visuelle orientation correspond au procédé qui consiste à faire v
 * elle est un peu passée de mode, bien qu'elle soit utile pour les sorties monochromes...
 
 .right[
-<img src="figures/var_visu_orientation.png" height="150px">
+<img src="figures/var_visu_orientation.png" height="150px" />
 ]
 
 ---
@@ -291,35 +291,35 @@ La variable visuelle *texture* combine des éléments graphiques pour construire
 ## Les couleurs qui évoquent la réalité
 
 .pull-left[
-<img src="figures/couleurs_réalité_france.png" height="450px">
+<img src="figures/couleurs_réalité_france.png" height="450px" />
 ]
 
 .pull-right[
-<img src="figures/couleurs_réalité_arcachon.png">
+<img src="figures/couleurs_réalité_arcachon.png" />
 ]
 
 ---
 
 ## Les couleurs historiquement associées à des thématiques
 
-<img src="figures/couleurs_théma_industrie.png" height="450px">
+<img src="figures/couleurs_théma_industrie.png" height="450px" />
 
 ---
 
 ## Les couleurs historiquement associées à des thématiques
 
-<img src="figures/couleurs_théma_onu.png" height="500px">
+<img src="figures/couleurs_théma_onu.png" height="500px" />
 
 ---
 
 ## Les couleurs conventionnelles
 
 .pull-left[
-<img src="figures/couleurs_conv_géol.png" height="450px">
+<img src="figures/couleurs_conv_géol.png" height="450px" />
 ]
 
 .pull-right[
-<img src="figures/couleurs_conv_géol_légende.png">
+<img src="figures/couleurs_conv_géol_légende.png" />
 ]
 
 ---
@@ -327,13 +327,13 @@ La variable visuelle *texture* combine des éléments graphiques pour construire
 ## Les couleurs opposées
 
 .center[
-<img src="figures/couleurs_opposées.png" height="400px">
+<img src="figures/couleurs_opposées.png" height="400px" />
 ]
 
 ---
 
 ### Opposition des couleurs chaudes et froides
-<img src="figures/couleurs_opposées_schengen.png" height="450px">
+<img src="figures/couleurs_opposées_schengen.png" height="450px" />
 
 ---
 
@@ -426,7 +426,7 @@ Votre objectif : représenter la localisation de votre terrain d'études au sein
 .left-column[
 ### Pour faire vos propres couleurs...
 
-<img src="figures/precaution.png" width="100px">
+<img src="figures/precaution.png" width="100px" />
 
 **Le rendu écran diffère toujours du rendu papier.**
 
@@ -466,5 +466,5 @@ En conditions réelles, il est utile de faire des tests d'impression ou d'opter 
 
 ---
 
-<img src="figures/magrit_quali_final.png" height="650px">
+<img src="figures/magrit_quali_final.png" height="650px" />
 
