@@ -197,7 +197,7 @@ La variable visuelle de la couleur est très utilisée en cartographie, car :
 ]
 
 .center[
-![](figures/carrés_couleurs.png)]
+![](figures/carres_couleurs.png)]
 
 ---
 
@@ -291,35 +291,35 @@ La variable visuelle *texture* combine des éléments graphiques pour construire
 ## Les couleurs qui évoquent la réalité
 
 .pull-left[
-<img src="figures/couleurs_réalité_france.png" height="450px" />
+<img src="figures/couleurs_realite_france.PNG" height="450px" />
 ]
 
 .pull-right[
-<img src="figures/couleurs_réalité_arcachon.png" />
+<img src="figures/couleurs_realite_arcachon.PNG" />
 ]
 
 ---
 
 ## Les couleurs historiquement associées à des thématiques
 
-<img src="figures/couleurs_théma_industrie.png" height="450px" />
+<img src="figures/couleurs_thema_industrie.png" height="450px" />
 
 ---
 
 ## Les couleurs historiquement associées à des thématiques
 
-<img src="figures/couleurs_théma_onu.png" height="500px" />
+<img src="figures/couleurs_thema_onu.PNG" height="500px" />
 
 ---
 
 ## Les couleurs conventionnelles
 
 .pull-left[
-<img src="figures/couleurs_conv_géol.png" height="450px" />
+<img src="figures/couleurs_conv_geol.PNG" height="450px" />
 ]
 
 .pull-right[
-<img src="figures/couleurs_conv_géol_légende.png" />
+<img src="figures/couleurs_conv_geol_legende.PNG" />
 ]
 
 ---
@@ -327,13 +327,13 @@ La variable visuelle *texture* combine des éléments graphiques pour construire
 ## Les couleurs opposées
 
 .center[
-<img src="figures/couleurs_opposées.png" height="400px" />
+<img src="figures/couleurs_opposees.png" height="400px" />
 ]
 
 ---
 
 ### Opposition des couleurs chaudes et froides
-<img src="figures/couleurs_opposées_schengen.png" height="450px" />
+<img src="figures/couleurs_opposees_schengen.png" height="450px" />
 
 ---
 
