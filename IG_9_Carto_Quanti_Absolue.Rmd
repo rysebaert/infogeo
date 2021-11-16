@@ -54,7 +54,7 @@ style_duo_accent(
 .pull-left[
 .center[**Logiciels de cartographie**
 
-<img src="figures/carto_logicielscarto.png" width=200>]
+<img src="figures/carto_logicielscarto.PNG" width="200"/>]
 
 .medium[
 * Environnement logiciel complètement **dédié à la création cartographique*</u>**.
@@ -74,7 +74,7 @@ style_duo_accent(
 .center[**Systèmes d'information géographique**
 
 
-<img src="figures/carto_logicielssig.png" width=200>]
+<img src="figures/carto_logicielssig.PNG" width="200"/>]
 
 .medium[
 * Gestion de **bases de données** géographiques.
@@ -100,7 +100,7 @@ style_duo_accent(
 Il est possible d'utiliser Magrit en ligne ou de l'installer sur son ordinateur.
 ]
 .pull-right[
-<img src="figures/carto_magrit.png" height=400>
+<img src="figures/carto_magrit.PNG" height="400"/>
 ]
 
 ---
@@ -126,7 +126,7 @@ Téléchargez les données sur Moodle.
 Données : dossier infogéo → Données INSEE]
 
 <br><br>
-<img src="figures/zip.png" width=80>
+<img src="figures/zip.PNG" width="80" />
 ]
 
 ---
@@ -158,7 +158,7 @@ _Identifiez la variable que vous souhaitez cartographier_
 
 .pull-left[.center[
 .medium[IRIS_Est_Ensemble.shp]
-<img src="figures/iris_est_ensemble_shp.png" height=400>
+<img src="figures/iris_est_ensemble_shp.PNG" height="400" />
 ]
 ]
 
