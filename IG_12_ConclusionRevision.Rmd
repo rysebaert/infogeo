@@ -701,7 +701,7 @@ technique et interprétation thématique).
 <br>
 <br>
 .big[
-Dossier à envoyer par mail au plus tard le **mercredi 5 janvier 2021**
+Dossier à retourner au format papier ou numérique (clé USB) au moment de l'examen terminal. 
 ]
 
 ---
@@ -709,7 +709,7 @@ Dossier à envoyer par mail au plus tard le **mercredi 5 janvier 2021**
 .pull-left[
 ## Le partiel
 
-Devoir sur table sur les notions vues en cours.]
+Devoir sur table sur les notions vues en cours : le **mercredi 5 janvier 2022 de 14 à 16h** (Amphi Gouges 2)]
 
 .pull-right[
 .right[
