@@ -20,7 +20,23 @@ Missions locales pour l'emploi (Open Data IDF)
 https://data.iledefrance.fr/explore/dataset/missions-locales/map/?location=13,48.86342,2.4533&basemap=jawg.streets
 https://data.iledefrance.fr/explore/dataset/missions-locales/map/?location=13,48.83624,2.4824&basemap=jawg.streets
 
+Ruches (OpenStreetMap) 
+https://www.openstreetmap.org/
+Objets géographiques situés dans l'emprise géographique de la Métropole du Grand Paris répondant aux requêtes man_made = beehive, craft = beekeeper
+Extrait avec un script R en septembre 2022. 
+
+Hotels à insectes (OpenStreetMap) 
+https://www.openstreetmap.org/
+Objets géographiques situés dans l'emprise géographique de la Métropole du Grand Paris répondant à la requête man_made = insect_hotel
+Extrait avec un script R en septembre 2022. 
+
+Points d'écoute à oiseaux (OpenStreetMap) 
+https://www.openstreetmap.org/
+Objets géographiques situés dans l'emprise géographique de la Métropole du Grand Paris répondant à la requête leisure = bird_hide
+Extrait avec un script R en septembre 2022. 
+
 shape tel qu'il est, aucun traitement (mais fonctionne !)
+Attention à la complétude des données pour OpenStreetMap !!
 
 
 
