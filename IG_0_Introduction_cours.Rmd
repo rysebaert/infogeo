@@ -30,7 +30,8 @@ knitr::opts_chunk$set(cache = TRUE,
                       warning = TRUE)
 # install.packages("devtools")
 # devtools::install_github("gadenbuie/countdown")
-# devtools::install_github("mitchelloharawild/icons")
+#
+#devtools::install_github("mitchelloharawild/icons")
 library(countdown)
 library(icons)
 #download_fontawesome()
@@ -95,7 +96,7 @@ knitr::include_graphics('figures/examen.jpeg')
 
 - Comptera pour **2/3 de la note finale**.
 
-- Rendu en **format papier le 10 janvier 2022, bureau 707**.
+- Rendu attendu au plus tard le **mercredi 5 janvier 2023**, au format papier en bureau 707 (ODG), ou par envoi par mail au format .pdf (accusé réception faisant foi).
 
 
 Vous aurez l'occasion de **travailler et d'avancer sur votre dossier durant de nombreuses séances. Profitez-en !**
@@ -118,7 +119,7 @@ Vous êtes **membre d'un bureau d'étude chargé de réaliser une pré-étude po
 ---
 
 
-<span style="font-size:18pt;">**1) Choisissez une des communautés d'agglomérations** de la MGP (**Paris exclu**)</span>
+<span style="font-size:18pt;">**1) Choisissez une des communautés d'agglomérations** de la MGP </span>
 
 ```{r, echo = FALSE, out.width = "600px", fig.align='center'}
 knitr::include_graphics('figures/carte_projet.png')
@@ -126,7 +127,7 @@ knitr::include_graphics('figures/carte_projet.png')
 
 ---
 
-<span style="font-size:19pt;">**2) Choisissez un type d'équipement public** parmi ces cinq propositions :</span>
+<span style="font-size:19pt;">**2) Choisissez un type d'équipement public** parmi ces propositions :</span>
 
 
 - **Médiathèque** 
@@ -134,6 +135,12 @@ knitr::include_graphics('figures/carte_projet.png')
 - **Salle de cinéma**
 - **Mission locale pour l’emploi**.
 - **Maison de retraite**.
+
+- **Nouvelles ruches**
+- **Hôtels à insectes**
+- **Abris d'écoute à oiseaux**.
+
+Les données géolocalisées de ces équipements ont préalablement été collectées par vos enseignants. Vous êtes libres de choisir d'autres équipements, mais il faudra récupérer vous-même ces données. 
 
 
 ---
@@ -387,14 +394,6 @@ knitr::include_graphics('figures/moodle.png')
 ```
 
 </center>
-
----
-
-### Lien de téléchargement
-
-Si Moodle dysfonctionne, les cours et les données utiles sont téléchargeables sur cette URL : 
-
-**https://bit.ly/3C7vcUx**
 
 ---
 
