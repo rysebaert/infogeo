@@ -1,0 +1,13 @@
+### COUCHES TRANSPORTS ########
+
+1. BUS, METRO, RER, TRAM
+Localisation des arrêts de métro, bus, RER et TRAM en Ile-de-France
+Téléchargé le 25/06/2018 sur le site Open Data Ile-de-France
+
+2. Highway OSM : Routes principales
+Objets géographiques situés dans l'emprise géographique de la Métropole du Grand Paris répondant aux requêtes highway = primary, highway = motorway et highway = secondary
+Extrait avec un script R en septembre 2022 depuis OpenStreetMap (https://www.openstreetmap.org/)
+
+3. Railways OSM : Réseau ferré
+Objets géographiques situés dans l'emprise géographique de la Métropole du Grand Paris répondant aux requêtes railway = rail
+Extrait avec un script R en septembre 2022 depuis OpenStreetMap (https://www.openstreetmap.org/)
