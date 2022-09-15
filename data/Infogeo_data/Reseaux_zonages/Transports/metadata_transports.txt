@@ -1,8 +1,10 @@
 ### COUCHES TRANSPORTS ########
 
-1. BUS, METRO, RER, TRAM
-Localisation des arrêts de métro, bus, RER et TRAM en Ile-de-France
-Téléchargé le 25/06/2018 sur le site Open Data Ile-de-France
+1. ARRETS BUS, METRO, TRAM, TRAIN
+Localisation des arrêts de métro, bus, train et TRAM en Ile-de-France
+Version à jour du 15/09/2022, sur le site data.iledefrance-mobilites.fr : voir
+https://data.iledefrance-mobilites.fr/explore/dataset/arrets/information/
+Lire également le document arrets_référence.pdf
 
 2. Highway OSM : Routes principales
 Objets géographiques situés dans l'emprise géographique de la Métropole du Grand Paris répondant aux requêtes highway = primary, highway = motorway et highway = secondary
