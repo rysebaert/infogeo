@@ -1,42 +1,42 @@
+## SOURCE DES DONNÉES PROPOSÉES DANS CE DOSSIER ##
+
+>> Répertoire des bibliothèques d'Île-de-France (2020, par la BNF sous licence ouverte Etalab)
+https://data.iledefrance.fr/explore/dataset/repertoire-bibliotheques/
+
+Voir aussi :
 https://www.idboox.com/etudes/les-publics-des-mediatheques-leurs-pratiques-et-le-numerique-10-ans-apres/
 
-Bibliothèques et médiathèques en IDF (2000-2013)
-https://data.iledefrance.fr/explore/dataset/carte-des-bibliotheques/
+>> Recensement des équipements sportifs (2020, par le Ministère des sports sous licence ouverte Etalab)
+https://data.iledefrance.fr/explore/dataset/recensement-des-equipements-sportifs/
+Note : pour limiter la taille du jeu de données, certaines colonnes ont été retirées du tableau.
 
-Salles multisports (Open Data IDF) 
-https://data.iledefrance.fr/explore/dataset/20170419_res_fichesequipementsactivites/map/?refine.equipementtypelib=Salle+multisports&location=16,48.85244,2.42771&basemap=jawg.streets
+>> Établissements et services pour personnes âgées (mis à jour en 2020, par la Région IDF sous licence ouverte Etalab)
+https://data.iledefrance.fr/explore/dataset/etablissements_et_services_pour_personnes_agees/
 
-Maisons de retraite (Open Data IDF)
-https://data.iledefrance.fr/explore/dataset/etablissements_et_services_pour_personnes_agees/map/?location=15,48.88494,2.42191&basemap=jawg.streets
-
-Conservatoires de musique (Open Data IDF) 
+>> Conservatoires de musique (mis à jour en 2019, par Ariam-IDF sous licence ouverte Etalab)
 https://data.iledefrance.fr/explore/dataset/les-conservatoires-et-ecoles-de-musique-en-ile-de-france/map/?location=14,48.86056,2.42596&basemap=jawg.streets
 
-Cinémas (Open Data IDF) 
-https://data.iledefrance.fr/explore/dataset/salle_de_cinema_ile-de-france/map/?location=13,48.86669,2.43699&basemap=jawg.streets
-https://data.iledefrance.fr/explore/dataset/les_salles_de_cinemas_en_ile-de-france/map/?location=13,48.85416,2.4933&basemap=jawg.streets
+>> Salles de cinéma en Île-de-France (mis à jour en 2022, par le CNC sous licence ouverte Etalab)
+https://www.data.gouv.fr/fr/datasets/liste-des-etablissements-cinematographiques-actifs-1/
 
-Missions locales pour l'emploi (Open Data IDF)
-https://data.iledefrance.fr/explore/dataset/missions-locales/map/?location=13,48.86342,2.4533&basemap=jawg.streets
-https://data.iledefrance.fr/explore/dataset/missions-locales/map/?location=13,48.83624,2.4824&basemap=jawg.streets
+>> Missions locales pour l'emploi (mis à jour en 2020, par la Région IDF sous licence ouverte Etalab)
+https://data.iledefrance.fr/explore/dataset/carte-des-missions-locales/
 
-Ruches (OpenStreetMap) 
+>> Ruches (OpenStreetMap)
 https://www.openstreetmap.org/
 Objets géographiques situés dans l'emprise géographique de la Métropole du Grand Paris répondant aux requêtes man_made = beehive, craft = beekeeper
 Extrait avec un script R en septembre 2022. 
 
-Hotels à insectes (OpenStreetMap) 
+>> Hotels à insectes (OpenStreetMap)
 https://www.openstreetmap.org/
 Objets géographiques situés dans l'emprise géographique de la Métropole du Grand Paris répondant à la requête man_made = insect_hotel
 Extrait avec un script R en septembre 2022. 
 
-Points d'écoute à oiseaux (OpenStreetMap) 
+>> Points d'écoute à oiseaux (OpenStreetMap)
 https://www.openstreetmap.org/
 Objets géographiques situés dans l'emprise géographique de la Métropole du Grand Paris répondant à la requête leisure = bird_hide
 Extrait avec un script R en septembre 2022. 
 
 shape tel qu'il est, aucun traitement (mais fonctionne !)
 Attention à la complétude des données pour OpenStreetMap !!
-
-
 
