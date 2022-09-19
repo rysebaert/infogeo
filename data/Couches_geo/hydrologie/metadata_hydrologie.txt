@@ -1,0 +1,15 @@
+### COUCHE HYDROLOGIE ########
+Description : Ce jeu de données représente le réseau hydrographique principal de la Région Île-de-France, simplifié par généralisation du tracé.
+L'AESN (Agence de l'Eau Seine Normandie), en partenariat avec l'IAU-ÎdF, a fait numériser l'hydrographie de surface de la Région Île-de-France.
+Ce jeu de données représente le réseau hydrologique linéaire d'Île-de-France en 2002. 
+
+Identifiant du jeu de données : reseau-hydrographique-principal-simplifie-dile-de-france
+Thèmes : Cadre de vie - environnement
+Mots clés : Environnement, Eau, Géolocalisation
+Licence : Licence Ouverte
+Langue : Français
+Modifié : 10 mars 2014 16:27
+Producteur : IAU-ÎdF
+Référence : https://data.iledefrance.fr/explore/dataset/reseau-hydrographique-principal-simplifie-dile-de-france
+Dernier traitement : 11 mars 2017 09:25 (métadonnées), 11 mars 2017 09:25 (données)
+
