@@ -54,8 +54,8 @@ L'information géographique peut être définie comme «**l'ensemble de la descr
 Entre **60 et 80%** de l’information que nous traitons possède une dimension géographique. (*Hahmann S. et Burghardt D., 2012, « How much information is geospatially referenced? Networks and cognition »*).
 
 
----
 
+---
 
 ## De l'information à l'information géographique ?
 

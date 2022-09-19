@@ -127,17 +127,24 @@ knitr::include_graphics('figures/carte_projet.png')
 
 ---
 
-<span style="font-size:19pt;">**2) Choisissez un type d'équipement public** parmi ces propositions :</span>
-
+<span style="font-size:19pt;">**2) Choisissez équipement** parmi ces propositions :</span>
 
 - **Médiathèque** 
+
 - **Conservatoire de musique**
+
 - **Salle de cinéma**
+
 - **Mission locale pour l’emploi**.
+
+- **Équipement sportif**
+
 - **Maison de retraite**.
 
 - **Nouvelles ruches**
+
 - **Hôtels à insectes**
+
 - **Abris d'écoute à oiseaux**.
 
 Les données géolocalisées de ces équipements ont préalablement été collectées par vos enseignants. Vous êtes libres de choisir d'autres équipements, mais il faudra récupérer vous-même ces données. 
