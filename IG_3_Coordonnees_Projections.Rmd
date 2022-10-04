@@ -155,7 +155,7 @@ knitr::include_graphics('figures/ellipsoid.jpg')
 
 ---
 
-## Ecart éllipsoïde-géoïde
+## Ecart ellipsoïde-géoïde
 
 .pull-left[
 ```{r, echo = FALSE, out.width = "500px", fig.align='center'}
