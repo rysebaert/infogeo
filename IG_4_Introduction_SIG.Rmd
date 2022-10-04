@@ -78,25 +78,42 @@ Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le
 
 ---
 
-## Un précurseur...
+## Londres, 1854
 
 .pull-left[
+**John Snow** est un médecin britannique. Ses travaux sur la **propagation du choléra** dans le quartier de Soho à Londres en 1854 sont reconnus dans l'histoire de l'**épidémiologie moderne** et de l'**analyse spatiale**.
+
+.left-column[
+<br>
+![](figures/John_snow.jpg)
+]
+
+.right-column[
+.medium[
+Il va identifier la **cause de l'épidémie** en utilisant un procédé simple, mais innovant, qui repose sur le principes de fonctionnement des SIG : **superposer deux couches géographiques différentes** :
+
+- **Les lieux de résidence des décès liés à l'épidémie**.
+- **Les pompes à eau** du quartier.]]  
+
+.medium[
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le foyer de contamination** : la pompe de Brewer Street.]
+]
+
+.pull-right[
 ![](figures/snow_monmonier.png)
 .leg-fig[Carte de John Snow revue par Mark Monmonnier, 1996]
 ]
 
 
-.pull-right[
-<img src="figures/snow_2.png" height="500px">
-]
 ---
 
-## ...des applications SIG
+## Un précurseur des applications SIG
 
 .center[Si John Snow avait utilisé un système d'information géographique...]
 
 .pull-left[
-<img src="figures/snow_GIS.gif" height="450" />
+<img src="figures/snow_2.png" height="500px">
 ]
 
 .pull-right[
@@ -186,7 +203,7 @@ Chaque **couche géographique contient des objets de même type** (adresses, par
 
 ---
 
-## Principe et fonctionnalités
+## Principes et fonctionnalités
 
 Un SIG permet de travailler sur les trois composantes de l'information géographique :
 
@@ -235,25 +252,27 @@ Pour travailler depuis chez vous, nous vous conseillons d'installer QGIS sur vot
 <br><br><br><br><br><br><br>
 # 3. Premiers pas dans un SIG et découverte de QGIS
 
-
+Téléchargez les données sur [Moodle](https://moodle.u-paris.fr/course/view.php?id=6316)
 ---
 
-## Présentation des données à disposition
+## Présentation des données à disposition - Couches géographiques
 
-Des jeux de données ont été extraits et préparés pour vous par les enseignants pour réaliser votre étude. Ils sont organisés par dossiers et sont disponibles sur [Moodle](https://moodle.u-paris.fr/course/view.php?id=6316).
+Les couches géographiques vectorielles (points, lignes, surfaces) au format shapefile (. shp), auxquelles sont souvent associées des attributs (ex : capacité des salles de cinéma).
 
 .pull-left[
 .medium[
-**Maillages territoriaux** *(répertoire maillage)* : 
-Données issues de l'IGN, contient les géométries des découpages administratifs français pour la métropole du Grand Paris (IRIS, communes, départements).
 
-**Équipements existants** *(répertoire Equipements)* :
-Données issues de la plateforme open data de la région Ile-de-France, contient les localisations des équipements cibles pour votre étude 
+**00_Équipements existants** 
 
-- Bibliothèques et médiathèques (844 points pour l'Ile-de-France)
-- Établissements et services pour les personnes âgées (1774 points)
-- Conservatoires et écoles de musique (331 points)
-- Missions locales pour l'emploi (172 points) et établissements cinématographiques (312 points)
+- Bibliothèques et médiathèques, conservatoires de musique, missions locales pour l'emploi, salles de cinéma, équipements sportifs, issues de la plateforme open data de la région Ile-de-France, contient les localisations des équipements cibles pour votre étude 
+
+- Hôtels à insecte, ruches, lieux d'écoute à oiseaux, issus de la plateforme collaborative OpenStreetMap. **Attention à la complétude des données** !
+
+**01_Maillages territoriaux** :  IRIS, communes, EPCI et départements de la Métropole du Grand
+Paris L’IRIS correspond au découpage territorial le plus fin en France. Ce sera aussi la brique
+territoriale que vous utiliserez pour définir le lieu d’implantation (favorisez l’implantation de
+l’équipement dans tel et tel IRIS…) IRIS…). Source : IGN en géographie du 1er janvier 2022).
+
 ]
 ]
 
@@ -263,21 +282,78 @@ Données issues de la plateforme open data de la région Ile-de-France, contient
 
 ---
 
-## Présentation des données à disposition
+## Présentation des données à disposition - Couches géographiques
 
-Des jeux de données ont été extraits et préparés pour vous par les enseignants pour réaliser votre étude. Ils sont organisés par dossiers et sont disponibles sur [Moodle](https://moodle.u-paris.fr/course/view.php?id=6316).
+D’autres couches géographiques sont disponibles. Elles serviront à définir des critères d’implantation pour optimiser l’implantation de l’équipement que vous aurez choisi..
 
+.medium[
 .pull-left[
-.medium[**Réseaux et zonages** *(répertoire Reseaux_zonages)* : Données également extraites depuis Open data IDF, contient les géométries des quartiers prioritaires pour la politique de la ville (300 quartiers), la localisation d'arrêts de transport collectif (bus, tram, métro, RER) ainsi que le réseau hydrographique principal de la région.
 
-**Critères socio-économiques** *(répertoire maillage)* : Contient des indicateurs statistiques à l'échelle de l'IRIS issus du recensement principal de l'INSEE (année de référence : 2013). Il s'agit de structures par âge de la population, les catégories sociales en 8 postes, actifs, chômeurs, étudiants, retraités, étudiants, personnes en CDD, interim, ainsi que le revenu médian de la population.
-]
-]
 
+**BPE** : une sélection pour l’Ile de France de 44 équipements géolocalisés que nous avons jugé
+adapté au regard des équipements à implanter. Source INEE, Base Permanente des
+Équipements 2021
+
+**Grille 200 m** : Des données socio économiques dans des carreaux réguliers de 200 mètres de
+côté (le plus fin existant en France).
+
+**Couverture du sol** : les parcs et jardins, les zones majoritairement dédiées aux fleurs, les
+forêts et vergers de la Métropole du Grand Paris. Source : OpenStreetMap.
+
+**Hydrologie** : Le réseau hydrologique principal d’Ile de France (Seine, Marne). Source
+Plateforme Open Data de la Région Ile de France.
+
+]
 
 .pull-right[
-![](figures/infogeodatafiles.PNG)
+**Transports** : Le réseau routier principal et le réseau ferré en Ile de Franc e (source :
+OpenStreetMap ), ainsi que la localisation des arrêts de bus, de train, de tram et de métro
+(source : Plateforme Open Data de la Région Ile de France.
+
+![](figures/infogeodata.PNG)]
 ]
+
+
+
+---
+
+## Présentation des données à disposition - Données statistiques
+
+Fichiers au format Excel qui correspondent à des extraits pour la Métropole du Grand Paris des données officielles de
+l’INSEE à l’échelle des IRIS et à la commune. 
+
+.medium[
+.pull-left[
+**BPE** : Les mêmes équipements que ceux disponibles dans le dossier des couches
+géographiques, mais agrégés à l’échelle des IRIS et des communes (e.g. nombre de médecins
+généralistes par IRIS ou par commune). Source : INSEE, Base Permanente des équipements en
+2021.
+
+**Démo** : Population totale et structure par âge de la population. Source : INSEE.
+
+**Socio-éco** : Structure de l’emploi (chômage, type de salariat, catégories socioprofessionnelles)
+de la population de plus de 15 ans selon la situation d’activité  et niveaux de vie des ménages (pauvreté, revenus). Source : INSEE.
+
+A partir de ces données, vous pourrez être en mesure de calculer des ratios d'intérêt : taux de chômage, part de la population jeune / âgée...
+]
+
+.pull-right[
+![](figures/infogeostat.PNG)]
+]
+
+---
+
+
+## Présentation des données à disposition - Métadonnées
+
+Les métadonnées apportent des éléments essentiels pour comprendre le contenu des ressources à votre disposition, leur origine et d'éventuelles informations sur leur utilisation. Leur consultation attentive est primordiale.
+
+.medium[
+Avec ces métadonnées, vous êtes en mesure de répondre aux questions suivantes : *Quelle est la signification du code "P18_POP0002" ? Quelle est son unité de mesure ? Qui a produit la donnée, quand ? Quelle est l'année de référence de l'indicateur ??*
+]
+
+![](figures/metadatainsee.PNG)
+
 
 ---
 
@@ -317,215 +393,222 @@ Dans votre répertoire de travail, créez une architecture de sous-répertoires 
 ]
 
 ---
-
-## Métadonnées
-
-Les métadonnées apportent des éléments essentiels pour comprendre le contenu des ressources à votre disposition, leur origine et d'éventuelles informations sur leur utilisation. Leur consultation attentive est primordiale.
-
-![](figures/metadatainsee.PNG)
-
-
-.medium[Avec ces métadonnées, vous êtes en mesure de répondre aux questions suivantes : *Quelle est la signification du code "P13_CHOM1564_tx" ? Quelle est son unité de mesure ? Qui a produit la donnée, quand ? Quelle est l'année de référence de l'indicateur ? Qu'est-ce qu'un IRIS ?*]
-
----
-
-
+.left-column[
 ## L'Interface de QGIS
 
-.left-column[
-<br>
 .medium[
 1.  **Menu principal**
+
 2.  **La barre d’outils** : Raccourci vers les outils les plus récurrents utilisés
+
 3.  **Barre d’outils latérale** : Par défaut, raccourci vers les options d'import de données.
+
 4.  **La barre d’état** : Niveau de zoom, échelle, coordonnées géographiques
+
 5.  **Les panneaux** : Explorateur, listing des couches géographiques chargées...
+
 6.  **Le canevas de carte** : visualisation des couches géographiques.  
 ]
 ]
 
 .right-column[
 ![](figures/interface_qgis.png)
+
 ]
 
 ---
 
-## Import (vecteur, raster, données tabulaires... )
-
+.left-column[
+## Importer une couche vectorielle
 
 **Pour importer des données facilement**, utilisez la barre d'outil latérale.
 
-.left-column[
-.medium[
-<br><br><br><br>
 Choisissez l'icône **en fonction du type de données à importer** (Vecteur, raster, csv...).
 
-<br>
-**TO DO** : *Importez La couche géographique IRIS de votre espace d'étude, celle de votre équipement et celle des communes de la Métropole du Grand Paris*.
-]
+Choisissez la couche *IRIS* (Couches Géo > 01_Découpages_territoriaux)
 ]
 
 .right-column[
+![](figures/importvecteur.PNG)
+
 .center[
-<img src="figures/importvecteur.PNG" height="400" />
+Importez la couche **IRIS** dans QGIS
 ]
 ]
 
 ---
-
-## Import (vecteur, raster, données tabulaires... )
-
-**Pour importer des données facilement**, utilisez la barre d'outil latérale.
 
 .left-column[
-.medium[
-<br><br><br><br>
-Import d'un fichier de données (1 et 2), définir les séparateurs de champs (3) et préciser si le fichier contient des géométries ou non (4).
+## Sélection par attributs
 
-<br>
-**TO DO** : *Importez le fichier de données contenant les structures par âge des IRIS (Ratio_DEMO_IRIS_2013.csv).*
+Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
+
+1. Clic droit sur la couche IRIS
+2. Ouvrir la table d'attribut
+3. Sélectionner les entités en utilisant une expression 
 ]
-]
+
 
 .right-column[
+![](figures/selection_par_attribut.PNG)
 .center[
-<img src="figures/importdata.PNG" height="400" />
+Sélectionnez uniquement les IRIS de **votre espace d'étude**
 ]
 ]
 
 ---
 
+.left-column[
+## Sélection par attributs
+
+Il est possible de sélectionner les objets géographiques à partir de leur **table attributaire**
+
+
+1. Clic droit sur la couche IRIS
+2. Ouvrir la table d'attribut
+3. Sélectionner les entités en utilisant une expression 
+4. Choisir son espace d'étude (champ LIB_EPCI)
+]
+
+.right-column[
+![](figures/selection_par_attribut_2.PNG)
+
+.center[
+Sélectionnez uniquement les IRIS de **votre espace d'étude**
+]
+]
+
+
+---
+.left-column[
+## Export d'une sélection
+
+
+1. Suite à la précédente sélection, clic droit sur la couche IRIS
+2. Sélectionner "Exporter, sauvegarder les entités sous...
+3. Sélectionner **l'emplacement de votre dossier de travail** et **nommer** la couche. Choisissez un format shapefile ou GEOJSON. 
+4. Sélectionner l'option **N'enregistrer que les entités sélectionnées**
+
+]
+
+.right-column[
+![](figures/export_sel.PNG)
+.center[
+**Exportez les IRIS** qui composent votre espace d'étude
+]
+]
+
+---
+.left-column[
 ## Gestion de la projection
 
 **La projection** d'une couche géographique **est indiquée dans ses propriétés générales**.
 
-.left-column[
 .medium[
-<br><br>
 Les couches géographiques s'affichent automatiquement dans le système de projection de la première couche géographique importée.
 
 Pour modifier le système de projection, il suffit d'enregistrer une nouvelle version de la couche géographique concernée dans le système de projection souhaité (clic-droit sur la couche, enregistrez-sous...).
-
-**TO DO** : *Enregistrez la couche géographique des équipements dans la même projection que la couche géographique des IRIS*.]
+]
 ]
 
 .right-column[
-.center[
-<img src="figures/projct_qgis.PNG" height="400" />
-]
+
+![](figures/projct_qgis.PNG)
+
+Importez la couche géographique contenant vos **équipements d'intérêt**, observez sa **projection** et enregistrez la dans la même projection que celle de vos **IRIS**.
+
 ]
 
 ---
-
-## Consulter les données attributaires et sélectionner des valeurs
-
-Chaque couche géographique est associée à une **table attributaire**.
 
 .left-column[
-<br><br>
-.medium[
-Pour consulter la table attributaire d'une couche géographique, cliquez droit sur la couche concernée dans le panneau légende, puis cliquez sur **Ouvrir la table d'attributs**.
 
-**TO DO** : *Ouvrez la table attributaire de votre couche d'IRIS, ordonnez la colonne TYP_IRIS (clic sur l'en-tête de colonne) et sélectionnez uniquement les IRIS d'habitation (type = H)*
-]]
-
-.right-column[
-.center[
-<img src="figures/qgis_5.PNG" height="400" />
-]
-]
-
----
-## Autres options de sélection
+## Quelques options utiles
 
 **Pour sélectionner et zoomer**, utilisez les différentes fonctionnalité de la barre d'outils.
 
-.left-column[
 .medium[
-<br><br><br><br>
 Les icônes *loupe* permettent de **zoomer/dé-zoomer**. Il est également possible d'utiliser la roulette de votre souris. **L'outil de sélection offre plusieurs solutions** : sélection par clic, par polygone, à main levée...
 
-**TO DO** : *Cliquez sur l'outil identifiez les résultats, puis sélectionnez n'importe quel objet. Que constatez vous ?*
 ]
 ]
 
 .right-column[
 .center[
-<img src="figures/qgis_4.png" height="400" />
+![](figures/qgis_4.png)
 ]
 ]
 
 ---
+.left-column[
 ## Gestion de l'affichage graphique
 
-.left-column[
-.medium[
-<br><br>
 Pour changer l'ordre d'affichage des couches, il suffit de les faire glisser à la position de son choix, comme des onglets dans un navigateur Web.
 
 Pour **visualiser l'ensemble d'une couche géographique**, **cliquez droit sur la couche** concernée dans le panneau légende, puis cliquez sur *Zoomer sur la couche*.
 
-**TO DO** : *Si ce n'est pas déjà fait, placez les couches géographiques dans l'ordre suivant : IRIS, communes, votre équipement.* 
-]
 ]
 
 .right-column[
-.center[
-<img src="figures/qgis_2.PNG" height="400" />
-]
-]
 
+![](figures/qgis_2.png)
+
+.center[
+Importez la couche géographique des **communes**, placer les couches géographiques dans l'ordre suivant : **IRIS, communes, votre équipement** 
+]
+]
 
 ---
-
+.left-column[
 ## Gestion de l'affichage graphique
 
 Modifier le style graphique (**symbologie**) d'une couche géographique
 
-.left-column[
-<br><br><br><br>
-.medium[
-**Double-cliquez sur la couche géographique concernée**, puis allez dans l'onglet *symbologie*.
+**Double-clic sur la couche géographique concernée**, puis onglet*symbologie*.
 
-**TO DO** : *Jouez sur le style graphique (couleur de fond, bordures) des couches IRIS, communes et équipement.*
-]
+
 ]
 
 .right-column[
+
+![](figures/qgis_3.PNG)
+
+
 .center[
-<img src="figures/qgis_3.PNG" height="400" />
+Jouer sur le **style graphique** (couleur de fond, bordures) des couches IRIS, communes et équipement.
 ]
 ]
 
 
 ---
-
+.left-column[
 ## Gestion de l'affichage graphique
 
-Vous pouvez aussi rajouter des **labels (étiquettes)** à la couche pour faciliter le repérage.
+Rajouter des **labels (étiquettes)** à la couche peut faciliter le repérage / la lecture de la carte.
 
-.left-column[
-<br><br><br><br>
-.medium[
+
 Clic-droit sur la couche commune, puis propriétés. Cliquez ensuite sur "étiquettes".
 
-**TO DO** : *Faites apparaître sur l'espace d'affichage le nom des communes de votre espace d'étude.*
-]
 ]
 
 .right-column[
 .center[
-<img src="figures/etiquettes.PNG" height="400" />
+![](figures/etiquettes.PNG)
+
+Faites apparaître sur l'espace d'affichage **le nom des communes** de votre espace d'étude.
 ]
 ]
 ---
 
 ## Gestion de l'affichage graphique
 
-Familiarisez vous avec vos équipements et votre espace d'étude en **superposant intelligemment les couches IRIS, communes, départements** ainsi que celle contenant **votre équipement**. Jouez sur les styles, et améliorez la **lisibilité**</p>
-
 .center[
-<img src="figures/todostyles.PNG" height="400" />
+
+<img src="figures/todostyles.PNG" width="600" />
+
+Familiarisez vous avec vos équipements et votre espace d'étude en **superposant intelligemment les couches IRIS, communes, départements** ainsi que celle contenant **votre équipement**. 
+
+Jouez sur les styles, et améliorez la **lisibilité**
 ]
 
 
