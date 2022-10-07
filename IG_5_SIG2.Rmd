@@ -29,8 +29,8 @@ knitr::opts_chunk$set(cache = TRUE,
 # install.packages("devtools")
 # devtools::install_github("gadenbuie/countdown")
 # devtools::install_github("mitchelloharawild/icons")
-library(countdown)
-library(icons)
+#library(countdown)
+#library(icons)
 #download_fontawesome()
 ```
 
@@ -226,50 +226,80 @@ Ne jamais oublier d'enregistrer votre projet à la fin de votre travail pour con
 
 
 ---
-
 ## Sélection des IRIS caractérisés par une population jeune
+.left-column[
 
-### **Étape 1** - Importer un fichier tabulaire
+### **Étape 1** - Consulter données et métadonnées
 
 .medium[
-*Importez le fichier contenant les structures par âge des IRIS d'Ile-de-France.*
+*Quelles sont les champs dont je vais avoir besoin* ?
+
+*Quel est leur code associé* ?
+
+> Se reporter aux métadonnées !
+
+**Enregistrer le fichier Excel au format .csv**
+
 ]
-.center[
-<img src="figures/import_table.PNG" height="400" />
 ]
+
+.right-column[
+![](figures/consult_excel.PNG)
+]
+
 
 ---
-
 ## Sélection des IRIS caractérisés par une population jeune
-
-### **Étape 2** - Jointure attributaire
 
 .left-column[
 
+### **Étape 2** - Importer un fichier tabulaire
+
 .medium[
-<br><br><br>
-Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.
+*Importez le fichier contenant les structures par âge des IRIS d'Ile-de-France.*
 
-Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
+- Virgule en séparateur décimal
+- Pas de géométrie
 
-*Clic droit sur la couche IRIS, propriétés, jointure, cliquer sur "+"*
+*Cliquez sur "ajouter"*
 ]
 ]
 
 .right-column[
 .center[
-<img src="figures/jointure_1.PNG" height="400" />
+![](figures/import_table.PNG)
+]
+]
+---
+## Sélection des IRIS caractérisés par une population jeune
+.left-column[
+
+
+### **Étape 3** - Jointure attributaire
+
+.medium[
+Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.
+
+Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
+
+*Clic droit sur la couche IRIS, propriétés, jointure, cliquez sur "+"*
+]
+]
+
+.right-column[
+.center[
+![](figures/jointure_1.PNG)
 ]]
 
 ---
-
 ## Sélection des IRIS caractérisés par une population jeune
-
-### **Étape 2** - Jointure attributaire
-
 .left-column[
+
+
+### **Étape 3** - Jointure attributaire
+
+
 .medium[
-<br><br><br>
 Jointure de ce fichier de données non spatiales à la couche géographique des IRIS.
 
 Au préalable, il faut s'assurer de la concordance des données statistiques avec les géométries et identifier le nom de la colonne (identifiant unique) sur laquelle portera la jointure.
@@ -279,27 +309,31 @@ Au préalable, il faut s'assurer de la concordance des données statistiques ave
 ]
 
 .right-column[
+**BRAVO !!! Vous venez de joindre les données démographiques de l'INSEE dans la table attributaire de la couche IGN IRIS !** 
 .center[
-<img src="figures/jointure_2.PNG" height="400"/>
+![](figures/jointure_2.PNG)
 ]]
 
 ---
-
 ## Sélection des IRIS caractérisés par une population jeune
+.left-column[
 
-### **Étape 2** - Jointure attributaire
 
-**BRAVO !!! Vous venez de joindre les données démographiques de l'INSEE dans la table attributaire de la couche IGN IRIS !** 
+### **Étape 4** - Calcul de la part des 0-24 ans
 
-.center[
-<img src="figures/jointure_3.PNG" width="800" />
+*Appuyez sur le stylo pour finir (l'édition) et enregistrez les résultats (OK)* 
 ]
 
----
+.right-column[
 
+![](figures/calcul_champ.PNG)
+]
+
+
+---
 ## Sélection des IRIS caractérisés par une population jeune
 
-### **Étape 3** - Sélection par expression
+### **Étape 5** - Sélection par expression
 
 .left-column[
 .medium[
@@ -320,7 +354,7 @@ NB : On pourrait aussi envisager la sélection autrement: 25 % des IRIS les plus
 
 ## Sélection des IRIS caractérisés par une population jeune
 
-### **Étape 4** - Enregistrer les résultats 
+### **Étape 6** - Enregistrer les résultats 
 
 .left-column[
 <br><br><br>
