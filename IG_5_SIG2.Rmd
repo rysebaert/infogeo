@@ -122,8 +122,8 @@ Le choix du **prédicat géométrique est important** (intersecte, contient, est
 <br><br><br><br><br><br><br>
 # 2. Exercice pratique (1)
 
-## Extraire les biblioothèques inclues dans le territoire d'Est-Ensemble
-### Changer la projection, sélectionner par localisation et sélectionner par expression. 
+## Extraire les bibliothèques inclues dans le territoire d'Est-Ensemble
+### Changer la projection, sélection par localisation et par expression. 
 
 ---
 
@@ -181,20 +181,39 @@ Observer le résultat de la sélection et l'enregistrer. *(clic droit sur la cou
 
 ## Sélection des bibliothèques d'Est Ensemble
 
+.left-column[
 ### **Étape 4** - Filtrer les résultats 
 
-.left-column[
 .medium[
-*Pour notre projet, nous décidons de moderniser une bibliothèque existante. Nous souhaitons donc retirer toutes les médiathèques déjà existantes de cette sélection.*
+[Le répertoire des bibliothèques](https://data.iledefrance.fr/explore/dataset/repertoire-bibliotheques/information/?disjunctive.typeinst) comprend des équipements de nature très hétérogènes (archives, centres spécialisés, musées, bibliothèques, etc.)
 
-*Ouvrez la table attributaire, triez les résultats, et ne sélectionnez que les bibliothèques. Enregistrez la sélection sous le nom "bibli_est_ensemble"*.
+La consultation de la table attributaire montre que le territoire d'Est-Ensemble comprend **17 bibliothèques**. 9 correspondent à des bibliothèques **généralistes**, de gestion communale ou intercommunale. Ce territoire comprend déjà **3 médiathèques**. 
 
-*On note ainsi que 16 bibliothèques et sont incluses dans le territoire d'Est Ensemble. Ce territoire compte aussi déjà 2 médiathèques, situées dans les communes de Bagnolet et Noisy-le-Sec.*
-]]
-
+]
+]
 .right-column[
 .center[
-<img src="figures/select_table_attrib.PNG" height="400" />
+![](figures/select_table_attrib.PNG)
+]]
+
+---
+
+## Sélection des bibliothèques d'Est Ensemble
+
+.left-column[
+### **Étape 4** - Filtrer les résultats 
+
+.medium[
+
+Nous souhaitons transformer une bibliothèque en médiathèque, sans que celle-ci ne se retrouve sur la zone de chalandise d'une médiathèque existante :
+
+- Extraire les bibliothèques publiques, les enregistrer dans votre dossier "mes traitements" sous le nom de "*bibli_est_ensemble*", puis les 3 médiathèques, sous le nom "*mediatheque_est_ensemble*". 
+
+]
+]
+.right-column[
+.center[
+![](figures/select_table_attrib2.PNG)
 ]]
 
 ---
