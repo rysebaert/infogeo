@@ -54,50 +54,121 @@ style_duo_accent(
 
 **Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
 
+**Proposition d'un 3e critère** : Sélectionner les 25% d'IRIS les plus pauvres d'Est ensemble.
+
+→ Comment procéder ?
+
+--
+
+1. Importer le fichier `socio_eco.xlsx` après avoir repéré le champ pertinent (`DEC_MED19`)
+2. Faire la **jointure attributaire** avec la couche IRIS
+3. Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
+4. Sélectionner (**sélection par attribut**) les IRIS qui correspondent à cette tranche de revenu médian
+5. Enregistrer le résultat (3e critère)
+
+---
+
+## Le 1er quartile des IRIS, par revenu
+
+.pull-left[
+Importer le fichier `socio_eco.xlsx` après avoir repéré le champ pertinent (`DEC_MED19`)
+]
+
+.pull-right[
 .center[
-<img src="figures/ig_5_rappel1.PNG" width="700" />
+![Exercice, étape 1](figures/exo_irisrevenu_tableau.png)
+]
 ]
 
 ---
 
-## Jointures, sélections par expression... 
+## Le 1er quartile des IRIS, par revenu
 
-**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
+.pull-left[
+Faire la **jointure attributaire** avec la couche IRIS
+]
 
+.pull-right[
 .center[
-<img src="figures/ig_5_rappel2.PNG" width="700" />
+![Exercice, étape 2](figures/exo_irisrevenu_jointure.png)
+]
 ]
 
 ---
 
-## Jointures, sélections par expression... 
+## Le 1er quartile des IRIS, par revenu
 
-**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
+.pull-left[
+Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
+]
 
+.pull-right[
 .center[
-<img src="figures/ig_5_rappel3.PNG" width="700" />
+![Exercice, étape 3](figures/exo_irisrevenu_stats_montrer.png)
+]
 ]
 
 ---
 
-## Jointures, sélections par expression... 
+## Le 1er quartile des IRIS, par revenu
 
-**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
+.pull-left[
+Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
+]
 
+.pull-right[
 .center[
-<img src="figures/ig_5_rappel4.PNG" width="700" />
+![Exercice, étape 3](figures/exo_irisrevenu_stats_champ.png)
+]
 ]
 
 ---
 
-## Jointures, sélections par expression... 
+## Le 1er quartile des IRIS, par revenu
 
-**Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
-
-.center[
-<img src="figures/ig_5_rappel5.PNG" width="700" />
+.pull-left[
+Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
 ]
 
+.pull-right[
+.center[
+![Exercice, étape 3](figures/exo_irisrevenu_stats_q1.png)
+]
+]
+
+---
+
+## Le 1er quartile des IRIS, par revenu
+
+.pull-left[
+Sélectionner (**sélection par attribut**) les IRIS qui correspondent à cette tranche de revenu médian
+]
+
+.pull-right[
+.center[
+![Exercice, étape 3](figures/exo_irisrevenu_selec.png)
+]
+]
+
+---
+
+## Le 1er quartile des IRIS, par revenu
+
+.pull-left[
+Enregistrer le résultat (3e critère)
+]
+
+.pull-right[
+.center[
+![Exercice, étape 3](figures/exo_irisrevenu_export.png)
+]
+]
+
+---
+
+.center[
+![Résultat](figures/exo_irisrevenu_fin.png)
+]
 
 ---
 
@@ -240,49 +311,55 @@ Tampons variables autour des rivières (Source : [Documentation QGIS](https://do
 
 ## Agréger les IRIS en communauté d'agglomération
 
-Objectif : Créer une couche présentant l'**emprise spatiale de la communauté d'agglomération Est Ensemble**. Une méthode possible : **agrégation sur les valeurs d'un champ (ou dissolve).**
 
 .left-column[
 .medium[
+Objectif : Créer une couche présentant l'**emprise spatiale de la communauté d'agglomération Est Ensemble** à partir du fichier des communes.
+
+Une méthode possible : **agrégation sur les valeurs d'un champ (ou dissolve).**
+
 Afficher la couche IRIS de votre espace d'étude, ouvrez la table attributaire et trouver le nom du champ correspondant au nom (ou au code de la communauté d'agglomération d'appartenance des IRIS.
 
-Vecteur > outils de géotraitement > Regrouper.
-
-Champ de regroupement : Sélectionner la colonne qui spécifie l'appartenance aux EPCI des communes (EPT_LIBEPT par exemple).
-
-Nommer le fichier de sortie **EPT_Est_Ensemble.shp**.]]
+Vecteur > outils de géotraitement > Regrouper.]]
 
 .right-column[
 
 .center[
-<img src="figures/dissolve_est_ensemble.PNG" width="500" />]]
+![](figures/dissolve_1.png)
+
+]]
 
 ---
 
 ## Agréger les IRIS en communauté d'agglomération
 
-Résultat pour Est-Ensemble...
+.pull-left[
+Champ de regroupement : Sélectionner la colonne qui spécifie l'appartenance aux EPCI des communes (EPT_LIBEPT par exemple).
 
-.center[
-<img src="figures/dissolve_est_ensemble2.PNG" width="800" />]
+Nommer le fichier de sortie **EPT_Est_Ensemble.shp**.]
+
+
+.pull-right[
+![](figures/dissolve_2.png)
+]
 
 ---
 
 ## Agréger les IRIS en communauté d'agglomération
 
-On pourrait réaliser la même opération pour l'ensemble de la MGP...
+Résultat pour Est-Ensemble et les EPCI avoisinants
 
-.center[
-<img src="figures/dissolve_est_ensemble3.PNG" width="800" />]
+<img src="figures/dissolve_3.png" width="800" />
+
 
 ---
 
 ## Diversifier l'offre géographique
 
-Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
-
 .left-column[
 .medium[
+Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
+
 ### **Étape 1** 
 Ouvrir la couche *bibliotheque_Est_Ensemble.shp* (correctement projetée), extraire uniquement les médiathèques (depuis la table attributaire ou par une sélection par expression). 
 
@@ -291,85 +368,149 @@ Réaliser un **espace tampon** de 1500 mètres autour de celles-ci et nommer cet
 
 .right-column[
 .center[
-<img src="figures/tampon_est_ensemble1.PNG" width="800" />
+![](figures/tampon_exo_1.png)
 
+.leg-fig[Création d'un **espace tampon de 1500m autour des médiathèques**]]]
+
+
+---
+
+## Diversifier l'offre géographique
+
+.left-column[
+.medium[
+Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
+
+### **Étape 1** 
+Ouvrir la couche *bibliotheque_Est_Ensemble.shp* (correctement projetée), extraire uniquement les médiathèques (depuis la table attributaire ou par une sélection par expression). 
+
+### **Étape 2** 
+Réaliser un **espace tampon** de 1500 mètres autour de celles-ci et nommer cette couche *mediatheques_1500m*.]]
+
+.right-column[
+.center[
+![](figures/tampon_exo_2.png)
 .leg-fig[Création d'un **espace tampon de 1500m autour des médiathèques**]]]
 
 ---
 
 ## Diversifier l'offre géographique
 
-Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
-
 .left-column[
 .medium[
+Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
 
 ### **Étape 3** 
 Réaliser la **différence** entre la couche *mediatheques_1500m* et la couche *EPT_Est_Ensemble*, la nommer *mediatheques_1500diff*.
+]]
+
+.right-column[
+.center[
+![](figures/tampon_exo_3.png)
+]]
+
+---
+
+## Diversifier l'offre géographique
+
+.left-column[
+
+.medium[
+
+Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
 
 ### **Étape 4** 
 Supprimer les couches intermédiaires affichées dans le SIG, enregistrer la couche finale dans le répertoire adéquat et jouer sur le style de cette couche finale qui nous intéresse directement pour notre projet.]]
 
 .right-column[
 .center[
-<img src="figures/tampon_est_ensemble2.PNG" width="800" />
+![](figures/tampon_exo_4.png)
 .leg-fig[L'espace à plus de 1500 mètres d'une médiathèque est dorénavant sélectionné !]]]
 
 ---
 
 ## Une médiathèque accessible
 
-Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de RER ou de métro**.
-
 .left-column[
 .medium[
 
+Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de tramway ou de métro**.
+
 ### **Étape 1**
-Ouvrir les couches *METRO* et *RER*, les enregistrer dans la projection du projet (EPSG:2154).
+Ouvrir les couches *arrets_metro* et *arrets_tram*, les enregistrer dans la projection du projet (EPSG:2154).
 
 ### **Étape 2**
-Créer **l'union** de ces deux couches. Nommer le résultat *RER_METRO*
+Créer **l'union** de ces deux couches. Nommer le résultat *Metro_Tram*
 ]]
 
 .right-column[
 .center[
-<img src="figures/union_est_ensemble.PNG" width="800" />
+![](figures/exo_union_1.png)
+]]
+
+---
+
+## Une médiathèque accessible
+
+.left-column[
+.medium[
+
+Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de tramway ou de métro**.
+
+### **Étape 1**
+Ouvrir les couches *arrets_metro* et *arrets_tram*, les enregistrer dans la projection du projet (EPSG:2154).
+
+### **Étape 2**
+Créer **l'union** de ces deux couches. Nommer le résultat *Metro_Tram*
+]]
+
+.right-column[
+.center[
+![](figures/exo_union_2.png)
 .leg-fig[Les deux couches géographiques de transport sont désormais réunies en une seule !]
 ]]
 
+
 ---
 
 ## Une médiathèque accessible
-
-Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de RER ou de métro**.
 
 .left-column[
 .medium[
 
+Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de RER ou de métro**.
+
 ### **Étape 3**
-Réaliser un **espace tampon** de 1000 mètres autour de celle-ci et nommer cette couche *RER_METRO_1000m*.]]  
+Réaliser un **espace tampon** de 1000 mètres autour de celle-ci et nommer cette couche *Metro Tram 1000m*.]]  
 
 .right-column[
 .center[
-<img src="figures/tampon_est_ensemble3.PNG" width="800" />]]
+![](figures/tampon_exo_5.png)
+]]
 
 ---
 
 ## Une médiathèque accessible
-
-Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de RER ou de métro**.
 
 .left-column[
 .medium[
 ### **Étape 4**
-Réaliser l'**intersection** entre la couche **RER_METRO_1000m** et la couche **EPT_Est_Ensemble**, la nommer *ACCESS*.
+Réaliser l'**intersection** entre la couche `Metro Tram 1000M` et la couche **EPT_Est_Ensemble**, la nommer *Accessibilite*.
 
 ### **Étape 5**
 Supprimer les couches intermédiaires affichées dans le SIG, enregistrer la couche finale dans le répertoire adéquat et jouer sur le style de cette couche finale qui nous intéresse directement pour notre projet.]]
 
 .right-column[
 .center[
-<img src="figures/intersection_est_ensemble.PNG" width="800" />]]
+![](figures/exo_intersection.png)
+]]
+
+---
+
+.center[
+<img src="figures/exo_intersection_2.png" width=800>
+]
+
 
 ---
 <br><br><br><br><br><br><br>
@@ -401,7 +542,7 @@ Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancem
 ## Modéliser sa chaine de traitement
 
 .center[
-<img src="figures/chaine_traitement1.png" width="800" />
+<img src="figures/chaine_traitement_V2_1.png" width="750" />
 ]
 
 ---
@@ -409,7 +550,7 @@ Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancem
 ## Modéliser sa chaine de traitement
 
 .center[
-<img src="figures/chaine_traitement2.png" width="800" />
+<img src="figures/chaine_traitement_V2_2.png" width="750" />
 ]
 
 ---
@@ -417,7 +558,7 @@ Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancem
 ## Modéliser sa chaine de traitement
 
 .center[
-<img src="figures/chaine_traitement3.png" width="800" />
+<img src="figures/chaine_traitement_V2_3.png" width="750" />
 ]
 
 ---
@@ -425,7 +566,7 @@ Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancem
 ## Modéliser sa chaine de traitement
 
 .center[
-<img src="figures/chaine_traitement4.png" width="800" />
+<img src="figures/chaine_traitement_V2_4.png" width="750" />
 ]
 
 ---
@@ -433,7 +574,7 @@ Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancem
 ## Modéliser sa chaine de traitement
 
 .center[
-<img src="figures/chaine_traitement5.png" width="800" />
+<img src="figures/chaine_traitement_V2_5.png" width="750" />
 ]
 
 ---
@@ -441,7 +582,7 @@ Nous vous conseillons de réaliser ce schéma au fur et à mesure de l’avancem
 ## Modéliser sa chaine de traitement
 
 .center[
-<img src="figures/chaine_traitement6.png" width="800" />
+<img src="figures/chaine_traitement_V2_6.png" width="750" />
 ]
 
 ---
