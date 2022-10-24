@@ -52,29 +52,48 @@ style_duo_accent(
 
 ## Une possible procédure... 
 
+.pull-left[
 Nous avons créé 4 couches géographiques qui constituent nos critères pour l'implantation d'une nouvelle médiathèque :
 
-- **POP024** : IRIS dont la part de la population de 0 à 24 ans est supérieure à 33 %. 
-- **REV_Q1** : les 25 % plus pauvres IRIS sur le territoire d'Est Ensemble.
-- **ACCESS** : l'espace situé à moins de 1000 m d'une station de métro ou de RER sur le territoire d'Est Ensemble.  
-- **1500DIFF** : l'espace situé à plus de 1500 m d'une médiathèque existante.
+- **Age_0024** : IRIS dont la part de la population de 0 à 24 ans est supérieure à 33 %. 
+- **Revenu_Med** : les 50 % plus pauvres IRIS sur le territoire d'Est Ensemble.
+- **MetroTram_1000m** : l'espace situé à moins de 1000 m d'une station de métro ou de RER sur le territoire d'Est Ensemble.  
+- **Mediatheque_1500mDiff** : l'espace situé à plus de 1500 m d'une médiathèque existante.
+]
 
-<br>
+.pull-right[
+<img src="figures/rappel_couches_criteres.jpg" width=500>
+]
 
+---
+
+## Une possible procédure... 
+
+.pull-left[
+Nous avons créé 4 couches géographiques qui constituent nos critères pour l'implantation d'une nouvelle médiathèque :
+
+- **Age_0024** : IRIS dont la part de la population de 0 à 24 ans est supérieure à 33 %. 
+- **Revenu_Med** : les 50 % plus pauvres IRIS sur le territoire d'Est Ensemble.
+- **MetroTram_1000m** : l'espace situé à moins de 1000 m d'une station de métro ou de RER sur le territoire d'Est Ensemble.  
+- **Mediatheque_1500mDiff** : l'espace situé à plus de 1500 m d'une médiathèque existante.
+]
+
+.pull-right[
 Dans notre cas, nous allons explorer **deux situations** :
 
 - **Nouvelle implantation** : Définir les IRIS qui présentent des caractéristiques favorables à l'implantation d'un nouvel équipement.
-- **Modernisation d'une bibliothèque** : Identifier les bibliothèques dans ces secteurs favorables. 
+- **Modernisation d'une bibliothèque** : Identifier les bibliothèques dans ces secteurs favorables.
+]
 
 ---
 ## Une possible procédure... 
 
 On peut procéder de bien des manières dans QGIS pour aboutir au résultat escompté, en voici par exemple une : 
 
-1. Afficher les couches **IRIS**, **POP024** et **REV_Q1**.  
-2. Par une **sélection par localisation**, sélectionner les IRIS de POP024 qui sont **égaux** à REV_Q1. Enregistrer la sélection sous le nom **IRIS_POP_REV**.
-3. Sélectionner les IRIS de la couche **IRIS_POP_REV** qui sont à l'intérieur de **1500_DIFF**. Enregistrer la sélection sous le nom **IRIS_POP_REV_DISTMED**.
-4. Sélectionner les IRIS de la couche **IRIS_POP_REV_MED** qui sont à l'intérieur de **ACCESS**. On enregistre la sélection sous le nom **IMPLANTATION_IRIS**.   
+1. Afficher les couches **IRIS**, **Age_0024** et **Revenu_Med**.  
+2. Par une **sélection par localisation**, sélectionner les IRIS de Age_0024 qui sont **égaux** à Revenu_Med. Enregistrer la sélection sous le nom **Iris_Age_Rev**.
+3. Sélectionner les IRIS de la couche **Iris_Age_Rev** qui sont à l'intérieur de **Mediatheque_1500mDiff**. Enregistrer la sélection sous le nom **Iris_Age_Rev_Med**.
+4. Sélectionner les IRIS de la couche **Iris_Age_Rev_Med** qui sont à l'intérieur de **MetroTram_1000m**. On enregistre la sélection sous le nom **Implantation_Iris**.   
 
 Pour maîtriser votre traitement, travaillez avec soin et méthode :
 - N'affichez que les couches sur lesquelles vous effectuez vos sélections. Observez si les résultats sont conformes à votre intention avant de les enregistrer. 
@@ -148,7 +167,7 @@ class:center
 ## Et si l'objectif était de moderniser une bibliothèque ?
 
 .center[
-<img src="figures/est_ensemble_bibli1B.PNG" width="375" /><img src="figures/est_ensemble_bibli1.PNG" width="575" />
+<img src="figures/est_ensemble_bibli1b.PNG" width="375" /><img src="figures/est_ensemble_bibli1.PNG" width="575" />
 ]
 
 ---
@@ -157,7 +176,7 @@ class:center
 ## Et si l'objectif était de moderniser une bibliothèque ?
 
 .center[
-<img src="figures/est_ensemble_bibli2B.PNG" width="375" /><img src="figures/est_ensemble_bibli2.PNG" width="575" />
+<img src="figures/est_ensemble_bibli2b.PNG" width="375" /><img src="figures/est_ensemble_bibli2.PNG" width="575" />
 ]
 
 ---
@@ -169,7 +188,7 @@ class:center
 ## Comment arriver à cette carte de synthèse ?
 
 .center[
-<img src="figures/est_ensemble_carte_synthese.PNG" width="700" />
+<img src="figures/est_ensemble_figure_qgis.png" width="700" />
 ]
 
 ---
@@ -193,7 +212,7 @@ class:center
 ## Mise en page dans QGIS
 
 .center[
-<img src="figures/mise_en_page.png" width="900" />
+<img src="figures/mise_en_page.jpg" width="900" />
 ]
 
 ---
