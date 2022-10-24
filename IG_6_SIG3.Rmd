@@ -322,18 +322,18 @@ Vecteur > outils de géotraitement > Regrouper.]]
 
 ## Agréger les IRIS en communauté d'agglomération
 
-.pull-left[
+.left-column[
 Champ de regroupement : Sélectionner la colonne qui spécifie l'appartenance aux EPCI des communes (EPT_LIBEPT par exemple).
 
 Nommer le fichier de sortie **EPT_Est_Ensemble.shp**.]
 
 
-.pull-right[
+.right-column[
 ![](figures/dissolve_2.png)
 ]
 
 ---
-
+class:middle
 ## Agréger les IRIS en communauté d'agglomération
 
 Résultat pour Est-Ensemble et les EPCI avoisinants
@@ -343,38 +343,41 @@ Résultat pour Est-Ensemble et les EPCI avoisinants
 
 ---
 
-## Diversifier l'offre géographique
-
 .left-column[
+## Diversifier l'offre géographique
 .medium[
 Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
 
-### **Étape 1** 
+**Étape 1** 
+
 Ouvrir la couche *bibliotheque_Est_Ensemble.shp* (correctement projetée), extraire uniquement les médiathèques (depuis la table attributaire ou par une sélection par expression). 
 
-### **Étape 2** 
+**Étape 2** 
+
 Réaliser un **espace tampon** de 1500 mètres autour de celles-ci et nommer cette couche *mediatheques_1500m*.]]
 
-.right-column[
-.center[
-![](figures/tampon_exo_1.png)
 
-.leg-fig[Création d'un **espace tampon de 1500m autour des médiathèques**]]]
+.right-column[
+<img src="figures/tampon_exo_1.png" width="75%" />
+
+.leg-fig[Création d'un **espace tampon de 1500m autour des médiathèques**]]
 
 
 ---
 
-## Diversifier l'offre géographique
-
 .left-column[
+## Diversifier l'offre géographique
 .medium[
 Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
 
-### **Étape 1** 
+**Étape 1** 
+
 Ouvrir la couche *bibliotheque_Est_Ensemble.shp* (correctement projetée), extraire uniquement les médiathèques (depuis la table attributaire ou par une sélection par expression). 
 
-### **Étape 2** 
+**Étape 2** 
+
 Réaliser un **espace tampon** de 1500 mètres autour de celles-ci et nommer cette couche *mediatheques_1500m*.]]
+
 
 .right-column[
 .center[
@@ -383,13 +386,16 @@ Réaliser un **espace tampon** de 1500 mètres autour de celles-ci et nommer cet
 
 ---
 
-## Diversifier l'offre géographique
 
 .left-column[
+
+## Diversifier l'offre géographique
+
 .medium[
 Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
 
-### **Étape 3** 
+**Étape 3** 
+
 Réaliser la **différence** entre la couche *mediatheques_1500m* et la couche *EPT_Est_Ensemble*, la nommer *mediatheques_1500diff*.
 ]]
 
@@ -400,15 +406,16 @@ Réaliser la **différence** entre la couche *mediatheques_1500m* et la couche *
 
 ---
 
-## Diversifier l'offre géographique
-
 .left-column[
+
+## Diversifier l'offre géographique
 
 .medium[
 
 Objectif : Extraire l'**espace situé à plus de 1500m d'une médiathèque** sur le territoire d'Est Ensemble.
 
-### **Étape 4** 
+**Étape 4** 
+
 Supprimer les couches intermédiaires affichées dans le SIG, enregistrer la couche finale dans le répertoire adéquat et jouer sur le style de cette couche finale qui nous intéresse directement pour notre projet.]]
 
 .right-column[
@@ -418,17 +425,20 @@ Supprimer les couches intermédiaires affichées dans le SIG, enregistrer la cou
 
 ---
 
+.left-column[
+
 ## Une médiathèque accessible
 
-.left-column[
 .medium[
 
 Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de tramway ou de métro**.
 
-### **Étape 1**
+**Étape 1**
+
 Ouvrir les couches *arrets_metro* et *arrets_tram*, les enregistrer dans la projection du projet (EPSG:2154).
 
-### **Étape 2**
+**Étape 2**
+
 Créer **l'union** de ces deux couches. Nommer le résultat *Metro_Tram*
 ]]
 
@@ -439,17 +449,18 @@ Créer **l'union** de ces deux couches. Nommer le résultat *Metro_Tram*
 
 ---
 
+.left-column[
+
 ## Une médiathèque accessible
 
-.left-column[
 .medium[
 
 Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de tramway ou de métro**.
 
-### **Étape 1**
+**Étape 1**
 Ouvrir les couches *arrets_metro* et *arrets_tram*, les enregistrer dans la projection du projet (EPSG:2154).
 
-### **Étape 2**
+ **Étape 2**
 Créer **l'union** de ces deux couches. Nommer le résultat *Metro_Tram*
 ]]
 
@@ -462,14 +473,13 @@ Créer **l'union** de ces deux couches. Nommer le résultat *Metro_Tram*
 
 ---
 
-## Une médiathèque accessible
-
 .left-column[
+## Une médiathèque accessible
 .medium[
 
 Objectif : Extraire l'**espace qui se situe à moins de 1000m d'une station de RER ou de métro**.
 
-### **Étape 3**
+ **Étape 3**
 Réaliser un **espace tampon** de 1000 mètres autour de celle-ci et nommer cette couche *Metro Tram 1000m*.]]  
 
 .right-column[
@@ -479,9 +489,8 @@ Réaliser un **espace tampon** de 1000 mètres autour de celle-ci et nommer cett
 
 ---
 
-## Une médiathèque accessible
-
 .left-column[
+## Une médiathèque accessible
 .medium[
 ### **Étape 4**
 Réaliser l'**intersection** entre la couche `Metro Tram 1000M` et la couche **EPT_Est_Ensemble**, la nommer *Accessibilite*.
