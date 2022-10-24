@@ -54,7 +54,7 @@ style_duo_accent(
 
 **Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.
 
-**Proposition d'un 3e critère** : Sélectionner les 25% d'IRIS les plus pauvres d'Est ensemble.
+**Proposition d'un 3e critère** : Sélectionner les 50% d'IRIS les plus pauvres d'Est ensemble.
 
 → Comment procéder ?
 
@@ -62,113 +62,102 @@ style_duo_accent(
 
 1. Importer le fichier `socio_eco.xlsx` après avoir repéré le champ pertinent (`DEC_MED19`)
 2. Faire la **jointure attributaire** avec la couche IRIS
-3. Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
+3. Repérer le niveau de revenu des 50% des IRIS les plus pauvres, c'est-à-dire sous la *médiane* des valeurs d'Est Ensemble
 4. Sélectionner (**sélection par attribut**) les IRIS qui correspondent à cette tranche de revenu médian
 5. Enregistrer le résultat (3e critère)
 
 ---
 
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
-Importer le fichier `socio_eco.xlsx` après avoir repéré le champ pertinent (`DEC_MED19`)
+.left-column[
+## 50 % des IRIS à plus faible revenu
+Consulter le fichier `socio_eco.xlsx`. Après avoir repéré le champ pertinent (`DEC_MED19`) et exporté le fichier Excel au format .csv, importer cette couche de texte délimité dans QGIS.
 ]
 
-.pull-right[
+.right-column[
 .center[
-![Exercice, étape 1](figures/exo_irisrevenu_tableau.png)
+<img src="figures/exo_irisrevenu_tableau.png" weight="100%" />
 ]
 ]
 
 ---
 
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
+.left-column[
+## 50 % des IRIS à plus faible revenu
 Faire la **jointure attributaire** avec la couche IRIS
 ]
 
-.pull-right[
+.right-column[
 .center[
-![Exercice, étape 2](figures/exo_irisrevenu_jointure.png)
+<img src="figures/exo_irisrevenu_jointure.png" weight="100%" />
 ]
 ]
 
 ---
 
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
-Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
+.left-column[
+## 50 % des IRIS à plus faible revenu
+Repérer le niveau de revenu des 50% des IRIS les plus pauvres, c'est-à-dire la *médiane*
 ]
 
-.pull-right[
+.right-column[
 .center[
-![Exercice, étape 3](figures/exo_irisrevenu_stats_montrer.png)
+<img src="figures/exo_irisrevenu_stats_montrer.png" weight="100%" />
+
 ]
 ]
 
 ---
 
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
-Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
+.left-column[
+## 50 % des IRIS à plus faible revenu
+Repérer le niveau de revenu des 50% des IRIS les plus pauvres, c'est-à-dire la *médiane*
 ]
 
-.pull-right[
+.right-column[
 .center[
-![Exercice, étape 3](figures/exo_irisrevenu_stats_champ.png)
+
+<img src="figures/exo_irisrevenu_stats_champ.png" weight="100%" />
 ]
 ]
 
 ---
 
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
-Repérer le niveau de revenu des 25% des IRIS les plus pauvres, c'est-à-dire le *premier quartile*
+.left-column[
+## 50 % des IRIS à plus faible revenu
+Repérer le niveau de revenu des 50% des IRIS les plus pauvres, c'est-à-dire la *médiane*
 ]
 
-.pull-right[
+.right-column[
 .center[
-![Exercice, étape 3](figures/exo_irisrevenu_stats_q1.png)
+
+<img src="figures/exo_irisrevenu_stats_q1.png" weight="100%" />
 ]
 ]
 
 ---
-
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
+.left-column[
+## 50 % des IRIS à plus faible revenu
 Sélectionner (**sélection par attribut**) les IRIS qui correspondent à cette tranche de revenu médian
 ]
 
-.pull-right[
+.right-column[
 .center[
-![Exercice, étape 3](figures/exo_irisrevenu_selec.png)
+<img src="figures/exo_irisrevenu_selec.png" weight="100%" />
 ]
 ]
 
 ---
 
-## Le 1er quartile des IRIS, par revenu
-
-.pull-left[
+.left-column[
+## 50 % des IRIS à plus faible revenu
 Enregistrer le résultat (3e critère)
 ]
 
-.pull-right[
+.right-column[
 .center[
-![Exercice, étape 3](figures/exo_irisrevenu_export.png)
-]
-]
+<img src="figures/exo_irisrevenu_export.png" weight="100%" />
+]]
 
----
-
-.center[
-![Résultat](figures/exo_irisrevenu_fin.png)
-]
 
 ---
 
