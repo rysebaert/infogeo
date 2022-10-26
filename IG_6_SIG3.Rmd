@@ -506,7 +506,7 @@ Supprimer les couches intermédiaires affichées dans le SIG, enregistrer la cou
 ---
 
 .center[
-<img src="figures/exo_intersection_2.png" width=800>
+![](figures/exo_intersection_2.png)
 ]
 
 
