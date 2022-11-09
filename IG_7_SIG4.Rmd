@@ -193,6 +193,24 @@ class:center
 
 ---
 
+## Préparation de mise en page
+
+- N'afficher que les couches géographiques que vous voulez voir apparaître sur votre carte de synthèse
+
+- Définir leur style graphique (couleur, épaisseur de bordure, labels éventuels)
+
+- Définir l'emprise graphique de la réprésentation cartographique (optimisation du zoom)
+
+- Enregistrer le projet (mise_en_page.qgz)
+
+- Initialiser la mise en page (projet > nouvelle mise en page)
+
+Une fois la mise en page terminée, exporter la carte réalisée au format .png ou .pdf (format vectoriel, si jamais vous souhaitez retoucher cette carte dans un logiciel de Dessin Assisté par Ordinateur).
+
+
+
+---
+
 ## Des éléments incontournables de mise en page
 
 - La carte doit disposer obligatoirement d'un **titre** , d'une **échelle**,  de la mention des **sources mobilisées (nom, date de téléchargement)** et la **date de référence des données**.
@@ -207,9 +225,10 @@ class:center
 
 - N'hésitez pas à jouer sur la transparence, les hachures, ajouter des labels, des encadrés etc. pour améliorer la lisibilité de votre carte !
 
----
 
-## Mise en page dans QGIS
+
+---
+## Mise en page dans QGIS 
 
 .center[
 <img src="figures/mise_en_page.jpg" width="900" />
@@ -217,6 +236,15 @@ class:center
 
 ---
 
+
+.center[
+
+<img src="figures/mise_en_page_QGIS-01.png" width="1150" />
+
+
+]
+
+---
 ## Mise en page dans QGIS
 
 .center[
@@ -224,6 +252,16 @@ class:center
 
 .leg-fig[Une vidéo (source : La Minute QGIS) qui explique les fondements de la mise en page avec QGIS]
 ]
+
+---
+
+class: middle center
+
+## On peut aller très loin avec la mise en page !
+
+<img src="figures/implantation.png" width="700" />
+
+ 
 
 ---
 class: center middle
