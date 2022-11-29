@@ -1,6 +1,5 @@
 ---
-title: "Introduction à la cartographie - Séance conclusive"
-subtitle: "Cartographie thématique avec Magrit"
+title: "Conclusion"
 author:  
 - "Ronan Ysebaert, Maxime Guinepain"
 date: "Dernière mise à jour: `r Sys.Date()`"
@@ -69,7 +68,7 @@ Entre <span color="red" font-size="20pt">60 et 80%</span> de l'information que n
 ]
 
 .center[
-```{r, echo = FALSE, out.width = "900px"}
+```{r, echo = FALSE, out.width = "900px", warning=FALSE, message=FALSE}
 
 library(DiagrammeR)
 
@@ -646,13 +645,14 @@ visuellement une information.*
 ## Le dossier
 
 .big[
+A rendre au format papier ou numérique (clé USB) au moment de l'examen terminal. 
+
 Grille de notation :
 
-* *13 points* sur la réflexion et le travail réalisé avec QGis
+* *14 points* sur la réflexion et le travail réalisé avec QGis
 
 * *6 points* sur les cartes thématiques réalisées avec Magrit
-
-* *1 point* de soin]
+]
 
 --
 
@@ -670,15 +670,15 @@ Expliquer en quoi l'implantation de ce nouvel équipement vous semble pertinente
 
 2) **Présentation des critères d'implantation (4 min.)** choisis pour déterminer la localisation
 optimale. Justifiez la pertinence de vos critères. N'hésitez pas à vous appuyer sur de la documentation.
-*(3 points)*
+*(3.5 points)*
 
 3) **Restitution des étapes de traitement SIG** qui vous ont permis de déterminer la ou les zone(s)
-optimale(s). Vous concluez cette partie par une carte de synthèse qui résume l'ensemble de la démarche
-et la (ou les) zone(s) d'implantation proposée(s). *(5 points)*
+optimale(s) **(3 points)**. Vous concluez cette partie par une carte de synthèse qui résume l'ensemble de la démarche
+et la (ou les) zone(s) d'implantation proposée(s).**(2.5 points)**
 
 4) **Illustration graphique** de la **chaîne de traitement** réalisée. *(2 points)*
 
-5) **Conclusion**. Vous y proposez des critères d'implantation supplémentaires qui amélioreraient
+5) **Pour aller plus loin**. Vous y proposez des critères d'implantation supplémentaires qui amélioreraient
 la qualité de votre étude. *(2 points)*
 
 ---
@@ -696,20 +696,13 @@ technique et interprétation thématique).
 3) Une carte représentant des **données qualitatives** *(2 points)*. *Ex. : localisation et présentation de votre espace d'étude*
 ]
 
----
-
-<br>
-<br>
-.big[
-Dossier à retourner au format papier ou numérique (clé USB) au moment de l'examen terminal. 
-]
 
 ---
 
 .pull-left[
 ## Le partiel
 
-Devoir sur table sur les notions vues en cours : le **mercredi 5 janvier 2022 de 14 à 16h** (Amphi Gouges 2)]
+Devoir sur table sur les notions vues en cours : le **mercredi 4 janvier 2023 de 16h30 à 18h30** (Amphi Gouges 1)]
 
 .pull-right[
 .right[
