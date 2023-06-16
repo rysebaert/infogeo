@@ -2,7 +2,7 @@
 
 
 
-**Ronan Ysebaert (UMS RIATE, Université Paris Cité)**
+**Ronan Ysebaert ([UAR RIATE](https://riate.cnrs.fr/), Université Paris Cité)**
 
 ***Contributeurs précédents : [Nicolas Lambert](https://github.com/neocarto), Flora Hayat, [Hugues Pecout](https://github.com/HuguesPecout), [Maxime Guinepain](https://github.com/mguinepain)***
 
@@ -21,13 +21,13 @@ Enseignement de 21 heures dispensé en 8 séances. Il s'articule autour d'un pro
 
 ## Plan de cours
 
-- [Informations pratiques](IG_0_Introduction_cours.html) : d?roul? du cours.
+- [Informations pratiques](IG_0_Introduction_cours.html) : déroulé du cours.
 - [Projet SIG : Probl?matique et consignes](IG_A_Projet_SIG.html)
 
 ### Aspects th?oriques
 
 - [Définition, méthodes et outils](IG_1_Defintion_methodes_outils.html) : qu'est-ce que l'information géographique, quelles sont ses sources, quels outils pour quels usages ?
-- [Open Data, sources et formats de donn?es](IG_2_Data_sources_formats.html)
+- [Open Data, sources et formats de données](IG_2_Data_sources_formats.html)
 - [Coordonnées géographiques et projections cartographiques](IG_3_Coordonnees_Projections.html)
 - [Cartographie thématique et règles de la sémiologie graphique](IG_8_Introduction_cartographie_1.html) 
 
