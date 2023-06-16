@@ -1,10 +1,10 @@
-# Initiation aux SIG et à la cartographie thématique <img src="figures/universite_de_paris_logo.png"  align="right" width="120"/>
+# Initiation aux SIG et Ã  la cartographie thÃ©matique <img src="figures/universite_de_paris_logo.png"  align="right" width="120"/>
 
 
 
-**Ronan Ysebaert (UMS RIATE, Université de Paris) et Maxime Guinepain (Géographie-Cités)**
+**Ronan Ysebaert (UMS RIATE, UniversitÃ© Paris CitÃ©)**
 
-***Contributeurs précédents : [Nicolas Lambert](https://github.com/neocarto), Flora Hayat, [Hugues Pécout](https://github.com/HuguesPecout)***
+***Contributeurs prÃ©cÃ©dents : [Nicolas Lambert](https://github.com/neocarto), Flora Hayat, [Hugues Pecout](https://github.com/HuguesPecout), [Maxime Guinepain](https://github.com/mguinepain)***
 
 <br>
 
@@ -12,50 +12,50 @@
 
 <br>
 
-## Objectif pédagogique
+## Objectif pÃ©dagogique
 
-Cet enseignement de master s'adresse en priorité aux étudiants n'ayant pas suivi un cursus en géographie en licence. Il vise à les sensibiliser à l'information géographique, ses modes de collecte, ses représentations et les choix préalables qu'ils imposent. Sont étudiées les principales méthodes et techniques d'acquisition, de traitement et de représentations de l'information géographique : systèmes d'information géographique (création de bases de données géographiques, requêtes, traitements spatiaux.), ainsi que la cartographie thématique selon les règles de la sémiologie graphique.
+Cet enseignement de M1 s'adresse en prioritÃ© aux Ã©tudiants n'ayant pas suivi un cursus en gÃ©ographie en licence. Il vise Ã  sensibiliser Ã  l'information gÃ©ographique, ses modes de collecte, ses reprÃ©sentations et les choix prÃ©alables qu'ils imposent. Sont Ã©tudiÃ©es les principales mÃ©thodes et techniques d'acquisition, de traitement et de reprÃ©sentations de l'information gÃ©ographique : systÃ¨mes d'information gÃ©ographique (crÃ©ation de bases de donnÃ©es gÃ©ographiques, requÃªtes, traitements spatiaux.), ainsi que la cartographie thÃ©matique selon les rÃ¨gles de la sÃ©miologie graphique.
 
-Enseignement de 21 heures dispensé en 8 séances. Il s'articule autour d'un projet d'implantation d'équipement dans la Métropole du Grand Paris. 
+Enseignement de 21 heures dispensÃ© en 8 sÃ©ances. Il s'articule autour d'un projet d'implantation d'Ã©quipement dans la MÃ©tropole du Grand Paris. 
 
 
 ## Plan de cours
 
-- [Informations pratiques](IG_0_Introduction_cours.html) : déroulé du cours.
-- [Projet SIG : Problématique et consignes](IG_A_Projet_SIG.html)
+- [Informations pratiques](IG_0_Introduction_cours.html) : d?roul? du cours.
+- [Projet SIG : Probl?matique et consignes](IG_A_Projet_SIG.html)
 
-### Aspects théoriques
+### Aspects th?oriques
 
-- [Définition, méthodes et outils](IG_1_Defintion_methodes_outils.html) : qu'est-ce que l'information géographique, quelles sont ses sources, quels outils pour quels usages ?
-- [Open Data, sources et formats de données](IG_2_Data_sources_formats.html)
-- [Coordonnées géographiques et projections cartographiques](IG_3_Coordonnees_Projections.html)
-- [Cartographie thématique et règles de la sémiologie graphique](IG_8_Introduction_cartographie_1.html) 
+- [DÃ©finition, mÃ©thodes et outils](IG_1_Defintion_methodes_outils.html) : qu'est-ce que l'information gÃ©ographique, quelles sont ses sources, quels outils pour quels usages ?
+- [Open Data, sources et formats de donn?es](IG_2_Data_sources_formats.html)
+- [CoordonnÃ©es gÃ©ographiques et projections cartographiques](IG_3_Coordonnees_Projections.html)
+- [Cartographie thÃ©matique et rÃ¨gles de la sÃ©miologie graphique](IG_8_Introduction_cartographie_1.html) 
 
 ### Travaux pratiques (SIG)
 
-- [SIG 1 - Définition, fonctionnalités, organiser son projet...](IG_4_Introduction_SIG.html) : premiers pas avec QGIS.
-- [SIG 2 - Opérations élémentaires : jointures, sélections par expression, sélections par localisation](IG_5_SIG2.html)
-- [SIG 3 - Initiation à la digitalisation et aux géotraitements](IG_6_SIG3.html)
-- [SIG 4 - Définir son implantation et mettre en page une carte dans QGIS](IG_7_SIG4.html)
+- [SIG 1 - DÃ©finition, fonctionnalitÃ©s, organiser son projet...](IG_4_Introduction_SIG.html) : premiers pas avec QGIS.
+- [SIG 2 - OpÃ©rations Ã©lÃ©mentaires : jointures, sÃ©lections par expression, sÃ©lections par localisation](IG_5_SIG2.html)
+- [SIG 3 - Initiation Ã  la digitalisation et aux gÃ©otraitements](IG_6_SIG3.html)
+- [SIG 4 - DÃ©finir son implantation et mettre en page une carte dans QGIS](IG_7_SIG4.html)
 
-### Travaux pratiques (cartographie thématique)
+### Travaux pratiques (cartographie thÃ©matique)
 
-- [Carto 1 : Représenter des données quantitatives absolues](IG_9_Carto_Quanti_Absolue) 
-- Carto 2 : Représenter des données quantitatives relatives(IG_10_Carto_Quanti_Relative)
-- Carto 3 : Représenter des données qualitatives
-
-
-### Synthèse du cours
+- [Carto 1 : ReprÃ©senter des donnÃ©es quantitatives absolues](IG_9_Carto_Quanti_Absolue.html) 
+- [Carto 2 : ReprÃ©senter des donnÃ©es quantitatives relatives](IG_10_Carto_Quanti_Relative.html)
+- [Carto 3 : ReprÃ©senter des donnÃ©es qualitatives](IG_11_Carto_Quali.html)
 
 
+### [SynthÃ¨se du cours](IG_12_ConclusionRevision.html)
 
-### Accès au données du cours
 
-- [Données délivrées aux étudiants](data/Infogeo_data.zip) : découpages géographiques, équipements, données socio-économiques. Utiles à la définition d'une implantation d'équipement dans un des EPCI de la métropole du Grand Paris.
-- [Exemple](data/Projet_Est_Ensemble.zip) : Un exemple appliqué à la modernisation d'une bibliothèque sur le territoire d'Est Ensemble. 
-- [Projet Magrit données quantitatives absolues](data/magrit_project_quanti_abs.json) : un exemple de carte mise en page avec Magrit.
-- [Projet Magrit données quantitatives relatives](data/magrit_project_quanti_rel.json)
-- [Projet Magrit données qualitatives](data/magrit_project_quali.json)
+
+### AccÃ¨s au donnÃ©es du cours
+
+- [DonnÃ©es dÃ©livrÃ©es aux Ã©tudiants](data/Infogeo_data.zip) : dÃ©coupages gÃ©ographiques, Ã©quipements, donnÃ©es socio-Ã©conomiques. Utiles Ã  la dÃ©finition d'une implantation d'Ã©quipement dans un des EPCI de la MÃ©tropole du Grand Paris.
+- [Exemple](data/Projet_Est_Ensemble.zip) : Un exemple appliquÃ© Ã  la modernisation d'une bibliothÃ¨que sur le territoire d'Est Ensemble. 
+- [Projet Magrit donnÃ©es quantitatives absolues](data/magrit_project_quanti_abs.json) : un exemple de carte mise en page avec Magrit.
+- [Projet Magrit donnÃ©es quantitatives relatives](data/magrit_project_quanti_rel.json)
+- [Projet Magrit donnÃ©es qualitatives](data/magrit_project_quali.json)
 
 
 
