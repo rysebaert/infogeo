@@ -2,7 +2,7 @@
 title: "Information géographique"
 subtitle: "Cours d'initiation - Informations pratiques"
 author:  
-- "Ronan Ysebaert, Maxime Guinepain"
+- ""
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -103,11 +103,11 @@ Vous aurez l'occasion de **travailler et d'avancer sur votre dossier durant de n
 
 ## Mise en situation
 
-Vous êtes membre d'un **bureau d'étude** chargé de réaliser une pré-étude pour l'**implantation d'un nouveau équipement** public dans une des communautés d’agglomération de la Métropole du Grand Paris.
+Vous êtes membre d'un **bureau d'étude** chargé de réaliser une pré-étude pour l'**implantation d'un nouvel équipement public** dans une des communautés d’agglomération de la Métropole du Grand Paris.
 
 L'objectif de cette pré-étude est de **proposer une zone d'implantation** pour ce nouvel équipement, en vous basant sur **plusieurs critères** que vous aurez préalablement déterminé et justifié.
 
-Vous devez livrer un document qui résume l'ensemble de vos **choix**, de votre **démarche** et de vos **traitements** qui vous ont permis de déterminer une (ou plusieurs) zone.s d'implantation optimale.s
+Vous devez livrer un document, de **15 à 30 pages**, qui résume l'ensemble de vos **choix**, de votre **démarche** et de vos **traitements** qui vous ont permis de déterminer une (voire plusieurs) zone d'implantation optimale.
 
 ---
 .pull-left[
@@ -115,14 +115,14 @@ Vous devez livrer un document qui résume l'ensemble de vos **choix**, de votre 
 
 <span style="font-size:18pt;">**1) Choisissez une des communautés d'agglomérations** de la MGP </span>
 
-```{r, echo = FALSE, out.width = "600px", fig.align='center'}
+```{r, echo = FALSE, out.width= "600px", fig.align='center'}
 knitr::include_graphics('figures/carte_projet.png')
 ```
 ]
 
 
 .pull-right[
-<span style="font-size:19pt;">**2) Choisissez un équipement** parmi ces propositions :</span>
+<span style="font-size:18pt;">**2) Choisissez un équipement** parmi ces propositions :</span>
 
 - Médiathèque 
 
@@ -149,23 +149,23 @@ La localisation de ces équipements a préalablement été collectée par vos en
 
 # Rapport à rendre
 
-## SIG et réflexion = 14 points
+## SIG et réflexion (*14 points*)
 
-1) **Introduisez** votre espace d'étude et l'équipement que vous souhaitez implanter. Expliquer pourquoi l'implantation de ce nouvel équipement vous semble pertinent. (1 point).
+1) **Introduisez** votre espace d'étude et l'équipement que vous souhaitez implanter. Expliquer pourquoi l'implantation de ce nouvel équipement vous semble pertinent. (*1 point*)
 
-2) Présentez les **critères** d'implantation (4 minimum) choisis pour déterminer la localisation optimale. Justifiez la pertinence de vos critères. N'hésitez pas à vous appuyer sur de la documentation ! (3.5 points).
+2) Présentez les **critères** d'implantation (4 minimum) choisis pour déterminer la localisation optimale. Justifiez la pertinence de vos critères. N'hésitez pas à vous appuyer sur de la documentation ! (*3.5 points*)
 
-3) Restituez **étapes de traitement SIG** qui vous ont permis de déterminer la ou les zone.s optimale.s (3 points). Concluez cette partie par une **carte de synthèse** résumant l'ensemble de la démarche et la (ou les) zone.s d'implantation proposée.s  (2.5 points).
+3) Restituez les **étapes de traitement SIG** qui vous ont permis de déterminer la ou les zones optimales (*3 points*). Concluez cette partie par une **carte de synthèse** résumant l'ensemble de la démarche et le ou les choix de localisation proposés.  (*2.5 points*)
 
-4) Illustrez graphiquement la **chaîne de traitement** mise en oeuvre. (2 points)
+4) Illustrez graphiquement la **chaîne de traitement** mise en oeuvre. (*2 points*)
 
-5) Proposez des **critères d'implémentation supplémentaires** qui pourraient améliorer la qualité votre étude (2 points).  
+5) Proposez des **critères d'implémentation supplémentaires** qui pourraient améliorer la qualité votre étude (*2 points*).  
 
 ---
 
-## Cartographie thématique : 6 points
+## Cartographie thématique (*6 points*)
 
-Votre rapport devra contenir **3 cartes thématiques** :
+Votre rapport devra contenir (au moins) **3 cartes thématiques** :
 
 1) Une carte représentant des données **quantitatives absolues** (2 points)
 *Ex : Nombre d'habitants par commune*.
@@ -209,8 +209,8 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 
 ### Cours    
 
-- **Information géographique** : Définition, sources, méthodes et outils.       
-- **Projet SIG : problématique**, consignes et données mises à disposition.     
+- **Information géographique :** Définition, sources, méthodes et outils.       
+- **Projet SIG :** problématique, consignes et données mises à disposition.     
 
 
 ### Atelier
@@ -257,7 +257,7 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 
 - **Import de données statistiques**.  
 - **Jointure** de données.   
-- **Sélection** d'entités **par attribut** ou par **localisation**.      
+- **Sélection** d'entités par **attribut** ou par **localisation**.      
 - Enregistrement d'une sélection.   
 
 ]
@@ -352,10 +352,11 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 
 ## Séance 8 : Conclusion
 
+
+- **Révisions** en vue de l'examen terminal.
+
+- **Travail collectif** sur votre projet.
 <center>
-
-Séance de travail collective sur votre projet.
-
 <br><br>
 
 <img src="figures/collectif.png" width="600" />
@@ -388,6 +389,7 @@ knitr::include_graphics('figures/moodle.png')
 
 <br><br><br><br>
 
-<p style="font-weight: bold; font-size: 18pt;text-align:center;">mguinepain@outlook.fr</p>
-<p style="font-weight: bold; font-size: 18pt;text-align:center;">ronan.ysebaert@cnrs.fr</p>
+## Nous joindre 
+**M1 MECI** : <p style="font-weight: bold; font-size: 18pt;">heloise.chauvel@etu.u-paris.fr</p>
+**M1 SDV** : <p style="font-weight: bold; font-size: 18pt;">louis.laurian@cnrs.fr</p>
 
