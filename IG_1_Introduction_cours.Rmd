@@ -2,7 +2,7 @@
 title: "Information géographique"
 subtitle: "Cours d'initiation - Informations pratiques"
 author:  
-- "Ronan Ysebaert, Maxime Guinepain"
+- "Héloïse Chauvel, Louis Laurian"
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -388,6 +388,6 @@ knitr::include_graphics('figures/moodle.png')
 
 <br><br><br><br>
 
-<p style="font-weight: bold; font-size: 18pt;text-align:center;">mguinepain@outlook.fr</p>
-<p style="font-weight: bold; font-size: 18pt;text-align:center;">ronan.ysebaert@cnrs.fr</p>
+<p style="font-weight: bold; font-size: 18pt;text-align:center;">heloise.chauvel@parisgeo.cnrs.fr</p>
+<p style="font-weight: bold; font-size: 18pt;text-align:center;">louis.laurian@cnrs.fr</p>
 
