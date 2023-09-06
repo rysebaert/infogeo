@@ -98,7 +98,7 @@ grViz("digraph dot {
 ## Niveau géométrique
 
 
-Le **niveau géométrique** d'un objet géographique correspond à **sa forme et sa localisation** sur la surface terrestre, exprimés dans un **système de coordonnées** explicite.
+Le **niveau géométrique** d'un objet géographique correspond à **sa forme** et **sa localisation** sur la surface terrestre, exprimés dans un **système de coordonnées** explicite.
    
 
 ```{r, echo = FALSE, out.width = "900px"}
