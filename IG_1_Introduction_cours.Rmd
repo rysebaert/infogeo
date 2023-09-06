@@ -57,9 +57,9 @@ Quelque soit le secteur professionnel dans lequel vous évoluerez, vous pouvez �
 
 - **Identifier**, **définir** et **caractériser** l'information géographique    
 
-- **Manipuler** de l'information géographique dans un environnement SIG (initiation au logiciel QGIS).
+- **Manipuler** de l'information géographique dans un environnement SIG (*initiation au logiciel QGIS*).
 
-- **Cartographier** de l'information géographique (initiation au logiciel de cartographie thématique Magrit).  
+- **Cartographier** de l'information géographique (*initiation au logiciel de cartographie thématique Magrit*).  
    
 - Tendre vers l'**autonomie**, savoir poser les **bonnes questions** et identifier les **outils et méthodes adéquats** pour manipuler l'information géographique.    
 ]
