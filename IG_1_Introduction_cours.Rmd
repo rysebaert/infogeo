@@ -115,14 +115,13 @@ Vous devez livrer un document, de **15 à 30 pages**, qui résume l'ensemble de 
 
 <span style="font-size:18pt;">**1) Choisissez une des communautés d'agglomérations** de la MGP </span>
 
-```{r, echo = FALSE, out.width= "600px", fig.align='center'}
+```{r, echo = FALSE, out_width="600px",fig.align='center'}
 knitr::include_graphics('figures/carte_projet.png')
 ```
-]
+ ]
 
 
-.pull-right[
-<span style="font-size:18pt;">**2) Choisissez un équipement** parmi ces propositions :</span>
+.pull-right[<span style="font-size:18pt;">**2) Choisissez un équipement** parmi ces propositions :</span>
 
 - Médiathèque 
 
@@ -142,8 +141,19 @@ knitr::include_graphics('figures/carte_projet.png')
 
 - Abris d'écoute à oiseaux
 
-La localisation de ces équipements a préalablement été collectée par vos enseignants. Vous êtes libres de choisir d'autres équipements, mais il faudra récupérer vous-même ces données. 
+La localisation de ces équipements a préalablement été collectée par vos enseignants. Vous êtes libres de choisir d'autres équipements, mais il faudra récupérer vous-même ces données.
+
 ]
+
+---
+
+
+<center>
+
+<img src="figures/carte_projet.png" width="800" />
+
+</center>
+
 
 ---
 
