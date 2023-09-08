@@ -177,7 +177,7 @@ La localisation de ces équipements a préalablement été collectée par vos en
 
 Votre rapport devra contenir (au moins) **3 cartes thématiques** :
 
-1) Une carte représentant des données **quantitatives absolues** (*2 points*)
+1) Une carte représentant des données **quantitatives absolues** (*2 points*)         
 *Ex : Nombre d'habitants par commune*.
 
 2) Une carte représentant des données **quantitatives relatives** (*2 points*)   
