@@ -94,7 +94,7 @@ knitr::include_graphics('figures/examen.jpeg')
 
 - Comptera pour **2/3 de la note finale**.
 
-- Rendu attendu au plus tard le **mercredi 5 janvier 2023**, au format papier en bureau 707 (ODG), ou par envoi par mail au format .pdf (accusé réception faisant foi).
+- Rendu attendu au plus tard le **vendredi 5 janvier 2024**, au format papier en bureau 707 (ODG), ou par envoi par mail au format .pdf (accusé réception faisant foi).
 
 
 Vous aurez l'occasion de **travailler et d'avancer sur votre dossier durant de nombreuses séances. Profitez-en !**
@@ -167,13 +167,13 @@ La localisation de ces équipements a préalablement été collectée par vos en
 
 Votre rapport devra contenir (au moins) **3 cartes thématiques** :
 
-1) Une carte représentant des données **quantitatives absolues** (2 points)
+1) Une carte représentant des données **quantitatives absolues** (*2 points*)
 *Ex : Nombre d'habitants par commune*.
 
-2) Une carte représentant des données **quantitatives relatives** (2 points)   
+2) Une carte représentant des données **quantitatives relatives** (*2 points*)   
 *Ex : Part des moins de 25 ans par commune*. 
 
-3) Une carte représentant des données **qualitatives** (2 points)    
+3) Une carte représentant des données **qualitatives** (*2 points*)    
 *Ex : Carte de localisation et présentation de votre espace d'étude.*
 
 ---
@@ -184,7 +184,7 @@ Votre rapport devra contenir (au moins) **3 cartes thématiques** :
 .pull-left[
 ## Un exemple type
 
-Pour vous guider dans votre projet et vous initier à QGIS et MAGRIT, **tous les tutoriels et démonstrations seront réalisés à partir du même exemple** : **L'implantation d'une médiathèque** au sein de la CA **Est-Ensemble**.
+Pour vous guider dans votre projet et vous initier à QGIS et MAGRIT, **tous les tutoriels et démonstrations seront réalisés à partir du même exemple** : **l'implantation d'une médiathèque** au sein de la CA **Est-Ensemble**.
 
 > A la racine de l'archive *infogeo-data*, le document TP-SIG présente dans le détail les attendus de ce projet, ainsi que les données que vous pouvez mobiliser pour votre projet. 
 
@@ -356,6 +356,7 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 - **Révisions** en vue de l'examen terminal.
 
 - **Travail collectif** sur votre projet.
+
 <center>
 <br><br>
 
