@@ -6,7 +6,7 @@ author:
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    self_contained: true
+    self_contained: no
     css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
     lib_dir: libs
     nature:
@@ -147,6 +147,11 @@ La localisation de ces équipements a préalablement été collectée par vos en
 
 ---
 
+```{r, echo = FALSE, out.width= "800px", fig.align='center'}
+knitr::include_graphics('figures/carte_projet.png')
+```
+
+---
 # Rapport à rendre
 
 ## SIG et réflexion (*14 points*)
@@ -204,7 +209,7 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 
 # Déroulé
 
-## Séance 1 : Introduction
+## Séance 1 : Introduction *(13/09)*
 
 
 ### Cours    
@@ -221,7 +226,7 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 ---
 
 
-## Séance 2 : SIG (1)
+## Séance 2 : SIG (1) *(27/09)*
 
 .pull-left[
 
@@ -249,7 +254,7 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 
 ---
 
-## Séance 3 : SIG (2)
+## Séance 3 : SIG (2) *(04/10)*
 
 .pull-left[
 
@@ -270,7 +275,7 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 
 ---
  
-## Séance 4 : SIG (3)
+## Séance 4 : SIG (3) *(11/10)*
 
 .pull-left[
 
@@ -289,7 +294,7 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 
 ---
 
-## Séance 5 : SIG (4)
+## Séance 5 : SIG (4) *(18/10)*
 
 .pull-left[
 ### Cours - Atelier
@@ -305,7 +310,7 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 
 ---
 
-## Séance 6 : Cartographie thématique (1)
+## Séance 6 : Cartographie thématique (1) *(15/11)*
 
 .pull-left[
 
@@ -329,7 +334,7 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 
 ---
 
-## Séance 7 : Cartographie thématique (2)
+## Séance 7 : Cartographie thématique (2) *(22/11)*
 
 .pull-left[
 
@@ -350,7 +355,7 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
  
 ---
 
-## Séance 8 : Conclusion
+## Séance 8 : Conclusion *(29/11)*
 
 
 - **Révisions** en vue de l'examen terminal.
