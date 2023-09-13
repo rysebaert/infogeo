@@ -2,7 +2,7 @@
 title: "Information géographique"
 subtitle: "Cours d'initiation - Informations pratiques"
 author:  
-- ""
+- "Héloïse Chauvel, Louis Laurian"
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -57,9 +57,9 @@ Quelque soit le secteur professionnel dans lequel vous évoluerez, vous pouvez �
 
 - **Identifier**, **définir** et **caractériser** l'information géographique    
 
-- **Manipuler** de l'information géographique dans un environnement SIG (*initiation au logiciel QGIS*).
+- **Manipuler** de l'information géographique dans un environnement SIG (initiation au logiciel QGIS).
 
-- **Cartographier** de l'information géographique (*initiation au logiciel de cartographie thématique Magrit*).  
+- **Cartographier** de l'information géographique (initiation au logiciel de cartographie thématique Magrit).  
    
 - Tendre vers l'**autonomie**, savoir poser les **bonnes questions** et identifier les **outils et méthodes adéquats** pour manipuler l'information géographique.    
 ]
@@ -94,7 +94,7 @@ knitr::include_graphics('figures/examen.jpeg')
 
 - Comptera pour **2/3 de la note finale**.
 
-- Rendu attendu au plus tard le **vendredi 5 janvier 2024**, au format papier en bureau 707 (ODG), ou par envoi par mail au format .pdf (accusé réception faisant foi).
+- Rendu attendu au plus tard le **mercredi 5 janvier 2023**, au format papier en bureau 707 (ODG), ou par envoi par mail au format .pdf (accusé réception faisant foi).
 
 
 Vous aurez l'occasion de **travailler et d'avancer sur votre dossier durant de nombreuses séances. Profitez-en !**
@@ -115,13 +115,14 @@ Vous devez livrer un document, de **15 à 30 pages**, qui résume l'ensemble de 
 
 <span style="font-size:18pt;">**1) Choisissez une des communautés d'agglomérations** de la MGP </span>
 
-```{r, echo = FALSE, out_width="600px",fig.align='center'}
+```{r, echo = FALSE, out.width= "600px", fig.align='center'}
 knitr::include_graphics('figures/carte_projet.png')
 ```
- ]
+]
 
 
-.pull-right[<span style="font-size:18pt;">**2) Choisissez un équipement** parmi ces propositions :</span>
+.pull-right[
+<span style="font-size:18pt;">**2) Choisissez un équipement** parmi ces propositions :</span>
 
 - Médiathèque 
 
@@ -141,19 +142,8 @@ knitr::include_graphics('figures/carte_projet.png')
 
 - Abris d'écoute à oiseaux
 
-La localisation de ces équipements a préalablement été collectée par vos enseignants. Vous êtes libres de choisir d'autres équipements, mais il faudra récupérer vous-même ces données.
-
+La localisation de ces équipements a préalablement été collectée par vos enseignants. Vous êtes libres de choisir d'autres équipements, mais il faudra récupérer vous-même ces données. 
 ]
-
----
-
-
-<center>
-
-<img src="figures/carte_projet.png" width="800" />
-
-</center>
-
 
 ---
 
@@ -177,13 +167,13 @@ La localisation de ces équipements a préalablement été collectée par vos en
 
 Votre rapport devra contenir (au moins) **3 cartes thématiques** :
 
-1) Une carte représentant des données **quantitatives absolues** (*2 points*)         
+1) Une carte représentant des données **quantitatives absolues** (2 points)
 *Ex : Nombre d'habitants par commune*.
 
-2) Une carte représentant des données **quantitatives relatives** (*2 points*)   
+2) Une carte représentant des données **quantitatives relatives** (2 points)   
 *Ex : Part des moins de 25 ans par commune*. 
 
-3) Une carte représentant des données **qualitatives** (*2 points*)    
+3) Une carte représentant des données **qualitatives** (2 points)    
 *Ex : Carte de localisation et présentation de votre espace d'étude.*
 
 ---
@@ -194,7 +184,7 @@ Votre rapport devra contenir (au moins) **3 cartes thématiques** :
 .pull-left[
 ## Un exemple type
 
-Pour vous guider dans votre projet et vous initier à QGIS et MAGRIT, **tous les tutoriels et démonstrations seront réalisés à partir du même exemple** : **l'implantation d'une médiathèque** au sein de la CA **Est-Ensemble**.
+Pour vous guider dans votre projet et vous initier à QGIS et MAGRIT, **tous les tutoriels et démonstrations seront réalisés à partir du même exemple** : **L'implantation d'une médiathèque** au sein de la CA **Est-Ensemble**.
 
 > A la racine de l'archive *infogeo-data*, le document TP-SIG présente dans le détail les attendus de ce projet, ainsi que les données que vous pouvez mobiliser pour votre projet. 
 
@@ -366,7 +356,6 @@ Vous ne pouvez pas choisir cet exemple pour votre projet !
 - **Révisions** en vue de l'examen terminal.
 
 - **Travail collectif** sur votre projet.
-
 <center>
 <br><br>
 
