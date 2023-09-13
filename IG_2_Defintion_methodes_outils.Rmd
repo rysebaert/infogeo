@@ -2,11 +2,11 @@
 title: "Information géographique"
 subtitle: "Définition, méthodes d'acquisition et formats"
 author:  
-- "Ronan Ysebaert, Maxime Guinepain"
+- ""
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    self_contained: true
+    self_contained: TRUE
     css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
     lib_dir: libs
     nature:
@@ -94,11 +94,11 @@ grViz("digraph dot {
 }")
 ```
 
-
+---
 ## Niveau géométrique
 
 
-Le **niveau géométrique** d'un objet géographique correspond à **sa forme et sa localisation** sur la surface terrestre, exprimés dans un **système de coordonnées** explicite.
+Le **niveau géométrique** d'un objet géographique correspond à **sa forme** et **sa localisation** sur la surface terrestre, exprimés dans un **système de coordonnées** explicite.
    
 
 ```{r, echo = FALSE, out.width = "900px"}
@@ -111,18 +111,18 @@ knitr::include_graphics('figures/geom.png')
 
 ## Niveau géométrique
 
-Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le raster et le vecteur. 
+Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le **raster** et le **vecteur**. 
 
 .pull-left[
 
 
 ### Le raster  
 
-**c'est une image** (plan scanné, photographie aérienne, image satellitaire...) **localisée dans l'espace**. 
+**Une donnée raster** est une **image** (plan scanné, photographie aérienne, image satellitaire...) **localisée dans l'espace**. 
 
 L’information géographique est alors stockée dans des cellules (pixel) contiguës généralement carrées. 
 
-Chaque pixel **défini par une résolution** possède des valeurs qui peuvent être traitées et cartographiées. 
+Chaque pixel est défini par une **résolution** et possède des valeurs qui peuvent être traitées et cartographiées. 
 
 La manipulation des rasters nécessite des méthodes et des outils spécialisés.    
 ]
@@ -138,13 +138,13 @@ La manipulation des rasters nécessite des méthodes et des outils spécialisés
 
 ## Niveau géométrique
 
-Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le raster et le vecteur. 
+Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le **raster** et le **vecteur**.  
 
 
 ### Le vecteur
 
 .pull-left[
-**Le format vectoriel** utilise le concept d'**objets géométriques (points, lignes, polygones) pour représenter (et stocker) des objets géographiques**. 
+**Le format vectoriel** utilise le concept d'**objets géométriques (points, lignes, polygones)** pour représenter (et stocker) des objets géographiques. 
 
 Les objets vectoriels ne ne pixellisent pas. On parlera néanmoins de **niveaux de généralisation** pour qualifier leur niveau de précision (parfois aussi appelée résolution).
 
@@ -167,9 +167,9 @@ Leur manipulation est simple et permet de puissants traitements.
 ---
 
 
-## Niveau géométrique
+## Niveau géométrique : raster vs. vecteur
 
-Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le raster et le vecteur. 
+
 
 ```{r, echo = FALSE, out.width = "600px", fig.align='center'}
 knitr::include_graphics('figures/raster_vecteur_2.png')
@@ -194,7 +194,7 @@ knitr::include_graphics('figures/topologie.gif')
 
 ## Niveau sémantique
 
-**Il s'agit de l'ensemble des informations relatives à un objet géographique, qui le décrivent et le caractérisent**. Elles sont souvent nommées données attributaires.
+Il s'agit de **l'ensemble des informations relatives à un objet géographique**, qui **le décrivent** et **le caractérisent**. Elles sont souvent nommées **données attributaires**. Le niveau sémantique **n'est pas fixe** et se décline en une multitude d'informations
 <br>
 
 ```{r, echo = FALSE, out.width = "800px", fig.align='center'}
@@ -206,7 +206,7 @@ knitr::include_graphics('figures/attribut.gif')
 
 ## Niveau sémantique
 
-**Il s'agit de l'ensemble des informations relatives à un objet géographique, qui le décrivent et le caractérisent**. Elles sont souvent nommées données attributaires.
+Il s'agit de **l'ensemble des informations relatives à un objet géographique**, qui **le décrivent** et le **caractérisent**. Elles sont souvent nommées **données attributaires**. Le niveau sémantique **n'est pas fixe** et se décline en une multitude d'informations.
 <br>
 
 
@@ -219,10 +219,9 @@ knitr::include_graphics('figures/attribut.png')
 
 ## Les outils : Logiciels d'analyse de données
 
-Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, explorer et analyser les données disposant d'une dimension géographique, grâce à du code et des fonctions.
+Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, explorer et analyser les données disposant d'une dimension géographique, grâce à du **code** et des **fonctions**.
 
-
-```{r, echo = FALSE, out.width = "590px", fig.align='center'}
+```{r, echo = FALSE, fig.cap="Le logiciel R", out.width = "590px", fig.align='center'}
 knitr::include_graphics('figures/rstudio.png')
 ```
 
@@ -232,10 +231,9 @@ knitr::include_graphics('figures/rstudio.png')
 ## Les outils :  Systèmes d'Informations Géographiques (SIG)
 
 Les SIG sont l'ensemble des outils informatiques permettant de **collecter, stocker, gérer, manipuler, analyser, modéliser et représenter de l’information géographique**. 
-
-.center[
-<img src="figures/qgis_style.png" width="480" />
-]
+```{r, echo = FALSE, fig.cap="Le logiciel QGIS", out.width = "580px", fig.align='center'}
+knitr::include_graphics('figures/qgis_style.png')
+```
 
 ---
 
@@ -244,7 +242,7 @@ Les SIG sont l'ensemble des outils informatiques permettant de **collecter, stoc
 Bien que les SIG permettent la réalisation de représentations cartographiques, il ne s'agit pas de leur principale fonctionnalité et réaliser une carte peut s'avérer fastidieux... Si l'on souhaite rapidement réaliser une carte qui respecte l'ensemble des règles de la cartographie, **il est plus simple d'utiliser un logiciel spécialisé**.
 
 
-```{r, echo = FALSE, out.width = "500px",fig.align='center'}
+```{r, echo = FALSE, fig.cap="Le logiciel Magrit", out.width = "500px",fig.align='center'}
 knitr::include_graphics('figures/Magrit.png')
 ```
 
@@ -274,7 +272,7 @@ knitr::include_graphics('figures/gps.jpg')
 
 **La télédétection comprend l’ensemble des procédés et techniques qui permettent d'acquérir à distance des informations sur les objets terrestres**, en utilisant les propriétés des ondes électromagnétiques émises ou réfléchies par ces objets. La collecte de données de télédétection est réalisée par des avions ou par des satellites. 
 
-**Les informations géographiques collectées par télédétection sont stockées en format RASTER**. Le traitement de ce genre de données nécessite l'**utilisation de logiciels spécialisés (Envi, Erdas, Idrisi...).**.    
+Les informations géographiques collectées par télédétection sont stockées en **format RASTER**. Le traitement de ce genre de données nécessite l'utilisation de **logiciels spécialisés (Envi, Erdas, Idrisi...).**.    
 
 
 ```{r, echo = FALSE, out.width = "830px",fig.align='center'}
@@ -287,16 +285,16 @@ knitr::include_graphics('figures/teledec.jpg')
 ## Photogrammétrie (photo aérienne) et LiDAR
 
 
-**Ces deux technologies permettent de déterminer la forme, les dimensions, la position dans l'espace d'un objet**. Elles sont très utilisées pour les levés topographiques, mais aussi pour de nombreuses autres applications.
+Ces deux technologies permettent de déterminer **la forme, les dimensions, la position dans l'espace d'un objet**. Elles sont très utilisées pour les levés topographiques, mais aussi pour de nombreuses autres applications.
 
 
 ```{r, echo = FALSE, out.width = "800px",fig.align='center'}
 knitr::include_graphics('figures/photogrametrie.jpg')
 ```
 
-<p style="line-height:1.3;font-size:10pt;">La photogrammétrie est une technologie passive. Elle est basée sur des images transformées de la 2D en modèles cartométriques 3D. Elle utilise le même principe que les yeux humains pour établir une perception de profondeur. La limitation de la photogrammétrie est qu’elle ne peut générer que des points basés sur ce que le capteur de la caméra peut voir.</p>      
+<p style="line-height:1.3;font-size:12pt;">La photogrammétrie est une technologie passive. Elle est basée sur des images transformées de la 2D en modèles cartométriques 3D. Elle utilise le même principe que les yeux humains pour établir une perception de profondeur. La limitation de la photogrammétrie est qu’elle ne peut générer que des points basés sur ce que le capteur de la caméra peut voir.</p>      
 
-<p style="line-height:1.3;font-size:10pt;">Lidar qui signifie Light Detection and Ranging est une technologie basée sur des faisceaux laser. Il tire au laser et mesure le temps qu’il faut pour que la lumière revienne. C’est ce qu’on appelle un capteur actif car il émet sa source d’énergie plutôt que de détecter l’énergie émise par les objets au sol.</p>
+<p style="line-height:1.3;font-size:12pt;">Lidar qui signifie Light Detection and Ranging est une technologie basée sur des faisceaux laser. Il tire au laser et mesure le temps qu’il faut pour que la lumière revienne. C’est ce qu’on appelle un capteur actif car il émet sa source d’énergie plutôt que de détecter l’énergie émise par les objets au sol.</p>
 
 
 ---
@@ -304,7 +302,7 @@ knitr::include_graphics('figures/photogrametrie.jpg')
 ## Digitalisation
 
 
-**La digitalisation consiste à numériser des points à partir d'un support visuel**, c'est à dire à attribuer à chaque point des coordonnées X et Y dans un système quelconque. Cela revient le plus souvent à **créer des objets géographiques vectoriels à partir d'information géographique en mode RASTER (ex : photo aérienne)**. 
+La **digitalisation** consiste à **numériser des points à partir d'un support visuel**, c'est à dire à attribuer à chaque point des coordonnées X et Y dans un système quelconque. Cela revient le plus souvent à **créer des objets géographiques vectoriels à partir d'information géographique en mode RASTER** (ex : photo aérienne). 
 
 ```{r, echo = FALSE, out.width = "930px",fig.align='center'}
 knitr::include_graphics('figures/digitalisation2.PNG')
@@ -340,9 +338,9 @@ Il suffit de les mettre en relation avec les polygones des limites communales fr
 
 ## Et... le Geoweb !
 
-Le mot **Geoweb désigne le mélange du Web 2.0 (ou web participatif) avec tout ce qui est lié à l'information géographique**.
+Le mot **Geoweb** désigne le mélange du **Web 2.0 (ou web participatif)** avec tout ce qui est lié à l'information géographique.
 
-Les **SIG grand public** (ex : OpenStreetMap), les **bases de données participatives** ayant une dimension géographique (ex : Le boin coin) et les **applications** utilisant la géolocalisation (ex : Twitter) sont des outils du Geoweb.
+Les **SIG grand public** (ex : OpenStreetMap), les **bases de données participatives** ayant une dimension géographique (ex : Leboncoin) et les **applications** utilisant la géolocalisation (ex : Twitter) sont des outils du Geoweb.
 
 ```{r image_grobs2, fig.show = "hold", out.width = "45%", fig.align = "default"}
 
@@ -425,7 +423,7 @@ knitr::include_graphics('figures/umap_canada.PNG')
 
 La donnée publique couvre l’ensemble des données qui sont ou devraient être (légalement ou volontairement) publiées ou tenues à disposition du public, et qui sont **produites ou collectées par un État, une collectivité territoriale, un organe parapublic**, dans le cadre de leurs activités de **service public**.
 
-L'accessibilité de la donnée publique (qui implique aussi la liberté d'accès aux documents administratifs) **est un des éléments de la transparence d'une gouvernance**. 
+L'accessibilité de la donnée publique (qui implique aussi la liberté d'accès aux documents administratifs) est un des éléments de la **transparence d'une gouvernance**. 
 
 Cette information a d'autant plus de valeur pédagogique, historique, sociale, culturelle ou économique qu'elle est fiable, catégorisée, organisée, diffusée et réutilisable. 
 
@@ -588,7 +586,9 @@ knitr::include_graphics('figures/insee.png')
 
 - **Quel est le format de données que je recherche ?** *Géométries ? Données statistiques à joindre à mes couches géographiques ?* <br>
 
-- **Données conventionnelles ou non ? Quelle période ?**
+- **Données conventionnelles ou non ?**<br>
+
+- **Quelle période ?**
 
 </br>
 
@@ -602,9 +602,9 @@ D'un point de vue général, privilégiez l'usage de ressources gérées et main
 
 Avec la massification des données mises à disposition, **la documentation structurée** des données est essentielle. Elle facilite l'accès au contenu informationnel d'une ressource informatique. 
 
-**Une métadonnée est littéralement une donnée sur une donnée. C'est un ensemble structuré d'informations décrivant une ressource** (pas spécifique à l'information géographique).
+Une **métadonnée** est littéralement **une donnée sur une donnée**. C'est un ensemble structuré d'informations décrivant une ressource (pas spécifique à l'information géographique).
 
-Les métadonnées synthétisent des informations élémentaires et facilitent la compréhension et l'utilisation des données : **Auteur, date de création/modification, technique de collecte, qualité, taille du fichier, unité de mesure, droits d'utilisation...**.
+Les métadonnées synthétisent des informations élémentaires et facilitent la compréhension et l'utilisation des données : *auteur, date de création/modification, technique de collecte, qualité, taille du fichier, unité de mesure, droits d'utilisation...*
 
 ]
 
@@ -722,11 +722,10 @@ L'INSEE et l'IGN utilisent des identifiants identiques pour qualifier les objets
 
 ---
 
-# Atelier
+# Atelier : quête géographique
 
-Organisez-vous en groupe et partez en quête d'informations géographiques ! Nous tentons de retrouver des couches géographiques 
+Organisez-vous en groupe de deux et partez en quête d'informations géographiques ! Voici les couches géographiques à retrouver :
 
-Objectifs :
 
 - La **dernière version "officielle" du découpage administratif** du territoire français (IGN). 
 - La liste des données en **Open Data mises à disposition par l'ONF**. 
@@ -736,8 +735,8 @@ Objectifs :
 
 Indice : pensez à spécifier dans votre recherche des mots-clés relatifs :
 
-- Au format des données souhaité (shapefiles)
-- A la couverture géographique désirée (France)
+- Au format des données souhaité (shapefiles).
+- A la couverture géographique désirée (France).
 - A l'objet géographique recherché.
 - A la source de données désirée.
 
