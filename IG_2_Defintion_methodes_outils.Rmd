@@ -111,7 +111,7 @@ knitr::include_graphics('figures/geom.png')
 
 ## Niveau géométrique
 
-Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le raster et le vecteur. 
+Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le **raster** et le **vecteur**. 
 
 .pull-left[
 
@@ -138,7 +138,7 @@ La manipulation des rasters nécessite des méthodes et des outils spécialisés
 
 ## Niveau géométrique
 
-Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le raster et le vecteur. 
+Pour stocker, manipuler, analyser et représenter de l'information géographique, on distingue généralement 2 types de données : le **raster** et le **vecteur**.  
 
 
 ### Le vecteur
@@ -194,7 +194,7 @@ knitr::include_graphics('figures/topologie.gif')
 
 ## Niveau sémantique
 
-Il s'agit de **l'ensemble des informations relatives à un objet géographique**, qui **le décrivent** et **le caractérisent**. Elles sont souvent nommées **données attributaires**.
+Il s'agit de **l'ensemble des informations relatives à un objet géographique**, qui **le décrivent** et **le caractérisent**. Elles sont souvent nommées **données attributaires**. Le niveau sémantique **n'est pas fixe** et se décline en une multitude de caractéristiques.
 <br>
 
 ```{r, echo = FALSE, out.width = "800px", fig.align='center'}
@@ -206,7 +206,7 @@ knitr::include_graphics('figures/attribut.gif')
 
 ## Niveau sémantique
 
-**Il s'agit de l'ensemble des informations relatives à un objet géographique, qui le décrivent et le caractérisent**. Elles sont souvent nommées données attributaires.
+Il s'agit de **l'ensemble des informations relatives à un objet géographique**, qui **le décrivent** et le **caractérisent**. Elles sont souvent nommées **données attributaires**. Le niveau sémantique **n'est pas fixe** et se décline en une multitude de caractéristiques.
 <br>
 
 
@@ -219,7 +219,7 @@ knitr::include_graphics('figures/attribut.png')
 
 ## Les outils : Logiciels d'analyse de données
 
-Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, explorer et analyser les données disposant d'une dimension géographique, grâce à du code et des fonctions.
+Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, explorer et analyser les données disposant d'une dimension géographique, grâce à du **code** et des **fonctions**.
 
 
 ```{r, echo = FALSE, out.width = "590px", fig.align='center'}
