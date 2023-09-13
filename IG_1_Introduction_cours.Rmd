@@ -163,9 +163,9 @@ La localisation de ces équipements a préalablement été collectée par vos en
 
 1) **Introduisez** votre espace d'étude et l'équipement que vous souhaitez implanter. Expliquer pourquoi l'implantation de ce nouvel équipement vous semble pertinent. (*1 point*)
 
-2) Présentez les **critères** d'implantation (4 minimum) choisis pour déterminer la localisation optimale. Justifiez la pertinence de vos critères. N'hésitez pas à vous appuyer sur de la documentation ! (*3.5 points*)
+2) Présentez les **critères** d'implantation (4 minimum) choisis pour déterminer la localisation optimale. Justifiez la pertinence de vos critères. N'hésitez pas à vous appuyer sur de la documentation ! (*3 points*)
 
-3) Restituez les **étapes de traitement SIG** qui vous ont permis de déterminer la ou les zones optimales (*3 points*). Concluez cette partie par une **carte de synthèse** résumant l'ensemble de la démarche et le ou les choix de localisation proposés.  (*2.5 points*)
+3) Restituez les **étapes de traitement SIG** qui vous ont permis de déterminer la ou les zones optimales (*3 points*). Concluez cette partie par une **carte de synthèse** résumant l'ensemble de la démarche et le ou les choix de localisation proposés.  (*3 points*)
 
 4) Illustrez graphiquement la **chaîne de traitement** mise en oeuvre. (*2 points*)
 
