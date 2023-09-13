@@ -94,7 +94,7 @@ knitr::include_graphics('figures/examen.jpeg')
 
 - Comptera pour **2/3 de la note finale**.
 
-- Rendu attendu au plus tard le **mercredi 5 janvier 2023**, au format papier en bureau 707 (ODG), ou par envoi par mail au format .pdf (accusé réception faisant foi).
+- Rendu attendu au plus tard le **mercredi 5 janvier 2024**, au format papier en bureau 707 (ODG), ou par envoi par mail au format .pdf (accusé réception faisant foi).
 
 
 Vous aurez l'occasion de **travailler et d'avancer sur votre dossier durant de nombreuses séances. Profitez-en !**
