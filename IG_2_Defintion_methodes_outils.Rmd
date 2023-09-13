@@ -6,7 +6,7 @@ author:
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    self_contained: true
+    self_contained: no
     css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
     lib_dir: libs
     nature:
@@ -194,7 +194,7 @@ knitr::include_graphics('figures/topologie.gif')
 
 ## Niveau sémantique
 
-Il s'agit de **l'ensemble des informations relatives à un objet géographique**, qui **le décrivent** et **le caractérisent**. Elles sont souvent nommées **données attributaires**. Le niveau sémantique **n'est pas fixe** et se décline en une multitude de caractéristiques.
+Il s'agit de **l'ensemble des informations relatives à un objet géographique**, qui **le décrivent** et **le caractérisent**. Elles sont souvent nommées **données attributaires**. Le niveau sémantique **n'est pas fixe** et se décline en une multitude d'informations
 <br>
 
 ```{r, echo = FALSE, out.width = "800px", fig.align='center'}
@@ -206,7 +206,7 @@ knitr::include_graphics('figures/attribut.gif')
 
 ## Niveau sémantique
 
-Il s'agit de **l'ensemble des informations relatives à un objet géographique**, qui **le décrivent** et le **caractérisent**. Elles sont souvent nommées **données attributaires**. Le niveau sémantique **n'est pas fixe** et se décline en une multitude de caractéristiques.
+Il s'agit de **l'ensemble des informations relatives à un objet géographique**, qui **le décrivent** et le **caractérisent**. Elles sont souvent nommées **données attributaires**. Le niveau sémantique **n'est pas fixe** et se décline en une multitude d'informations.
 <br>
 
 
@@ -221,8 +221,7 @@ knitr::include_graphics('figures/attribut.png')
 
 Les logiciels d'analyse de données (R, SAS, SPSS, etc.) permettent de traiter, explorer et analyser les données disposant d'une dimension géographique, grâce à du **code** et des **fonctions**.
 
-
-```{r, echo = FALSE, out.width = "590px", fig.align='center'}
+```{r, echo = FALSE, fig.cap="Le logiciel R", out.width = "590px", fig.align='center'}
 knitr::include_graphics('figures/rstudio.png')
 ```
 
@@ -232,10 +231,9 @@ knitr::include_graphics('figures/rstudio.png')
 ## Les outils :  Systèmes d'Informations Géographiques (SIG)
 
 Les SIG sont l'ensemble des outils informatiques permettant de **collecter, stocker, gérer, manipuler, analyser, modéliser et représenter de l’information géographique**. 
-
-.center[
-<img src="figures/qgis_style.png" width="480" />
-]
+```{r, echo = FALSE, fig.cap="Le logiciel QGIS", out.width = "580px", fig.align='center'}
+knitr::include_graphics('figures/qgis_style.png')
+```
 
 ---
 
@@ -244,7 +242,7 @@ Les SIG sont l'ensemble des outils informatiques permettant de **collecter, stoc
 Bien que les SIG permettent la réalisation de représentations cartographiques, il ne s'agit pas de leur principale fonctionnalité et réaliser une carte peut s'avérer fastidieux... Si l'on souhaite rapidement réaliser une carte qui respecte l'ensemble des règles de la cartographie, **il est plus simple d'utiliser un logiciel spécialisé**.
 
 
-```{r, echo = FALSE, out.width = "500px",fig.align='center'}
+```{r, echo = FALSE, fig.cap="Le logiciel Magrit", out.width = "500px",fig.align='center'}
 knitr::include_graphics('figures/Magrit.png')
 ```
 
