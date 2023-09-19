@@ -2,7 +2,7 @@
 title: "Information géographique"
 subtitle: "Coordonnées géographiques et projections cartographiques"
 author:  
-- "Ronan Ysebaert, Maxime Guinepain"
+- ""
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -54,7 +54,7 @@ class: middle
 
 
 
-Une information géographique est forcément décrite par **une position et une forme sur la surface de la Terre**.
+Une information géographique est forcément décrite par **une position** et **une forme** sur la surface de la Terre.
 
 <br>
 
@@ -66,7 +66,7 @@ Une information géographique est forcément décrite par **une position et une 
 
 <br>
 
-Comprendre les méthodes de localisation et de projection de l'information géographique est fondamental pour correctement **gérer le système de coordonnées géographiques et la projection cartographique d'une couche dans un SIG.**
+Comprendre les méthodes de localisation et de projection de l'information géographique est fondamental pour **correctement gérer le système de coordonnées géographiques et la projection cartographique d'une couche dans un SIG**.
 
 ---
 <br><br><br><br><br><br><br>
@@ -76,6 +76,8 @@ Comprendre les méthodes de localisation et de projection de l'information géog
 class: center middle
 ## La planète Terre n'est pas une sphère parfaite...
 
+« La Terre est bleue comme une orange »
+(Paul Eluard, *L'amour la poésie*)
 
 <img src="figures/globe.gif" width="420" />
 <br>
@@ -93,23 +95,26 @@ class: left middle
 
 Toute mesure ayant besoin d'une référence, on modélise la forme de la Terre selon le modèle théorique du **géoïde**.
 
-.pull-left[
+Un géoïde est une surface équipotentielle du champ de pesanteur coïncidant « au mieux » avec le **niveau moyen des océans et qui se prolonge sous les continents**.
+
 ```{r, echo = FALSE, out.width = "350px", fig.align='center'}
 knitr::include_graphics('figures/geoide2.png')
 ```
-]
 
-.pull-right[
 
-.medium[
+
+
+---
 <br><br>
-Un géoïde est une surface équipotentielle du champ de pesanteur coïncidant « au mieux » avec le **niveau moyen des océans et qui se prolonge sous les continents**.
  
-**La surface du géoïde équivaut au niveau d'altitude 0** à l'échelle mondiale. La notion d'**altitude traduit donc la hauteur au-dessus du géoïde**.
+La **surface du géoïde** équivaut au **niveau d'altitude 0** à l'échelle mondiale. La notion d'**altitude** traduit donc **la hauteur au-dessus du géoïde**.
 
-Pour la France, il est calé sur un niveau zéro scellé dans le port de Marseille.
-]
-]
+Pour la France, il est calé sur un niveau zéro scellé dans le port de Marseille et mesuré par le **Marégraphe de Marseille** depuis 1885.
+
+
+```{r, echo = FALSE, out.width = "550px", fig.align='center'}
+knitr::include_graphics('figures/maregraphe.png')
+```
 
 ---
 
@@ -141,24 +146,17 @@ knitr::include_graphics('figures/AnimationSphere2.GIF')
 
 Il sert de **référence pour la construction des projections cartographiques**. Positionner l'ellipsoïde en fonction du géoïde permet de construire **un système géodésique**.
 
-.pull-left[
-```{r, echo = FALSE, out.width = "500px", fig.align='center'}
+
+```{r, echo = FALSE, out.width = "600px", fig.align='center'}
 knitr::include_graphics('figures/geoide_ellips.png')
 ```
-]
-
-.pull-right[
-```{r, echo = FALSE, out.width = "400px", fig.align='center'}
-knitr::include_graphics('figures/ellipsoid.jpg')
-```
-]
 
 ---
 
 ## Ecart ellipsoïde-géoïde
 
 .pull-left[
-```{r, echo = FALSE, out.width = "500px", fig.align='center'}
+```{r, echo = FALSE, out.width = "600px", fig.align='center'}
 knitr::include_graphics('figures/geoide.jpg')
 ```
 
@@ -185,7 +183,7 @@ Il est important de noter que **l'altitude** d'un point est calculé par rapport
 ## Les systèmes géodésiques
 
 
-**Un système géodésique** sert de repère pour déterminer les coordonnées géographiques (ou géodésiques) d'un objet à la surface de la Terre. 
+Un **système géodésique** sert de repère pour déterminer les coordonnées géographiques (ou géodésiques) d'un objet à la surface de la Terre. 
 
 .pull-left[
 ```{r, echo = FALSE, out.width = "300px", fig.align='center'}
@@ -199,7 +197,7 @@ knitr::include_graphics('figures/sphere_lat_long.png')
 ```
 ]
 
-**Ces coordonnées sont des valeurs angulaires, calculées par rapport à un parallèle (équateur) et un méridien de référence (Greenwich)**. Les coordonnées d'un objet traduit (au minimum) deux dimensions : **la latitude et la longitude**.
+Ces coordonnées sont des **valeurs angulaires**, calculées par rapport à un **parallèle (équateur)** et un **méridien de référence (Greenwich)**. Les coordonnées d'un objet traduit (au minimum) deux dimensions : la **latitude** et la **longitude**.
 
 ---
 
@@ -252,7 +250,7 @@ knitr::include_graphics('figures/orange.png')
 
 ## Les projections cartographiques
 
-Une **projection est un procédé mathématique permettant de passer de l'ellipsoïde à sa représentation sur une surface plane**. 
+Une **projection** est un **procédé mathématique** permettant de passer de l'ellipsoïde à **sa représentation sur une surface plane**. 
 
 Toutes les projections provoquent des déformations. Plus l'espace représenté est vaste, plus les altérations sont importantes.
 
@@ -261,13 +259,13 @@ Toutes les projections provoquent des déformations. Plus l'espace représenté 
 knitr::include_graphics('figures/projection_style.jpeg')
 ```
 
-Les projections cartographiques peuvent se classer **selon le type d'altération et la surface de projection**. 
+Les projections cartographiques peuvent se classer selon **le type d'altération** et **la surface de projection**. 
 
 ---
 
 ## Surfaces de projection
 
-Un ellipsoïde **peut être projeté sur différentes surfaces**, facilement **représentables en deux dimensions**.
+Un ellipsoïde peut être projeté sur différentes surfaces, facilement **représentables en deux dimensions**.
 
 .pull-left[
 <img src="figures/surface_proj.png" height="450" />
@@ -290,7 +288,7 @@ Une **projection azimutale** est une manière de projeter une sphère sur un pla
 
 ## Surfaces de projection
 
-Un ellipsoïde **peut être projeté sur différentes surfaces**, facilement **représentable en deux dimensions**.
+Un ellipsoïde peut être projeté sur différentes surfaces, facilement **représentable en deux dimensions**.
 
 .pull-left[
 <img src="figures/surface_proj_2.png" height="350" />
@@ -673,7 +671,7 @@ knitr::include_graphics('figures/precaution.png')
 ```
 ]
 
-**Il faut toujours connaître le système de coordonnées géographiques et/ou la projection utilisée** lorsque l'on manipule et représente de l'information géographique **dans un SIG ou en cartographie**.
+Il faut toujours **connaître le système de coordonnées géographiques et/ou la projection utilisée** lorsque l'on manipule et représente de l'information géographique **dans un SIG ou en cartographie**.
 
 ---
 <br><br><br><br><br><br><br>
