@@ -2,7 +2,7 @@
 title: "Introduction aux SIG - Séance 1"
 subtitle: "Définition, fonctionnalités, organiser son projet... <br> Premiers pas avec QGIS"
 author:  
-- "Ronan Ysebaert, Maxime Guinepain"
+- ""
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -139,10 +139,6 @@ Il déterminera que la **transmission s'effectue par l'eau** et **identifiera le
 
 - **Depuis les années 90 et 2000** : diffusion de SIG plus légers, libres, d'applications web et banalisation de l’usage de l’information géographique (cartographie en ligne, calcul d’itinéraires, utilisation de la géolocalisation, base de données participatives.
 
-.medium[
-**Les SIG sont aujourd’hui utilisés dans de nombreux domaines** : 
-*Agriculture, aménagement du territoire, architecture, assurances & banque, automobile, BTP, cadastre, découpage électoral, défense, démographie, eau et assainissement, électricité, enseignement, environnement, épidémiologie, équipement, géologie, géomarketing, gestion de flotte, gestion de patrimoine, gestion de réseaux, gestion des sols, Internet, immobilier, implantation de commerces, ingénierie logistique, optimisation de parcours, pétrole et gaz, publicité, recherche, ressources naturelles, santé, services d'urgence, télécommunications, tourisme,...* ]
-
 ---
 
 ## Définition
@@ -198,11 +194,64 @@ Chaque **couche géographique contient des objets de même type** (adresses, par
 
 .center[
 .pull-right[
-<img src="figures/GIS_SPAIN.jpg" height="450" />
+<img src="figures/fond_mtq.png" height="450" />
 ]]
 
 ---
 
+## Principes et fonctionnalités
+
+.pull-left[
+<br><br><br>
+Pour **modéliser la réalité**, on superpose plusieurs couches d'information géographique, **vecteur et/ou raster**.
+
+Chaque **couche géographique contient des objets de même type** (adresses, parcelles, routes, bâtiments, cours d'eau, limites administratives...)
+
+**Une couche géographique = un type d'objet géographique** : point, ligne, polygone ou image géoréférencée (raster).
+]
+
+.center[
+.pull-right[
+<img src="figures/maillage_mtq.png" height="450" />
+]]
+
+---
+
+## Principes et fonctionnalités
+
+.pull-left[
+<br><br><br>
+Pour **modéliser la réalité**, on superpose plusieurs couches d'information géographique, **vecteur et/ou raster**.
+
+Chaque **couche géographique contient des objets de même type** (adresses, parcelles, routes, bâtiments, cours d'eau, limites administratives...)
+
+**Une couche géographique = un type d'objet géographique** : point, ligne, polygone ou image géoréférencée (raster).
+]
+
+.center[
+.pull-right[
+<img src="figures/pop_mtq.png" height="450" />
+]]
+
+---
+
+## Principes et fonctionnalités
+
+.pull-left[
+<br><br><br>
+Pour **modéliser la réalité**, on superpose plusieurs couches d'information géographique, **vecteur et/ou raster**.
+
+Chaque **couche géographique contient des objets de même type** (adresses, parcelles, routes, bâtiments, cours d'eau, limites administratives...)
+
+**Une couche géographique = un type d'objet géographique** : point, ligne, polygone ou image géoréférencée (raster).
+]
+
+.center[
+.pull-right[
+<img src="figures/mtq.png" height="450" />
+]]
+
+---
 ## Principes et fonctionnalités
 
 Un SIG permet de travailler sur les trois composantes de l'information géographique :
