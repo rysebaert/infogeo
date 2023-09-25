@@ -412,7 +412,7 @@ Avec ces métadonnées, vous êtes en mesure de répondre aux questions suivante
 
 <br><br>
 .center[
-<img src="figures/logo_qgis.PNG" width="520" />
+<img src="figures/qgis_desktop.png" width="300" />
 ]
 ---
 
