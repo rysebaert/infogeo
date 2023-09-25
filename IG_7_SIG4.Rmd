@@ -2,7 +2,7 @@
 title: "Introduction aux SIG - Séance 4"
 subtitle: "Définir son implantation et mettre en page une carte dans QGIS"
 author:  
-- "Ronan Ysebaert, Maxime Guinepain"
+- ""
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -50,7 +50,7 @@ style_duo_accent(
 
 ---
 
-## Une possible procédure... 
+## Une procédure possible 
 
 .pull-left[
 Nous avons créé 4 couches géographiques qui constituent nos critères pour l'implantation d'une nouvelle médiathèque :
@@ -67,7 +67,7 @@ Nous avons créé 4 couches géographiques qui constituent nos critères pour l'
 
 ---
 
-## Une possible procédure... 
+## Une procédure possible
 
 .pull-left[
 Nous avons créé 4 couches géographiques qui constituent nos critères pour l'implantation d'une nouvelle médiathèque :
@@ -86,7 +86,7 @@ Dans notre cas, nous allons explorer **deux situations** :
 ]
 
 ---
-## Une possible procédure... 
+## Une procédure possible 
 
 On peut procéder de bien des manières dans QGIS pour aboutir au résultat escompté, en voici par exemple une : 
 
@@ -264,6 +264,4 @@ class: middle center
  
 
 ---
-class: center middle
-background-image: url("figures/ouinideyou.PNG")
-background-size: contain
+## **A vous de jouer !**
