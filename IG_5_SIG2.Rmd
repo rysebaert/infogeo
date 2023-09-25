@@ -2,7 +2,7 @@
 title: "Introduction aux SIG - Séance 2"
 subtitle: "Opérations élémentaires : Jointures, sélections par expression, sélections par localisation"
 author:  
-- "Ronan Ysebaert, Maxime Guinepain"
+- ""
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -63,7 +63,7 @@ Les jointures attributaires sont utilisées lorsque l'on souhaite introduire des
 <br><br><br>
 <img src="figures/jointure_attributaire.png" width="450" />
 
-.leg-fig[Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.
+.leg-fig[*Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.*
 ]
 ]
 ---
@@ -82,7 +82,7 @@ Si le point de l'école se trouve dans le polygone correspondant à la commune, 
 <img src="figures/jointure_spatiale_1.png" width="450" />
 
 .leg-fig[
-Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.
+*Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.*
 ]
 ]
 
