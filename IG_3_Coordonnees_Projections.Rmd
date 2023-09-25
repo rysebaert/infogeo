@@ -236,6 +236,31 @@ Un même **ellipsoïde peut être positionné différemment par rapport au géo�
 
 ---
 
+.center[
+**Passer de la sphère...**    
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+knitr::include_graphics('figures/moscou.png')
+```
+
+]
+
+---
+
+.center[
+**...au plan...**    
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+knitr::include_graphics('figures/avion.png')
+```
+
+*provoque des déformations !*]
+
+
+
+---
+
+
 ## Les projections cartographiques
 
 .center[
