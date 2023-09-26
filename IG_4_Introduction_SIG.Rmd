@@ -517,6 +517,9 @@ Il est possible de sélectionner les objets géographiques à partir de leur **t
 2. Ouvrir la table d'attribut
 3. Sélectionner les entités en utilisant une expression 
 4. Choisir son espace d'étude (champ LIB_EPCI)
+
+
+! Attention aux **types de variables !**
 ]
 
 .right-column[
