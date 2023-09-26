@@ -292,7 +292,7 @@ Ex : *Sélection d'objets géographiques ponctuels situés à une certaine dista
 Pour travailler depuis chez vous, nous vous conseillons d'installer QGIS sur votre ordinateur personnel *(https://www.qgis.org/fr/site/forusers/download.html)*. Choisissez la version long terme (la plus stable). 
 
 .center[
-<img src="figures/qgisinstall.PNG" height="450" />
+<img src="figures/qgis_download.PNG" height="450" />
 ]
 
 ---
