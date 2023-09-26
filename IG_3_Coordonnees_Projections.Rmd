@@ -254,7 +254,7 @@ knitr::include_graphics('figures/moscou.png')
 knitr::include_graphics('figures/avion.png')
 ```
 
-*provoque des déformations !*]
+*...provoque des déformations !*]
 
 
 
