@@ -2,7 +2,7 @@
 title: "Introduction aux SIG - Séance 3"
 subtitle: "Initiation à la digitalisation et aux géotraitements"
 author:  
-- "Ronan Ysebaert, Maxime Guinepain"
+- ""
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -177,7 +177,7 @@ Leur analyse et leur traitement relève d'un domaine spécifique : **la téléd�
 .pull-right[
 <img src="figures/raster_vecteur.png" width="390" />
 
-.leg-fig[Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.]
+.leg-fig[*Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG.*]
 ]
 
 

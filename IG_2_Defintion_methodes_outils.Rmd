@@ -6,7 +6,7 @@ author:
 date: "Dernière mise à jour: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    self_contained: TRUE
+    self_contained: no
     css: ["default", "css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
     lib_dir: libs
     nature:
