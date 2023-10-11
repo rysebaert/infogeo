@@ -50,6 +50,21 @@ style_duo_accent(
 
 ---
 
+### Vu dans les cours précédents 
+
+
+- <img src="figures/sel_expression.png" weight="100%" /> : Sélection par expression /attribut
+<br>
+- <img src="figures/sel_loc.png" weight="100%" /> : Sélection par localisation
+<br>
+- <img src="figures/jointure2.png" weight="100%" /> : Jointure attributaire
+<br>
+- <img src="figures/calc_champ.png" weight="100%" /> : Création de champ
+<br>
+- Gestion de l'affichage graphique (couleurs, étiquettes, ordre des couches, etc)
+
+---
+
 ## Jointures, sélections par expression...
 
 **Objectif** : Réaliser une sélection sur un second critère statistique : Faible revenu dans les IRIS d'Est Ensemble.

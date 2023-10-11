@@ -16,3 +16,4 @@ renderthis::to_pdf("IG_2_Defintion_methodes_outils.html")
 renderthis::to_pdf("IG_3_Coordonnees_Projections.html")
 renderthis::to_pdf("IG_4_Introduction_SIG.html")
 
+renderthis::to_pdf("IG_6_SIG3.html")
