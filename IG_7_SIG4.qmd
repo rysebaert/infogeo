@@ -1,0 +1,185 @@
+---
+title: "Introduction aux SIG - Séance 4"
+subtitle: "Définir son implantation et mettre en page une carte dans QGIS"
+author:
+  - name: "Louis Laurian"
+    email: "louis.laurian@cnrs.fr"
+  - name: "Héloïse Chauvel"
+    email: "heloise.chauvel@parisgeo.cnrs.fr"
+date: today
+format:
+  revealjs:
+    css: ["css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+---
+
+<br><br><br><br><br><br>
+<span style="color:darkred;font-size:36pt;">Quelle implantation ?</span>
+
+## Une procédure possible 
+
+:::columns
+:::column
+Nous avons créé 4 couches géographiques qui constituent nos critères pour l'implantation d'une nouvelle médiathèque :
+
+- **iris_jeunes** : IRIS dont la part de la population de 0 à 24 ans est supérieure à 33 %. 
+
+- **iris_precaires** : les 50 % plus pauvres IRIS sur le territoire d'Est Ensemble.
+
+- **proche_transports** : l'espace situé à moins de 1000m d'une station de métro ou de RER sur le territoire d'Est Ensemble.  
+
+- **loin_mediatheques** : l'espace situé à plus de 1500m d'une médiathèque existante.
+
+:::
+:::column
+<img src="figs/rappel_couches_criteres.png" width=500>
+:::
+:::
+
+## Une procédure possible
+
+:::columns
+:::column
+Nous avons créé 4 couches géographiques qui constituent nos critères pour l'implantation d'une nouvelle médiathèque :
+
+- **iris_jeunes** : IRIS dont la part de la population de 0 à 24 ans est supérieure à 33 %.
+
+- **iris_precaires** : les 50 % plus pauvres IRIS sur le territoire d'Est Ensemble.
+
+- **proche_transports** : l'espace situé à moins de 1000m d'une station de métro ou de RER sur le territoire d'Est Ensemble.
+
+- **loin_mediatheques** : l'espace situé à plus de 1500m d'une médiathèque existante.
+
+:::
+:::column
+Dans notre cas, nous allons explorer **deux situations** :
+
+<br>
+
+- **Nouvelle implantation** : Définir les IRIS qui présentent des caractéristiques favorables à l'implantation d'un nouvel équipement.
+
+- **Modernisation d'une bibliothèque** : Identifier les bibliothèques dans ces secteurs favorables.
+:::
+:::
+
+
+## Une procédure possible 
+
+On peut procéder de bien des manières dans QGIS pour aboutir au résultat escompté, en voici par exemple une : 
+
+1. Afficher les couches **IRIS**, **iris_jeunes** et **iris_precaires**.
+
+2. Par une **sélection par localisation**, sélectionner les IRIS de iris_jeunes qui sont **égaux** à iris_precaires. Enregistrer la sélection sous le nom **iris_jeunes_precaires**.
+
+3. Sélectionner les IRIS de la couche **iris_jeunes_precaires** qui sont à l'intérieur de **loin_mediatheques**. Enregistrer la sélection sous le nom **iris_jeunes_precaires_loin_mediatheques**.
+
+4. Sélectionner les IRIS de la couche **iris_jeunes_precaires_loin_mediatheques** qui sont à l'intérieur de **proche_transports**. On enregistre la sélection sous le nom **Implantation_Iris**.   
+
+Pour maîtriser votre traitement, travaillez avec soin et méthode :
+
+- N'affichez que les couches sur lesquelles vous effectuez vos sélections. Observez si les résultats sont conformes à votre intention avant de les enregistrer. 
+
+- Maîtrisez l'endroit où vous enregistrez ces différents traitements intermédiaires, et nommez clairement les couches géographiques issues de ces sélections. 
+
+## IRIS jeunes et à faible revenu... 
+
+<img src="figs/est_ensemble_selec1b.PNG" width="375" /><img src="figs/est_ensemble_selec1.PNG" width="575" />
+
+## IRIS jeunes et à faible revenu...  
+
+<img src="figs/est_ensemble_selec2b.PNG" width="375" /><img src="figs/est_ensemble_selec2.PNG" width="575" />
+
+## ... A plus de 1500 m à vol d'oiseau d'une médiathèque existante...
+
+<img src="figs/est_ensemble_selec3b.PNG" width="375" /><img src="figs/est_ensemble_selec3.PNG" width="575" />
+
+## ... A plus de 1500 m à vol d'oiseau d'une médiathèque existante...
+
+<img src="figs/est_ensemble_selec4b.PNG" width="375" /><img src="figs/est_ensemble_selec4.PNG" width="575" />
+
+## ... Et à moins de 1000 m d'une station de métro ou de tramway ! 
+
+<img src="figs/est_ensemble_selec5b.PNG" width="375" /><img src="figs/est_ensemble_selec5.PNG" width="575" />
+
+## ... Et à moins de 1000 m d'une station de métro ou de tramway ! 
+
+<img src="figs/finaltab.PNG" width="375" /><img src="figs/final.PNG" width="575" />
+
+## Et si l'objectif était de moderniser une bibliothèque ?
+
+<img src="figs/est_ensemble_bibli1b.PNG" width="375" /><img src="figs/est_ensemble_bibli1.PNG" width="575" />
+
+## Et si l'objectif était de moderniser une bibliothèque ?
+
+<img src="figs/est_ensemble_bibli2b.PNG" width="375" /><img src="figs/est_ensemble_bibli2.PNG" width="575" />
+
+
+<br><br><br><br><br><br><br>
+
+<span style="color:darkred;font-size:36pt;">Mettre en page sa carte avec QGIS</span>
+
+
+## Comment arriver à cette carte de synthèse ?
+
+<img src="figs/est_ensemble_figure_qgis.png" width="700" />
+
+
+## Préparation de mise en page
+
+- N'afficher que les couches géographiques que vous voulez voir apparaître sur votre carte de synthèse
+
+- Définir leur style graphique (couleur, épaisseur de bordure, labels éventuels)
+
+- Définir l'emprise graphique de la réprésentation cartographique (optimisation du zoom)
+
+- Enregistrer le projet (mise_en_page.qgz)
+
+- Initialiser la mise en page (projet > nouvelle mise en page)
+
+Une fois la mise en page terminée, exporter la carte réalisée au format .png ou .pdf (format vectoriel, si jamais vous souhaitez retoucher cette carte dans un logiciel de Dessin Assisté par Ordinateur).
+
+
+## Des éléments incontournables de mise en page
+
+- La carte doit disposer obligatoirement d'un **titre**, d'une **échelle**,  de la mention des **sources mobilisées (nom, date de téléchargement)** et la **date de référence des données**.
+
+- Les éléments graphiques doivent être **hiérarchisés**.
+
+- Pour la représentation des données, respecter les règles de sémiologie graphique (séances suivantes).
+
+- La **légende** résume les éléments présentés sur la carte. Celle-ci peut être organisée par sous-titres de légende pour mieux contextualiser l'information que vous présentez (*par ex : équipements existants, caractéristiques socio-économiques, distances aux équipements*).
+
+- Ne pas trop surcharger la carte : ne pas hésiter à produire des cartes plutôt qu'une. 
+
+- N'hésitez pas à jouer sur la transparence, les hachures, ajouter des labels, des encadrés etc. pour améliorer la lisibilité de votre carte !
+
+
+## Mise en page dans QGIS 
+
+<img src="figs/mise_en_page.jpg" width="900" />
+
+---
+
+<img src="figs/mise_en_page_QGIS-01.png" width="1150" />
+
+
+## Mise en page dans QGIS
+
+<iframe width="840" height="472.5" src="https://www.youtube.com/embed/zuYOBoMVfrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Une vidéo (source : La Minute QGIS) qui explique les fondements de la mise en page avec QGIS]
+
+
+## On peut aller très loin avec la mise en page !
+
+<img src="figs/implantation.png" width="700" />
+
+##  Quelques ressources complémentaires
+
+Documentation et manuel d'utilisation de QGIS : https://docs.qgis.org/3.28/fr/docs/training_manual/index.html
+
+Tutoriel hébergé par le CNRS : https://tutoqgis.cnrs.fr/index.php
+
+---
+
+<br><br><br><br><br><br>
+<span style="color:darkred;font-size:36pt;">A vous de jouer !</span>

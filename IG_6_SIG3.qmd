@@ -1,6 +1,6 @@
 ---
 title: "Introduction aux SIG - Séance 3"
-subtitle: "Initiation à la digitalisation et aux géotraitements"
+subtitle: "Initiation aux géotraitements"
 author:
   - name: "Louis Laurian"
     email: "louis.laurian@cnrs.fr"
@@ -53,7 +53,7 @@ format:
 
 ::: columns
 ::: column
-Consulter le fichier `socio_eco.xlsx`. Après avoir repéré le champ pertinent (`DEC_MED19`) et exporté le fichier Excel au format .csv, importer cette couche de texte délimité dans QGIS.
+Consulter le fichier `socio_eco.csv`. Après avoir repéré le champ pertinent (`DEC_MED19`), importer cette couche de texte délimité dans QGIS.
 
 :::
 ::: column
@@ -239,7 +239,9 @@ Tampons variables autour des rivières (Source : [Documentation QGIS](https://do
 
 - **Une médiathèque accessible** : Extraire l'espace situé à moins de 1000m d'une station de RER : **géotraitements *union*, *espace tampon* et *intersection* **.  
 
-## Agréger les IRIS en communauté d'agglomération
+---
+
+### Agréger les IRIS en communauté d'agglomération
 
 ::: columns
 ::: column
@@ -257,7 +259,9 @@ Vecteur > outils de géotraitement > Regrouper.
 :::
 :::
 
-## Agréger les IRIS en communauté d'agglomération
+---
+
+### Agréger les IRIS en communauté d'agglomération
 
 ::: columns
 ::: column
@@ -272,7 +276,9 @@ Nommer le fichier de sortie **EPT_Est_Ensemble.shp**.
 ::: 
 ::: 
 
-## Agréger les IRIS en communauté d'agglomération
+---
+
+### Agréger les IRIS en communauté d'agglomération
 
 Résultat pour Est-Ensemble et les EPCI avoisinants
 
