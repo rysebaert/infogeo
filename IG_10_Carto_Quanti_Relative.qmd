@@ -57,7 +57,7 @@ où $N$ est le nombre d'observations et $N(cl)$ le nombre de classes
 
 On a coutume de dire que 10 classes est un maximum.
 
-**Construire une carte qui "raconte" quelque-chose !**
+**Construire une carte qui "raconte" quelque-chose**
 
 :::
 :::
@@ -346,17 +346,11 @@ On utilise ici les **propriétés du spectre visible de la lumière** en en fais
 
 ---
 
-:::columns
-:::{.column width="30%"}
 ### Une ressource utile : ColorBrewer
 
 [http://colorbrewer2.org](http://colorbrewer2.org)
 
-:::
-:::{.column width="70%"}
 ![](figs/color_brewer.png)
-:::
-:::
 
 ---
 
