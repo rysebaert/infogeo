@@ -1,0 +1,823 @@
+---
+title: "Cartographie thématique"
+subtitle: "Concepts fondamentaux et règles de sémiologie graphique"
+author:
+  - name: "Louis Laurian"
+    email: "louis.laurian@cnrs.fr"
+  - name: "Héloïse Chauvel"
+    email: "heloise.chauvel@parisgeo.cnrs.fr"
+date: today
+format:
+  revealjs:
+    css: ["css/styles.css", "css/rutgers-tidyverse.css", "css/rutgers-fonts_og.css"]
+---
+
+<br><br><br><br><br><br>
+<span style="color:darkred;font-size:36pt;">Cartographie thématique ?</span>
+
+## Deux grandes catégories de cartes
+
+Il existe une **multitude de constructions cartographiques** : *cartes météo, géologique, de végétation, climatique, touristique, d'inventaire, routière, animée, interactive*.... **Deux grandes catégories se dégagent**
+
+:::columns
+:::column
+### Cartes topographiques
+
+<img src="figs/carte_topo.png" height="350"/>
+
+:::
+:::column
+### Cartes thématiques
+
+<img src="figs/carte_thema.jpg" height="350"/>
+:::
+:::
+
+## La cartographie
+
+**La cartographie est une discipline**, composante de la géomatique, qui rassemble les opérations ayant pour objet l'élaboration, la rédaction et l'édition de cartes. Elle repose sur des bases  **scientifiques**, **techniques** et **artistiques**.
+<br>
+
+:::columns
+:::column
+### Une science 
+
+Les **bases sont mathématiques** (systèmes géodésiques de référence et projections). 
+
+La chaîne de traitement qu'elle mobilise en amont nécessite **précision et fiabilité**.    
+
+La représentation cartographique est régie par des **règles de sémiologie graphique** et un **socle méthodologique fort**. 
+
+L'objet de la carte donne lieu à de nombreuses recherches : efficacité communicationnelle, cartographie animée, optimisation de la représentation des flux...
+
+:::
+:::column
+<img src="figs/lambert.jpg" width="540"/>
+:::
+:::
+
+
+## La cartographie
+
+**La cartographie est une discipline**, composante de la géomatique, qui rassemble les opérations ayant pour objet l'élaboration, la rédaction et l'édition de cartes. Elle repose sur des bases  **scientifiques**, **techniques** et **artistiques**.
+<br>
+
+:::columns
+:::column
+### Une technique
+
+Sa maîtrise repose sur l'acquisition de données, la préparation et le traitement de données, et la mobilisation de **logiciels** (tableurs, SIG, cartographie thématique, voire construction et requête de bases de données spatiales).
+spécialisés... 
+
+:::
+:::column
+<img src="figs/technique_carto.png" width="540"/>
+:::
+:::
+
+## La cartographie
+
+**La cartographie est une discipline**, composante de la géomatique, qui rassemble les opérations ayant pour objet l'élaboration, la rédaction et l'édition de cartes. Elle repose sur des bases  **scientifiques**, **techniques** et **artistiques**.
+<br>
+
+:::columns
+:::column
+### Un art
+
+Recherche d'**esthétisme**, de la **"touche graphique"** et d'une certaine **mise en perspective** de phénomènes spatialisés.
+
+Comme pour tout objet de communication, le graphisme d'une carte à un impact sur la transmission du message.
+
+<br><br>
+Frontière États-Unis / Mexique : une fracture humaine et économique (Source : [Rekacewicz, 2009](https://www.monde-diplomatique.fr/cartes/maquiladoras))
+
+:::
+:::column
+<img src="figs/art.png" width="540"/>
+:::
+:::
+
+## La cartographie
+
+**La cartographie est une discipline**, composante de la géomatique, qui rassemble les opérations ayant pour objet l'élaboration, la rédaction et l'édition de cartes. Elle repose sur des bases  **scientifiques**, **techniques** et **artistiques**.
+<br>
+
+:::columns
+:::column
+### Un art
+
+Recherche d'**esthétisme**, de la **"touche graphique"** et d'une certaine **mise en perspective** de phénomènes spatialisés.
+
+Comme pour tout objet de communication, le graphisme d'une carte à un impact sur la transmission du message.
+
+<br><br>
+War Business 
+(Source : [Lambert, Zainin, Mad Maps, 2019](http://www.cartolycee.net/spip.php?article152))
+
+:::
+:::column
+<img src="figs/mad_maps.png" width="540"/>
+:::
+:::
+
+## Un public, un objectif et un message
+
+:::columns
+:::column
+On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/presentation_images/20d4feabc6bf2c18278efa0457b302e2e7b39419/Pr%C3%A9sentation_LJegou.html#1)) :
+
+La carte **performative**, qui vise à faire réagir, de propagande, rhétorique (vision *post-moderniste*, B. Harley).  
+
+<img src="figs/Bunge_3.png" width="550"/>
+
+Geography of Revolution (Source : Bunge W., 1971)
+Pour en savoir plus, allez [ici](https://jacket2.org/commentary/william-bunge-dgei-radical-cartography) 
+
+:::
+:::column
+Region of Rat-Bitten Babies (Source : Bunge W., Bordessa R., 1975, the Canadian Alternative)
+
+<img src="figs/Bunge_1.png" width="650"/>
+
+<p>Region of Rat-Bitten Babies (Source : Bunge W., Bordessa R., 1975, the Canadian Alternative)</p>
+:::
+:::
+
+## Un public, un objectif et un message
+
+:::columns
+:::column
+On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/presentation_images/20d4feabc6bf2c18278efa0457b302e2e7b39419/Pr%C3%A9sentation_LJegou.html#1)) :
+
+- La carte **performative**, qui vise à faire réagir, de propagande, rhétorique (vision *post-moderniste*, B. Harley). 
+
+- La carte comme **outil d'analyse**, moyen de faire découvrir des phénomènes et des relations, dans un processus d'exploration et de transformation (paradigme *analytique*, W. Tobler et K. Clarke)
+
+<img src="figs/tobler93f.png" width="700"/>
+
+:::
+:::column
+<img src="figs/Snow-cholera-map.JPG" width="700"/>
+Adaptation de la carte de John Snow sur l'épidémie de choléra à Londres en 1854 (Source : Gilbert W, 1958)
+
+<br><br>
+<< Three presentations of geographical analysis and modeling (Source : [Tobler, 1993](http://www.lukatela.com/hrvoje/papers/tobler93.html))
+:::
+:::
+
+## Un public, un objectif et un message
+
+:::columns
+:::column
+On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/presentation_images/20d4feabc6bf2c18278efa0457b302e2e7b39419/Pr%C3%A9sentation_LJegou.html#1)) :
+
+- La carte **performative**, qui vise à faire réagir, de propagande, rhétorique (vision *post-moderniste*, B. Harley). 
+
+- La carte comme **outil d'analyse**, moyen de faire découvrir des phénomènes et des relations, dans un processus d'exploration et de transformation (paradigme *analytique*, W. Tobler et K. Clarke)
+
+- La carte comme **outil d'organisation** d'une communauté sur son territoire (paradigme *participatif*, M. Noucher, T. Jolliveau).
+
+:::
+:::column
+<br><br>
+<img src="figs/points_noirs1.PNG" width="700"/>
+
+Cartographie des points noirs et des tronçons à aménager de façon prioritaire (18 300 contributions). Source : [Fédération des Usagers de la Bicyclette, 2019](https://carto.parlons-velo.fr/)
+:::
+:::
+
+## Un public, un objectif et un message
+
+:::columns
+:::column
+On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/presentation_images/20d4feabc6bf2c18278efa0457b302e2e7b39419/Pr%C3%A9sentation_LJegou.html#1)) :
+
+La carte comme **outil de visualisation de son propre territoire et de navigation**, adaptée et centrée sur sa position actuelle (paradigme de l'*égo-cartographie*) 
+
+<br><br><br>
+Google Timeline, votre mobilité restituée par Google depuis... 2009 ! >>>
+
+:::
+:::column
+<img src="figs/google_maps2.PNG" width="700"/>
+<img src="figs/google_maps.PNG" width="700"/>
+:::
+:::
+
+## Un public, un objectif et un message
+
+:::columns
+:::column
+On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/presentation_images/20d4feabc6bf2c18278efa0457b302e2e7b39419/Pr%C3%A9sentation_LJegou.html#1)) :
+
+- La carte comme **outil de visualisation de son propre territoire et de navigation**, adaptée et centrée sur sa position actuelle (paradigme de l'*égo-cartographie*) 
+
+- La carte **décorative**, à valeur esthétique, historique, émotive.
+
+:::
+:::column
+<br><br><br><br>
+<img src="figs/air_france_1937.jpg" width="700"/>
+Affiche publicitaire Air France (Source : Boucher, 1937)
+:::
+:::
+
+## Un public, un objectif et un message
+
+:::columns
+:::column
+On distingue souvent ([Jégou, 2021](https://rawcdn.githack.com/transcarto/presentation_images/20d4feabc6bf2c18278efa0457b302e2e7b39419/Pr%C3%A9sentation_LJegou.html#1)) :
+
+- La carte comme **outil de visualisation de son propre territoire et de navigation**, adaptée et centrée sur sa position actuelle (paradigme de l'*égo-cartographie*) 
+
+- La carte **décorative**, à valeur esthétique, historique, émotive.
+
+- La carte **imaginaire ou poétique**, qui vise à faire réfléchir.
+
+:::
+:::column
+<br><br>
+<img src="figs/macronie.jfif" width="700"/>
+Source : [Grandin, 2018](https://twitter.com/julesgrandin/status/987316047874273282)
+:::
+:::
+
+## Prendre du recul
+
+Le contexte de production compte, pour mieux appréhender les questions de lisibilité et de transmission du message cartographique (Jégou, 2021) :
+
+- Quel ***rôle*** j'endosse quand je produis une carte ?
+
+- À quoi doit ***servir*** ma carte, comment doit-on y réagir ? 
+
+- À quel ***public*** est-elle destinée ? Que doit-il savoir pour la comprendre ?
+
+- Au final, comment ***fonctionne*** ma carte ? 
+
+<br>
+
+Efficacité et lisibilité de la carte (communication) + design (message véhiculé par la carte)
+
+Cela influence directement l'**emprise géographique** et la **projection utilisée**, la **généralisation du fond de carte**, les choix graphiques (fontes, couleurs, format de diffusion), le vocabulaire utilisé. 
+
+## Prendre du recul
+
+<br>
+
+<p style="text-align:center;"><https://www.youtube.com/watch?v=uicwYbendUk></p>
+
+<p style="text-align:center;">Méfiez-vous des cartes, pas des migrants (Source : Lambert, Bahoken, 2018)</p>
+
+## La carte thématique / statistique
+
+:::columns
+:::column
+
+Un outil d’**analyse**, d’**aide à la décision** et de **communication** largement apprécié et utilisé.
+
+Un document graphique basé sur la **communication par les signes**. Elle relève du **langage visuel** et nécessite d'être appréhendée comme tel.
+
+:::
+:::column
+
+<img src="figs/rideau_fer.png" width="800"/>
+Source : [Lambert, 2021](https://neocarto.hypotheses.org/3239)
+
+Nécessité d'**identifier les moyens graphiques** qui permettent de passer d'une **information statistique spatialisée** à une **représentation graphique efficace**.
+:::
+:::
+
+---
+
+<br><br><br><br><br><br>
+<span style="color:darkred;font-size:36pt;">Les fondamentaux</span>
+
+## Les fondamentaux
+
+<br><br><br>
+
+L’efficacité graphique d'une carte thématique peut s'évaluer par le **temps nécessaire** pour mémoriser correctement l’information qui veut être transmise. Pour cela, il ne faut jamais oublier : 
+  
+1 - L’**objectif** de la carte et le **public visé**
+
+2 - Les **codes** et **conventions** de la cartographie
+
+3 - Les règles de la **sémiologie graphique**
+
+---
+
+:::columns
+:::column
+
+<span style="color:darkred;font-size:28pt;font-weight:bold">Codes et conventions cartographiques : Aider à la mise en contexte</span>
+
+<span style="color:grey;font-size:20pt;font-weight:bold">Des éléments obligatoires</span>
+
+<div style="font-size: 0.7em">
+- Un **titre** 
+
+- Une **date**
+
+- Une **légende**  
+
+- Une **source** (un **auteur**)
+
+- Une **échelle** 
+
+- Une **orientation** (optionnel)
+</div>
+
+<span style="color:grey;font-size:20pt;font-weight:bold">Couleurs et projections</span>
+
+Le choix des couleurs n'est pas anodin (considérations thématiques, statistiques, culturelles, etc.)
+
+L'usage de la projection doit être maîtrisé. Il est parfois soumise à des normes, comme vu lors des précédentes séances.
+ 
+:::
+:::column
+
+<img src="figs/carte_lambert.png" width="520"/>
+Des morts par milliers aux portes de l'Europe (Source : [Lambert, 2015](https://neocarto.hypotheses.org/1370))
+:::
+:::
+
+## Les Règles de la sémiologie graphique
+
+<p style="text-align:center;">Le **langage cartographique** a été théorisé par **Jacques Bertin** (1967).</p>
+
+:::columns
+:::column
+![](figs/bertin_1.jpg){fig-align="center" width="50%"}
+
+:::
+:::column
+![](figs/bertin_2.jpg){fig-align="center" width="50%"}
+:::
+:::
+
+« ***La graphique*** *utilise les propriétés de l'image visuelle pour faire apparaître les* ***relations*** *de* ***différence***, ***d'ordre*** et de ***proportionnalité*** entre les données ».
+
+## Sémiologie graphique : implantation et variable visuelle
+
+:::columns
+:::column
+**L'implantation** est la transcription graphique d'un objet géographique (points, lignes ou polygones).
+
+Trois types d'implantation existent : **ponctuel**, **linéaire** et **zonale** (surfacique).
+
+<br>
+
+**Les variables visuelles** (ou rétiniennes) sont les **moyens graphiques pour retranscrire visuellement une information**.
+
+Elles possèdent des propriétés différentes qui permettent de **différencier**, **ordonner** et **mesurer les données**.
+
+:::
+:::column
+
+<img src="figs/VV_couleur.png" width="500"/>
+<br><br>
+<img src="figs/var_visu.png" width="250"/>
+
+Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)
+:::
+:::
+
+## Les variables visuelles (6 + 1)
+
+:::columns
+:::column
+<img src="figs/VV_valeur.png" width="450"/>
+<img src="figs/VV_couleur.png" width="450"/>
+<img src="figs/VV_taille_ordre.png" width="450"/>
+<img src="figs/VV_forme.png" width="450"/>
+
+:::
+:::column
+
+<img src="figs/VV_grain.png" width="450"/>
+<img src="figs/VV_orientation.png" width="450"/>
+<img src="figs/VV_texture_diff.png" width="450"/>
+
+Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)
+:::
+:::
+
+## Les 3 propriétés des variables visuelles
+
+![](figs/VV_et_categories.png){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)</p>
+
+## Les types de données qui caractérisent les objets géographiques
+
+![](figs/types_de_donnees_1.png){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)</p>
+
+## Le lien entre données statistiques et variables visuelles
+
+![](figs/categories-de-VV.png){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)</p>
+
+## Le lien entre données statistiques et variables visuelles
+
+![](figs/arbre_type_data.png){fig-align="center" width="50%"}
+
+## Une erreur à éviter absolument ! 
+
+![](figs/types_de_donnees_2.png){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)</p>
+
+## Données, variables visuelles et implantation
+
+![](figs/donnee_carte.png){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)</p>
+
+---
+
+<br><br><br><br><br><br>
+<span style="color:darkred;font-size:36pt;">Représenter des données quantitatives absolues</span>
+
+## Représenter des données quantitatives absolues
+
+**UNE SEULE variable visuelle** peut être utilisée pour représenter des données **quantitatives absolues** : la variable visuelle **TAILLE**.
+
+![](figs/donnee_carte.png){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)</p>
+
+C'est la seule variable visuelle qui permet de retranscrire correctement ***des différences***, ***une hiérarchie*** et surtout ***la proportionnalité***.
+
+## Données quantitatives absolues - *implantation ponctuelle*
+
+![](figs/nuclear_full.png){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : [Bill Rankin, 2007](http://www.radicalcartography.net/)</p>
+
+## Données quantitatives absolues - *implantation linéaire*
+
+![](figs/taille_line.png){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : Les émigrants du Globe (Minard, 1858)</p>
+
+## Données quantitatives absolues - *implantation linéaire*
+
+:::columns
+:::column
+![](figs/commerce.jpeg){fig-align="center" width="65%"}
+
+<br>
+Source : [Atlas de l'espace mondial contemporain](https://espace-mondial-atlas.sciencespo.fr/fr/), Sciences Po, Atelier de cartographie, 2018
+
+:::
+:::column
+![](figs/navette.png){fig-align="center" width="65%"}
+<br>
+Source : [Cartothèque de la région Hauts-de-France, 2021](https://cartes.hautsdefrance.fr/)
+
+:::
+:::
+
+## Données quantitatives absolues - *implantation surfacique*
+
+:::columns
+:::column
+Pas de solution graphique simple pour utiliser la variable visuelle taille sur une surface. Il est généralement nécessaire d'extraire un figuré ponctuel de l'implantation surfacique
+
+Les logiciels de cartographie placent généralement le figuré ponctuel sur le barycentre des polygones (centroide).
+
+:::
+:::column
+<img src="figs/pop_brasil.png" height="420"/>
+
+La population brésilienne par municipio en 2010, Source : [Théry, 2011](https://braises.hypotheses.org/76))
+:::
+:::
+
+## Données quantitatives absolues - *implantation surfacique*
+
+![](figs/vatican.png){fig-align="center" width="50%"}
+<br>
+
+<p style="text-align:center;">Source : [L'enjeu mondial](https://www.sciencespo.fr/enjeumondial/fr/media/diplomatie-du-vatican-1978-2017.html), Sciences Po, 2017</p>
+
+## Données quantitatives absolues - *variante : carte en proportion*
+
+![](figs/prop.png){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : [HowMuch.net](https://twitter.com/howmuch_net/status/702133591241834496), 2016</p>
+
+## Données quantitatives absolues - *variante : diagramme et camembert*
+
+:::columns
+:::column
+<img src="figs/camembert.png" height="420"/>
+<br>
+Source : Carte figurative des viandes de boucherie, Minard, 1858
+:::
+:::column
+
+<img src="figs/tour_controle.png" height="420"/>
+Source : [Faire des cartes avec R, la frontière États-Unis - Mexique](https://riatelab.github.io/mexusaborder), Lambert, Ysebaert, 2019
+
+:::
+:::
+
+## Données quantitatives absolues - *variante : cartogramme / anamorphose*
+
+:::columns
+:::column
+<img src="figs/allo_afrique.jpg" height="420"/>
+
+Source : [Courrier International, 2019](https://www.courrierinternational.com/article/2013/10/10/allo-l-afrique)
+
+:::
+:::column
+
+<img src="figs/anamorphose.jpg" height="420"/>
+
+Source : [Agence France Presse, 2017](https://twitter.com/afpfr/status/856951951656988672)
+
+:::
+:::
+
+## Données quantitatives absolues - *variante : carte en point*
+
+:::columns
+:::column
+<img src="figs/dot_map.jpg" height="480"/>
+<br>
+Source : [Bill Rankin, 2009](http://www.radicalcartography.net/index.html?chicagodots)
+
+:::
+:::column
+
+<img src="figs/dot_map_2.png" height="480"/>
+Source : [Bill Rankin, 2013](http://www.radicalcartography.net/index.html?france)
+
+:::
+:::
+
+---
+
+<br><br><br><br><br><br>
+<span style="color:darkred;font-size:36pt;">Représenter des données quantitatives relatives</span>
+
+## Représenter des données quantitatives relatives
+
+Les variables visuelles adaptées à la représentation de données quantitatives relatives sont la **VALEUR**, la **COULEUR** (intensité/dégradé), le **GRAIN** ou la **TEXTURE-STRUCTURE**.
+Elles retranscrivent visuellement **différences** et **hiérarchies**.
+
+:::columns
+:::column
+
+<img src="figs/VV_valeur.png" width="470"/>
+<img src="figs/VV_intensite.png" width="470"/>
+<img src="figs/VV_harmonique.png" width="470"/>
+
+:::
+:::column
+
+<img src="figs/VV_grain.png" width="470"/>
+
+<img src="figs/VV_texture_ordre.png" width="470"/>
+
+**--> N'utilisez jamais la TAILLE**
+
+:::
+:::
+
+## Discrétiser des données quantitatives relatives
+
+:::columns
+:::column
+
+Un préalable à la représentation consiste à convertir la variable aux caractéristiques continues en variable discrète : **discrétisation**.
+
+Plusieurs méthodes existent. Leur choix dépend :
+
+- de la **forme de la distribution statistique**
+
+- des **valeurs centrales** (moyenne, médiane) 
+
+- des **paramètres de dispersion statistique** (écart-type) 
+
+Ce choix a un **impact important** sur l'information représentée...
+
+:::
+:::column
+<img src="figs/discretisations_examples_cartes.png" width="430"/>
+<br>
+Source : Manuel de cartographie : principes, méthodes, applications (Lambert, Zanin, 2016)
+:::
+:::
+
+## Données quantitatives relatives - *implantation surfacique*
+
+:::columns
+:::column
+
+<br>
+Conçue par Charles Dupin et réalisée par le lithographe Jean-Baptiste Collon, cette carte est considérée comme une des toutes premières cartes thématiques jamais réalisée. Elle représente le taux d'élèves masculins scolarisés par département. 
+
+:::
+:::column
+
+<img src="figs/dupin.jpg" height="480"/>
+
+Carte figurative de l'instruction populaire de France (Source : Dupin, 1826)
+
+:::
+:::
+
+## Données quantitatives relatives - *implantation surfacique*
+
+![](figs/quanti_rel_surf.jpg){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Potentiel d'incendie (Source : [USGS, 2013](https://www.usgs.gov/ecosystems/lcsp/fire-danger-forecast/legacy-fire-danger-forecast-products))</p>
+
+## Données quantitatives relatives - *implantation surfacique*
+
+![](figs/quanti_rel_2.png){fig-align="center" width="50%"}
+
+## Données quantitatives relatives - *implantation surfacique*
+
+:::columns
+:::column
+
+<img src="figs/brexit.jpg" height="480"  />
+<br>
+Source : [New York Times, 2016](https://www.nytimes.com/interactive/2016/06/24/world/europe/how-britain-voted-brexit-referendum.html)
+
+:::
+:::column
+
+<img src="figs/4G.jpg" height="480"  />
+
+Source : [Chroniques Cartographiques, 2015](https://www.chroniques-cartographiques.fr/2015/08/carte-de-france-de-la-couverture-mobile-4g.html)
+
+:::
+:::
+
+## Données quantitatives relatives - *implantation ponctuelle*
+
+![](figs/transac_montreuil.png){fig-align="center" width="50%"}
+
+## Données quantitatives relatives - *implantation linéaire*
+
+![](figs/quanti_rel_3.png){fig-align="center" width="50%"}
+
+<p style="text-align:center;">
+High Speed rail in Europe, 2016 (Source : [Wikipedia](https://en.wikipedia.org/wiki/High-speed_rail_in_Europe))</p>
+
+---
+
+<br><br><br><br><br><br>
+<span style="color:darkred;font-size:36pt;">Représenter des données qualitatives</span>
+
+## Représenter des données qualitatives
+
+:::columns
+:::column
+
+**Qualitative NOMINALE**
+
+<img src="figs/VV_couleur.png" width="380"/>
+<img src="figs/VV_forme.png" width="380"/>
+<img src="figs/VV_orientation.png" width="380"/>
+
+Exprime la **différence** entre les modalités
+
+
+:::
+:::column
+
+**Qualitative ORDINALE**
+
+<img src="figs/VV_valeur.png" width="380"/>   
+<img src="figs/VV_intensite.png" width="380"/>    
+<img src="figs/VV_texture_ordre.png" width="380"/>   
+<img src="figs/VV_taille_ordre.png" width="380"/>   
+
+Exprime l'**ordre** et la **hiérarchie** entre les modalités.
+
+:::
+:::
+
+## Donnée qualitative nominale - *implantation ponctuelle*
+
+<img src="figs/csp_ac_montreuil.png" height="370"/>
+<img src="figs/csp_ve_montreuil.png" height="370"/>
+
+
+## Donnée qualitative nominale - *implantation ponctuelle*
+
+![](figs/symbol_map.jpg){fig-align="center" width="50%"}
+
+## Donnée qualitative nominale - *implantation ponctuelle*
+
+![](figs/carte_symbol.gif){fig-align="center" width="50%"}
+
+<p style="text-align:center;">How Hollywood destroyed America (Source : [theconcourse.deadspin.com, 2014](https://deadspin.com/map-how-hollywood-has-destroyed-america-1542969906))</p>
+
+## Donnée qualitative nominale - *implantation linéaire*
+
+![](figs/quali_line_nominale.png){fig-align="center" width="50%"}
+
+## Donnée qualitative nominale - *implantation surfacique*
+
+![](figs/quali_nom_surface.jpg){fig-align="center" width="50%"}
+
+## Donnée qualitative nominale - *implantation surfacique*
+
+![](figs/typo.jpg){fig-align="center" width="50%"}
+
+
+## Donnée qualitative ordinale - *implantation ponctuelle*
+
+![](figs/quali_point_ordinale_2.jpg){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : [Ministère de la transition écologique et solidaire](http://www.donnees.statistiques.developpement-durable.gouv.fr/lesessentiels/essentiels/nitrates-dce-cours-eau.html)</p>
+
+## Donnée qualitative ordinale - *implantation linéaire*
+
+![](figs/quali_line_ordinale.jpg){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : [Ministère de la transition écologique et solidaire](http://www.donnees.statistiques.developpement-durable.gouv.fr/lesessentiels/essentiels/nitrates-dce-cours-eau.html)</p>
+
+## Donnée qualitative ordinale - *implantation linéaire*
+
+![](figs/regnier_1882.JPEG){fig-align="center" width="50%"}
+
+<p style="text-align:center;">Source : Regnier et Dourdet, 1882</p>
+
+## Donnée qualitative ordinale - *implantation surfacique*
+
+![](figs/quali_surface_ordinale.png){fig-align="center" width="50%"}
+
+## Donnée qualitative ordinale - *implantation surfacique*
+
+![](figs/conflict.png){fig-align="center" width="50%"}
+
+## Composition de données qualitatives en cartographie d'édition
+
+![](figs/quali_all.png){fig-align="center" width="50%"}
+
+---
+
+<br><br><br><br><br><br><br>
+<span style="color:darkred;font-size:36pt;">Map fails</span>
+
+## Cherchez l'erreur...
+
+![](figs/map_failed_0.jpg){fig-align="center" width="50%"}
+
+## Cherchez l'erreur...
+
+![](figs/map_failed_4.jpg){fig-align="center" width="50%"}
+
+## Cherchez l'erreur...
+
+![](figs/map_failed_6.jpg){fig-align="center" width="50%"}
+
+## Cherchez l'erreur...
+
+![](figs/map_failed_3.jpg){fig-align="center" width="50%"}
+
+## Cherchez l'erreur...
+
+![](figs/map_failed_7.jpg){fig-align="center" width="50%"}
+
+## Cherchez l'erreur...
+
+![](figs/map_failed_5.jpg){fig-align="center" width="50%"}
+
+## Cherchez l'erreur...
+
+![](figs/map_failed_8.jpg){fig-align="center" width="50%"}
+
+## Cherchez l'erreur...
+
+![](figs/map_failed_9.jpg){fig-align="center" width="50%"}
+
+---
+
+:::columns
+:::column
+
+![](figs/map_failed_1.jpg){fig-align="center" width="90%"}
+
+:::
+:::column
+![](figs/map_failed_2.jpg){fig-align="center" width="90%"}
+:::
+:::
+
+## Références
+
+<img src="figs/ref_1.jpg" width="290" style="border:1px solid grey"/>
+<img src="figs/ref_2.jpg" width="280" style="border:1px solid grey"/>
+<img src="figs/ref_3.jpg" width="280" style="border:1px solid grey"/>

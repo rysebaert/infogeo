@@ -1,0 +1,545 @@
+---
+title: "Information géographique"
+subtitle: "Coordonnées géographiques et projections cartographiques"
+author:
+  - name: "Louis Laurian"
+    email: "louis.laurian@cnrs.fr"
+  - name: "Héloïse Chauvel"
+    email: "heloise.chauvel@parisgeo.cnrs.fr"
+date: today
+format:
+  revealjs:
+    css: ["css/styles.css", "css/rutgers-tidyverse.css","css/rutgers-fonts_og.css"]
+---
+
+## Coordonnées géographiques & projections
+
+Une information géographique est forcément décrite par **une position** et **une forme** sur la surface de la Terre.
+
+- Sur quel **référentiel** se base-t-on pour localiser un objet sur Terre ?
+
+- Comment détermine-t-on **les coordonnées géographiques** d'un objet géographique ?   
+
+- Qu'est-ce qu'une **projection cartographique** ?  
+
+Comprendre les méthodes de localisation et de projection de l'information géographique est fondamental pour **correctement gérer le système de coordonnées géographiques et la projection cartographique d'une couche dans un SIG**.
+
+---
+
+<br><br><br><br><br><br><br>
+
+### <span style="color:darkred;font-size:36pt;">1.  Modéliser pour localiser</span>
+
+## La planète Terre n'est pas une sphère parfaite...
+<br>
+<img src="figs/globe.gif" width="420" style="display: block; margin: 0 auto;" />
+<p style="font-size:10pt;line-height:1.3;font-style:italic;color:#8e8d8d;">Source : NASA, University of Texas for Space Research, 2002 </p>
+
+## Le géoïde terrestre
+
+**La Terre n'est pas une sphère** qui est une forme géométrie dite parfaite. **Elle est légèrement aplatie aux pôles et bosselée selon les continents**. Son apparence sphérique lorsqu'on l'observe depuis l'espace masque les nombreuses petites irrégularités de sa surface.
+
+Toute mesure ayant besoin d'une référence, on modélise la forme de la Terre selon le modèle théorique du **géoïde**.
+
+Un géoïde est une **surface équipotentielle du champ de pesanteur** coïncidant « au mieux » avec le **niveau moyen des océans et qui se prolonge sous les continents**.
+
+```{r, echo = FALSE, out.width = "350px", fig.align='center'}
+knitr::include_graphics('figs/geoide2.png')
+```
+
+## Le géoïde terrestre
+ 
+La **surface du géoïde** équivaut au **niveau d'altitude 0** à l'échelle mondiale. La notion d'**altitude** traduit donc **la hauteur au-dessus du géoïde**.
+
+Pour la France, il est calé sur un niveau zéro scellé dans le port de Marseille et mesuré par le **Marégraphe de Marseille** depuis 1885.
+
+```{r, echo = FALSE, out.width = "550px", fig.align='center'}
+knitr::include_graphics('figs/maregraphe.png')
+```
+
+##  Formalisation mathématique du géoïde
+
+
+::: columns 
+::: column
+<br><br>
+Le géoïde est une **surface difforme** à laquelle on ne saurait appliquer des **relations mathématiques**.
+
+Pour modéliser cette surface, on utilise une **figure géométrique régulière**: **l'ellipsoïde**.      
+
+Il s'agit d'un volume globalement sphérique présentant un aplatissement aux pôles.
+:::
+::: column
+```{r, echo = FALSE, out.width = "350px", fig.align='center'}
+knitr::include_graphics('figs/AnimationSphere2.GIF')
+```
+:::
+:::
+
+## L'ellipsoïde terrestre
+
+**L'ellipsoïde est la surface mathématique qui se rapproche le plus du géoïde**. 
+
+Il sert de **référence pour la construction des projections cartographiques**. Positionner l'ellipsoïde en fonction du géoïde permet de construire **un système géodésique**.
+
+
+```{r, echo = FALSE, out.width = "600px", fig.align='center'}
+knitr::include_graphics('figs/geoide_ellips.png')
+```
+
+
+## Ecart ellipsoïde-géoïde
+
+::: columns 
+::: column
+```{r, echo = FALSE, out.width = "600px", fig.align='center'}
+knitr::include_graphics('figs/geoide.jpg')
+```
+:::
+::: column
+
+**Les couleurs traduisent l'écart entre le géoïde et l'ellipsoïde**. Cela se nomme la 'hauteur', et **ne dépasse pas 110 mètres** ! 
+
+Si la forme de la terre n'est pas régulière, elle se rapproche donc fortement d'un ellipsoïde
+
+Il est important de noter que **l'altitude** d'un point est calculé par rapport à son l'**éloignement vertical à la surface du géoïde** et **pas à celle de l’ellipsoïde de référence**.
+
+:::
+:::
+
+## Les systèmes géodésiques
+
+Un **système géodésique** sert de repère pour déterminer les coordonnées géographiques (ou géodésiques) d'un objet à la surface de la Terre. 
+
+::: columns 
+::: column
+```{r, echo = FALSE, out.width = "300px", fig.align='center'}
+knitr::include_graphics('figs/meridien_paral1.gif')
+```
+:::
+::: column
+```{r, echo = FALSE, out.width = "300px", fig.align='center'}
+knitr::include_graphics('figs/sphere_lat_long.png')
+```
+:::
+:::
+
+Ces coordonnées sont des **valeurs angulaires**, calculées par rapport à un **parallèle (équateur)** et un **méridien de référence (Greenwich)**. Les coordonnées d'un objet traduit (au minimum) deux dimensions : la **latitude** et la **longitude**.
+
+## Les coordonnées géographiques
+
+Les **coordonnées géographiques** peuvent être exprimées en **degrés décimaux (DD)** ou en **Degrés-minutes-secondes (DMS)**
+
+```{r, echo = FALSE, out.width = "600px", fig.align='center'}
+knitr::include_graphics('figs/sphere_lat_long_2.png')
+```
+
+## Les systèmes géodésiques à connaître
+
+Un même ellipsoïde peut être **positionné différemment par rapport au géoïde**, et ainsi constituer des systèmes de référence géodésiques **différents**. Le même objet n'aura pas les mêmes coordonnées géographiques dans différents systèmes géodésiques.
+
+- **WGS84 (World Geodesic System 1984)**  
+*Le plus utilisé au monde. C'est ce système géodésique qui est utilisé pour le GPS (système de positionnement par satellites).*
+
+- **ITRS (International Terrestrial Reference System)**  
+*Le plus précis à l'échelle mondiale (précision centimétrique).* 
+
+- **RGF93 (Réseau Géodésique Français 1993)**.  
+*Système géodésique officiel en France métropolitaine.*
+
+- **NTF (Nouvelle Triangulation de la France)**  
+*Ancien système géodésique français de référence, couvrant le territoire métropolitain.*
+
+---
+
+<br><br><br><br><br><br><br>
+
+<span style="color:darkred;font-size:36pt;">2.  Projeter pour cartographier</span>
+
+---
+
+<p style="text-align:center;">**Passer de la sphère...**</p>
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+knitr::include_graphics('figs/moscou.png')
+```
+
+---
+
+<p style="text-align:center;">**...au plan...**</p>
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+knitr::include_graphics('figs/avion.png')
+```
+
+<p style="text-align:center;">...provoque des **déformations** !</p>
+
+## Les projections cartographiques
+
+Un système géodésique, **en attribuant des coordonnées à tout point de l'espace**, permet de **localiser un objet sur une surface en 3 dimensions.**
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+knitr::include_graphics('figs/orange.png')
+```
+
+<p style="text-align:center;">*Mais comment représenter l'information géographique sur un plan en deux dimensions, sur une carte ?*</p>
+
+<p style="text-align:center;">*https://www.youtube.com/watch?v=8ZANOq8D5YE*</p>
+
+
+## Les projections cartographiques
+
+Une **projection** est un **procédé mathématique** permettant de passer de l'ellipsoïde à **sa représentation sur une surface plane**. 
+
+Toutes les projections provoquent des déformations. Plus l'espace représenté est vaste, plus les altérations sont importantes.
+
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+knitr::include_graphics('figs/projection_style.jpeg')
+```
+
+Les projections cartographiques peuvent se classer selon **le type d'altération** et **la surface de projection**. 
+
+## Surfaces de projection
+
+Un ellipsoïde peut être projeté sur différentes surfaces, facilement **représentables en deux dimensions**. Le cône, le cylindre et le plan sont des formes géométriques développables. 
+
+::: columns
+::: column
+<img src="figs/surface_proj.png" height="450" />
+:::
+::: column
+<p style=";font-size:16pt;">Dans la **projection conique**, les méridiens et les parallèles sont projetés sur un cône qui est tangent avec le parallèle souhaité. Cette projection permet d'établir des cartes assez fidèles à la réalité dans les régions voisines du parallèle de contact. Par contre les régions éloignées sont très déformées et souvent un des deux hémisphères ne peut être cartographié en même temps que l'autre.</p>
+
+<p style=";font-size:16pt;">Une **projection cylindrique** est la projection de la Terre sur un cylindre tangent à un grand cercle ou sécant en deux cercles. Lorsque la sphère est projetée sur un seul cylindre, il y a une importante distorsion des hautes latitudes, où les surfaces sont considérablement agrandies.</p>
+
+<p style=";font-size:16pt;">Une **projection azimutale** est une manière de projeter une sphère sur un plan, et en particulier, une façon de représenter entièrement la surface de la Terre sous la forme d'un disque.</p>
+:::
+:::
+
+## Surfaces de projection
+
+Un ellipsoïde peut être projeté sur différentes surfaces, facilement **représentables en deux dimensions**.
+
+<br>
+
+::: columns
+::: column
+<img src="figs/surface_proj_2.png" height="350" />
+:::
+::: column
+Pour un plan **tangent**, le cône, le cylindre ou le plan ne touchent la Terre que le long d'une seule droite ou qu'à un point. 
+
+Dans le cas d'un **plan sécant**, le cône ou le cylindre coupent au travers de la Terre au moyen de deux cercles. 
+
+Le lieu du point de contact définit l'endroit où les distorsions sont les moins importantes. Il est appelé **parallèle de référence**
+
+Les projections planes peuvent être orientées de différentes manières : **polaire (directe)**, **équatoriale (transverse)** et **oblique**.
+:::
+:::
+
+## Le choix du centrage...
+<p style="text-align:center;">Il n'y a pas de règle pour l'orientation et le centre d'une projection, mais ce choix n'est pas anodin...</p>
+
+::: columns
+::: column
+<img src="figs/US.jpg" width="550" />
+:::
+::: column
+<img src="figs/chinese_world.jpeg" width="550" />
+:::
+:::
+
+## Le choix du centrage...
+<p style="text-align:center;">Il n'y a pas de règle pour l'orientation et le centre d'une projection, mais ce choix n'est pas anodin...</p>
+
+::: columns
+::: column
+<img src="figs/japan_world.jpg" width="550" />
+:::
+::: column
+<img src="figs/australian.jpg" width="550" />
+:::
+:::
+
+## Le choix du centrage...
+<p style="text-align:center;">Il n'y a pas de règle pour l'orientation et le centre d'une projection, mais ce choix n'est pas anodin...</p>
+
+::: columns 
+::: column
+<img src="figs/world_map.jpg" width="550" />
+:::
+::: column
+<img src="figs/ONU.png" width="550" />
+:::
+:::
+
+## Les types de projection (déformations)
+
+Les projections peuvent être classées selon les **altérations géométriques** qu'elles provoquent.
+
+::: columns 
+::: column
+### Projections conformes
+
+**Conservent localement les angles, donc les formes**. Les méridiens et parallèles se coupent à angle droit.    
+
+**Les surfaces et les distances sont déformées.** Ce type de projection peut être utilisé pour la navigation maritime.
+:::
+::: column
+![](figs/mercator.jpg)
+<p style=";font-size:18pt;">Exemple : **Projection Mercator**</p>
+<p style=";font-size:14pt;">*Gerardus Mercator (1569)*</p>
+:::
+:::
+
+## Les types de projection (déformations)
+
+Les projections peuvent être classées selon les **altérations géométriques** qu'elles provoquent.
+
+::: columns 
+::: column
+
+### Projections équivalentes
+
+**Conserve localement les surfaces**, mais au prix d’une **déformation des distances et des angles** de route sur la carte.
+
+:::
+::: column
+![](figs/gall_peters.jpg)
+<p style=";font-size:18pt;">Exemple : **Projection Gall–Peters**</p>
+<p style=";font-size:14pt;">*James Gall et Arno Peters (1855)*</p>
+:::
+:::
+
+## Les types de projection (déformations)
+
+Les projections peuvent être classées selon les **altérations géométriques** qu'elles provoquent.
+
+::: columns
+::: column
+
+### Projections aphylactiques
+
+Projections  **ni conformes, ni équivalentes**, mais qui cherchent à faire un **compromis acceptable** entre les inévitables déformations des surfaces, des distances et des angles sur une carte.
+:::
+::: column
+![](figs/Natural_Earth.JPG)
+<p style=";font-size:18pt;">Exemple : **Projection Natural Earth**</p>
+<p style=";font-size:14pt;">*Tom Patterson (2011)*</p>
+:::
+:::
+
+## Les types de projection (déformations)
+
+Les projections peuvent être classées selon les **altérations géométriques** qu'elles provoquent.
+
+::: columns 
+::: column
+### Projections aphylactiques (équidistantes)
+
+La **distance et la direction**, mesurées à partir du point central, sont toutes deux exactes.
+:::
+::: column
+![](figs/postel.png)
+<p style=";font-size:18pt;">Exemple : **Projection Postel**</p>
+<p style=";font-size:14pt;">*Al-Biruni (1000 envir.)*</p>
+:::
+:::
+
+## Quelles déformations ? 
+
+Le cas controversé de la projection Mercator... 
+
+::: columns 
+::: column
+```{r, echo = FALSE, out.width = "500px", fig.align='center'}
+knitr::include_graphics('figs/russie_afrique.png')
+```
+<p style=";font-size:18pt;">En réalité, la Russie est 2 fois moins étendue que l'Afrique...</p>
+:::
+::: column
+```{r, echo = FALSE, out.width = "500px", fig.align='center'}
+knitr::include_graphics('figs/SA_groenland.png')
+```
+<p style=";font-size:18pt;">... Et l'Amérique du Sud 8 fois plus étendue que le Groenland !</p>
+:::
+:::
+
+## Quelles déformations ? 
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+knitr::include_graphics('figs/truesize.PNG')
+```
+
+<p style="text-align:center;">*https://thetruesize.com*</p>
+
+## Quelles déformations ? 
+
+**L'indicatrice de Tissot** permet d'apprécier les déformations engendrées par l'usage d'un système de projection cartographique.
+
+::: columns 
+::: column
+```{r, echo = FALSE, out.width = "450x", fig.align='center'}
+knitr::include_graphics('figs/mercator_deform.png')
+```
+:::
+::: column
+```{r, echo = FALSE, out.width = "500px", fig.align='center'}
+knitr::include_graphics('figs/equivalente_deform.png')
+```
+
+<br>
+Une forme géométrique (un cercle ou une ellipse) est répétée de manière régulière sur le planisphère.
+:::
+:::
+
+---
+
+<br><br><br><br><br><br><br>
+
+<span style="color:darkred;font-size:36pt;">3. Quelle projection choisir ?</span>
+
+## Des normes, des références et des choix
+
+**Le choix d'une projection cartographique** ne se fait pas aléatoirement.
+
+-  En France, tout comme dans de nombreux pays, vous êtes soumis à des **normes** si vous travaillez dans le cadre d'une **mission de service public.**
+
+-  Sinon, **c'est la zone représentée, la thématique et l'objectif de la carte** qui vous permettront de choisir une projection.
+
+- Pour la navigation, les directions sont importantes.
+- Sur les cartes routières, les distances précises sont importantes. 
+<br><br>
+**Des conventions pour certaines zones géographiques**
+- Pour les régions de basse latitude (près de l'Équateur), utilisez des projections cylindriques.
+- Pour les régions de latitude moyenne, les projections coniques sont plus adaptées.
+- Pour les régions polaires, plutôt des projections azimutales.
+
+
+D'un point de vue général, ne pas oublier que plus la surface à représenter est importante, plus les distorsions le seront également
+
+## En France : La projection Lambert93
+
+::: columns 
+::: column
+Suite à un décret du [3 mars 2006](https://geodesie.ign.fr/contenu/fichiers/Decret2006-272_03-03-06MODdecret2000-1276.pdf) :
+
+Toutes les administrations de l'État, collectivités locales et entreprises chargées de l'exécution d'une mission de service public doivent utiliser le **système géodésique de référence RGF93** pour leurs échanges de données géoréférencées.
+
+Ce système géodésique est compatible avec le système géodésique de **référence européen ETRS89** et avec le système géodésique de référence mondial **WGS84** (utilisé par le système GPS).
+
+Les cartes officielles représentant l'ensemble de la France métropolitaine doivent utiliser la projection de référence **Lambert93 Conique Conforme**. 9 variantes de cette projection existent, elles couvrent 9 zones s'étalant du Nord au Sud et doivent être utilisées pour la cartographie locale.
+
+[Source : Géoréférencement et RGF93, théorie et concepts, 2008](http://gtsoft.ftpacs.com/RGF93_theorie_et_concept_T3.pdf?PHPSESSID=649823751d32b07817a3795a95f748aa)
+
+:::
+::: column
+<img src="figs/CC9zones.png" width="350" />
+<img src="figs/C9zones2.png" width="350" />
+:::
+:::
+
+## En France : La projection Lambert93
+
+<p style="text-align:center;">Les déformations engendrées par cette projection restent minimes.</p>
+
+```{r, echo = FALSE, out.width = "590px", fig.align='center'}
+knitr::include_graphics('figs/CC9zones_deform.png')
+```
+
+## Chaque pays a son popre système de projection de référence ! 
+
+L'EPSG (European Petroleum Survey Group) a construit en place une base de données qui recense et identifie les systèmes de **coordonnées géographiques de projection les plus utilisés**.
+
+
+[**epsg.io**](https://epsg.io/) est aujourd'hui une ressource Open-Source de référence internationale.
+
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+knitr::include_graphics('figs/epsg1.PNG')
+```
+
+Les **codes EPSG** sont des identifiants uniques pour qualifier de systèmes de projection, directement utilisables dans des SIG.
+
+## Les codes EPSG
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+knitr::include_graphics('figs/epsg2.PNG')
+```
+
+---
+
+<br><br><br><br><br><br><br>
+
+<span style="color:darkred;font-size:36pt;">4. Ce qu'il faut retenir...</span>
+
+## Modéliser pour localiser
+
+```{r, echo = FALSE, out.width = "900px", fig.align='center'}
+knitr::include_graphics('figs/Modeliser_localiser.png')
+```
+
+
+## Coordonnées géographiques
+
+::: columns 
+::: column
+<br><br>
+
+Les coordonnées géographiques sont :
+
+- <p style=";font-size:18pt;">des **angles**, mesurées depuis le centre de la Terre et vers un point de la surface</p>
+
+> Latitude = angle avec le plan équatorial.
+
+> Longitude = angle avec le méridien de référence, Greenwich.
+
+- exprimées en **degrés**.
+
+- relatives à un **système géodésique** de référence (**l’ellipsoïde**).
+
+:::
+::: column
+```{r, echo = FALSE, out.width = "450px", fig.align='center'}
+knitr::include_graphics('figs/latlong.png')
+```
+:::
+:::
+
+## Déformer pour représenter
+
+::: columns 
+::: column
+```{r, echo = FALSE, out.width = "400px", fig.align='center'}
+knitr::include_graphics('figs/glob_blue.jpg')
+```
+:::
+::: column
+```{r, echo = FALSE, out.width = "350px", fig.align='center'}
+knitr::include_graphics('figs/map_blue.png')
+```
+:::
+:::
+
+Pour représenter une **surface sphérique** sur un **plan (planisphère)**, on utilise des **systèmes de projection cartographique** qui :
+
+- déforment soit les formes/angles et conservent les surfaces (projection **équivalente**).
+
+- soit l'inverse (projection **conforme**).
+
+- soit tentent de **minimiser les deux déformations (projection aphylactique)**. 
+
+Les **coordonnées géographiques** sont alors **converties en coordonnées projetées** (propres à chaque projection). Elles sont exprimées en **m ou km**.
+
+## Précaution
+
+En France, le **système géodésique de référence est le RGF93**.
+
+La **projection officielle** pour cartographier le territoire métropolitain est la **projection conique conforme Lambert 93** et ses variantes **Lambert Conique Conforme 9 zones**.
+
+```{r, echo = FALSE, out.width = "125px", fig.align='center'}
+knitr::include_graphics('figs/precaution.png')
+```
+
+Il faut toujours **connaître le système de coordonnées géographiques et/ou la projection utilisée** lorsque l'on manipule et représente de l'information géographique **dans un SIG ou en cartographie**.

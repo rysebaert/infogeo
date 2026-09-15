@@ -36,7 +36,79 @@
          url('fonts/Roboto-Bold-webfont.svg') format('svg');
     font-weight: 700;
     font-style: normal;
+}
 
+.reveal h1 {
+  font-size: 1.4em;
+  color: darkred;
+  text-align: left;
+}
+
+.reveal h2 {
+  font-size: 1.2em;
+  color: darkred;
+  text-align: left;
+}
+
+.reveal h3 {
+  font-size: 1em;
+  color: black;
+  text-align: left;
+}
+
+.reveal h1.title {
+  font-size: 1.1em;
+  text-align: left;
+}
+
+.reveal p.subtitle {
+  font-size: 1em;
+  text-align: left;
+  color: darkred;
+}
+
+.reveal p {
+  font-size: 0.6em;
+}
+
+ul li::marker {
+  font-size: 0.7em;
+}
+
+.extrapad li:not(:last-child) {
+    margin-bottom:-10px !important;
+}
+
+.reveal .quarto-title-authors {
+  text-align: left !important;
+  display: block !important;
+  margin-left: 0 !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.reveal .quarto-title-author {
+  text-align: left !important;
+  display: block !important;
+  margin-bottom: 0.5em;
+}
+
+.reveal .quarto-title-author-name {
+  text-align: left;
+  font-weight: bold;
+}
+
+.reveal .quarto-title-author-email {
+  font-size: 0.8em;
+  color: #666;
+  display: block;
+}
+
+.reveal p.date {
+  font-size: 0.8em;
+  text-align: left;
+  margin-top: 0.3em;
+  color: #666; 
 }
 
 
@@ -49,6 +121,17 @@ h1, h2, h3 {
 
 .hljs-github .hljs {
     background: #e5e5e5;
+}
+
+.title-slide h3 {
+  font-size: 28px;
+  font-weight: normal;
+  color: #666666;
+  text-align: left;
+  text-shadow: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1;
 }
 
 .fig{
@@ -74,6 +157,16 @@ h1, h2, h3 {
    font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace;
 }
 
+.pull-left {
+  float: left;
+  width: 45%;
+  margin-right: 5%;
+}
+.pull-right {
+  float: right;
+  width: 45%;
+}
+
 .pull-left-c {
     float: left;
     width: 58%;
@@ -91,6 +184,11 @@ h1, h2, h3 {
 .small {
     font-size: 65%
     }
+    
+.center {
+  text-align:center
+  }
+
 
 .action {
     background-color: #f2eecb;

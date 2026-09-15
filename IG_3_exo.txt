@@ -1,1 +1,0 @@
-slide 26, ouvrir Magrit, charger Tissot + Monde, appliquer la projection Lambert 93, jouer avec d'autres projections. 
